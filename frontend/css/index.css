@@ -367,9 +367,10 @@ border-bottom: 2px solid var(--teal);
 margin: 0 40px 50px;
 position: sticky;
 top: 72px;
-background: #f0e8d5;
+background: #eedcb4;
 z-index: 10;
 padding-top: 10px;
+border-radius: 10px;
 }
 .tab-btn {
 font-family: 'Special Elite', cursive;
