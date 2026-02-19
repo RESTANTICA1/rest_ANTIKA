@@ -261,7 +261,7 @@ section { position: relative; }
 
 .section-label {
 font-family: 'Crimson Text', serif;
-font-size: 12px;
+font-size: 15px;
 letter-spacing: 5px;
 text-transform: uppercase;
 color: var(--gold);
@@ -346,7 +346,7 @@ padding-bottom: 2px;
 
 /* ===== MENU SECTION ===== */
 #menu {
-background: #f0e8d5;
+background: url(fonde\ menu.png);
 color: var(--text);
 padding: 80px 0;
 }
@@ -373,7 +373,7 @@ padding-top: 10px;
 }
 .tab-btn {
 font-family: 'Special Elite', cursive;
-font-size: 13px;
+font-size: 16px;
 letter-spacing: 1.5px;
 text-transform: uppercase;
 color: var(--teal-dark);
@@ -404,7 +404,7 @@ gap: 60px 80px;
 }
 .menu-section-title {
 font-family: 'Crimson Text', serif;
-font-size: 13px;
+font-size: 18px;
 letter-spacing: 4px;
 text-transform: uppercase;
 color: var(--teal);
@@ -426,14 +426,14 @@ gap: 12px;
 .item-info { flex: 1; }
 .item-name {
 font-family: 'Crimson Text', serif;
-font-size: 17px;
+font-size: 23px;
 font-weight: 600;
 color: var(--teal-dark);
 display: block;
 margin-bottom: 3px;
 }
 .item-desc {
-font-size: 14px;
+font-size: 20px;
 color: #5a4a30;
 line-height: 1.5;
 font-style: italic;
@@ -465,7 +465,7 @@ font-style: italic;
 width: 100%;
 border-collapse: collapse;
 margin-top: 20px;
-font-size: 15px;
+font-size: 17px;
 }
 .broaster-table th {
 background: var(--teal-dark);
@@ -491,7 +491,7 @@ font-size: 16px;
 .broaster-table .promo-name {
 font-family: 'Crimson Text', serif;
 font-weight: 600;
-font-size: 16px;
+font-size: 18px;
 color: var(--teal-dark);
 }
 
