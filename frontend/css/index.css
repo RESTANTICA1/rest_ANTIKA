@@ -636,14 +636,31 @@ flex-wrap: wrap;
 footer {
 background: #0d1a1b;
 padding: 24px 60px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
+display: grid;
+grid-template-rows: 1fr auto;
+min-height: 200px;
 gap: 12px;
 border-top: 1px solid rgba(201,168,76,0.2);
 }
-footer p { font-size: 13px; color: var(--cream); opacity: 0.5; letter-spacing: 1px; }
+.primero{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+footer p { font-size: 13px;
+    color: var(--cream);
+    opacity: 0.5;
+    letter-spacing: 1px; }
+
+.copy {
+    display: flex;
+    justify-content: center; /* una fila centrada */
+    align-items: center;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    padding-top: 12px;
+}
+
 footer .footer-logo {
 font-family: 'Special Elite', cursive;
 font-size: 18px;
