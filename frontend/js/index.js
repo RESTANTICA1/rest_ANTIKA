@@ -20,6 +20,159 @@ function closeMenu() {
 document.getElementById('main-nav').classList.remove('open');
 }
 
+
+// ===== Reseñas de Google (CARRUSEL) =====
+async function loadGoogleReviews() {
+  const container = document.getElementById('reviews-container');
+  if (!container) return;
+
+  try {
+    const response = await fetch('../assets/docs/resenas_extraccion.json');
+    const data = await response.json();
+    const reseñas = data.resenas || [];
+
+    // Filter out empty reviews and take first 20
+    const validReviews = reseñas.filter(r => r.resena && r.resena.trim().length > 0).slice(0, 20);
+
+    container.innerHTML = validReviews.map((reseña, index) => {
+      // Generate stars HTML
+      let starsHtml = '';
+      for (let i = 0; i < 5; i++) {
+        starsHtml += i < reseña.estrellas ? '★' : '☆';
+      }
+
+      // Get initials for avatar
+      const initials = reseña.nombre.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+
+      // Random pastel color for avatar
+      const colors = ['#4285F4', '#EA4335', '#FBBC05', '#34A853', '#FF6D01', '#46BDC6', '#7B1FA2'];
+      const avatarColor = colors[index % colors.length];
+
+      return `
+        <a href="https://maps.app.goo.gl/gJKPpyPZ9J4UHtSH9" target="_blank" class="google-review-card">
+          <div class="google-review-header">
+            <div class="google-review-avatar" style="background-color: ${avatarColor}">
+              ${initials}
+            </div>
+            <div class="google-review-info">
+              <span class="google-review-name">${reseña.nombre}</span>
+              <div class="google-review-stars">${starsHtml}</div>
+            </div>
+            <img src="../assets/icons/google.png" alt="Google" class="google-review-logo">
+          </div>
+          <p class="google-review-text">${reseña.resena}</p>
+        </a>
+      `;
+    }).join('');
+
+    // Initialize carousel after loading reviews
+    initReviewsCarousel();
+
+  } catch (error) {
+    console.error('Error loading reviews:', error);
+    container.innerHTML = '<p style="color:white;text-align:center;">No se pudieron cargar las reseñas.</p>';
+  }
+}
+
+// ===== CARRUSEL DE RESEÑAS =====
+function initReviewsCarousel() {
+  const track = document.querySelector('.reviews-carousel-track');
+  const items = document.querySelectorAll('.google-review-card');
+  const prevBtn = document.querySelector('.carousel-nav-prev-reviews');
+  const nextBtn = document.querySelector('.carousel-nav-next-reviews');
+
+  if (!track || items.length === 0) return;
+
+  let currentIndex = 0;
+  let itemsPerView = 3;
+  let autoPlayInterval;
+  let isPaused = false;
+
+  const AUTO_PLAY_INTERVAL = 5000;
+  const TRANSITION_DURATION = 500;
+
+  function getItemsPerView() {
+    const width = window.innerWidth;
+    if (width <= 600) return 1;
+    if (width <= 1024) return 2;
+    return 3;
+  }
+
+  function updateCarousel() {
+    itemsPerView = getItemsPerView();
+    const maxIndex = Math.max(0, items.length - itemsPerView);
+
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+    const itemWidth = track.offsetWidth / itemsPerView;
+    const offset = currentIndex * itemWidth;
+
+    track.style.transition = `transform ${TRANSITION_DURATION}ms ease-in-out`;
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  function nextSlide() {
+    const maxIndex = Math.max(0, items.length - itemsPerView);
+    if (currentIndex < maxIndex) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    const maxIndex = Math.max(0, items.length - itemsPerView);
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = maxIndex;
+    }
+    updateCarousel();
+  }
+
+  function startAutoPlay() {
+    autoPlayInterval = setInterval(() => {
+      if (!isPaused) nextSlide();
+    }, AUTO_PLAY_INTERVAL);
+  }
+
+  function pauseAutoPlay() { isPaused = true; }
+  function resumeAutoPlay() { isPaused = false; }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      nextSlide();
+      pauseAutoPlay();
+      setTimeout(resumeAutoPlay, 3000);
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      prevSlide();
+      pauseAutoPlay();
+      setTimeout(resumeAutoPlay, 3000);
+    });
+  }
+
+  const carouselContainer = document.querySelector('.reviews-carousel-container');
+  if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', pauseAutoPlay);
+    carouselContainer.addEventListener('mouseleave', resumeAutoPlay);
+  }
+
+  window.addEventListener('resize', updateCarousel);
+
+  updateCarousel();
+  startAutoPlay();
+}
+
+// Load reviews on DOM ready
+document.addEventListener('DOMContentLoaded', function() {
+  loadGoogleReviews();
+});
+
 // ===== CARRUSEL MULTI-IMAGEN (3 PC, 2 TABLET, 1 CELULAR) =====
 document.addEventListener('DOMContentLoaded', function() {
   const track = document.querySelector('.multi-carousel-track');

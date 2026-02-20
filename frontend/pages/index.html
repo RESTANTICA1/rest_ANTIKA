@@ -393,7 +393,7 @@
         </div>
       </div>
       <div>
-        <p class="menu-section-title">Saltados & Especiales</p>
+        <p class="menu-section-title">Saltados &amp; Especiales</p>
         <div class="menu-item">
           <div class="item-info"><span class="item-name">Saltado de Pollo</span>
             <span class="item-desc">Pollo salteado al wok con cebolla, tomate y ají amarillo. Con papas fritas y arroz blanco.</span></div>
@@ -696,23 +696,27 @@
     <span class="section-label" data-i18n="span4"></span>
     <h2 class="section-title" data-i18n="opiniones"></h2>
     <p class="section-desc" style="margin:0 auto;max-width:560px;color:var(--cream-dark);opacity:0.8;" data-i18n="parrafo8"></p>
+    <a href="https://maps.app.goo.gl/gJKPpyPZ9J4UHtSH9" target="_blank" class="google-reviews-link">
+      <img src="../assets/icons/google.png" alt="Google" class="google-icon">
+      <span data-i18n="ver_en_google">Ver todas las reseñas en Google</span>
+    </a>
   </div>
-  <div class="reviews-grid">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text" data-i18n="coment1"></p>
-      <span class="reviewer">— María C.</span>
+  <div class="reviews-carousel-container">
+    <button class="carousel-nav-btn carousel-nav-prev-reviews" aria-label="Opinion anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <div class="reviews-carousel-viewport">
+      <div class="reviews-carousel-track" id="reviews-container">
+        <!-- Reviews will be loaded dynamically -->
+      </div>
     </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text" data-i18n="coment2"></p>
-      <span class="reviewer">— José R.</span>
-    </div>
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p class="review-text" data-i18n="coment3"></p>
-      <span class="reviewer">— Ana P.</span>
-    </div>
+    <button class="carousel-nav-btn carousel-nav-next-reviews" aria-label="Siguiente opinion">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
   </div>
 </section>
 
@@ -727,8 +731,6 @@
   referrerpolicy="no-referrer-when-downgrade">
 </iframe>
 </div>
-
-
 
 <!-- RESERVA -->
 <section id="reserva">
@@ -768,11 +770,10 @@
   <!-- Columna 3 -->
   <div class="footer-col derecha">
     <div class="footer-logo">ANTIKA</div>
-    <p data-i18n="parrafo10">/p>
+    <p data-i18n="parrafo10"></p>
   </div>
 
 </footer>
-
 
 <script src="../js/index.js"></script>
 <script src="../js/lang.js"></script>
