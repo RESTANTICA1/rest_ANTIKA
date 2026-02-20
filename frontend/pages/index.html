@@ -636,23 +636,57 @@
   <span class="section-label" data-i18n="casa"></span>
   <h2 class="section-title" data-i18n="galeria"></h2>
   <p class="section-desc" data-i18n="parrafo7"></p>
-  <div class="gallery-grid" style="margin-top:40px;">
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" alt="Lomo Saltado" loading="lazy">
-      <div class="gallery-label" data-i18n="plato1"></div>
+  
+  <!-- Carrusel de imágenes múltiples -->
+  <div class="multi-carousel-container" style="margin-top:40px;">
+    <button class="carousel-nav-btn carousel-nav-prev" aria-label="Imagen anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    
+    <div class="multi-carousel-viewport">
+      <div class="multi-carousel-track">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" alt="Lomo Saltado" loading="lazy">
+          <div class="gallery-label" data-i18n="plato1"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Ensaladas" loading="lazy">
+          <div class="gallery-label" data-i18n="plato2"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=400&q=80" alt="Truchas" loading="lazy">
+          <div class="gallery-label" data-i18n="plato3">Trucha</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&q=80" alt="Desayunos" loading="lazy">
+          <div class="gallery-label" data-i18n="plato4">Desayunos</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80" alt="Carnes" loading="lazy">
+          <div class="gallery-label">Carnes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80" alt="Postres" loading="lazy">
+          <div class="gallery-label">Postres</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&q=80" alt="Pasta" loading="lazy">
+          <div class="gallery-label">Pasta</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&q=80" alt="Platos" loading="lazy">
+          <div class="gallery-label">Especiales</div>
+        </div>
+      </div>
     </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Ensaladas" loading="lazy">
-      <div class="gallery-label" data-i18n="plato2"></div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=400&q=80" alt="Truchas" loading="lazy">
-      <div class="gallery-label" data-i18n="plato3">Trucha</div>
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&q=80" alt="Desayunos" loading="lazy">
-      <div class="gallery-label" data-i18n="plato4">Desayunos</div>
-    </div>
+    
+    <button class="carousel-nav-btn carousel-nav-next" aria-label="Siguiente imagen">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
   </div>
 </section>
 

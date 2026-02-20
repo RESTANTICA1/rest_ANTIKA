@@ -792,3 +792,147 @@ footer { flex-direction: column; text-align: center; padding: 24px 30px; }
     transform: scale(1.1);
     box-shadow: 0 12px 30px rgba(0,0,0,0.45);
 }
+
+/* ===== CARRUSEL MULTI-IMAGEN (3 PC, 2 TABLET, 1 CELULAR) ===== */
+.multi-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+.multi-carousel-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.multi-carousel-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.multi-carousel-track .gallery-item {
+  flex: 0 0 calc(33.333% - 11px);
+  aspect-ratio: 3/4;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  background: var(--teal);
+}
+
+.multi-carousel-track .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s, filter 0.5s;
+  filter: sepia(25%) saturate(0.85) hue-rotate(-10deg);
+}
+
+.multi-carousel-track .gallery-item:hover img {
+  transform: scale(1.05);
+  filter: sepia(0%) saturate(1);
+}
+
+.multi-carousel-track .gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(7,26,27,0.85));
+  color: var(--cream);
+  padding: 20px 12px 12px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Special Elite', cursive;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.multi-carousel-track .gallery-item:hover .gallery-label {
+  opacity: 1;
+}
+
+/* Botones de navegación */
+.carousel-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(7,26,27,0.75);
+  color: var(--cream);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(201,168,76,0.3);
+}
+
+.carousel-nav-btn:hover {
+  background: rgba(42,107,112,0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav-prev {
+  left: 0;
+}
+
+.carousel-nav-next {
+  right: 0;
+}
+
+.carousel-nav-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive del carrusel multi-imagen */
+@media (max-width: 1024px) {
+  .multi-carousel-container {
+    padding: 0 45px;
+  }
+  
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+@media (max-width: 600px) {
+  .multi-carousel-container {
+    padding: 0 40px;
+  }
+  
+  .multi-carousel-track {
+    gap: 12px;
+  }
+  
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 100%;
+    aspect-ratio: 4/3;
+  }
+  
+  .carousel-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .carousel-nav-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .multi-carousel-container {
+    padding: 0 35px;
+  }
+}
