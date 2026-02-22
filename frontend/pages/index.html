@@ -26,9 +26,9 @@
     </button>
     <ul>
       <li><a href="#nosotros" onclick="closeMenu()" data-i18n="link1"></a></li>
+      <li><a href="#opiniones" onclick="closeMenu()" data-i18n="link4"></a></li>
       <li><a href="#menu" onclick="closeMenu()" data-i18n="link2"></a></li>
       <li><a href="#galeria" onclick="closeMenu()" data-i18n="link3"></a></li>
-      <li><a href="#opiniones" onclick="closeMenu()" data-i18n="link4"></a></li>
       <li class="cta"><a href="https://wa.me/51999999999?text=Hola,%20quisiera%20hacer%20una%20reserva" target="_blank" onclick="closeMenu()" data-i18n="Reserva">Reservar</a></li>
       <!--Lenguaje-->
       <div class="language-selector">
@@ -90,6 +90,36 @@
       <p style="color:var(--text);margin-top:16px;" data-i18n="parrafo6"></p>
       <a href="https://wa.me/51999999999" class="map-link" style="margin-top:20px;" data-i18n="whatsapp"></a>
     </div>
+  </div>
+</section>
+
+<!-- OPINIONES -->
+<section id="opiniones">
+  <div class="opinions-header">
+    <span class="section-label" data-i18n="span4"></span>
+    <h2 class="section-title" data-i18n="opiniones"></h2>
+    <p class="section-desc" style="margin:0 auto;max-width:560px;color:var(--cream-dark);opacity:0.8;" data-i18n="parrafo8"></p>
+    <a href="https://maps.app.goo.gl/gJKPpyPZ9J4UHtSH9" target="_blank" class="google-reviews-link">
+      <img src="../assets/icons/google.png" alt="Google" class="google-icon">
+      <span data-i18n="ver_en_google">Ver todas las reseñas en Google</span>
+    </a>
+  </div>
+  <div class="reviews-carousel-container">
+    <button class="carousel-nav-btn carousel-nav-prev-reviews" aria-label="Opinion anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <div class="reviews-carousel-viewport">
+      <div class="reviews-carousel-track" id="reviews-container">
+        <!-- Reviews will be loaded dynamically -->
+      </div>
+    </div>
+    <button class="carousel-nav-btn carousel-nav-next-reviews" aria-label="Siguiente opinion">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
   </div>
 </section>
 
@@ -690,36 +720,6 @@
   </div>
 </section>
 
-<!-- OPINIONES -->
-<section id="opiniones">
-  <div class="opinions-header">
-    <span class="section-label" data-i18n="span4"></span>
-    <h2 class="section-title" data-i18n="opiniones"></h2>
-    <p class="section-desc" style="margin:0 auto;max-width:560px;color:var(--cream-dark);opacity:0.8;" data-i18n="parrafo8"></p>
-    <a href="https://maps.app.goo.gl/gJKPpyPZ9J4UHtSH9" target="_blank" class="google-reviews-link">
-      <img src="../assets/icons/google.png" alt="Google" class="google-icon">
-      <span data-i18n="ver_en_google">Ver todas las reseñas en Google</span>
-    </a>
-  </div>
-  <div class="reviews-carousel-container">
-    <button class="carousel-nav-btn carousel-nav-prev-reviews" aria-label="Opinion anterior">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-    <div class="reviews-carousel-viewport">
-      <div class="reviews-carousel-track" id="reviews-container">
-        <!-- Reviews will be loaded dynamically -->
-      </div>
-    </div>
-    <button class="carousel-nav-btn carousel-nav-next-reviews" aria-label="Siguiente opinion">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
-  </div>
-</section>
-
 <!-- MAPA -->
 <div id="mapa">
   <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1933.3258752000193!2d-71.22761264356757!3d-14.273520447118614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x91692ace156aaaab%3A0xf9ae430e57d36a58!2sPlaza%20Mayor%20de%20Sicuani%2C%20PQGF%2BHJM%2C%20Plaza%20de%20Armas%2C%20JR%20GARCILASO%20DE%20LA%20VEGA%2C%20Sicuani%2008254!3m2!1d-14.2730053!2d-71.2266312!4m5!1s0x91692b3cabf28c27%3A0xbd007cb5cfe738c2!2sRESTAURANTE%20ANTIKA%20SICUANI%2C%20Parque%20Periodista%2C%20Jr.%20Comercio%20250%2C%20Sicuani%2008454!3m2!1d-14.2738967!2d-71.2256213!5e0!3m2!1ses-419!2spe!4v1771603583472!5m2!1ses-419!2spe" 
@@ -777,5 +777,7 @@
 
 <script src="../js/index.js"></script>
 <script src="../js/lang.js"></script>
+<!-- Animaciones de scroll — no invasivo, cargado al final -->
+<script src="../js/animations.js"></script>
 </body>
 </html>
