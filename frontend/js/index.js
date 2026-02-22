@@ -21,49 +21,67 @@ document.getElementById('main-nav').classList.remove('open');
 }
 
 
-// ===== Reseñas de Google (CARRUSEL) =====
+// ===== Reseñas de Google (CARRUSEL) - Using comentarios.json =====
 async function loadGoogleReviews() {
   const container = document.getElementById('reviews-container');
   if (!container) return;
 
   try {
-    const response = await fetch('../assets/docs/resenas_extraccion.json');
-    const data = await response.json();
-    const reseñas = data.resenas || [];
+    // Fetch from comentarios.json
+    const response = await fetch('../assets/comentarios/data/comentarios.json');
+    const comentarios = await response.json();
 
-    // Filter out empty reviews and take first 20
-    const validReviews = reseñas.filter(r => r.resena && r.resena.trim().length > 0).slice(0, 20);
-
-    container.innerHTML = validReviews.map((reseña, index) => {
-      // Generate stars HTML
+    // Use a single forEach loop to iterate through all reviews
+    let cardsHtml = '';
+    comentarios.forEach((reseña, index) => {
+      // Generate stars HTML based on calificacion
       let starsHtml = '';
       for (let i = 0; i < 5; i++) {
-        starsHtml += i < reseña.estrellas ? '★' : '☆';
+        starsHtml += i < reseña.calificacion ? '<span class="star-filled">★</span>' : '<span class="star-empty">☆</span>';
       }
 
-      // Get initials for avatar
-      const initials = reseña.nombre.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase();
+      // Handle comment text
+      const reviewText = (reseña.comentario && reseña.comentario.trim().length > 0) 
+        ? reseña.comentario 
+        : 'El cliente dejó una valoración sin comentario.';
 
-      // Random pastel color for avatar
-      const colors = ['#4285F4', '#EA4335', '#FBBC05', '#34A853', '#FF6D01', '#46BDC6', '#7B1FA2'];
-      const avatarColor = colors[index % colors.length];
+      // Food type and price info
+      const foodInfo = reseña.tipoComida ? `${reseña.tipoComida}${reseña.precio ? ' · ' + reseña.precio : ''}` : '';
 
-      return `
-        <a href="https://maps.app.goo.gl/gJKPpyPZ9J4UHtSH9" target="_blank" class="google-review-card">
-          <div class="google-review-header">
-            <div class="google-review-avatar" style="background-color: ${avatarColor}">
-              ${initials}
+      // Date and time format: fecha • hora
+      const dateTime = `${reseña.fecha}${reseña.hora && reseña.hora !== '—' ? ' • ' + reseña.hora : ''}`;
+
+      // Build card HTML with all data from the same object
+      // Using div with data attributes instead of <a> tag to avoid breaking carousel
+      cardsHtml += `
+        <div class="opinion-card-link" data-link="${reseña.link || 'https://maps.app.goo.gl/iUyWFZhFPJ3UgouN6'}">
+          <div class="opinion-card">
+            <div class="opinion-card-header">
+              <img class="opinion-photo" 
+                   src="${reseña.fotoCliente}" 
+                   alt="${reseña.nombre}"
+                   onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23c9a84c%22/><text x=%2250%22 y=%2260%22 text-anchor=%22middle%22 fill=%22white%22 font-size=%2240%22>★</text></svg>'">
+              <div class="opinion-info">
+                <span class="opinion-name">${reseña.nombre}</span>
+                <span class="opinion-datetime">${dateTime}</span>
+                <div class="opinion-stars">${starsHtml}</div>
+              </div>
             </div>
-            <div class="google-review-info">
-              <span class="google-review-name">${reseña.nombre}</span>
-              <div class="google-review-stars">${starsHtml}</div>
-            </div>
-            <img src="../assets/icons/google.png" alt="Google" class="google-review-logo">
+            <p class="opinion-text">${reviewText}</p>
+            ${foodInfo ? `<div class="opinion-food-info">${foodInfo}</div>` : ''}
+            <img class="opinion-food-photo" 
+                 src="${reseña.fotoComida}" 
+                 alt="${reseña.tipoComida || 'Plato'}"
+                 onerror="this.style.display='none'">
           </div>
-          <p class="google-review-text">${reseña.resena}</p>
-        </a>
+        </div>
       `;
-    }).join('');
+    });
+
+    container.innerHTML = cardsHtml;
+
+    // Add click event listeners to all cards after they're added to DOM
+    addCardClickListeners();
 
     // Initialize carousel after loading reviews
     initReviewsCarousel();
@@ -74,10 +92,30 @@ async function loadGoogleReviews() {
   }
 }
 
+// Function to add click event listeners to cards
+function addCardClickListeners() {
+  const cards = document.querySelectorAll('.opinion-card-link');
+  cards.forEach(card => {
+    card.addEventListener('click', function(e) {
+      // Don't open link if clicking on a potential future interactive element
+      if (e.target.tagName === 'BUTTON' || e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') {
+        return;
+      }
+      const link = this.getAttribute('data-link');
+      if (link) {
+        window.open(link, '_blank', 'noopener,noreferrer');
+      }
+    });
+    
+    // Add cursor pointer to indicate clickability
+    card.style.cursor = 'pointer';
+  });
+}
+
 // ===== CARRUSEL DE RESEÑAS =====
 function initReviewsCarousel() {
   const track = document.querySelector('.reviews-carousel-track');
-  const items = document.querySelectorAll('.google-review-card');
+  const items = document.querySelectorAll('.opinion-card');
   const prevBtn = document.querySelector('.carousel-nav-prev-reviews');
   const nextBtn = document.querySelector('.carousel-nav-next-reviews');
 
@@ -88,7 +126,7 @@ function initReviewsCarousel() {
   let autoPlayInterval;
   let isPaused = false;
 
-  const AUTO_PLAY_INTERVAL = 5000;
+  const AUTO_PLAY_INTERVAL = 4000; // 4 segundos
   const TRANSITION_DURATION = 500;
 
   function getItemsPerView() {
