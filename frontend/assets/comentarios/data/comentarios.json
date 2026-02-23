@@ -63,5 +63,18 @@
     "link": "https://maps.google.com/review5",
     "fotoCliente": "../assets/comentarios/img/clientes/cliente5.png",
     "fotoComida": "../assets/comentarios/img/comida/comida5.png"
+  },
+  {
+    "id": 6,
+    "nombre": "GGGGGGGGGGGGFFF",
+    "comentario": "FGVFDGFDDDDDDDDDDDDDplemente espectacular. Recomendamos reservar.",
+    "calificacion": 5,
+    "tipoComida": "Almuerzo",
+    "precio": "PEN 20-40",
+    "fecha": "Hace 1 mes",
+    "hora": "12:30 PM",
+    "link": "https://maps.google.com/review5",
+    "fotoCliente": "../assets/comentarios/img/clientes/cliente5.png",
+    "fotoComida": "../assets/comentarios/img/comida/comida5.png"
   }
 ]

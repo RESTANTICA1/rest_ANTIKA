@@ -1,133 +1,181 @@
 {
   "desayunos": {
     "title": "Desayunos",
+    "title_en": "Breakfasts",
+    "title_pt": "Cafés da manhã",
     "items": [
-      { "name": "Desayuno Antika - OPCIÓN A", "description": "Biste encebollado acompañado de arroz y papa sancochada. Incluye café o jugo.", "price": 11.00 },
-      { "name": "Desayuno Antika - OPCIÓN B", "description": "Saltado casero de pollo acompañado de arroz y papas fritas. Incluye café o jugo.", "price": 11.00 },
-      { "name": "Desayuno Americano", "description": "Pan artesanal con mantequilla y mermelada, huevos al gusto (fritos o revueltos) con tocino crocante o jamón, acompañado de un refrescante jugo natural de fruta de estación y una taza de café pasado.", "price": 13.00 },
-      { "name": "Tamal Peruano", "description": "Exquisitos tamales Arequipeños y Limeños, hechos de maíz, rellenos con jugosa carne de cerdo acompañado de pan fresco y salsa criolla. incluye café y pan del día", "price": 13.00 }
+      { "name": "Desayuno Antika - OPCIÓN A", "description": "Biste encebollado acompañado de arroz y papa sancochada. Incluye café o jugo.", "description_en": "Onion steak with rice and boiled potatoes. Includes coffee or juice.", "description_pt": "Bife acebolado com arroz e batata cozida. Inclui café ou suco.", "price": 11.00 },
+      { "name": "Desayuno Antika - OPCIÓN B", "description": "Saltado casero de pollo acompañado de arroz y papas fritas. Incluye café o jugo.", "description_en": "Homemade chicken stir-fry with rice and French fries. Includes coffee or juice.", "description_pt": "Saltado caseiro de frango com arroz e batatas fritas. Inclui café ou suco.", "price": 11.00 },
+      { "name": "Desayuno Americano", "description": "Pan artesanal con mantequilla y mermelada, huevos al gusto (fritos o revueltos) con tocino crocante o jamón, acompañado de un refrescante jugo natural de fruta de estación y una taza de café pasado.", "description_en": "Artisan bread with butter and jam, eggs cooked to your liking (fried or scrambled) with crispy bacon or ham, accompanied by a refreshing fresh seasonal fruit juice and a cup of brewed coffee.", "description_pt": "Pão artesanal com manteiga e geleia, ovos ao seu gosto (fritos ou mexidos) com bacon crocante ou presunto, acompanhado de um refrescante suco natural de fruta da estação e uma xícara de café passado.", "price": 13.00 },
+      { "name": "Tamal Peruano", "description": "Exquisitos tamales Arequipeños y Limeños, hechos de maíz, rellenos con jugosa carne de cerdo acompañado de pan fresco y salsa criolla. incluye café y pan del día", "description_en": "Exquisite Arequipeño and Limeño corn tamales, made from corn, filled with juicy pork meat accompanied by fresh bread and criolla sauce. Includes coffee and bread of the day.", "description_pt": "Exquisitos tamales arequipenhos e limeños, feitos de milho, rechados com carne de porco suculenta acompanhados de pão fresco e salsa crioula. Inclui café e pão do dia.", "price": 13.00 }
     ],
     "note": {
       "icon": "☕",
-      "text": "Disponibles hasta las 11:00 a.m."
+      "text": "Disponibles hasta las 11:00 a.m.",
+      "text_en": "Available until 11:00 a.m.",
+      "text_pt": "Disponíveis até às 11:00"
     }
   },
   "sandwiches": {
     "title": "Sándwiches",
+    "title_en": "Sandwiches",
+    "title_pt": "Sanduíches",
     "columns": [
       [
-        { "name": "Sándwich de Lomo Saltado", "description": "Una fusión irresistible de lomo saltado jugoso, servido en pan artesanal y acompañado de crujientes papas andinas fritas.", "price": 16.00 },
-        { "name": "Sándwich de Milanesa de Pollo", "description": "Milanesa de pollo crocante, servida en pan, con lechuga, tomate y papas fritas doradas.", "price": 15.00 },
-        { "name": "Sándwich de Filete de Pollo", "description": "Filete de pollo a la plancha, servido con lechuga, tomate todo dentro de un pan suave y delicioso acompañado de hojuelas de papa crujientes.", "price": 14.00 },
-        { "name": "Pan con Chicharrón", "description": "Crujientes trozos de chicharrón de cerdo servidos en un pan francés fresco, acompañados de camote frito y nuestra clásica salsa criolla.", "price": 12.00 },
-        { "name": "Choripán", "description": "Clásico chorizo al grill, servido en pan fresco y acompañado de chimichurri casero. Se complementa de hojuelas de papa crujientes.", "price": 10.00 }
+        { "name": "Sándwich de Lomo Saltado", "description": "Una fusión irresistible de lomo saltado jugoso, servido en pan artesanal y acompañado de crujientes papas andinas fritas.", "description_en": "An irresistible fusion of juicy lomo saltado, served on artisan bread and accompanied by crispy Andean-style fried potatoes.", "description_pt": "Uma fusão irresistível de lomo saltado suculento, servido em pão artesanal e acompanhado de crocantes batatas andinas fritas.", "price": 16.00 },
+        { "name": "Sándwich de Milanesa de Pollo", "description": "Milanesa de pollo crocante, servida en pan, con lechuga, tomate y papas fritas doradas.", "description_en": "Crispy breaded chicken Milanesa, served on bread with lettuce, tomato, and golden French fries.", "description_pt": "Milanesa de frango crocante, servida no pão, com alface, tomate e batatas fritas douradas.", "price": 15.00 },
+        { "name": "Sándwich de Filete de Pollo", "description": "Filete de pollo a la plancha, servido con lechuga, tomate todo dentro de un pan suave y delicioso acompañado de hojuelas de papa crujientes.", "description_en": "Grilled chicken fillet, served with lettuce, tomato all inside a soft and delicious bread accompanied by crispy potato chips.", "description_pt": "Filé de frango grelhado, servido com alface, tomate tudo dentro de um pão macio e delicioso acompanhado de batatas crocantes.", "price": 14.00 },
+        { "name": "Pan con Chicharrón", "description": "Crujientes trozos de chicharrón de cerdo servidos en un pan francés fresco, acompañados de camote frito y nuestra clásica salsa criolla.", "description_en": "Crispy pork chicharrón pieces served on fresh French bread, accompanied by fried sweet potato and our classic criolla sauce.", "description_pt": "Pedaços crocantes de chicharrón de porco servidos em um pão francês fresco, acompanhados de batata-doce frita e nossa clássica salsa crioula.", "price": 12.00 },
+        { "name": "Choripán", "description": "Clásico chorizo al grill, servido en pan fresco y acompañado de chimichurri casero. Se complementa de hojuelas de papa crujientes.", "description_en": "Classic grilled chorizo, served on fresh bread and accompanied by homemade chimichurri. Complemented with crispy potato chips.", "description_pt": "Clássico chouriço na grelha, servido em pão fresco e acompanhado de chimichurri caseiro. Complementado com batatas crocantes.", "price": 10.00 }
       ],
       [
-        { "name": "Sándwich de Salchicha Arequipeña", "description": "Exquisita salchicha arequipeña, servida en pan con un toque de mostaza. Una combinación auténtica y llena de tradición.", "price": 10.00 },
-        { "name": "Sándwich Caprese", "description": "Una combinación fresca de tomate en rodajas, mozzarella suave y albahaca aromática, servida en pan artesanal y aderezada con un toque de aceite de oliva y pesto.", "price": 15.00 },
-        { "name": "Sándwich de Champiñones Salteados", "description": "Pan artesanal relleno de champiñones salteados con ajo y cebolla, acompañados de queso derretido y lechuga fresca.", "price": 15.00 },
-        { "name": "Sándwich de Pollo Deshilachado", "description": "Delicioso sándwich de pollo deshilachado mezclado con una cremosa mayonesa tártara, preparada con huevo cocido y cebolla china. Servido en pan, acompañado de lechuga y hojuelas de papa crujientes.", "price": 13.00 }
+        { "name": "Sándwich de Salchicha Arequipeña", "description": "Exquisita salchicha arequipeña, servida en pan con un toque de mostaza. Una combinación auténtica y llena de tradición.", "description_en": "Exquisite Arequipeña sausage, served on bread with a touch of mustard. An authentic combination full of tradition.", "description_pt": "Exquisita salsicha arequipenha, servida no pão com um toque de mostarda. Uma combinação autêntica e cheia de tradição.", "price": 10.00 },
+        { "name": "Sándwich Caprese", "description": "Una combinación fresca de tomate en rodajas, mozzarella suave y albahaca aromática, servida en pan artesanal y aderezada con un toque de aceite de oliva y pesto.", "description_en": "A fresh combination of sliced tomato, smooth mozzarella, and aromatic basil, served on artisan bread dressed with a touch of olive oil and pesto.", "description_pt": "Uma combinação fresca de tomate em rodelas, mussarela macia e manjericão aromático, servida em pão artesanal e temperada com um toque de azeite de oliva e pesto.", "price": 15.00 },
+        { "name": "Sándwich de Champiñones Salteados", "description": "Pan artesanal relleno de champiñones salteados con ajo y cebolla, acompañados de queso derretido y lechuga fresca.", "description_en": "Artisan bread filled with sautéed mushrooms with garlic and onion, accompanied by melted cheese and fresh lettuce.", "description_pt": "Pão artesanal rechado com cogumelos saltoados com alho e cebola, acompanhados de queijo derretido e alface fresca.", "price": 15.00 },
+        { "name": "Sándwich de Pollo Deshilachado", "description": "Delicioso sándwich de pollo deshilachado mezclado con una cremosa mayonesa tártara, preparada con huevo cocido y cebolla china. Servido en pan, acompañado de lechuga y hojuelas de papa crujientes.", "description_en": "Delicious shredded chicken sandwich mixed with creamy tartar sauce, prepared with boiled egg and green onion. Served on bread, accompanied by lettuce and crispy potato chips.", "description_pt": "Delicioso sanduíche de frango desfiado misturado com uma cremosa maionese tártara, preparada com ovo cozido e cebolinha. Servido no pão, acompanhado de alface e batatas crocantes.", "price": 13.00 }
       ]
     ]
   },
   "ensaladas": {
     "title": "Ensaladas",
+    "title_en": "Salads",
+    "title_pt": "Saladas",
     "columns": [
       [
-        { "name": "Ensalada César", "description": "Lechugas bañadas en nuestra deliciosa salsa César, con queso parmesano y crutones crujientes.", "price": 15.00 },
-        { "name": "Ensalada Mango al Curry", "description": "Lechugas frescas, tocino crujiente, jamón, mango en cubos con una vinagreta de mango y curry.", "price": 16.00 },
-        { "name": "Ensalada Campesina", "description": "Una combinación de atún, quinua, aceitunas negras, tomate, lechuga y papas doradas.", "price": 18.00 }
+        { "name": "Ensalada César", "description": "Lechugas bañadas en nuestra deliciosa salsa César, con queso parmesano y crutones crujientes.", "description_en": "Lettuce tossed in our delicious Caesar dressing, with Parmesan cheese and crispy croutons.", "description_pt": "Alface banhada em nosso delicioso molho César, com queijo parmesão e croutons crocantes.", "price": 15.00 },
+        { "name": "Ensalada Mango al Curry", "description": "Lechugas frescas, tocino crujiente, jamón, mango en cubos con una vinagreta de mango y curry.", "description_en": "Fresh lettuce, crispy bacon, ham, diced mango with a mango and curry vinaigrette.", "description_pt": "Alface fresca, bacon crocante, presunto, manga em cubos com um vinagrete de manga e curry.", "price": 16.00 },
+        { "name": "Ensalada Campesina", "description": "Una combinación de atún, quinua, aceitunas negras, tomate, lechuga y papas doradas.", "description_en": "A combination of tuna, quinoa, black olives, tomato, lettuce, and golden potatoes.", "description_pt": "Uma combinação de atum, quinoa, azeitonas pretas, tomate, alface e batatas douradas.", "price": 18.00 }
       ],
       [
-        { "name": "Sopa Dieta de Pollo", "description": "Caldo de pollo con tiernos trozos de pollo y vegetales.", "price": 16.00 },
-        { "name": "Sopa a la Minuta", "description": "Trozos de carne tierna, fideos cabello de ángel, huevo y leche, al estilo criollo.", "price": 18.00 },
-        { "name": "Caldo de Gallina", "description": "Delicioso caldo concentrado con gallina de corral, fideos, papa, huevo duro y un toque de cebolla china.", "price": 20.00 }
+        { "name": "Sopa Dieta de Pollo", "description": "Caldo de pollo con tiernos trozos de pollo y vegetales.", "description_en": "Chicken broth with tender pieces of chicken and vegetables.", "description_pt": "Caldo de frango com pedaços tenros de frango e vegetais.", "price": 16.00 },
+        { "name": "Sopa a la Minuta", "description": "Trozos de carne tierna, fideos cabello de ángel, huevo y leche, al estilo criollo.", "description_en": "Tender beef pieces, angel hair pasta, egg, and milk, Creole style.", "description_pt": "Pedaços de carne macia, macarrão cabelo de anjo, ovo e leite, ao estilo crioulo.", "price": 18.00 },
+        { "name": "Caldo de Gallina", "description": "Delicioso caldo concentrado con gallina de corral, fideos, papa, huevo duro y un toque de cebolla china.", "description_en": "Rich concentrated broth with free-range hen, noodles, potato, hard-boiled egg, and a touch of green onion.", "description_pt": "Delicioso caldo concentrado com galinha caipira, macarrão, batata, ovo cozido e um toque de cebolinha.", "price": 20.00 }
       ]
     ]
   },
   "mediodia": {
     "title": "Medio Día Criollo",
+    "title_en": "Traditional Creole Lunch",
+    "title_pt": "Almoço Tradicional Criollo",
     "columns": [
       [
-        { "name": "Arroz con Pollo", "description": "Arroz realizado con cilantro y pollo dorado, acompañado de salsa criolla y papa a la huancaina.", "price": 22.00 },
-        { "name": "Lengua Almendrada", "description": "Tiernos cortes de lengua, servidos en una cremosa salsa de maní tostado. Acompañado de arroz.", "price": 18.00 },
-        { "name": "Estofado de Res", "description": "Res jugosa, cocida lentamente en una rica y aromática salsa a base de vino tinto, tomate, cebolla y ajo. Servido con arroz blanco.", "price": 22.00 },
-        { "name": "Frejol con Seco de Res", "description": "Tierna costilla de res cocida en una salsa aromática de cilantro y especias, combinados con frejoles suaves y llenos de sabor. De guarnición arroz blanco.", "price": 22.00 }
+        { "name": "Arroz con Pollo", "description": "Arroz realizado con cilantro y pollo dorado, acompañado de salsa criolla y papa a la huancaina.", "description_en": "Rice made with cilantro and golden chicken, accompanied by criolla sauce and huancaína-style potatoes.", "description_pt": "Arroz feito com coentro e frango dourado, acompanhado de salsa crioula e batata à huancaína.", "price": 22.00 },
+        { "name": "Lengua Almendrada", "description": "Tiernos cortes de lengua, servidos en una cremosa salsa de maní tostado. Acompañado de arroz.", "description_en": "Tender slices of beef tongue, served in a creamy roasted peanut sauce. Accompanied by rice.", "description_pt": "Fatias tenras de língua, servidas em um cremoso molho de amendoim torrado. Acompanhado de arroz.", "price": 18.00 },
+        { "name": "Estofado de Res", "description": "Res jugosa, cocida lentamente en una rica y aromática salsa a base de vino tinto, tomate, cebolla y ajo. Servido con arroz blanco.", "description_en": "Juicy beef, slowly cooked in a rich and aromatic sauce based on red wine, tomato, onion, and garlic. Served with white rice.", "description_pt": "Carne suculenta, cozida lentamente em um rico e aromático molho à base de vinho tinto, tomate, cebola e alho. Servida com arroz branco.", "price": 22.00 },
+        { "name": "Frejol con Seco de Res", "description": "Tierna costilla de res cocida en una salsa aromática de cilantro y especias, combinados con frejoles suaves y llenos de sabor. De guarnición arroz blanco.", "description_en": "Tender beef ribs cooked in an aromatic cilantro and spice sauce, combined with soft and flavorful beans. With white rice as a side.", "description_pt": "Costela de boi tenra cozida em um molho aromático de coentro e especiarias, combinados com feijões macios e cheios de sabor. Acompanhado de arroz branco.", "price": 22.00 }
       ],
       [
-        { "name": "Ají de Gallina", "description": "Pollo desmenuzado en una cremosa salsa de ají amarillo, servida sobre papas sancochadas y acompañado de arroz blanco.", "price": 22.00 },
-        { "name": "Asado a la Olla con Puré o Tallarín", "description": "Asado de res cocido con verduras y hierbas aromáticas. Se sirve a elección con un cremoso puré de papas o tallarines.", "price": 22.00 },
-        { "name": "Malaya Dorada", "description": "Res cocida, con un exterior crujiente y un interior jugoso. Se acompaña de choclo tierno, una salsa fresca y papas doradas.", "price": 22.00 },
-        { "name": "Apanado al Jugo", "description": "Bistec rebozado y frito, luego cocido en un jugo aromático de vegetales y especias. Se sirve con arroz blanco y papas.", "price": 22.00 }
+        { "name": "Ají de Gallina", "description": "Pollo desmenuzado en una cremosa salsa de ají amarillo, servida sobre papas sancochadas y acompañado de arroz blanco.", "description_en": "Shredded chicken in a creamy yellow chili sauce, served over boiled potatoes and accompanied by white rice.", "description_pt": "Frango desfiado em um cremoso molho de pimenta amarela, servido sobre batatas cozidas e acompanhado de arroz branco.", "price": 22.00 },
+        { "name": "Asado a la Olla con Puré o Tallarín", "description": "Asado de res cocido con verduras y hierbas aromáticas. Se sirve a elección con un cremoso puré de papas o tallarines.", "description_en": "Beef roast cooked with vegetables and aromatic herbs. Served at your choice with creamy mashed potatoes or noodles.", "description_pt": "Assado de carne cozido com legumes e ervas aromáticas. Servido a escolher com um cremoso purê de batatas ou macarrão.", "price": 22.00 },
+        { "name": "Malaya Dorada", "description": "Res cocida, con un exterior crujiente y un interior jugoso. Se acompaña de choclo tierno, una salsa fresca y papas doradas.", "description_en": "Cooked beef, with a crispy exterior and juicy interior. Accompanied by tender corn, a fresh sauce, and golden potatoes.", "description_pt": "Carne cozida, com um exterior crocante e um interior suculento. Acompanhado de milho tenro, um molho fresco e batatas douradas.", "price": 22.00 },
+        { "name": "Apanado al Jugo", "description": "Bistec rebozado y frito, luego cocido en un jugo aromático de vegetales y especias. Se sirve con arroz blanco y papas.", "description_en": "Breaded and fried beef steak, then cooked in an aromatic vegetable and spice juice. Served with white rice and potatoes.", "description_pt": "Bife empanado e frito, depois cozido em um sumo aromático de vegetais e especiarias. Servido com arroz branco e batatas.", "price": 22.00 }
       ]
     ],
-    "note": " Incluye arroz y guarniciones."
+    "note": " Incluye arroz y guarniciones.",
+    "note_en": " Includes rice and sides.",
+    "note_pt": " Inclui arroz e acompanhamentos."
   },
   "fondos": {
     "title": "Fondos",
+    "title_en": "Main Dishes",
+    "title_pt": "Pratos Principais",
     "columns": [
       [
-        { "name": "Chaufa de Pollo", "description": "Arroz frito salteado al wok con jugosos trozos de pollo, huevo, cebollita china, con un toque de ajonjolí para resaltar su auténtico sabor.", "price": 18.00 },
-        { "name": "Chaufa Agridulce", "description": "Exquisito arroz frito al estilo peruano, salteado al wok con crujientes trozos de pollo en salsa agridulce.", "price": 23.00 },
-        { "name": "Corazón Anticuchero", "description": "Jugosos trozos de corazón de res marinados en salsa anticuchera y salteados al wok con el inconfundible toque ahumado del fuego alto.", "price": 23.00 },
-        { "name": "Pollo a la Plancha", "description": "Pechuga de pollo jugosa y dorada a la perfección en la plancha, sazonada con especias especiales para resaltar su sabor natural.", "price": 22.00 },
-        { "name": "Bistec a lo Pobre", "description": "Bistec a la plancha acompañado de arroz blanco, papas fritas, huevo frito plátano frito o salchicha.", "price": 27.00 },
-        { "name": "Milanesa de Pollo / Carne", "description": "Filete tierno de pollo o carne, empanizado y dorado a la perfección. Acompañado de papas fritas, arroz y ensalada fresca.", "price": 24.00 },
-        { "name": "Trucha a la Menuere", "description": "Filete de trucha fresca, cocinado con mantequilla, limón, finas hierbas, un sabor delicado y aromático. Acompañado de puré de papa y ensalada fresca.", "price": 24.00 },
-        { "name": "Trucha Fungi", "description": "Filete de trucha cocinado a la perfección, bañado en una salsa a base de champiñones y cremosa bechamel. Acompañado de puré de papa y ensalada fresca.", "price": 25.00 }
+        { "name": "Chaufa de Pollo", "description": "Arroz frito salteado al wok con jugosos trozos de pollo, huevo, cebollita china, con un toque de ajonjolí para resaltar su auténtico sabor.", "description_en": "Fried rice stir-fried in a wok with juicy pieces of chicken, egg, green onion, with a touch of sesame to enhance its authentic flavor.", "description_pt": "Arroz frito saltoado no wok com suculentos pedaços de frango, ovo, cebolinha, com um toque de gergelim para realçar seu sabor autêntico.", "price": 18.00 },
+        { "name": "Chaufa Agridulce", "description": "Exquisito arroz frito al estilo peruano, salteado al wok con crujientes trozos de pollo en salsa agridulce.", "description_en": "Exquisite Peruvian-style fried rice, stir-fried in a wok with crispy pieces of chicken in sweet and sour sauce.", "description_pt": "Exquisito arroz frito ao estilo peruano, saltoado no wok com pedaços crocantes de frango em molho agridoce.", "price": 23.00 },
+        { "name": "Corazón Anticuchero", "description": "Jugosos trozos de corazón de res marinados en salsa anticuchera y salteados al wok con el inconfundible toque ahumado del fuego alto.", "description_en": "Juicy pieces of beef heart marinated in anticucho sauce and stir-fried in a wok with the unmistakable smoky touch of high heat.", "description_pt": "Pedaços suculentos de coração de boi marinados em molho anticucho e saltoados no wok com o inconfundível toque defumado do fogo alto.", "price": 23.00 },
+        { "name": "Pollo a la Plancha", "description": "Pechuga de pollo jugosa y dorada a la perfección en la plancha, sazonada con especias especiales para resaltar su sabor natural.", "description_en": "Juicy and perfectly golden chicken breast on the grill, seasoned with special spices to enhance its natural flavor.", "description_pt": "Peito de frango suculento e dourado à perfeição na grelha, temperado com especiarias especiais para realçar seu sabor natural.", "price": 22.00 },
+        { "name": "Bistec a lo Pobre", "description": "Bistec a la plancha acompañado de arroz blanco, papas fritas, huevo frito plátano frito o salchicha.", "description_en": "Grilled steak accompanied by white rice, French fries, fried egg, fried plantain, or sausage.", "description_pt": "Bife na grelha acompanhado de arroz branco, batatas fritas, ovo frito, banana frita ou salsicha.", "price": 27.00 },
+        { "name": "Milanesa de Pollo / Carne", "description": "Filete tierno de pollo o carne, empanizado y dorado a la perfección. Acompañado de papas fritas, arroz y ensalada fresca.", "description_en": "Tender chicken or beef fillet, breaded and golden to perfection. Accompanied by French fries, rice, and fresh salad.", "description_pt": "Filé tenro de frango ou carne, empanado e dourado à perfeição. Acompanhado de batatas fritas, arroz e salada fresca.", "price": 24.00 },
+        { "name": "Trucha a la Menuere", "description": "Filete de trucha fresca, cocinado con mantequilla, limón, finas hierbas, un sabor delicado y aromático. Acompañado de puré de papa y ensalada fresca.", "description_en": "Fresh trout fillet, cooked with butter, lemon, fine herbs, a delicate and aromatic flavor. Accompanied by mashed potatoes and fresh salad.", "description_pt": "Filé de truta fresca, cozida com manteiga, limão, ervas finas, um sabor delicado e aromático. Acompanhado de purê de batata e salada fresca.", "price": 24.00 },
+        { "name": "Trucha Fungi", "description": "Filete de trucha cocinado a la perfección, bañado en una salsa a base de champiñones y cremosa bechamel. Acompañado de puré de papa y ensalada fresca.", "description_en": "Perfectly cooked trout fillet, bathed in a mushroom-based sauce and creamy béchamel. Accompanied by mashed potatoes and fresh salad.", "description_pt": "Filé de truta cozido à perfeição, banhado em um molho à base de cogumelos e cremosa bechamel. Acompanhado de purê de batata e salada fresca.", "price": 25.00 }
       ],
       [
-        { "name": "Saltado de Pollo", "description": "Jugosos trozos de pollo salteados al wok con cebolla, tomate y ají amarillo. Acompañado de papas fritas doradas y arroz blanco.", "price": 25.00 },
-        { "name": "Lomo Saltado", "description": "Tiernos trozos de lomo de res salteados al wok con cebolla, tomate y ají amarillo. Acompañado de crujientes papas fritas y arroz blanco.", "price": 28.00 },
-        { "name": "Tallarín Saltado de Pollo", "description": "Fideos salteados al wok junto a jugosos trozos de pollo, cebolla, tomate y ají amarillo.", "price": 25.00 },
-        { "name": "Tallarín Saltado de Lomo", "description": "Sabrosa combinación de fideos salteados al wok con jugosos trozos de lomo de res, cebolla, tomate y ají amarillo.", "price": 28.00 },
-        { "name": "Lomo Saltado al Pesto / Huancaina", "description": "Lomo saltado servido con fettuccine en una salsa cremosa de tu elección.", "price": 32.00 },
-        { "name": "Pulpo Anticuchero", "description": "Pulpo marinado en salsa anticuchera, ahumado y suave. Acompañado de papas doradas, ensalada de choclo americano y piña.", "price": 42.00 }
+        { "name": "Saltado de Pollo", "description": "Jugosos trozos de pollo salteados al wok con cebolla, tomate y ají amarillo. Acompañado de papas fritas doradas y arroz blanco.", "description_en": "Juicy chicken pieces stir-fried in a wok with onion, tomato, and yellow chili. Accompanied by golden French fries and white rice.", "description_pt": "Pedaços suculentos de frango saltoados no wok com cebola, tomate e pimenta amarela. Acompanhado de batatas fritas douradas e arroz branco.", "price": 25.00 },
+        { "name": "Lomo Saltado", "description": "Tiernos trozos de lomo de res salteados al wok con cebolla, tomate y ají amarillo. Acompañado de crujientes papas fritas y arroz blanco.", "description_en": "Tender pieces of beef tenderloin stir-fried in a wok with onion, tomato, and yellow chili. Accompanied by crispy French fries and white rice.", "description_pt": "Pedaços tenros de filé mignon saltoados no wok com cebola, tomate e pimenta amarela. Acompanhado de batatas fritas crocantes e arroz branco.", "price": 28.00 },
+        { "name": "Tallarín Saltado de Pollo", "description": "Fideos salteados al wok junto a jugosos trozos de pollo, cebolla, tomate y ají amarillo.", "description_en": "Noodles stir-fried in a wok together with juicy pieces of chicken, onion, tomato, and yellow chili.", "description_pt": "Macarrão saltoado no wok junto com suculentos pedaços de frango, cebola, tomate e pimenta amarela.", "price": 25.00 },
+        { "name": "Tallarín Saltado de Lomo", "description": "Sabrosa combinación de fideos salteados al wok con jugosos trozos de lomo de res, cebolla, tomate y ají amarillo.", "description_en": "Delicious combination of noodles stir-fried in a wok with juicy pieces of beef tenderloin, onion, tomato, and yellow chili.", "description_pt": "Deliciosa combinação de macarrão saltoado no wok com suculentos pedaços de filé mignon, cebola, tomate e pimenta amarela.", "price": 28.00 },
+        { "name": "Lomo Saltado al Pesto / Huancaina", "description": "Lomo saltado servido con fettuccine en una salsa cremosa de tu elección.", "description_en": "Lomo saltado served with fettuccine in a creamy sauce of your choice.", "description_pt": "Lomo saltado servido com fettuccine em um cremoso molho de sua escolha.", "price": 32.00 },
+        { "name": "Pulpo Anticuchero", "description": "Pulpo marinado en salsa anticuchera, ahumado y suave. Acompañado de papas doradas, ensalada de choclo americano y piña.", "description_en": "Octopus marinated in anticucho sauce, smoked and tender. Accompanied by golden potatoes, American corn salad, and pineapple.", "description_pt": "Polvo marinado em molho anticucho, defumado e macio. Acompanhado de batatas douradas, salada de milho americano e abacaxi.", "price": 42.00 }
       ]
     ],
     "vegetarian": [
-      { "name": "Chaufa de Champiñones", "description": "Delicioso chaufa, salteado al wok con champiñones frescos, huevo y cebollita china.", "price": 18.00 },
-      { "name": "Kapchi de Habas", "description": "Guiso andino elaborado con habas frescas, papa, queso y un toque de huacatay.", "price": 18.00 },
-      { "name": "Tallarín Saltado de Verduras", "description": "Fideos salteados con una mezcla fresca de verduras y champiñones.", "price": 25.00 },
-      { "name": "Saltado de Champiñones", "description": "Champiñones frescos salteados al wok con cebolla, tomate y ají amarillo. Acompañado de papas doradas y arroz blanco.", "price": 27.00 }
+      { "name": "Chaufa de Champiñones", "description": "Delicioso chaufa, salteado al wok con champiñones frescos, huevo y cebollita china.", "description_en": "Delicious chaufa, stir-fried in a wok with fresh mushrooms, egg, and green onion.", "description_pt": "Delicioso chaufa, saltoado no wok com cogumelos frescos, ovo e cebolinha.", "price": 18.00 },
+      { "name": "Kapchi de Habas", "description": "Guiso andino elaborado con habas frescas, papa, queso y un toque de huacatay.", "description_en": "Andean stew made with fresh broad beans, potato, cheese, and a touch of huacatay.", "description_pt": "Guizado andino feito com favas frescas, batata, queijo e um toque de huacatay.", "price": 18.00 },
+      { "name": "Tallarín Saltado de Verduras", "description": "Fideos salteados con una mezcla fresca de verduras y champiñones.", "description_en": "Noodles stir-fried with a fresh mixture of vegetables and mushrooms.", "description_pt": "Macarrão saltoado com uma mistura fresca de vegetais e cogumelos.", "price": 25.00 },
+      { "name": "Saltado de Champiñones", "description": "Champiñones frescos salteados al wok con cebolla, tomate y ají amarillo. Acompañado de papas doradas y arroz blanco.", "description_en": "Fresh mushrooms stir-fried in a wok with onion, tomato, and yellow chili. Accompanied by golden potatoes and white rice.", "description_pt": "Cogumelos frescos saltoados no wok com cebola, tomate e pimenta amarela. Acompanhado de batatas douradas e arroz branco.", "price": 27.00 }
     ]
   },
   "domingo": {
     "title": "Especiales de Domingo",
+    "title_en": "Sunday Specials",
+    "title_pt": "Especiais de Domingo",
     "items": [
-      { "name": "Chicharrón de cerdo", "description": "Crujiente por fuera y tierno por dentro, se sirve acompañado con choclo, una fresca ensalada de hierba buena y papas doradas.", "price": 23.00 },
-      { "name": "Caja china", "description": "Caja china de cerdo crujiente, tierno y jugoso. Se sirve acompañado de un suave puré de camote, una ensalada fresca y tamal tradicional.", "price": 28.00 },
-      { "name": "Triple Arequipeño", "description": "Disfruta del rocoto relleno arequipeño, el cremoso pastel de papa y la irresistible opción de chicharrón o caja china.", "price": 35.00 },
-      { "name": "Adobo Arequipeño de Antaño", "description": "Cerdo marinado en chicha de guiñapo morado, ají panca, ajo y especias; cocida a fuego lento para lograr una textura tierna y un sabor auténtico.", "price": 22.00 }
+      {
+        "name": "Chicharrón de cerdo",
+        "description": "Crujiente por fuera y tierno por dentro, se sirve acompañado con choclo, una fresca ensalada de hierba buena y papas doradas.",
+        "description_en": "Crispy on the outside and tender on the inside, served accompanied by corn, a fresh herb salad, and golden potatoes.",
+        "description_pt": "Crocante por fora e tenro por dentro, servido acompanhado de milho, uma fresca salada de erva fresca e batatas douradas.",
+        "price": 23.00
+      },
+      {
+        "name": "Caja china",
+        "description": "Caja china de cerdo crujiente, tierno y jugoso. Se sirve acompañado de un suave puré de camote, una ensalada fresca y tamal tradicional.",
+        "description_en": "Crispy, tender, and juicy Chinese-style pork. Served accompanied by smooth sweet potato puree, a fresh salad, and traditional tamal.",
+        "description_pt": "Porco crocante, tenro e suculento ao estilo caja china. Servido acompanhado de um suave purê de batata-doce, uma salada fresca e tamal tradicional.",
+        "price": 28.00
+      },
+      {
+        "name": "Triple Arequipeño",
+        "description": "Disfruta del rocoto relleno arequipeño, el cremoso pastel de papa y la irresistible opción de chicharrón o caja china.",
+        "description_en": "Enjoy the Arequipeño stuffed rocoto, the creamy potato cake, and the irresistible chicharrón or caja china option.",
+        "description_pt": "Aproveite o rocoto relleno arequipenho, o cremoso pastel de batata e a irresistível opção de chicharrón ou caja china.",
+        "price": 35.00
+      },
+      {
+        "name": "Adobo Arequipeño de Antaño",
+        "description": "Cerdo marinado en chicha de guiñapo morado, ají panca, ajo y especias; cocida a fuego lento para lograr una textura tierna y un sabor auténtico.",
+        "description_en": "Pork marinated in purple corn chicha, ají panca, garlic, and spices; cooked slowly to achieve a tender texture and authentic flavor.",
+        "description_pt": "Porco marinado em chicha de milho roxo, ají panca, alho e especiarias; cozido em fogo lento para alcançar uma textura tenra e um sabor autêntico.",
+        "price": 22.00
+      }
     ]
   },
   "burgers": {
     "title": "Burgers",
+    "title_en": "Burgers",
+    "title_pt": "Burgers",
     "subtitle": "· Incluye porción de papas fritas personales",
+    "subtitle_en": "· Includes personal French fries portion",
+    "subtitle_pt": "· Inclui porção de batatas fritas pessoais",
     "columns": [
       [
-        { "name": "Clásica", "description": "Exquisita carne de res sazonada con especias, servida en un pan, acompañada de lechuga fresca, tomate.", "price": 13.00 },
-        { "name": "Cheese Burger", "description": "Jugosa carne de res a la parrilla con queso derretido, acompañada de lechuga fresca y tomate en rodajas.", "price": 15.00 },
-        { "name": "Bacon Burger", "description": "Carne de res a la parrilla con tocino ahumado, acompañada de lechuga fresca y tomate en rodajas.", "price": 15.00 },
-        { "name": "Parrillera", "description": "Carne de res a la parrilla con chorizo dorado, bañada en chimichurri casero, acompañada de lechuga fresca y tomate en rodajas.", "price": 16.00 },
-        { "name": "Doble", "description": "Dos jugosas carnes de res a la parrilla, acompañadas de lechuga fresca y tomate en rodajas.", "price": 17.00 }
+        { "name": "Clásica", "description": "Exquisita carne de res sazonada con especias, servida en un pan, acompañada de lechuga fresca, tomate.", "description_en": "Exquisite seasoned beef served on bread, accompanied by fresh lettuce, tomato.", "description_pt": "Exquisita carne bovina temperada, servida no pão, acompanhada de alface fresca, tomate.", "price": 13.00 },
+        { "name": "Cheese Burger", "description": "Jugosa carne de res a la parrilla con queso derretido, acompañada de lechuga fresca y tomate en rodajas.", "description_en": "Juicy grilled beef with melted cheese, accompanied by fresh lettuce and sliced tomato.", "description_pt": "Carne bovina suculenta na grelha com queijo derretido, acompanhada de alface fresca e tomate em rodelas.", "price": 15.00 },
+        { "name": "Bacon Burger", "description": "Carne de res a la parrilla con tocino ahumado, accompagnée de lechuga fresca y tomate en rodajas.", "description_en": "Grilled beef with smoked bacon, accompanied by fresh lettuce and sliced tomato.", "description_pt": "Carne bovina na grelha com bacon defumado, acompanhada de alface fresca e tomate em rodelas.", "price": 15.00 },
+        { "name": "Parrillera", "description": "Carne de res a la parrilla con chorizo dorado, bañada en chimichurri casero, acompañada de lechuga fresca y tomate en rodajas.", "description_en": "Grilled beef with golden chorizo, bathed in homemade chimichurri, accompanied by fresh lettuce and sliced tomato.", "description_pt": "Carne bovina na grelha com chouriço dourado, banhada em chimichurri caseiro, acompanhada de alface fresca e tomate em rodelas.", "price": 16.00 },
+        { "name": "Doble", "description": "Dos jugosas carnes de res a la parrilla, acompañadas de lechuga fresca y tomate en rodajas.", "description_en": "Two juicy grilled beef patties, accompanied by fresh lettuce and sliced tomato.", "description_pt": "Duas carnes bovinas suculentas na grelha, acompanhadas de alface fresca e tomate em rodelas.", "price": 17.00 }
       ],
       [
-        { "name": "Salchipapa Clásica", "description": "Crujientes papas fritas acompañadas de salchicha dorada.", "price": 12.00 },
-        { "name": "Salchipapa Parrillera", "description": "Salchipapa acompañada de trozos de chorizo bañados en nuestro chimichurri casero.", "price": 15.00 },
-        { "name": "Salchipollo", "description": "Salchipapa acompañadas de pollo deshilachado.", "price": 15.00 },
-        { "name": "Salchi Queso", "description": "Salchipapa acompañada de cubos de queso frito.", "price": 15.00 },
-        { "name": "Salchi Nuggets", "description": "Salchipapa acompañada de tiernos nuggets de pollo.", "price": 20.00 }
+        { "name": "Salchipapa Clásica", "description": "Crujientes papas fritas acompañadas de salchicha dorada.", "description_en": "Crispy French fries accompanied by golden sausage.", "description_pt": "Batatas fritas crocantes acompanhadas de salsicha dourada.", "price": 12.00 },
+        { "name": "Salchipapa Parrillera", "description": "Salchipapa acompañada de trozos de chorizo bañados en nuestro chimichurri casero.", "description_en": "Salchipapa accompanied by chorizo pieces bathed in our homemade chimichurri.", "description_pt": "Salchipapa acompanhada de pedaços de chouriço banhados no nosso chimichurri caseiro.", "price": 15.00 },
+        { "name": "Salchipollo", "description": "Salchipapa acompañadas de pollo deshilachado.", "description_en": "Salchipapa accompanied by shredded chicken.", "description_pt": "Salchipapa acompanhada de frango desfiado.", "price": 15.00 },
+        { "name": "Salchi Queso", "description": "Salchipapa acompañada de cubos de queso frito.", "description_en": "Salchipapa accompanied by fried cheese cubes.", "description_pt": "Salchipapa acompanhada de cubos de queijo frito.", "price": 15.00 },
+        { "name": "Salchi Nuggets", "description": "Salchipapa accompagnée de tiernos nuggets de pollo.", "description_en": "Salchipapa accompanied by tender chicken nuggets.", "description_pt": "Salchipapa acompanhada de tenros nuggets de frango.", "price": 20.00 }
       ]
     ]
   },
   "alitas": {
     "title": "Alitas y Costillitas",
+    "title_en": "Wings and Ribs",
+    "title_pt": "Asinhas e Costelinhas",
     "columns": [
       [
         {
           "name": "Alitas (6 unidades)",
           "description": "En la salsa de tu elección. Incluye porción de papas fritas personales.",
+          "description_en": "In the sauce of your choice. Includes personal French fries portion.",
+          "description_pt": "No molho de sua escolha. Inclui porção de batatas fritas pessoais.",
           "price": 16.00,
           "sauces": ["Maracuyá", "BBQ", "Hot BBQ", "Acevichadas", "Crispy", "Anticucheras", "Orientales", "Parrilleras", "Honey Mustard", "Agridulce"]
         }
@@ -136,6 +184,8 @@
         {
           "name": "Costillitas (3 unidades)",
           "description": "En la salsa de tu elección. Incluye porción de papas fritas andinas.",
+          "description_en": "In the sauce of your choice. Includes Andean French fries portion.",
+          "description_pt": "No molho de sua escolha. Inclui porção de batatas fritas andinas.",
           "price": 18.00,
           "sauces": ["Maracuyá", "BBQ", "Hot BBQ", "Chimichurri", "Orientales", "Agridulce"]
         }
@@ -144,7 +194,11 @@
   },
   "broaster": {
     "title": "Broaster Mr. Bross",
+    "title_en": "Broaster Mr. Bross",
+    "title_pt": "Broaster Mr. Bross",
     "description": "¡Crujiente por fuera, jugoso por dentro y con un sabor irresistible. Nuestro Pollo Broaster se prepara con una receta especial. Cada pieza está llena de sabor y cocinada con la calidad que nos distingue. Pide el combo ideal para ti:",
+    "description_en": "Crispy on the outside, juicy on the inside, and with an irresistible flavor. Our Broaster Chicken is prepared with a special recipe. Each piece is full of flavor and cooked with the quality that distinguishes us. Order the ideal combo for you:",
+    "description_pt": "Crocante por fora, suculento por dentro e com um sabor irresistível. Nosso Frango Broaster é preparado com uma receita especial. Cada peça está cheia de sabor e cozida com a qualidade que nos distingue. Peça o combo ideal para você:",
     "combos": [
       { "name": "Solo para Mí", "pieces": "2 piezas", "fries": "1 Porción personal", "nuggets": "No incluye", "drink": "No incluye", "price": 17.00 },
       { "name": "Dúo Conquistador", "pieces": "4 piezas", "fries": "2 Porción personal", "nuggets": "No incluye", "drink": "No incluye", "price": 32.00 },
@@ -155,6 +209,8 @@
   },
   "adicionales": {
     "title": "Adicionales",
+    "title_en": "Extras",
+    "title_pt": "Extras",
     "items": [
       { "name": "Docena de Nuggets", "price": 16.00 },
       { "name": "½ Docena de Nuggets", "price": 10.00 },
@@ -166,8 +222,8 @@
       { "name": "Huevo Frito", "price": 3.00 }
     ],
     "notes": [
-      { "icon": "🍰", "text": "Postre del día", "subtext": "Preguntar por el postre especial del día." },
-      { "icon": "💳", "text": "Pago con tarjeta", "subtext": "Tiene un cargo adicional del 5%" }
+      { "icon": "🍰", "text": "Postre del día", "subtext": "Preguntar por el postre especial del día.", "text_en": "Dessert of the day", "subtext_en": "Ask about the special dessert of the day.", "text_pt": "Sobremesa do dia", "subtext_pt": "Pergunte pela sobremesa especial do dia." },
+      { "icon": "💳", "text": "Pago con tarjeta", "subtext": "Tiene un cargo adicional del 5%", "text_en": "Card payment", "subtext_en": "Has an additional charge of 5%", "text_pt": "Pagamento com cartão", "subtext_pt": "Tem uma taxa adicional de 5%" }
     ]
   }
 }
