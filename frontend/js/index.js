@@ -1,26 +1,7 @@
-/* ====================================================
-   ANTIKA RESTAURANT — index-optimized.js
-   Versión: Performance Edition
-   ─────────────────────────────────────────────────────
-   OPTIMIZACIONES APLICADAS:
-   ① DocumentFragment en todos los renderers (0 reflows intermedios)
-   ② Motor de render unificado: buildMenuSection() reemplaza
-      8 funciones casi idénticas → -180 líneas de código
-   ③ Nodos DOM cacheados al inicio (0 querySelector repetidos)
-   ④ Delegación de eventos en reviews (1 listener en lugar de N)
-   ⑤ will-change + GPU compositing en carruseles
-   ⑥ Intersection Observer para lazy-render de tabs
-   ⑦ Scroll/resize con passive:true y throttle vía rAF
-   ⑧ Flags de guard (window._antika) contra doble init
-   ⑨ clearInterval antes de cada setInterval
-   ⑩ CSS transitions solo cuando el elemento es visible
-   ==================================================== */
-
+/* Antika Restaurant - Optimizado para producción */
 'use strict';
 
-/* ═══════════════════════════════════════════════════════
-   REGISTRO GLOBAL — inspectable desde DevTools
-   ═══════════════════════════════════════════════════════ */
+/* Registro global */
 window._antika = window._antika || {
   /* flags */
   headerScrollInit:    false,
@@ -42,12 +23,7 @@ window._antika = window._antika || {
   heroParallaxFn:    null,
   headerGoldScrollFn:null,
 
-  /* ── LAZY TAB RENDERING ──────────────────────────────
-     menuData: datos del JSON guardados tras el primer fetch,
-               disponibles para todos los renders bajo demanda.
-     tabRendered: mapa de flags por tab — true = ya renderizado,
-                  no volver a tocar el DOM.
-     ────────────────────────────────────────────────────── */
+  /* Lazy tab rendering: menuData + tabRendered flags */
   menuData:    null,
   tabRendered: {
     desayunos:  false,
@@ -62,10 +38,7 @@ window._antika = window._antika || {
   },
 };
 
-/* ═══════════════════════════════════════════════════════
-   CACHE DE NODOS — se puebla una sola vez en onDOMReady
-   Evita querySelector repetidos en hot-paths
-   ═══════════════════════════════════════════════════════ */
+/* Cache de nodos DOM */
 const $ = {
   header:            null,   // #header-outer
   nav:               null,   // #main-nav
@@ -100,9 +73,7 @@ function cacheNodes() {
   $.tabPanels        = document.querySelectorAll('.tab-panel');
 }
 
-/* ═══════════════════════════════════════════════════════
-   1. HEADER — scroll effect
-   ═══════════════════════════════════════════════════════ */
+/* Header scroll effect */
 function initHeaderScroll() {
   if (window._antika.headerScrollInit) return;
 
@@ -122,9 +93,7 @@ function initHeaderScroll() {
   window._antika.headerScrollInit = true;
 }
 
-/* ═══════════════════════════════════════════════════════
-   2. TAB SWITCHING — único listener automático + renderMenu genérico
-   ═══════════════════════════════════════════════════════ */
+/* Tab switching */
 
 // Función genérica universal para renderizar cualquier categoría del menú
 function renderMenu(tipo) {
@@ -175,12 +144,16 @@ function renderMenu(tipo) {
 
 // Renderizadores genéricos para cada tipo
 function renderDesayunosGen(frag, data) {
+  const lang = getCurrentLang();
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
 
   const col1 = document.createElement('div');
-  col1.appendChild(createSectionTitle(data.title));
-  data.items.forEach(item => col1.appendChild(createMenuItem(item.name, item.description, item.price)));
+  col1.appendChild(createSectionTitle(getTranslatedTitle(data, lang)));
+  data.items.forEach(item => {
+    const desc = lang === 'es' ? item.description : (lang === 'en' ? (item.description_en || item.description) : (item.description_pt || item.description));
+    col1.appendChild(createMenuItem(item.name, desc, item.price));
+  });
 
   const col2 = document.createElement('div');
   col2.style.cssText = 'display:flex;align-items:center;justify-content:center;';
@@ -190,8 +163,9 @@ function renderDesayunosGen(frag, data) {
   icon.style.cssText = "font-family:'Special Elite',cursive;font-size:48px;color:var(--teal);margin-bottom:12px;";
   icon.textContent = data.note.icon;
   const txt = document.createElement('p');
+  txt.className = 'tab-note-text';
   txt.style.cssText = 'color:var(--teal-dark);font-style:italic;font-size:17px;';
-  txt.textContent = data.note.text;
+  txt.textContent = lang === 'es' ? data.note.text : (lang === 'en' ? data.note.text_en : data.note.text_pt);
   noteBox.append(icon, txt);
   col2.appendChild(noteBox);
 
@@ -200,59 +174,63 @@ function renderDesayunosGen(frag, data) {
 }
 
 function renderSandwichesGen(frag, data) {
+  const lang = getCurrentLang();
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
   const col1 = document.createElement('div');
-  col1.append(createSectionTitle(data.title), renderItems(data.columns[0]));
+  col1.append(createSectionTitle(getTranslatedTitle(data, lang)), renderItemsLang(data.columns[0], lang));
   const col2 = document.createElement('div');
-  col2.append(createSectionTitle('—', true), renderItems(data.columns[1]));
+  col2.append(createSectionTitle('—', true), renderItemsLang(data.columns[1], lang));
   cols.append(col1, col2);
   frag.appendChild(cols);
 }
 
 function renderEnsaladasGen(frag, data) {
-  const parts = data.title.split(' y ');
+  const lang = getCurrentLang();
+  const parts = getTranslatedTitle(data, lang).split(' y ');
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
   const col1 = document.createElement('div');
-  col1.append(createSectionTitle(parts[0]), renderItems(data.columns[0]));
+  col1.append(createSectionTitle(parts[0]), renderItemsLang(data.columns[0], lang));
   const col2 = document.createElement('div');
-  col2.append(createSectionTitle(parts[1] || 'Sopas'), renderItems(data.columns[1]));
+  col2.append(createSectionTitle(parts[1] || 'Sopas'), renderItemsLang(data.columns[1], lang));
   cols.append(col1, col2);
   frag.appendChild(cols);
 }
 
 function renderMediodiaGen(frag, data) {
+  const lang = getCurrentLang();
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
   const col1 = document.createElement('div');
-  col1.append(createSectionTitle(data.title), renderItems(data.columns[0]));
+  col1.append(createSectionTitle(getTranslatedTitle(data, lang)), renderItemsLang(data.columns[0], lang));
   const col2 = document.createElement('div');
-  col2.append(createSectionTitle('—', true), renderItems(data.columns[1]));
+  col2.append(createSectionTitle('—', true), renderItemsLang(data.columns[1], lang));
   cols.append(col1, col2);
   frag.appendChild(cols);
   if (data.note) {
     const note = document.createElement('div');
     note.className = 'menu-note';
     note.style.marginTop = '40px';
-    note.innerHTML = data.note;
+    note.innerHTML = lang === 'es' ? data.note : (lang === 'en' ? data.note_en : data.note_pt);
     frag.appendChild(note);
   }
 }
 
 function renderFondosGen(frag, data) {
+  const lang = getCurrentLang();
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
 
   const col1 = document.createElement('div');
-  col1.append(createSectionTitle('Fondos'), renderItems(data.columns[0]));
+  col1.append(createSectionTitle('Fondos'), renderItemsLang(data.columns[0], lang));
 
   const col2 = document.createElement('div');
-  col2.append(createSectionTitle('Saltados & Especiales'), renderItems(data.columns[1]));
+  col2.append(createSectionTitle('Saltados & Especiales'), renderItemsLang(data.columns[1], lang));
   if (data.vegetarian) {
     const vTitle = createSectionTitle('Opciones Vegetarianas');
     vTitle.style.marginTop = '28px';
-    col2.append(vTitle, renderItems(data.vegetarian));
+    col2.append(vTitle, renderItemsLang(data.vegetarian, lang));
   }
 
   cols.append(col1, col2);
@@ -260,29 +238,36 @@ function renderFondosGen(frag, data) {
 }
 
 function renderDomingoGen(frag, data) {
+  const lang = getCurrentLang();
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
 
   const col1 = document.createElement('div');
-  col1.appendChild(createSectionTitle(data.title));
-  data.items.forEach(item => col1.appendChild(createMenuItem(item.name, item.description, item.price)));
+  col1.appendChild(createSectionTitle(getTranslatedTitle(data, lang)));
+  data.items.forEach(item => {
+    const desc = lang === 'es' ? item.description : (lang === 'en' ? (item.description_en || item.description) : (item.description_pt || item.description));
+    col1.appendChild(createMenuItem(item.name, desc, item.price));
+  });
 
   cols.appendChild(col1);
   frag.appendChild(cols);
 }
 
 function renderBurgersGen(frag, data) {
+  const lang = getCurrentLang();
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
+  const subtitle = lang === 'es' ? data.subtitle : (lang === 'en' ? (data.subtitle_en || data.subtitle) : (data.subtitle_pt || data.subtitle));
   const col1 = document.createElement('div');
-  col1.append(createSectionTitle(`${data.title} ${data.subtitle}`), renderItems(data.columns[0]));
+  col1.append(createSectionTitle(`${getTranslatedTitle(data, lang)} ${subtitle}`), renderItemsLang(data.columns[0], lang));
   const col2 = document.createElement('div');
-  col2.append(createSectionTitle('Salchipapas'), renderItems(data.columns[1]));
+  col2.append(createSectionTitle('Salchipapas'), renderItemsLang(data.columns[1], lang));
   cols.append(col1, col2);
   frag.appendChild(cols);
 }
 
 function renderAlitasGen(frag, data) {
+  const lang = getCurrentLang();
   const menuData = window._antika.menuData;
   const broasterData = menuData ? menuData.broaster : null;
 
@@ -291,15 +276,17 @@ function renderAlitasGen(frag, data) {
 
   const col1 = document.createElement('div');
   const alitas = data.columns[0][0];
+  const alitasDesc = lang === 'es' ? alitas.description : (lang === 'en' ? (alitas.description_en || alitas.description) : (alitas.description_pt || alitas.description));
   col1.appendChild(createSectionTitle('Alitas · Incluye papas fritas personales'));
-  col1.appendChild(createMenuItem(alitas.name, alitas.description, alitas.price));
+  col1.appendChild(createMenuItem(alitas.name, alitasDesc, alitas.price));
   col1.appendChild(buildSauceTags(alitas.sauces));
 
   const costDiv = document.createElement('div');
   costDiv.style.marginTop = '32px';
   const cost = data.columns[1][0];
+  const costDesc = lang === 'es' ? cost.description : (lang === 'en' ? (cost.description_en || cost.description) : (cost.description_pt || cost.description));
   costDiv.appendChild(createSectionTitle('Costillitas · Incluye papas fritas andinas'));
-  costDiv.appendChild(createMenuItem(cost.name, cost.description, cost.price));
+  costDiv.appendChild(createMenuItem(cost.name, costDesc, cost.price));
   costDiv.appendChild(buildSauceTags(cost.sauces));
   col1.appendChild(costDiv);
 
@@ -307,7 +294,8 @@ function renderAlitasGen(frag, data) {
   col2.appendChild(createSectionTitle('Broaster Mr. Bross'));
   const tagline = document.createElement('p');
   tagline.style.cssText = 'font-size:20px;color:#5a4a30;font-style:italic;margin-bottom:20px;';
-  tagline.textContent = broasterData ? broasterData.description : '¡Crujiente por fuera, jugoso por dentro y con un sabor irresistible! Pide el combo ideal para ti:';
+  const broasterDesc = broasterData ? (lang === 'es' ? broasterData.description : (lang === 'en' ? broasterData.description_en : broasterData.description_pt)) : '¡Crujiente por fuera, jugoso por dentro y con un sabor irresistible! Pide el combo ideal para ti:';
+  tagline.textContent = broasterDesc;
   col2.appendChild(tagline);
   if (broasterData) {
     col2.appendChild(buildBroasterTable(broasterData.combos));
@@ -318,11 +306,12 @@ function renderAlitasGen(frag, data) {
 }
 
 function renderAdicionalesGen(frag, data) {
+  const lang = getCurrentLang();
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
 
   const col1 = document.createElement('div');
-  col1.appendChild(createSectionTitle(data.title));
+  col1.appendChild(createSectionTitle(getTranslatedTitle(data, lang)));
   data.items.forEach(item => {
     const wrap = document.createElement('div');
     wrap.className = 'menu-item';
@@ -345,10 +334,12 @@ function renderAdicionalesGen(frag, data) {
     const d = document.createElement('div');
     const p1 = document.createElement('p');
     p1.style.cssText = "font-family:'Special Elite',cursive;font-size:22px;color:var(--teal-dark);margin-bottom:8px;";
-    p1.textContent = `${note.icon} ${note.text}`;
+    const noteText = lang === 'es' ? note.text : (lang === 'en' ? note.text_en : note.text_pt);
+    p1.textContent = `${note.icon} ${noteText}`;
     const p2 = document.createElement('p');
     p2.style.cssText = 'font-size:18px;color:#5a4a30;font-style:italic;';
-    p2.textContent = note.subtext;
+    const subtext = lang === 'es' ? note.subtext : (lang === 'en' ? note.subtext_en : note.subtext_pt);
+    p2.textContent = subtext;
     d.append(p1, p2);
     col2.appendChild(d);
   });
@@ -383,16 +374,21 @@ const _tabRenderers = {
   adicionales: () => renderMenu('adicionales'),
 };
 
+/* Función helper para obtener el idioma actual */
+function getCurrentLang() {
+  const langSelect = document.getElementById('language-select');
+  return langSelect ? langSelect.value : 'es';
+}
+
+/* Función helper para obtener título traducido */
+function getTranslatedTitle(data, lang) {
+  if (lang === 'es') return data.title;
+  if (lang === 'en') return data.title_en || data.title;
+  return data.title_pt || data.title;
+}
+
 function showTab(id, btn) {
-  /* ── Lazy render bajo demanda ──────────────────────────
-     Condiciones para renderizar:
-     1. El JSON ya fue cargado (menuData no es null)
-     2. Este tab aún no ha sido renderizado (flag false)
-     3. Existe un renderer para este id
-     Si alguna falla, se muestra el panel igualmente
-     (cuando el JSON llegue tarde, renderMenuContent()
-      inicializa el primer tab y marca su flag).
-     ──────────────────────────────────────────────────── */
+  /* Lazy render: solo renderiza si JSON cargado y tab no renderizado */
   if (
     window._antika.menuData !== null &&
     window._antika.tabRendered[id] === false &&
@@ -410,24 +406,11 @@ function showTab(id, btn) {
   btn.classList.add('active');
 }
 
-/* ═══════════════════════════════════════════════════════
-   3. MOBILE MENU
-   ═══════════════════════════════════════════════════════ */
+/* Mobile menu */
 function toggleMenu() { $.nav?.classList.toggle('open'); }
 function closeMenu()  { $.nav?.classList.remove('open'); }
 
-/* ═══════════════════════════════════════════════════════
-   4. MOTOR DE RENDER UNIFICADO
-   ─────────────────────────────────────────────────────
-   Reemplaza renderDesayunos / renderSandwiches /
-   renderEnsaladas / renderMediodia / renderFondos /
-   renderBurgers / renderAlitas / renderAdicionales
-   con un motor genérico basado en DocumentFragment.
-
-   ¿Por qué DocumentFragment?
-   → Todos los nodos se construyen en memoria.
-   → Solo hay UN insert al DOM real → 0 reflows intermedios.
-   ═══════════════════════════════════════════════════════ */
+/* Motor de render unificado - usa DocumentFragment */
 
 /**
  * Crea un .menu-item completo como Element (no string).
@@ -480,14 +463,26 @@ function createSectionTitle(text, hidden = false) {
  * Renderiza un array de items en un DocumentFragment.
  */
 function renderItems(items) {
+  const lang = getCurrentLang();
+  return renderItemsLang(items, lang);
+}
+
+/**
+ * Renderiza un array de items en un DocumentFragment con idioma específico.
+ */
+function renderItemsLang(items, lang) {
   const frag = new DocumentFragment();
-  items.forEach(item => frag.appendChild(createMenuItem(item.name, item.description || '', item.price)));
+  items.forEach(item => {
+    const desc = lang === 'es' ? item.description : (lang === 'en' ? (item.description_en || item.description) : (item.description_pt || item.description));
+    frag.appendChild(createMenuItem(item.name, desc || '', item.price));
+  });
   return frag;
 }
 
 /* ─── Renderers específicos (usan el motor genérico) ─── */
 
 function renderDesayunos(data) {
+  const lang = getCurrentLang();
   const panel = document.getElementById('tab-desayunos');
   if (!panel) return;
 
@@ -497,8 +492,11 @@ function renderDesayunos(data) {
 
   /* Col 1 */
   const col1 = document.createElement('div');
-  col1.appendChild(createSectionTitle(data.title));
-  data.items.forEach(item => col1.appendChild(createMenuItem(item.name, item.description, item.price)));
+  col1.appendChild(createSectionTitle(getTranslatedTitle(data, lang)));
+  data.items.forEach(item => {
+    const desc = lang === 'es' ? item.description : (lang === 'en' ? (item.description_en || item.description) : (item.description_pt || item.description));
+    col1.appendChild(createMenuItem(item.name, desc, item.price));
+  });
 
   /* Col 2 — nota visual */
   const col2  = document.createElement('div');
@@ -509,8 +507,9 @@ function renderDesayunos(data) {
   icon.style.cssText = "font-family:'Special Elite',cursive;font-size:48px;color:var(--teal);margin-bottom:12px;";
   icon.textContent = data.note.icon;
   const txt  = document.createElement('p');
+  txt.className = 'tab-note-text';
   txt.style.cssText = 'color:var(--teal-dark);font-style:italic;font-size:17px;';
-  txt.textContent = data.note.text;
+  txt.textContent = lang === 'es' ? data.note.text : (lang === 'en' ? data.note.text_en : data.note.text_pt);
   noteBox.append(icon, txt);
   col2.appendChild(noteBox);
 
@@ -519,198 +518,7 @@ function renderDesayunos(data) {
   panel.replaceChildren(frag);
 }
 
-function renderSandwiches(data) {
-  const panel = document.getElementById('tab-sandwiches');
-  if (!panel) return;
-  const frag  = new DocumentFragment();
-  const cols  = document.createElement('div');
-  cols.className = 'menu-columns';
-  const col1  = document.createElement('div');
-  col1.append(createSectionTitle(data.title), renderItems(data.columns[0]));
-  const col2  = document.createElement('div');
-  col2.append(createSectionTitle('—', true), renderItems(data.columns[1]));
-  cols.append(col1, col2);
-  frag.appendChild(cols);
-  panel.replaceChildren(frag);
-}
-
-function renderEnsaladas(data) {
-  const panel = document.getElementById('tab-ensaladas');
-  if (!panel) return;
-  const parts  = data.title.split(' y ');
-  const frag   = new DocumentFragment();
-  const cols   = document.createElement('div');
-  cols.className = 'menu-columns';
-  const col1   = document.createElement('div');
-  col1.append(createSectionTitle(parts[0]), renderItems(data.columns[0]));
-  const col2   = document.createElement('div');
-  col2.append(createSectionTitle(parts[1] || 'Sopas'), renderItems(data.columns[1]));
-  cols.append(col1, col2);
-  frag.appendChild(cols);
-  panel.replaceChildren(frag);
-}
-
-function renderMediodia(data) {
-  const panel = document.getElementById('tab-mediodia');
-  if (!panel) return;
-  const frag  = new DocumentFragment();
-  const cols  = document.createElement('div');
-  cols.className = 'menu-columns';
-  const col1  = document.createElement('div');
-  col1.append(createSectionTitle(data.title), renderItems(data.columns[0]));
-  const col2  = document.createElement('div');
-  col2.append(createSectionTitle('—', true), renderItems(data.columns[1]));
-  cols.append(col1, col2);
-  frag.appendChild(cols);
-  if (data.note) {
-    const note = document.createElement('div');
-    note.className = 'menu-note';
-    note.style.marginTop = '40px';
-    note.innerHTML = data.note; // nota puede tener HTML (<strong> etc.)
-    frag.appendChild(note);
-  }
-  panel.replaceChildren(frag);
-}
-
-function renderFondos(data) {
-  const panel = document.getElementById('tab-fondos');
-  if (!panel) return;
-  const frag  = new DocumentFragment();
-  const cols  = document.createElement('div');
-  cols.className = 'menu-columns';
-
-  const col1  = document.createElement('div');
-  col1.append(createSectionTitle('Fondos'), renderItems(data.columns[0]));
-
-  const col2  = document.createElement('div');
-  col2.append(createSectionTitle('Saltados & Especiales'), renderItems(data.columns[1]));
-  if (data.vegetarian) {
-    const vTitle = createSectionTitle('Opciones Vegetarianas');
-    vTitle.style.marginTop = '28px';
-    col2.append(vTitle, renderItems(data.vegetarian));
-  }
-
-  cols.append(col1, col2);
-  frag.appendChild(cols);
-  panel.replaceChildren(frag);
-}
-
-function renderBurgers(data) {
-  const panel = document.getElementById('tab-burgers');
-  if (!panel) return;
-  const frag  = new DocumentFragment();
-  const cols  = document.createElement('div');
-  cols.className = 'menu-columns';
-  const col1  = document.createElement('div');
-  col1.append(createSectionTitle(`${data.title} ${data.subtitle}`), renderItems(data.columns[0]));
-  const col2  = document.createElement('div');
-  col2.append(createSectionTitle('Salchipapas'), renderItems(data.columns[1]));
-  cols.append(col1, col2);
-  frag.appendChild(cols);
-  panel.replaceChildren(frag);
-}
-
-function renderAlitas(alitasData, broasterData) {
-  const panel = document.getElementById('tab-alitas');
-  if (!panel) return;
-
-  const frag  = new DocumentFragment();
-  const cols  = document.createElement('div');
-  cols.className = 'menu-columns';
-
-  /* ── Columna izquierda: alitas + costillitas ── */
-  const col1  = document.createElement('div');
-  const alitas = alitasData.columns[0][0];
-  col1.appendChild(createSectionTitle('Alitas · Incluye papas fritas personales'));
-  col1.appendChild(createMenuItem(alitas.name, alitas.description, alitas.price));
-  col1.appendChild(buildSauceTags(alitas.sauces));
-
-  const costDiv = document.createElement('div');
-  costDiv.style.marginTop = '32px';
-  const cost = alitasData.columns[1][0]; // Fixed: correct index for costillitas
-  costDiv.appendChild(createSectionTitle('Costillitas · Incluye papas fritas andinas'));
-  costDiv.appendChild(createMenuItem(cost.name, cost.description, cost.price));
-  costDiv.appendChild(buildSauceTags(cost.sauces));
-  col1.appendChild(costDiv);
-
-  /* ── Columna derecha: broaster ── */
-  const col2  = document.createElement('div');
-  col2.appendChild(createSectionTitle('Broaster Mr. Bross'));
-  const tagline = document.createElement('p');
-  tagline.style.cssText = 'font-size:20px;color:#5a4a30;font-style:italic;margin-bottom:20px;';
-  tagline.textContent = broasterData.description || '¡Crujiente por fuera, jugoso por dentro y con un sabor irresistible! Pide el combo ideal para ti:';
-  col2.appendChild(tagline);
-  col2.appendChild(buildBroasterTable(broasterData.combos));
-
-  cols.append(col1, col2);
-  frag.appendChild(cols);
-  panel.replaceChildren(frag);
-}
-
-function renderAdicionales(data) {
-  const panel = document.getElementById('tab-adicionales');
-  if (!panel) return;
-
-  const frag  = new DocumentFragment();
-  const cols  = document.createElement('div');
-  cols.className = 'menu-columns';
-
-  const col1  = document.createElement('div');
-  col1.appendChild(createSectionTitle(data.title));
-  /* Adicionales no tienen description — item simplificado */
-  data.items.forEach(item => {
-    const wrap = document.createElement('div');
-    wrap.className = 'menu-item';
-    const info = document.createElement('div');
-    info.className = 'item-info';
-    const nm   = document.createElement('span');
-    nm.className = 'item-name';
-    nm.textContent = item.name;
-    info.appendChild(nm);
-    const pr   = document.createElement('span');
-    pr.className = 'item-price';
-    pr.textContent = 'S/ ' + item.price.toFixed(2);
-    wrap.append(info, pr);
-    col1.appendChild(wrap);
-  });
-
-  const col2  = document.createElement('div');
-  col2.style.cssText = 'display:flex;flex-direction:column;justify-content:center;align-items:center;gap:24px;text-align:center;padding:40px;border:1px solid rgba(42,107,112,0.3);border-radius:4px;height:fit-content;margin:auto 0;';
-  data.notes.forEach(note => {
-    const d  = document.createElement('div');
-    const p1 = document.createElement('p');
-    p1.style.cssText = "font-family:'Special Elite',cursive;font-size:22px;color:var(--teal-dark);margin-bottom:8px;";
-    p1.textContent = `${note.icon} ${note.text}`;
-    const p2 = document.createElement('p');
-    p2.style.cssText = 'font-size:18px;color:#5a4a30;font-style:italic;';
-    p2.textContent = note.subtext;
-    d.append(p1, p2);
-    col2.appendChild(d);
-  });
-
-  cols.append(col1, col2);
-  frag.appendChild(cols);
-  panel.replaceChildren(frag);
-}
-
-function renderDomingo(data) {
-  const panel = document.getElementById('tab-domingo');
-  if (!panel) return;
-
-  const frag = new DocumentFragment();
-  const cols = document.createElement('div');
-  cols.className = 'menu-columns';
-
-  const col1 = document.createElement('div');
-  col1.appendChild(createSectionTitle(data.title));
-  data.items.forEach(item => col1.appendChild(createMenuItem(item.name, item.description, item.price)));
-
-  cols.appendChild(col1);
-  frag.appendChild(cols);
-  panel.replaceChildren(frag);
-}
-
-/* ── helpers privados del motor ── */
+/* Helpers del motor de render */
 
 function buildSauceTags(sauces) {
   const div = document.createElement('div');
@@ -766,9 +574,7 @@ function renderMenuContent(menuData) {
      layout aunque el usuario nunca abriera esos tabs. */
 }
 
-/* ═══════════════════════════════════════════════════════
-   5. CARGA DE MENÚ DESDE JSON
-   ═══════════════════════════════════════════════════════ */
+/* Carga de menu desde JSON */
 async function loadMenuFromJSON() {
   if (!$.menuSection) return;
   if (window._antika.menuLoaded) return;
@@ -783,9 +589,7 @@ async function loadMenuFromJSON() {
   }
 }
 
-/* ═══════════════════════════════════════════════════════
-   6. RESEÑAS DE GOOGLE — carga + carrusel
-   ═══════════════════════════════════════════════════════ */
+/* Reseñas de Google - carga + carrusel */
 
 /* Delegación de eventos: 1 listener en el track, no N en cada card */
 function initReviewsDelegation() {
@@ -969,9 +773,7 @@ function initReviewsCarousel() {
   window._antika.reviewsCarouselInit = true;
 }
 
-/* ═══════════════════════════════════════════════════════
-   7. CARRUSEL DE GALERÍA
-   ═══════════════════════════════════════════════════════ */
+/* Carrusel de galería */
 function initGalleryCarousel() {
   if (window._antika.galleryCarouselInit) return;
 
@@ -1059,10 +861,7 @@ function initGalleryCarousel() {
   window._antika.galleryCarouselInit = true;
 }
 
-/* ═══════════════════════════════════════════════════════
-   8. ANIMACIONES — (scroll reveal, parallax, gold line,
-      button ripple, gallery reveal)
-   ═══════════════════════════════════════════════════════ */
+/* Animaciones - scroll reveal, parallax, etc */
 (function initAnimations() {
 
   if (window._antika.animationsInit) return;
@@ -1225,9 +1024,7 @@ function initGalleryCarousel() {
 
 })();
 
-/* ═══════════════════════════════════════════════════════
-   9. PUNTO DE ENTRADA ÚNICO
-   ═══════════════════════════════════════════════════════ */
+/* Punto de entrada */
 (function() {
   if (window._antika.domReady) return;
 
@@ -1240,9 +1037,127 @@ function initGalleryCarousel() {
     loadGoogleReviews();    // fetch reviews + init carousel
     loadMenuFromJSON();     // fetch menú + render diferido
     initGalleryCarousel();  // carousel galería
+    initMenuLanguageListener(); // listener para cambio de idioma del menú
   }
 
   document.readyState === 'loading'
     ? document.addEventListener('DOMContentLoaded', onDOMReady)
     : onDOMReady();
 })();
+
+/* Función para traducir las descripciones del menú */
+function translateMenuDescriptions(lang) {
+  const menuData = window._antika.menuData;
+  if (!menuData) return;
+
+  // Obtener todos los paneles de menú
+  const panels = document.querySelectorAll('.tab-panel');
+  
+  panels.forEach(panel => {
+    if (!panel.classList.contains('active')) return;
+    
+    const panelId = panel.id.replace('tab-', '');
+    const data = menuData[panelId];
+    if (!data) return;
+
+    // Actualizar títulos de sección
+    const sectionTitle = panel.querySelector('.menu-section-title');
+    if (sectionTitle) {
+      const translatedTitle = lang === 'es' ? data.title : (lang === 'en' ? (data.title_en || data.title) : (data.title_pt || data.title));
+      sectionTitle.textContent = translatedTitle;
+    }
+
+    // Actualizar notas de sección (desayunos)
+    const noteText = panel.querySelector('.tab-note-text');
+    if (noteText && data.note) {
+      noteText.textContent = lang === 'es' ? data.note.text : (lang === 'en' ? data.note.text_en : data.note.text_pt);
+    }
+
+    // Actualizar notas de medio día
+    const menuNote = panel.querySelector('.menu-note');
+    if (menuNote && data.note && typeof data.note === 'string') {
+      menuNote.innerHTML = lang === 'es' ? data.note : (lang === 'en' ? data.note_en : data.note_pt);
+    }
+
+    // Actualizar todos los items del menú
+    const menuItems = panel.querySelectorAll('.menu-item');
+    
+    // Función auxiliar para obtener la descripción traducida
+    const getTranslatedDescription = (itemData) => {
+      if (lang === 'es') return itemData.description;
+      if (lang === 'en') return itemData.description_en || itemData.description;
+      return itemData.description_pt || itemData.description;
+    };
+
+    // Recopilar todos los items de datos del menú
+    let allDataItems = [];
+    
+    if (data.items) {
+      allDataItems = data.items;
+    } else if (data.columns) {
+      data.columns.forEach(col => {
+        col.forEach(item => {
+          if (item) allDataItems.push(item);
+        });
+      });
+    } else if (data.vegetarian) {
+      data.columns.forEach(col => {
+        col.forEach(item => {
+          if (item) allDataItems.push(item);
+        });
+      });
+      allDataItems = allDataItems.concat(data.vegetarian);
+    }
+
+    // Actualizar cada elemento del DOM
+    menuItems.forEach((menuItem, index) => {
+      if (index < allDataItems.length) {
+        const itemData = allDataItems[index];
+        const descElement = menuItem.querySelector('.item-desc');
+        if (descElement && itemData) {
+          const translatedDesc = getTranslatedDescription(itemData);
+          if (translatedDesc) {
+            descElement.textContent = translatedDesc;
+          }
+        }
+      }
+    });
+
+    // Actualizar etiquetas de salsa en alitas
+    const sauceTags = panel.querySelectorAll('.sauce-tag');
+    if (data.columns && panelId === 'alitas' && sauceTags.length > 0) {
+      const alitas = data.columns[0][0];
+      const cost = data.columns[1][0];
+      const allSauces = [...(alitas.sauces || []), ...(cost.sauces || [])];
+      sauceTags.forEach((tag, idx) => {
+        if (idx < allSauces.length) {
+          tag.textContent = allSauces[idx];
+        }
+      });
+    }
+
+    // Actualizar descripción de broaster
+    const broasterTagline = panel.querySelector('p[style*="font-size:20px"]');
+    if (broasterTagline && data.description) {
+      const translatedDesc = lang === 'es' ? data.description : (lang === 'en' ? data.description_en : data.description_pt);
+      broasterTagline.textContent = translatedDesc;
+    }
+  });
+}
+
+/* Inicializar listener para cambio de idioma */
+function initMenuLanguageListener() {
+  const langSelect = document.getElementById('language-select');
+  if (!langSelect) return;
+
+  langSelect.addEventListener('change', function() {
+    const lang = this.value;
+    translateMenuDescriptions(lang);
+  });
+
+  // Aplicar traducción inicial si ya hay un idioma seleccionado
+  const currentLang = langSelect.value || 'es';
+  if (currentLang !== 'es') {
+    translateMenuDescriptions(currentLang);
+  }
+}
