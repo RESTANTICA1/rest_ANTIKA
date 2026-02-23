@@ -95,10 +95,26 @@
   "domingo": {
     "title": "Especiales de Domingo",
     "items": [
-      { "name": "Chicharrón de cerdo", "description": "Crujiente por fuera y tierno por dentro, se sirve acompañado con choclo, una fresca ensalada de hierba buena y papas doradas.", "price": 23.00 },
-      { "name": "Caja china", "description": "Caja china de cerdo crujiente, tierno y jugoso. Se sirve acompañado de un suave puré de camote, una ensalada fresca y tamal tradicional.", "price": 28.00 },
-      { "name": "Triple Arequipeño", "description": "Disfruta del rocoto relleno arequipeño, el cremoso pastel de papa y la irresistible opción de chicharrón o caja china.", "price": 35.00 },
-      { "name": "Adobo Arequipeño de Antaño", "description": "Cerdo marinado en chicha de guiñapo morado, ají panca, ajo y especias; cocida a fuego lento para lograr una textura tierna y un sabor auténtico.", "price": 22.00 }
+      {
+        "name": "Chicharrón de cerdo",
+        "description": "Crujiente por fuera y tierno por dentro, se sirve acompañado con choclo, una fresca ensalada de hierba buena y papas doradas.",
+        "price": 23.00
+      },
+      {
+        "name": "Caja china",
+        "description": "Caja china de cerdo crujiente, tierno y jugoso. Se sirve acompañado de un suave puré de camote, una ensalada fresca y tamal tradicional.",
+        "price": 28.00
+      },
+      {
+        "name": "Triple Arequipeño",
+        "description": "Disfruta del rocoto relleno arequipeño, el cremoso pastel de papa y la irresistible opción de chicharrón o caja china.",
+        "price": 35.00
+      },
+      {
+        "name": "Adobo Arequipeño de Antaño",
+        "description": "Cerdo marinado en chicha de guiñapo morado, ají panca, ajo y especias; cocida a fuego lento para lograr una textura tierna y un sabor auténtico.",
+        "price": 22.00
+      }
     ]
   },
   "burgers": {
