@@ -137,6 +137,7 @@
     <button class="tab-btn" onclick="showTab('ensaladas', this)" data-menu="ensaladas" data-i18n="comida3"></button>
     <button class="tab-btn" onclick="showTab('mediodia', this)" data-menu="mediodia" data-i18n="comida4"></button>
     <button class="tab-btn" onclick="showTab('fondos', this)" data-menu="fondos" data-i18n="comida5"></button>
+    <button class="tab-btn" onclick="showTab('vegetariana', this)" data-menu="vegetariana" data-i18n="vegetariana"></button>
     <button class="tab-btn" onclick="showTab('domingo', this)" data-menu="domingo" data-i18n="comida9"></button>
     <button class="tab-btn" onclick="showTab('burgers', this)" data-menu="burgers" data-i18n="comida6"></button>
     <button class="tab-btn" onclick="showTab('alitas', this)" data-menu="alitas" data-i18n="comida7"></button>
@@ -145,339 +146,32 @@
 
   <!-- DESAYUNOS -->
   <div id="tab-desayunos" class="tab-panel active">
-    <div class="menu-columns">
-      <div>
-        <p class="menu-section-title" data-i18n="desayuno"></p>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="des"></span>
-            <span class="item-desc" data-i18n="opD"></span>
-          </div>
-          <span class="item-price">S/ 14.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="opD1"></span>
-            <span class="item-desc" data-i18n="opD2"></span>
-          </div>
-          <span class="item-price">S/ 13.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="opD3"></span>
-            <span class="item-desc" data-i18n="opD4"></span>
-          </div>
-          <span class="item-price">S/ 13.00</span>
-        </div>
-      </div>
-      <div style="display:flex;align-items:center;justify-content:center;">
-        <div style="text-align:center;padding:40px;border:1px solid rgba(42,107,112,0.3);border-radius:4px;">
-          <div style="font-family:'Special Elite',cursive;font-size:48px;color:var(--teal);margin-bottom:12px;">☕</div>
-          <p style="color:var(--teal-dark);font-style:italic;font-size:17px;" data-i18n="horario"></p>
-        </div>
-      </div>
-    </div>
+    <!-- Content rendered from menu.json -->
   </div>
 
   <!-- SÁNDWICHES -->
   <div id="tab-sandwiches" class="tab-panel">
-    <div class="menu-columns">
-      <div>
-        <p class="menu-section-title" data-i18n="sandwiches"></p>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san"></span>
-            <span class="item-desc" data-i18n="san1"></span>
-          </div>
-          <span class="item-price">S/ 16.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san2"></span>
-            <span class="item-desc" data-i18n="san3"></span>
-          </div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san4"></span>
-            <span class="item-desc" data-i18n="san5"></span>
-          </div>
-          <span class="item-price">S/ 14.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san6"></span>
-            <span class="item-desc" data-i18n="san7"></span>
-          </div>
-          <span class="item-price">S/ 12.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san8"></span>
-            <span class="item-desc" data-i18n="san9"></span>
-          </div>
-          <span class="item-price">S/ 10.00</span>
-        </div>
-      </div>
-      <div>
-        <p class="menu-section-title" style="visibility:hidden;">—</p>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san10"></span>
-            <span class="item-desc" data-i18n="san11"></span>
-          </div>
-          <span class="item-price">S/ 10.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san12"></span>
-            <span class="item-desc" data-i18n="san13"></span>
-          </div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san14"></span>
-            <span class="item-desc" data-i18n="san15"></span>
-          </div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="san16"></span>
-            <span class="item-desc" data-i18n="san17"></span>
-          </div>
-          <span class="item-price">S/ 13.00</span>
-        </div>
-      </div>
-    </div>
+    <!-- Content rendered from menu.json -->
   </div>
 
   <!-- ENSALADAS Y SOPAS -->
   <div id="tab-ensaladas" class="tab-panel">
-    <div class="menu-columns">
-      <div>
-        <p class="menu-section-title" data-i18n="ensa"></p>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="ensa1"></span>
-            <span class="item-desc" data-i18n="ensa2"></span>
-          </div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="ensa3"></span>
-            <span class="item-desc" data-i18n="ensa4"></span>
-          </div>
-          <span class="item-price">S/ 16.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="ensa5"></span>
-            <span class="item-desc" data-i18n="ensa6"></span>
-          </div>
-          <span class="item-price">S/ 18.00</span>
-        </div>
-      </div>
-      <div>
-        <p class="menu-section-title" data-i18n="soup"></p>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="soup1"></span>
-            <span class="item-desc" data-i18n="soup2"></span>
-          </div>
-          <span class="item-price">S/ 16.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="soup3"></span>
-            <span class="item-desc" data-i18n="soup4"></span>
-          </div>
-          <span class="item-price">S/ 18.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name" data-i18n="soup5"></span>
-            <span class="item-desc" data-i18n="soup6"></span>
-          </div>
-          <span class="item-price">S/ 20.00</span>
-        </div>
-      </div>
-    </div>
+    <!-- Content rendered from menu.json -->
   </div>
 
   <!-- MEDIO DÍA CRIOLLO -->
   <div id="tab-mediodia" class="tab-panel">
-    <div class="menu-columns">
-      <div>
-        <p class="menu-section-title" data-i18n="medio">Medio Día Criollo</p>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">Arroz con Pollo</span>
-            <span class="item-desc" data-i18n="medio1"></span>
-          </div>
-          <span class="item-price">S/ 22.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">Lengua Almendrada</span>
-            <span class="item-desc" data-i18n="medio2"></span>
-          </div>
-          <span class="item-price">S/ 18.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">Estofado de Res</span>
-            <span class="item-desc" data-i18n="medio3"></span>
-          </div>
-          <span class="item-price">S/ 22.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">Frejol con Seco de Res</span>
-            <span class="item-desc" data-i18n="medio4"></span>
-          </div>
-          <span class="item-price">S/ 22.00</span>
-        </div>
-      </div>
-      <div>
-        <p class="menu-section-title" style="visibility:hidden;">—</p>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">Ají de Gallina</span>
-            <span class="item-desc" data-i18n="medio5"></span>
-          </div>
-          <span class="item-price">S/ 22.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">Asado a la Olla con Puré o Tallarín</span>
-            <span class="item-desc" data-i18n="medio6"></span>
-          </div>
-          <span class="item-price">S/ 22.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">Malaya Dorada</span>
-            <span class="item-desc" data-i18n="medio7"></span>
-          </div>
-          <span class="item-price">S/ 22.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">Apanado al Jugo</span>
-            <span class="item-desc" data-i18n="medio8"></span>
-          </div>
-          <span class="item-price">S/ 22.00</span>
-        </div>
-      </div>
-    </div>
-    <div class="menu-note" style="margin-top:40px;" data-i18n="medio9"></div>
+    <!-- Content rendered from menu.json -->
   </div>
 
   <!-- FONDOS -->
   <div id="tab-fondos" class="tab-panel">
-    <div class="menu-columns">
-      <div>
-        <p class="menu-section-title">Fondos</p>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Chaufa de Pollo</span>
-            <span class="item-desc">Arroz frito salteado al wok con pollo, huevo, cebollita china y ajonjolí.</span></div>
-          <span class="item-price">S/ 18.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Chaufa Agridulce</span>
-            <span class="item-desc">Arroz frito al estilo peruano con crujientes trozos de pollo en salsa agridulce.</span></div>
-          <span class="item-price">S/ 23.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Corazón Anticuchero</span>
-            <span class="item-desc">Corazón de res marinado en salsa anticuchera, salteado al wok con toque ahumado.</span></div>
-          <span class="item-price">S/ 23.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Pollo a la Plancha</span>
-            <span class="item-desc">Pechuga dorada a la perfección, sazonada con especias especiales.</span></div>
-          <span class="item-price">S/ 22.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Bistec a lo Pobre</span>
-            <span class="item-desc">Bistec a la plancha con arroz blanco, papas fritas, huevo frito y plátano frito o salchicha.</span></div>
-          <span class="item-price">S/ 27.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Milanesa de Pollo / Carne</span>
-            <span class="item-desc">Filete empanizado y dorado. Con papas fritas, arroz y ensalada fresca.</span></div>
-          <span class="item-price">S/ 24.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Trucha a la Menuere</span>
-            <span class="item-desc">Filete de trucha con mantequilla, limón y finas hierbas. Con puré de papa y ensalada.</span></div>
-          <span class="item-price">S/ 24.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Trucha Fungi</span>
-            <span class="item-desc">Filete de trucha en salsa de champiñones y bechamel. Con puré de papa y ensalada fresca.</span></div>
-          <span class="item-price">S/ 25.00</span>
-        </div>
-      </div>
-      <div>
-        <p class="menu-section-title">Saltados &amp; Especiales</p>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Saltado de Pollo</span>
-            <span class="item-desc">Pollo salteado al wok con cebolla, tomate y ají amarillo. Con papas fritas y arroz blanco.</span></div>
-          <span class="item-price">S/ 25.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Lomo Saltado</span>
-            <span class="item-desc">Lomo de res salteado al wok con cebolla, tomate y ají amarillo. Con papas fritas y arroz.</span></div>
-          <span class="item-price">S/ 28.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Tallarín Saltado de Pollo</span>
-            <span class="item-desc">Fideos salteados con pollo, cebolla, tomate y ají amarillo.</span></div>
-          <span class="item-price">S/ 25.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Tallarín Saltado de Lomo</span>
-            <span class="item-desc">Fideos salteados con lomo de res, cebolla, tomate y ají amarillo.</span></div>
-          <span class="item-price">S/ 28.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Lomo Saltado al Pesto / Huancaína</span>
-            <span class="item-desc">Lomo saltado con fettuccine en salsa cremosa a elección.</span></div>
-          <span class="item-price">S/ 32.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Pulpo Anticuchero</span>
-            <span class="item-desc">Pulpo marinado en salsa anticuchera, ahumado y suave. Con papas doradas, choclo americano y piña.</span></div>
-          <span class="item-price">S/ 42.00</span>
-        </div>
-        <p class="menu-section-title" style="margin-top:28px;">Opciones Vegetarianas</p>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Chaufa de Champiñones</span>
-            <span class="item-desc">Chaufa salteado al wok con champiñones frescos, huevo y cebollita china.</span></div>
-          <span class="item-price">S/ 18.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Kapchi de Habas</span>
-            <span class="item-desc">Guiso andino con habas frescas, papa, queso y un toque de huacatay.</span></div>
-          <span class="item-price">S/ 18.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Tallarín Saltado de Verduras</span>
-            <span class="item-desc">Fideos salteados con mezcla fresca de verduras y champiñones.</span></div>
-          <span class="item-price">S/ 25.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Saltado de Champiñones</span>
-            <span class="item-desc">Champiñones frescos salteados con cebolla, tomate y ají amarillo. Con papas doradas y arroz.</span></div>
-          <span class="item-price">S/ 27.00</span>
-        </div>
-      </div>
-    </div>
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- VEGETARIANA -->
+  <div id="tab-vegetariana" class="tab-panel">
+    <!-- Content rendered from menu.json -->
   </div>
 
   <!-- ESPECIALES DE DOMINGO -->
@@ -491,183 +185,17 @@
 
   <!-- BURGERS -->
   <div id="tab-burgers" class="tab-panel">
-    <div class="menu-columns">
-      <div>
-        <p class="menu-section-title">Burgers · Incluye papas fritas personales</p>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Clásica</span>
-            <span class="item-desc">Carne de res sazonada con especias, lechuga fresca y tomate.</span></div>
-          <span class="item-price">S/ 13.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Cheese Burger</span>
-            <span class="item-desc">Jugosa carne de res a la parrilla con queso derretido, lechuga fresca y tomate.</span></div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Bacon Burger</span>
-            <span class="item-desc">Carne de res con tocino ahumado, lechuga fresca y tomate en rodajas.</span></div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Parrillera</span>
-            <span class="item-desc">Carne de res con chorizo dorado, chimichurri casero, lechuga fresca y tomate.</span></div>
-          <span class="item-price">S/ 16.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Doble</span>
-            <span class="item-desc">Dos jugosas carnes de res a la parrilla, lechuga fresca y tomate en rodajas.</span></div>
-          <span class="item-price">S/ 17.00</span>
-        </div>
-      </div>
-      <div>
-        <p class="menu-section-title">Salchipapas</p>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Clásica</span>
-            <span class="item-desc">Crujientes papas fritas acompañadas de salchicha dorada.</span></div>
-          <span class="item-price">S/ 12.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Parrillera</span>
-            <span class="item-desc">Salchipapa con trozos de chorizo bañados en chimichurri casero.</span></div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Salchipollo</span>
-            <span class="item-desc">Salchipapa acompañada de pollo deshilachado.</span></div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Salchi Queso</span>
-            <span class="item-desc">Salchipapa acompañada de cubos de queso frito.</span></div>
-          <span class="item-price">S/ 15.00</span>
-        </div>
-        <div class="menu-item">
-          <div class="item-info"><span class="item-name">Salchi Nuggets</span>
-            <span class="item-desc">Salchipapa acompañada de tiernos nuggets de pollo.</span></div>
-          <span class="item-price">S/ 20.00</span>
-        </div>
-      </div>
-    </div>
+    <!-- Content rendered from menu.json -->
   </div>
 
   <!-- ALITAS Y BROASTER -->
   <div id="tab-alitas" class="tab-panel">
-    <div class="menu-columns">
-      <div>
-        <p class="menu-section-title">Alitas · Incluye papas fritas personales</p>
-        <div class="menu-item">
-          <div class="item-info">
-            <span class="item-name">6 Unidades de alitas</span>
-            <span class="item-desc">En la salsa de tu elección:</span>
-          </div>
-          <span class="item-price">S/ 16.00</span>
-        </div>
-        <div class="sauce-tags">
-          <span class="sauce-tag">Maracuyá</span>
-          <span class="sauce-tag">BBQ</span>
-          <span class="sauce-tag">Hot BBQ</span>
-          <span class="sauce-tag">Acevichadas</span>
-          <span class="sauce-tag">Crispy</span>
-          <span class="sauce-tag">Anticucheras</span>
-          <span class="sauce-tag">Orientales</span>
-          <span class="sauce-tag">Parrilleras</span>
-          <span class="sauce-tag">Honey Mustard</span>
-          <span class="sauce-tag">Agridulce</span>
-        </div>
-        <div style="margin-top:32px;">
-          <p class="menu-section-title">Costillitas · Incluye papas fritas andinas</p>
-          <div class="menu-item">
-            <div class="item-info">
-              <span class="item-name">3 Unidades de costillitas</span>
-              <span class="item-desc">En la salsa de tu elección:</span>
-            </div>
-            <span class="item-price">S/ 18.00</span>
-          </div>
-          <div class="sauce-tags">
-            <span class="sauce-tag">Maracuyá</span>
-            <span class="sauce-tag">BBQ</span>
-            <span class="sauce-tag">Hot BBQ</span>
-            <span class="sauce-tag">Chimichurri</span>
-            <span class="sauce-tag">Orientales</span>
-            <span class="sauce-tag">Agridulce</span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <p class="menu-section-title">Broaster Mr. Bross</p>
-        <p style="font-size:20px;color:#5a4a30;font-style:italic;margin-bottom:20px;">¡Crujiente por fuera, jugoso por dentro y con un sabor irresistible! Pide el combo ideal para ti:</p>
-        <table class="broaster-table">
-          <thead>
-            <tr>
-              <th>Combo</th>
-              <th>Piezas</th>
-              <th>Papas</th>
-              <th>Precio</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="promo-name">Solo para Mí</td>
-              <td>2 pzas.</td>
-              <td>1 personal</td>
-              <td class="price-col">S/ 17</td>
-            </tr>
-            <tr>
-              <td class="promo-name">Dúo Conquistador</td>
-              <td>4 pzas.</td>
-              <td>2 personal</td>
-              <td class="price-col">S/ 32</td>
-            </tr>
-            <tr>
-              <td class="promo-name">Trío Perfecto</td>
-              <td>6 pzas.</td>
-              <td>1 mediana + 6 nuggets + ½ lt. chicha</td>
-              <td class="price-col">S/ 50</td>
-            </tr>
-            <tr>
-              <td class="promo-name">Familia Feliz</td>
-              <td>8 pzas.</td>
-              <td>1 familiar + 8 nuggets + 1 lt. chicha</td>
-              <td class="price-col">S/ 70</td>
-            </tr>
-            <tr>
-              <td class="promo-name">Súper Batallón</td>
-              <td>10 pzas.</td>
-              <td>1½ familiar + 10 nuggets + 1 lt. chicha</td>
-              <td class="price-col">S/ 82</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <!-- Content rendered from menu.json -->
   </div>
 
   <!-- ADICIONALES -->
   <div id="tab-adicionales" class="tab-panel">
-    <div class="menu-columns">
-      <div>
-        <p class="menu-section-title">Adicionales</p>
-        <div class="menu-item"><div class="item-info"><span class="item-name">Docena de Nuggets</span></div><span class="item-price">S/ 16.00</span></div>
-        <div class="menu-item"><div class="item-info"><span class="item-name">½ Docena de Nuggets</span></div><span class="item-price">S/ 10.00</span></div>
-        <div class="menu-item"><div class="item-info"><span class="item-name">Porción Papas Personal</span></div><span class="item-price">S/ 3.50</span></div>
-        <div class="menu-item"><div class="item-info"><span class="item-name">Porción Papas Regular</span></div><span class="item-price">S/ 7.00</span></div>
-        <div class="menu-item"><div class="item-info"><span class="item-name">Queso Extra</span></div><span class="item-price">S/ 5.00</span></div>
-        <div class="menu-item"><div class="item-info"><span class="item-name">Porción Arroz</span></div><span class="item-price">S/ 5.00</span></div>
-        <div class="menu-item"><div class="item-info"><span class="item-name">Ensalada Personal</span></div><span class="item-price">S/ 5.00</span></div>
-        <div class="menu-item"><div class="item-info"><span class="item-name">Huevo Frito</span></div><span class="item-price">S/ 3.00</span></div>
-      </div>
-      <div style="display:flex;flex-direction:column;justify-content:center;align-items:center;gap:24px;text-align:center;padding:40px;border:1px solid rgba(42,107,112,0.3);border-radius:4px;height:fit-content;margin:auto 0;">
-        <div>
-          <p style="font-family:'Special Elite',cursive;font-size:22px;color:var(--teal-dark);margin-bottom:8px;">🍰 Postre del día</p>
-          <p style="font-size:18px;color:#5a4a30;font-style:italic;">Pregunta a tu mesero por el postre especial del día.</p>
-        </div>
-        <div style="border-top:1px solid rgba(42,107,112,0.2);padding-top:20px;width:100%;">
-          <p style="font-family:'Special Elite',cursive;font-size:15px;color:var(--teal-dark);">💳 Pago con tarjeta</p>
-          <p style="font-size:18px;color:#5a4a30;margin-top:6px;">Tiene un cargo adicional del <strong style="color:var(--teal-dark);">5%</strong></p>
-        </div>
-      </div>
-    </div>
+    <!-- Content rendered from menu.json -->
   </div>
 </section>
 
