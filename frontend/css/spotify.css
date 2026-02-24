@@ -25,11 +25,14 @@
 
 /* Spotify tamaño */
 .spotify-playlist iframe{
-  width:250px;
-  height:80px;
+  width:350px;
+  height:152px;
   border:none;
 }
 
+.spotify-playlist{
+  height: 152px
+}
 /* Logo */
 .footer-logo{
   font-size:28px;

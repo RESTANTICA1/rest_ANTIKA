@@ -1329,7 +1329,7 @@ footer {
 }
 .primero {
   display: flex;
-  align-items: flex-start;
+  align-content: center;
   gap: 20px;
   flex-wrap: wrap;
 }
