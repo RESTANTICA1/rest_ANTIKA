@@ -664,9 +664,9 @@ async function loadMenuFromJSON() {
   if (window._antika.menuLoaded) return;
 
   try {
-    const response = await fetch('menu.json');
+    const response = await fetch('../menu.json');
     const menuData = await response.json();
-    renderMenuContent(menuData);
+    renderMenuContent(menuData);    
     window._antika.menuLoaded = true;
   } catch (err) {
     console.error('Error loading menu:', err);
@@ -698,7 +698,7 @@ async function loadGoogleReviews() {
   }
 
   try {
-    const response  = await fetch('assets/comentarios/data/comentarios.json');
+    const response  = await fetch('../assets/comentarios/data/comentarios.json');
     const comentarios = await response.json();
 
     const frag = new DocumentFragment();
