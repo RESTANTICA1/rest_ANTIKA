@@ -31,6 +31,7 @@ window._antika = window._antika || {
     ensaladas:  false,
     mediodia:   false,
     fondos:     false,
+    vegetariana:false,
     domingo:    false,
     burgers:    false,
     alitas:     false,
@@ -122,6 +123,9 @@ function renderMenu(tipo) {
       break;
     case 'fondos':
       renderFondosGen(frag, data);
+      break;
+    case 'vegetariana':
+      renderVegetarianaGen(frag, data);
       break;
     case 'domingo':
       renderDomingoGen(frag, data);
@@ -222,16 +226,15 @@ function renderFondosGen(frag, data) {
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
 
+  // Get translated sub-titles from menu.json
+  const subtitle1 = lang === 'es' ? (data.subtitle1 || 'Platos de Fondo') : (lang === 'en' ? (data.subtitle1_en || 'Main Courses') : (data.subtitle1_pt || 'Pratos Principais'));
+  const subtitle2 = lang === 'es' ? (data.subtitle2 || 'Saltados & Especiales') : (lang === 'en' ? (data.subtitle2_en || 'Stir-fried & Specials') : (data.subtitle2_pt || 'Saltados & Especiais'));
+  
   const col1 = document.createElement('div');
-  col1.append(createSectionTitle('Fondos'), renderItemsLang(data.columns[0], lang));
+  col1.append(createSectionTitle(subtitle1), renderItemsLang(data.columns[0], lang));
 
   const col2 = document.createElement('div');
-  col2.append(createSectionTitle('Saltados & Especiales'), renderItemsLang(data.columns[1], lang));
-  if (data.vegetarian) {
-    const vTitle = createSectionTitle('Opciones Vegetarianas');
-    vTitle.style.marginTop = '28px';
-    col2.append(vTitle, renderItemsLang(data.vegetarian, lang));
-  }
+  col2.append(createSectionTitle(subtitle2), renderItemsLang(data.columns[1], lang));
 
   cols.append(col1, col2);
   frag.appendChild(cols);
@@ -253,15 +256,32 @@ function renderDomingoGen(frag, data) {
   frag.appendChild(cols);
 }
 
+function renderVegetarianaGen(frag, data) {
+  const lang = getCurrentLang();
+  const cols = document.createElement('div');
+  cols.className = 'menu-columns';
+
+  const col1 = document.createElement('div');
+  col1.appendChild(createSectionTitle(getTranslatedTitle(data, lang)));
+  data.items.forEach(item => {
+    const desc = lang === 'es' ? item.description : (lang === 'en' ? (item.description_en || item.description) : (item.description_pt || item.description));
+    col1.appendChild(createMenuItem(item.name, desc, item.price));
+  });
+
+  cols.appendChild(col1);
+  frag.appendChild(cols);
+}
+
 function renderBurgersGen(frag, data) {
   const lang = getCurrentLang();
   const cols = document.createElement('div');
   cols.className = 'menu-columns';
   const subtitle = lang === 'es' ? data.subtitle : (lang === 'en' ? (data.subtitle_en || data.subtitle) : (data.subtitle_pt || data.subtitle));
+  const salchipapasTitle = lang === 'es' ? 'Salchipapas' : (lang === 'en' ? 'Sausage & Fries' : 'Salchipapas');
   const col1 = document.createElement('div');
   col1.append(createSectionTitle(`${getTranslatedTitle(data, lang)} ${subtitle}`), renderItemsLang(data.columns[0], lang));
   const col2 = document.createElement('div');
-  col2.append(createSectionTitle('Salchipapas'), renderItemsLang(data.columns[1], lang));
+  col2.append(createSectionTitle(salchipapasTitle), renderItemsLang(data.columns[1], lang));
   cols.append(col1, col2);
   frag.appendChild(cols);
 }
@@ -277,7 +297,17 @@ function renderAlitasGen(frag, data) {
   const col1 = document.createElement('div');
   const alitas = data.columns[0][0];
   const alitasDesc = lang === 'es' ? alitas.description : (lang === 'en' ? (alitas.description_en || alitas.description) : (alitas.description_pt || alitas.description));
-  col1.appendChild(createSectionTitle('Alitas · Incluye papas fritas personales'));
+  
+  // Get translated titles for sections
+  const alitasTitle = lang === 'es' ? 'Alitas · Incluye papas fritas personales' : (lang === 'en' ? 'Wings · Includes personal French fries' : 'Asinhas · Inclui batatas fritas pessoais');
+  const costillasTitle = lang === 'es' ? 'Costillitas · Incluye papas fritas andinas' : (lang === 'en' ? 'Ribs · Includes Andean French fries' : 'Costelinhas · Inclui batatas fritas andinas');
+  const broasterTitle = broasterData ? getTranslatedTitle(broasterData, lang) : 'Broaster Mr. Bross';
+  
+  // Get translated subtitle
+  const alitasSubtitle = lang === 'es' ? '' : (lang === 'en' ? ' · Includes personal French fries' : ' · Inclui batatas fritas pessoais');
+  const costSubtitle = lang === 'es' ? '' : (lang === 'en' ? ' · Includes Andean French fries' : ' · Inclui batatas fritas andinas');
+  
+  col1.appendChild(createSectionTitle(data.title + alitasSubtitle));
   col1.appendChild(createMenuItem(alitas.name, alitasDesc, alitas.price));
   col1.appendChild(buildSauceTags(alitas.sauces));
 
@@ -285,20 +315,20 @@ function renderAlitasGen(frag, data) {
   costDiv.style.marginTop = '32px';
   const cost = data.columns[1][0];
   const costDesc = lang === 'es' ? cost.description : (lang === 'en' ? (cost.description_en || cost.description) : (cost.description_pt || cost.description));
-  costDiv.appendChild(createSectionTitle('Costillitas · Incluye papas fritas andinas'));
+  costDiv.appendChild(createSectionTitle(data.title + costSubtitle));
   costDiv.appendChild(createMenuItem(cost.name, costDesc, cost.price));
   costDiv.appendChild(buildSauceTags(cost.sauces));
   col1.appendChild(costDiv);
 
   const col2 = document.createElement('div');
-  col2.appendChild(createSectionTitle('Broaster Mr. Bross'));
+  col2.appendChild(createSectionTitle(broasterTitle));
   const tagline = document.createElement('p');
   tagline.style.cssText = 'font-size:20px;color:#5a4a30;font-style:italic;margin-bottom:20px;';
   const broasterDesc = broasterData ? (lang === 'es' ? broasterData.description : (lang === 'en' ? broasterData.description_en : broasterData.description_pt)) : '¡Crujiente por fuera, jugoso por dentro y con un sabor irresistible! Pide el combo ideal para ti:';
   tagline.textContent = broasterDesc;
   col2.appendChild(tagline);
   if (broasterData) {
-    col2.appendChild(buildBroasterTable(broasterData.combos));
+    col2.appendChild(buildBroasterTable(broasterData.combos, broasterData));
   }
 
   cols.append(col1, col2);
@@ -368,6 +398,7 @@ const _tabRenderers = {
   ensaladas:   () => renderMenu('ensaladas'),
   mediodia:    () => renderMenu('mediodia'),
   fondos:      () => renderMenu('fondos'),
+  vegetariana: () => renderMenu('vegetariana'),
   domingo:     () => renderMenu('domingo'),
   burgers:     () => renderMenu('burgers'),
   alitas:      () => renderMenu('alitas'),
@@ -534,17 +565,70 @@ function buildSauceTags(sauces) {
   return div;
 }
 
-function buildBroasterTable(combos) {
+function buildBroasterTable(combos, data) {
+  const lang = getCurrentLang();
+  const cols = data.columns || {};
+  
+  // Get translated column headers
+  const comboHeader = lang === 'es' ? cols.combo : (lang === 'en' ? cols.combo_en : cols.combo_pt);
+  const piecesHeader = lang === 'es' ? cols.pieces : (lang === 'en' ? cols.pieces_en : cols.pieces_pt);
+  const friesHeader = lang === 'es' ? cols.fries : (lang === 'en' ? cols.fries_en : cols.fries_pt);
+  const promoHeader = lang === 'es' ? cols.promo : (lang === 'en' ? cols.promo_en : cols.promo_pt);
+  const priceHeader = lang === 'es' ? cols.price : (lang === 'en' ? cols.price_en : cols.price_pt);
+  
+  // Get promo translations
+  const promoOpts = data.promoOptions || {};
+  const chooseTxt = lang === 'es' ? promoOpts.choose : (lang === 'en' ? promoOpts.choose_en : promoOpts.choose_pt);
+  const includesTxt = lang === 'es' ? promoOpts.includes : (lang === 'en' ? promoOpts.includes_en : promoOpts.includes_pt);
+  const nuggetsTxt = promoOpts.nuggets;
+  const chichaTxt = promoOpts.chicha;
+  
+  // Get fry portion translations
+  const personalTxt = lang === 'es' ? promoOpts.personal : (lang === 'en' ? promoOpts.personal_en : promoOpts.personal_pt);
+  const mediumTxt = lang === 'es' ? promoOpts.medium : (lang === 'en' ? promoOpts.medium_en : promoOpts.medium_pt);
+  const familyTxt = lang === 'es' ? promoOpts.family : (lang === 'en' ? promoOpts.family_en : promoOpts.family_pt);
+  
   const table = document.createElement('table');
   table.className = 'broaster-table';
-  table.innerHTML = '<thead><tr><th>Combo</th><th>Piezas</th><th>Papas</th><th>Precio</th></tr></thead>';
+  table.innerHTML = `<thead><tr><th>${comboHeader}</th><th>${piecesHeader}</th><th>${friesHeader}</th><th>${promoHeader}</th><th>${priceHeader}</th></tr></thead>`;
   const tbody = document.createElement('tbody');
-  const frag  = new DocumentFragment();
+  const frag = new DocumentFragment();
+  
   combos.forEach(c => {
+    // Build fries column with translation
+    let friesText = c.fries;
+    if (lang !== 'es') {
+      friesText = friesText.replace(/1 personal/gi, `1 ${personalTxt}`);
+      friesText = friesText.replace(/2 personales/gi, `2 ${personalTxt}`);
+      friesText = friesText.replace(/1 mediana/gi, `1 ${mediumTxt}`);
+      friesText = friesText.replace(/1 familiar/gi, `1 ${familyTxt}`);
+      friesText = friesText.replace(/1½ familiar/gi, `1½ ${familyTxt}`);
+    }
+    
+    // Build promo column based on combo type
+    let promoText = '';
+    switch (c.promo) {
+      case 'nuggets_or_chicha':
+        promoText = chooseTxt;
+        break;
+      case 'nuggets_6_chicha_half':
+        promoText = `${includesTxt}: 6 ${nuggetsTxt} o ½ lt. ${chichaTxt}`;
+        break;
+      case 'nuggets_8_chicha_full':
+        promoText = `${includesTxt}: 8 ${nuggetsTxt} o 1 lt. ${chichaTxt}`;
+        break;
+      case 'nuggets_10_chicha_full':
+        promoText = `${includesTxt}: 10 ${nuggetsTxt} o 1 lt. ${chichaTxt}`;
+        break;
+      default:
+        promoText = '';
+    }
+    
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td class="promo-name">${c.name}</td><td>${c.pieces}</td><td>${c.fries}</td><td class="price-col">S/ ${c.price}</td>`;
+    tr.innerHTML = `<td class="promo-name">${c.name}</td><td>${c.pieces}</td><td>${friesText}</td><td>${promoText}</td><td class="price-col">S/ ${c.price}</td>`;
     frag.appendChild(tr);
   });
+  
   tbody.appendChild(frag);
   table.appendChild(tbody);
   return table;
@@ -1060,11 +1144,43 @@ function translateMenuDescriptions(lang) {
     const data = menuData[panelId];
     if (!data) return;
 
-    // Actualizar títulos de sección
-    const sectionTitle = panel.querySelector('.menu-section-title');
-    if (sectionTitle) {
-      const translatedTitle = lang === 'es' ? data.title : (lang === 'en' ? (data.title_en || data.title) : (data.title_pt || data.title));
-      sectionTitle.textContent = translatedTitle;
+    // Actualizar títulos de sección (puede haber múltiples)
+    const sectionTitles = panel.querySelectorAll('.menu-section-title');
+    if (sectionTitles.length > 0) {
+      sectionTitles.forEach((title, idx) => {
+        let translatedTitle = '';
+        
+        // Handle Fondos special case with multiple subtitles
+        if (panelId === 'fondos' && data.subtitle1 && data.subtitle2) {
+          if (idx === 0) {
+            // First subtitle (Platos de Fondo / Main Courses)
+            translatedTitle = lang === 'es' ? data.subtitle1 : (lang === 'en' ? (data.subtitle1_en || data.subtitle1) : (data.subtitle1_pt || data.subtitle1));
+          } else if (idx === 1) {
+            // Second subtitle (Saltados & Especiales / Stir-fried & Specials)
+            translatedTitle = lang === 'es' ? data.subtitle2 : (lang === 'en' ? (data.subtitle2_en || data.subtitle2) : (data.subtitle2_pt || data.subtitle2));
+          }
+        } else {
+          // Default behavior for other sections
+          if (lang === 'es') {
+            translatedTitle = data.title;
+          } else if (lang === 'en') {
+            translatedTitle = data.title_en || data.title;
+          } else {
+            translatedTitle = data.title_pt || data.title;
+          }
+        }
+        
+        // Add subtitle for alitas/broaster
+        if (panelId === 'alitas') {
+          const subtitle = lang === 'es' ? ' · Incluye papas fritas personales' : (lang === 'en' ? ' · Includes personal French fries' : ' · Inclui batatas fritas pessoais');
+          translatedTitle = translatedTitle + subtitle;
+        } else if (panelId === 'burgers' && data.subtitle) {
+          const subtitle = lang === 'es' ? data.subtitle : (lang === 'en' ? (data.subtitle_en || data.subtitle) : (data.subtitle_pt || data.subtitle));
+          translatedTitle = translatedTitle + ' ' + subtitle;
+        }
+        
+        title.textContent = translatedTitle;
+      });
     }
 
     // Actualizar notas de sección (desayunos)
@@ -1100,13 +1216,6 @@ function translateMenuDescriptions(lang) {
           if (item) allDataItems.push(item);
         });
       });
-    } else if (data.vegetarian) {
-      data.columns.forEach(col => {
-        col.forEach(item => {
-          if (item) allDataItems.push(item);
-        });
-      });
-      allDataItems = allDataItems.concat(data.vegetarian);
     }
 
     // Actualizar cada elemento del DOM
@@ -1141,6 +1250,89 @@ function translateMenuDescriptions(lang) {
     if (broasterTagline && data.description) {
       const translatedDesc = lang === 'es' ? data.description : (lang === 'en' ? data.description_en : data.description_pt);
       broasterTagline.textContent = translatedDesc;
+    }
+    
+    // Actualizar tabla broaster
+    const broasterTable = panel.querySelector('.broaster-table');
+    if (broasterTable && panelId === 'alitas' && menuData.broaster) {
+      const broasterData = menuData.broaster;
+      const cols = broasterData.columns || {};
+      const promoOpts = broasterData.promoOptions || {};
+      
+      // Get translated column headers
+      const comboHeader = lang === 'es' ? cols.combo : (lang === 'en' ? cols.combo_en : cols.combo_pt);
+      const piecesHeader = lang === 'es' ? cols.pieces : (lang === 'en' ? cols.pieces_en : cols.pieces_pt);
+      const friesHeader = lang === 'es' ? cols.fries : (lang === 'en' ? cols.fries_en : cols.fries_pt);
+      const promoHeader = lang === 'es' ? cols.promo : (lang === 'en' ? cols.promo_en : cols.promo_pt);
+      const priceHeader = lang === 'es' ? cols.price : (lang === 'en' ? cols.price_en : cols.price_pt);
+      
+      // Get promo translations
+      const chooseTxt = lang === 'es' ? promoOpts.choose : (lang === 'en' ? promoOpts.choose_en : promoOpts.choose_pt);
+      const includesTxt = lang === 'es' ? promoOpts.includes : (lang === 'en' ? promoOpts.includes_en : promoOpts.includes_pt);
+      const nuggetsTxt = promoOpts.nuggets;
+      const chichaTxt = promoOpts.chicha;
+      
+      // Get fry portion translations
+      const personalTxt = lang === 'es' ? promoOpts.personal : (lang === 'en' ? promoOpts.personal_en : promoOpts.personal_pt);
+      const mediumTxt = lang === 'es' ? promoOpts.medium : (lang === 'en' ? promoOpts.medium_en : promoOpts.medium_pt);
+      const familyTxt = lang === 'es' ? promoOpts.family : (lang === 'en' ? promoOpts.family_en : promoOpts.family_pt);
+      
+      // Update table headers
+      const thead = broasterTable.querySelector('thead tr');
+      if (thead) {
+        const ths = thead.querySelectorAll('th');
+        if (ths[0]) ths[0].textContent = comboHeader;
+        if (ths[1]) ths[1].textContent = piecesHeader;
+        if (ths[2]) ths[2].textContent = friesHeader;
+        if (ths[3]) ths[3].textContent = promoHeader;
+        if (ths[4]) ths[4].textContent = priceHeader;
+      }
+      
+      // Update table rows
+      const tbody = broasterTable.querySelector('tbody');
+      if (tbody) {
+        const rows = tbody.querySelectorAll('tr');
+        rows.forEach((tr, idx) => {
+          if (idx < broasterData.combos.length) {
+            const c = broasterData.combos[idx];
+            const tds = tr.querySelectorAll('td');
+            
+            // Update fries column with translation
+            let friesText = c.fries;
+            if (lang !== 'es') {
+              friesText = friesText.replace(/1 personal/gi, `1 ${personalTxt}`);
+              friesText = friesText.replace(/2 personales/gi, `2 ${personalTxt}`);
+              friesText = friesText.replace(/1 mediana/gi, `1 ${mediumTxt}`);
+              friesText = friesText.replace(/1 familiar/gi, `1 ${familyTxt}`);
+              friesText = friesText.replace(/1½ familiar/gi, `1½ ${familyTxt}`);
+            }
+            
+            // Build promo column based on combo type
+            let promoText = '';
+            switch (c.promo) {
+              case 'nuggets_or_chicha':
+                promoText = chooseTxt;
+                break;
+              case 'nuggets_6_chicha_half':
+                promoText = `${includesTxt}: 6 ${nuggetsTxt} o ½ lt. ${chichaTxt}`;
+                break;
+              case 'nuggets_8_chicha_full':
+                promoText = `${includesTxt}: 8 ${nuggetsTxt} o 1 lt. ${chichaTxt}`;
+                break;
+              case 'nuggets_10_chicha_full':
+                promoText = `${includesTxt}: 10 ${nuggetsTxt} o 1 lt. ${chichaTxt}`;
+                break;
+              default:
+                promoText = '';
+            }
+            
+            if (tds[0]) tds[0].textContent = c.name;
+            if (tds[1]) tds[1].textContent = c.pieces;
+            if (tds[2]) tds[2].textContent = friesText;
+            if (tds[3]) tds[3].textContent = promoText;
+          }
+        });
+      }
     }
   });
 }

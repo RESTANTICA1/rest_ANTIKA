@@ -4,7 +4,7 @@
     "title_en": "Breakfasts",
     "title_pt": "Cafés da manhã",
     "items": [
-      { "name": "Desayuno Antika - OPCIÓN A", "description": "Biste encebollado acompañado de arroz y papa sancochada. Incluye café o jugo.", "description_en": "Onion steak with rice and boiled potatoes. Includes coffee or juice.", "description_pt": "Bife acebolado com arroz e batata cozida. Inclui café ou suco.", "price": 11.00 },
+      { "name": "Desayuno Antika - OPCIÓN A", "description": "Bisté encebollado acompañado de arroz y papa sancochada. Incluye café o jugo.", "description_en": "Onion steak with rice and boiled potatoes. Includes coffee or juice.", "description_pt": "Bife acebolado com arroz e batata cozida. Inclui café ou suco.", "price": 11.00 },
       { "name": "Desayuno Antika - OPCIÓN B", "description": "Saltado casero de pollo acompañado de arroz y papas fritas. Incluye café o jugo.", "description_en": "Homemade chicken stir-fry with rice and French fries. Includes coffee or juice.", "description_pt": "Saltado caseiro de frango com arroz e batatas fritas. Inclui café ou suco.", "price": 11.00 },
       { "name": "Desayuno Americano", "description": "Pan artesanal con mantequilla y mermelada, huevos al gusto (fritos o revueltos) con tocino crocante o jamón, acompañado de un refrescante jugo natural de fruta de estación y una taza de café pasado.", "description_en": "Artisan bread with butter and jam, eggs cooked to your liking (fried or scrambled) with crispy bacon or ham, accompanied by a refreshing fresh seasonal fruit juice and a cup of brewed coffee.", "description_pt": "Pão artesanal com manteiga e geleia, ovos ao seu gosto (fritos ou mexidos) com bacon crocante ou presunto, acompanhado de um refrescante suco natural de fruta da estação e uma xícara de café passado.", "price": 13.00 },
       { "name": "Tamal Peruano", "description": "Exquisitos tamales Arequipeños y Limeños, hechos de maíz, rellenos con jugosa carne de cerdo acompañado de pan fresco y salsa criolla. incluye café y pan del día", "description_en": "Exquisite Arequipeño and Limeño corn tamales, made from corn, filled with juicy pork meat accompanied by fresh bread and criolla sauce. Includes coffee and bread of the day.", "description_pt": "Exquisitos tamales arequipenhos e limeños, feitos de milho, rechados com carne de porco suculenta acompanhados de pão fresco e salsa crioula. Inclui café e pão do dia.", "price": 13.00 }
@@ -46,6 +46,7 @@
         { "name": "Ensalada Mango al Curry", "description": "Lechugas frescas, tocino crujiente, jamón, mango en cubos con una vinagreta de mango y curry.", "description_en": "Fresh lettuce, crispy bacon, ham, diced mango with a mango and curry vinaigrette.", "description_pt": "Alface fresca, bacon crocante, presunto, manga em cubos com um vinagrete de manga e curry.", "price": 16.00 },
         { "name": "Ensalada Campesina", "description": "Una combinación de atún, quinua, aceitunas negras, tomate, lechuga y papas doradas.", "description_en": "A combination of tuna, quinoa, black olives, tomato, lettuce, and golden potatoes.", "description_pt": "Uma combinação de atum, quinoa, azeitonas pretas, tomate, alface e batatas douradas.", "price": 18.00 }
       ],
+      
       [
         { "name": "Sopa Dieta de Pollo", "description": "Caldo de pollo con tiernos trozos de pollo y vegetales.", "description_en": "Chicken broth with tender pieces of chicken and vegetables.", "description_pt": "Caldo de frango com pedaços tenros de frango e vegetais.", "price": 16.00 },
         { "name": "Sopa a la Minuta", "description": "Trozos de carne tierna, fideos cabello de ángel, huevo y leche, al estilo criollo.", "description_en": "Tender beef pieces, angel hair pasta, egg, and milk, Creole style.", "description_pt": "Pedaços de carne macia, macarrão cabelo de anjo, ovo e leite, ao estilo crioulo.", "price": 18.00 },
@@ -57,6 +58,9 @@
     "title": "Medio Día Criollo",
     "title_en": "Traditional Creole Lunch",
     "title_pt": "Almoço Tradicional Criollo",
+    "note": "★ Especiales de Domingo -> Chicharrón de cerdo S/ 23 · Caja China S/ 28 · Triple Arequipeño S/ 35 · Adobo Arequipeño de Antaño S/ 22",
+    "note_en": "★ Sunday Specials -> Chicharrón S/ 23 · Caja China S/ 28 · Triple Arequipeño S/ 35 · Adobo Arequipeño S/ 22",
+    "note_pt": "★ Especiais de Domingo -> Chicharrón S/ 23 · Caja China S/ 28 · Triple Arequipeño S/ 35 · Adobo Arequipeño S/ 22",
     "columns": [
       [
         { "name": "Arroz con Pollo", "description": "Arroz realizado con cilantro y pollo dorado, acompañado de salsa criolla y papa a la huancaina.", "description_en": "Rice made with cilantro and golden chicken, accompanied by criolla sauce and huancaína-style potatoes.", "description_pt": "Arroz feito com coentro e frango dourado, acompanhado de salsa crioula e batata à huancaína.", "price": 22.00 },
@@ -70,15 +74,19 @@
         { "name": "Malaya Dorada", "description": "Res cocida, con un exterior crujiente y un interior jugoso. Se acompaña de choclo tierno, una salsa fresca y papas doradas.", "description_en": "Cooked beef, with a crispy exterior and juicy interior. Accompanied by tender corn, a fresh sauce, and golden potatoes.", "description_pt": "Carne cozida, com um exterior crocante e um interior suculento. Acompanhado de milho tenro, um molho fresco e batatas douradas.", "price": 22.00 },
         { "name": "Apanado al Jugo", "description": "Bistec rebozado y frito, luego cocido en un jugo aromático de vegetales y especias. Se sirve con arroz blanco y papas.", "description_en": "Breaded and fried beef steak, then cooked in an aromatic vegetable and spice juice. Served with white rice and potatoes.", "description_pt": "Bife empanado e frito, depois cozido em um sumo aromático de vegetais e especiarias. Servido com arroz branco e batatas.", "price": 22.00 }
       ]
-    ],
-    "note": " Incluye arroz y guarniciones.",
-    "note_en": " Includes rice and sides.",
-    "note_pt": " Inclui arroz e acompanhamentos."
+    ]
+    
   },
   "fondos": {
     "title": "Fondos",
     "title_en": "Main Dishes",
     "title_pt": "Pratos Principais",
+    "subtitle1": "Platos de Fondo",
+    "subtitle1_en": "Main Courses",
+    "subtitle1_pt": "Pratos Principais",
+    "subtitle2": "Saltados & Especiales",
+    "subtitle2_en": "Stir-fried & Specials",
+    "subtitle2_pt": "Saltados & Especiais",
     "columns": [
       [
         { "name": "Chaufa de Pollo", "description": "Arroz frito salteado al wok con jugosos trozos de pollo, huevo, cebollita china, con un toque de ajonjolí para resaltar su auténtico sabor.", "description_en": "Fried rice stir-fried in a wok with juicy pieces of chicken, egg, green onion, with a touch of sesame to enhance its authentic flavor.", "description_pt": "Arroz frito saltoado no wok com suculentos pedaços de frango, ovo, cebolinha, com um toque de gergelim para realçar seu sabor autêntico.", "price": 18.00 },
@@ -98,12 +106,6 @@
         { "name": "Lomo Saltado al Pesto / Huancaina", "description": "Lomo saltado servido con fettuccine en una salsa cremosa de tu elección.", "description_en": "Lomo saltado served with fettuccine in a creamy sauce of your choice.", "description_pt": "Lomo saltado servido com fettuccine em um cremoso molho de sua escolha.", "price": 32.00 },
         { "name": "Pulpo Anticuchero", "description": "Pulpo marinado en salsa anticuchera, ahumado y suave. Acompañado de papas doradas, ensalada de choclo americano y piña.", "description_en": "Octopus marinated in anticucho sauce, smoked and tender. Accompanied by golden potatoes, American corn salad, and pineapple.", "description_pt": "Polvo marinado em molho anticucho, defumado e macio. Acompanhado de batatas douradas, salada de milho americano e abacaxi.", "price": 42.00 }
       ]
-    ],
-    "vegetarian": [
-      { "name": "Chaufa de Champiñones", "description": "Delicioso chaufa, salteado al wok con champiñones frescos, huevo y cebollita china.", "description_en": "Delicious chaufa, stir-fried in a wok with fresh mushrooms, egg, and green onion.", "description_pt": "Delicioso chaufa, saltoado no wok com cogumelos frescos, ovo e cebolinha.", "price": 18.00 },
-      { "name": "Kapchi de Habas", "description": "Guiso andino elaborado con habas frescas, papa, queso y un toque de huacatay.", "description_en": "Andean stew made with fresh broad beans, potato, cheese, and a touch of huacatay.", "description_pt": "Guizado andino feito com favas frescas, batata, queijo e um toque de huacatay.", "price": 18.00 },
-      { "name": "Tallarín Saltado de Verduras", "description": "Fideos salteados con una mezcla fresca de verduras y champiñones.", "description_en": "Noodles stir-fried with a fresh mixture of vegetables and mushrooms.", "description_pt": "Macarrão saltoado com uma mistura fresca de vegetais e cogumelos.", "price": 25.00 },
-      { "name": "Saltado de Champiñones", "description": "Champiñones frescos salteados al wok con cebolla, tomate y ají amarillo. Acompañado de papas doradas y arroz blanco.", "description_en": "Fresh mushrooms stir-fried in a wok with onion, tomato, and yellow chili. Accompanied by golden potatoes and white rice.", "description_pt": "Cogumelos frescos saltoados no wok com cebola, tomate e pimenta amarela. Acompanhado de batatas douradas e arroz branco.", "price": 27.00 }
     ]
   },
   "domingo": {
@@ -196,15 +198,66 @@
     "title": "Broaster Mr. Bross",
     "title_en": "Broaster Mr. Bross",
     "title_pt": "Broaster Mr. Bross",
-    "description": "¡Crujiente por fuera, jugoso por dentro y con un sabor irresistible. Nuestro Pollo Broaster se prepara con una receta especial. Cada pieza está llena de sabor y cocinada con la calidad que nos distingue. Pide el combo ideal para ti:",
-    "description_en": "Crispy on the outside, juicy on the inside, and with an irresistible flavor. Our Broaster Chicken is prepared with a special recipe. Each piece is full of flavor and cooked with the quality that distinguishes us. Order the ideal combo for you:",
-    "description_pt": "Crocante por fora, suculento por dentro e com um sabor irresistível. Nosso Frango Broaster é preparado com uma receita especial. Cada peça está cheia de sabor e cozida com a qualidade que nos distingue. Peça o combo ideal para você:",
+    "description": "¡Crujiente por fuera, jugoso por dentro y con un sabor irresistible! Pide el combo ideal para ti:",
+    "description_en": "Crispy on the outside, juicy on the inside, and with an irresistible flavor! Order the ideal combo for you:",
+    "description_pt": "Crocante por fora, suculento por dentro e com um sabor irresistível! Peça o combo ideal para você:",
+    "columns": {
+      "combo": "Combo",
+      "combo_en": "Combo",
+      "combo_pt": "Combo",
+      "pieces": "Piezas de pollo",
+      "pieces_en": "Chicken pieces",
+      "pieces_pt": "Pedaços de frango",
+      "fries": "Papas fritas",
+      "fries_en": "French fries",
+      "fries_pt": "Batatas fritas",
+      "promo": "Promoción",
+      "promo_en": "Promotion",
+      "promo_pt": "Promoção",
+      "price": "Precio",
+      "price_en": "Price",
+      "price_pt": "Preço"
+    },
+    "promoOptions": {
+      "choose": "Elegir nuggets o chicha",
+      "choose_en": "Choose nuggets or chicha",
+      "choose_pt": "Escolher nuggets ou chicha",
+      "includes": "Incluye",
+      "includes_en": "Includes",
+      "includes_pt": "Inclui",
+      "nuggets": "nuggets",
+      "nuggets_en": "nuggets",
+      "nuggets_pt": "nuggets",
+      "chicha": "chicha",
+      "chicha_en": "chicha",
+      "chicha_pt": "chicha",
+      "personal": "porción personal",
+      "personal_en": "personal portion",
+      "personal_pt": "porção pessoal",
+      "medium": "mediana",
+      "medium_en": "medium",
+      "medium_pt": "média",
+      "family": "familiar",
+      "family_en": "family size",
+      "family_pt": "família"
+    },
     "combos": [
-      { "name": "Solo para Mí", "pieces": "2 piezas", "fries": "1 Porción personal", "nuggets": "No incluye", "drink": "No incluye", "price": 17.00 },
-      { "name": "Dúo Conquistador", "pieces": "4 piezas", "fries": "2 Porción personal", "nuggets": "No incluye", "drink": "No incluye", "price": 32.00 },
-      { "name": "Trío Perfecto", "pieces": "6 piezas", "fries": "1 Porción Mediana", "nuggets": "6 nuggets", "drink": "1/2 Lt.", "price": 50.00 },
-      { "name": "Familia Feliz", "pieces": "8 piezas", "fries": "1 Porción familiar", "nuggets": "8 nuggets", "drink": "1 Lt.", "price": 70.00 },
-      { "name": "Súper Batallón", "pieces": "10 piezas", "fries": "1 1/2 Porción Familiar", "nuggets": "10 nuggets", "drink": "1 Lt.", "price": 82.00 }
+      { "name": "Solo para Mí", "pieces": "2", "fries": "1 personal", "promo": "nuggets_or_chicha", "price": 17.00 },
+      { "name": "Dúo Conquistador", "pieces": "4", "fries": "2 personales", "promo": "nuggets_or_chicha", "price": 32.00 },
+      { "name": "Trío Perfecto", "pieces": "6", "fries": "1 mediana", "promo": "nuggets_6_chicha_half", "price": 50.00 },
+      { "name": "Familia Feliz", "pieces": "8", "fries": "1 familiar", "promo": "nuggets_8_chicha_full", "price": 70.00 },
+      { "name": "Súper Batallón", "pieces": "10", "fries": "1½ familiar", "promo": "nuggets_10_chicha_full", "price": 82.00 }
+    ]
+  },
+  "vegetariana": {
+    "title": "Vegetariana",
+    "title_en": "Vegetarian",
+    "title_pt": "Vegetariano",
+    "items": [
+      { "name": "Chaufa de Champiñones", "description": "Delicioso chaufa, salteado al wok con champiñones frescos, huevo y cebollita china.", "description_en": "Delicious chaufa, stir-fried in a wok with fresh mushrooms, egg, and green onion.", "description_pt": "Delicioso chaufa, saltoado no wok com cogumelos frescos, ovo e cebolinha.", "price": 18.00 },
+      { "name": "Kapchi de Habas", "description": "Guiso andino elaborado con habas frescas, papa, queso y un toque de huacatay.", "description_en": "Andean stew made with fresh broad beans, potato, cheese, and a touch of huacatay.", "description_pt": "Guizado andino feito com favas frescas, batata, queijo e um toque de huacatay.", "price": 18.00 },
+      { "name": "Tallarín Saltado de Verduras", "description": "Fideos salteados con una mezcla fresca de verduras y champiñones.", "description_en": "Noodles stir-fried with a fresh mixture of vegetables and mushrooms.", "description_pt": "Macarrão saltoado com uma mistura fresca de vegetais e cogumelos.", "price": 25.00 },
+      { "name": "Saltado de Champiñones", "description": "Champiñones frescos salteados al wok con cebolla, tomate y ají amarillo. Acompañado de papas doradas y arroz blanco.", "description_en": "Fresh mushrooms stir-fried in a wok with onion, tomato, and yellow chili. Accompanied by golden potatoes and white rice.", "description_pt": "Cogumelos frescos saltoados no wok com cebola, tomate e pimenta amarela. Acompanhado de batatas douradas e arroz branco.", "price": 27.00 }
     ]
   },
   "adicionales": {

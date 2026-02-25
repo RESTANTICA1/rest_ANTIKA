@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antika Restaurant – Sicuani, Cusco</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/css/index.css">
+    <link rel="stylesheet" href="/frontend/css/spotify.css">
+    <link rel="stylesheet" href="/frontend/css/lang.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header-outer">
+  <a href="#hero" class="logo-area">
+    <div class="logo-icon">ANT</div>
+    <div>
+      <div class="logo-text">ANTIKA</div>
+      <div class="logo-sub" data-i18n="restaurant_name"></div>
+    </div>
+  </a>
+  <nav id="main-nav">
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul>
+      <li><a href="#nosotros" onclick="closeMenu()" data-i18n="link1"></a></li>
+      <li><a href="#opiniones" onclick="closeMenu()" data-i18n="link4"></a></li>
+      <li><a href="#menu" onclick="closeMenu()" data-i18n="link2"></a></li>
+      <li><a href="#galeria" onclick="closeMenu()" data-i18n="link3"></a></li>
+      <li class="cta"><a href="https://wa.me/51999999999?text=Hola,%20quisiera%20hacer%20una%20reserva" target="_blank" onclick="closeMenu()" data-i18n="Reserva">Reservar</a></li>
+      <!--Lenguaje-->
+      <div class="language-selector">
+        <select id="language-select" class="form-select">
+          <option value="es" onclick="closeMenu()">🇪🇸 Español</option>
+          <option value="en" onclick="closeMenu()">🇺🇸 English</option>
+          <option value="pt" onclick="closeMenu()">🇧🇷 Português</option>
+        </select>
+      </div>
+    </ul>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Sicuani · Cusco · Perú</span>
+    <h1 class="hero-title">
+      ANTIKA
+      <span data-i18n="spanRes"></span>
+    </h1>
+    <p class="hero-desc" data-i18n="p1"></p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn-primary" data-i18n="menu"></a>
+      <a href="#nosotros" class="btn-outline" data-i18n="conocenos"></a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <div class="line"></div>
+    <span data-i18n="pie1">Explorar</span>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="nosotros-grid">
+    <div class="nosotros-img"></div>
+    <div class="nosotros-content">
+      <span class="section-label" data-i18n="span2"></span>
+      <h2 class="section-title" data-i18n="tradicion"></h2>
+      <p class="section-desc" data-i18n="parrafo1"></p>
+      <p class="section-desc" style="margin-top:16px;" data-i18n="parrafo2"></p>
+    </div>
+  </div>
+  <div class="info-grid">
+    <div class="info-block teal">
+      <span class="section-label" data-i18n="span3"></span>
+      <h3 class="section-title" data-i18n="ubicacion"></h3>
+      <p data-i18n="parrafo3"></p>
+      <p style="margin-top:20px;"><strong>Sicuani, Cusco – Perú</strong></p>
+      <p style="margin-top:8px;" data-i18n="parrafo4"></p>
+      <a href="#mapa" class="map-link" data-i18n="mapa"></a>
+    </div>
+    <div class="info-block light">
+      <span class="section-label" style="color:var(--teal);" data-i18n="contacto"></span>
+      <h3 class="section-title" style="color:var(--teal-dark);" data-i18n="info"></h3>
+      <p style="color:var(--text);" data-i18n="parrafo5"></p>
+      <p style="color:var(--text);margin-top:16px;" data-i18n="parrafo6"></p>
+      <a href="https://wa.me/51999999999" class="map-link" style="margin-top:20px;" data-i18n="whatsapp"></a>
+    </div>
+  </div>
+</section>
+
+<!-- OPINIONES -->
+<section id="opiniones">
+  <div class="opinions-header">
+    <span class="section-label" data-i18n="span4"></span>
+    <h2 class="section-title" data-i18n="opiniones"></h2>
+    <p class="section-desc" style="margin:0 auto;max-width:560px;color:var(--cream-dark);opacity:0.8;" data-i18n="parrafo8"></p>
+    <a href="https://maps.app.goo.gl/gJKPpyPZ9J4UHtSH9" target="_blank" class="google-reviews-link">
+      <img src="../assets/icons/google.png" alt="Google" class="google-icon">
+      <span data-i18n="ver_en_google">Ver todas las reseñas en Google</span>
+    </a>
+  </div>
+  <div class="reviews-carousel-container">
+    <button class="carousel-nav-btn carousel-nav-prev-reviews" aria-label="Opinion anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    <div class="reviews-carousel-viewport">
+      <div class="reviews-carousel-track" id="reviews-container">
+        <!-- Reviews will be loaded dynamically -->
+      </div>
+    </div>
+    <button class="carousel-nav-btn carousel-nav-next-reviews" aria-label="Siguiente opinion">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="menu-header">
+    <span class="section-label" style="color:var(--teal);" data-i18n="titulo"></span>
+    <h2 class="section-title" style="color:var(--teal-dark);" data-i18n="carta"></h2>
+    <p class="section-desc" data-i18n="pcarta"></p>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="showTab('desayunos', this)" data-menu="desayunos" data-i18n="comida1"></button>
+    <button class="tab-btn" onclick="showTab('sandwiches', this)" data-menu="sandwiches" data-i18n="comida2"></button>
+    <button class="tab-btn" onclick="showTab('ensaladas', this)" data-menu="ensaladas" data-i18n="comida3"></button>
+    <button class="tab-btn" onclick="showTab('mediodia', this)" data-menu="mediodia" data-i18n="comida4"></button>
+    <button class="tab-btn" onclick="showTab('fondos', this)" data-menu="fondos" data-i18n="comida5"></button>
+    <button class="tab-btn" onclick="showTab('vegetariana', this)" data-menu="vegetariana" data-i18n="vegetariana"></button>
+    <button class="tab-btn" onclick="showTab('domingo', this)" data-menu="domingo" data-i18n="comida9"></button>
+    <button class="tab-btn" onclick="showTab('burgers', this)" data-menu="burgers" data-i18n="comida6"></button>
+    <button class="tab-btn" onclick="showTab('alitas', this)" data-menu="alitas" data-i18n="comida7"></button>
+    <button class="tab-btn" onclick="showTab('adicionales', this)" data-menu="adicionales" data-i18n="comida8"></button>
+  </div>
+
+  <!-- DESAYUNOS -->
+  <div id="tab-desayunos" class="tab-panel active">
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- SÁNDWICHES -->
+  <div id="tab-sandwiches" class="tab-panel">
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- ENSALADAS Y SOPAS -->
+  <div id="tab-ensaladas" class="tab-panel">
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- MEDIO DÍA CRIOLLO -->
+  <div id="tab-mediodia" class="tab-panel">
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- FONDOS -->
+  <div id="tab-fondos" class="tab-panel">
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- VEGETARIANA -->
+  <div id="tab-vegetariana" class="tab-panel">
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- ESPECIALES DE DOMINGO -->
+  <div id="tab-domingo" class="tab-panel">
+    <div class="menu-columns">
+      <div>
+        <!-- Los items se cargan dinámicamente desde menu.json -->
+      </div>
+    </div>
+  </div>
+
+  <!-- BURGERS -->
+  <div id="tab-burgers" class="tab-panel">
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- ALITAS Y BROASTER -->
+  <div id="tab-alitas" class="tab-panel">
+    <!-- Content rendered from menu.json -->
+  </div>
+
+  <!-- ADICIONALES -->
+  <div id="tab-adicionales" class="tab-panel">
+    <!-- Content rendered from menu.json -->
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section id="galeria">
+  <span class="section-label" data-i18n="casa"></span>
+  <h2 class="section-title" data-i18n="galeria"></h2>
+  <p class="section-desc" data-i18n="parrafo7"></p>
+  
+  <!-- Carrusel de imágenes múltiples -->
+  <div class="multi-carousel-container" style="margin-top:40px;">
+    <button class="carousel-nav-btn carousel-nav-prev" aria-label="Imagen anterior">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+    
+    <div class="multi-carousel-viewport">
+      <div class="multi-carousel-track">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80" alt="Lomo Saltado" loading="lazy">
+          <div class="gallery-label" data-i18n="plato1"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&q=80" alt="Ensaladas" loading="lazy">
+          <div class="gallery-label" data-i18n="plato2"></div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=400&q=80" alt="Truchas" loading="lazy">
+          <div class="gallery-label" data-i18n="plato3">Trucha</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400&q=80" alt="Desayunos" loading="lazy">
+          <div class="gallery-label" data-i18n="plato4">Desayunos</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&q=80" alt="Carnes" loading="lazy">
+          <div class="gallery-label">Carnes</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&q=80" alt="Postres" loading="lazy">
+          <div class="gallery-label">Postres</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=400&q=80" alt="Pasta" loading="lazy">
+          <div class="gallery-label">Pasta</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&q=80" alt="Platos" loading="lazy">
+          <div class="gallery-label">Especiales</div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-nav-btn carousel-nav-next" aria-label="Siguiente imagen">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<!-- MAPA -->
+<div id="mapa">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1933.3258752000193!2d-71.22761264356757!3d-14.273520447118614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x91692ace156aaaab%3A0xf9ae430e57d36a58!2sPlaza%20Mayor%20de%20Sicuani%2C%20PQGF%2BHJM%2C%20Plaza%20de%20Armas%2C%20JR%20GARCILASO%20DE%20LA%20VEGA%2C%20Sicuani%2008254!3m2!1d-14.2730053!2d-71.2266312!4m5!1s0x91692b3cabf28c27%3A0xbd007cb5cfe738c2!2sRESTAURANTE%20ANTIKA%20SICUANI%2C%20Parque%20Periodista%2C%20Jr.%20Comercio%20250%2C%20Sicuani%2008454!3m2!1d-14.2738967!2d-71.2256213!5e0!3m2!1ses-419!2spe!4v1771603583472!5m2!1ses-419!2spe" 
+  width="600" 
+  height="650" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</div>
+
+<!-- RESERVA -->
+<section id="reserva">
+  <div class="reserva-text">
+    <span class="section-label" data-i18n="span5"></span>
+    <h2 class="section-title" data-i18n="reserva"></h2>
+    <p class="section-desc" data-i18n="parrafo9"></p>
+  </div>
+  <div class="reserva-actions">
+    <a href="https://wa.me/51999999999?text=Hola,%20quisiera%20hacer%20una%20reserva%20en%20Antika%20Restaurant" target="_blank" class="btn-primary" data-i18n="whatsapp2"></a>
+    <a href="tel:+51999999999" class="btn-outline" data-i18n="celular"></a>
+  </div>
+</section>
+<a href="https://wa.me/51999999999" class="whatsapp-btn" target="_blank" >
+    <img src="../assets/icons/wasap2.png" alt="WhatsApp" class="whatsapp-icon">
+</a>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <!-- Columna 1 -->
+  <div class="footer-col primero">
+    <div class="spotify-playlist">
+      <iframe 
+        src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M"
+        allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- Columna 2 -->
+  <div class="footer-col centro">
+    <p class="copy">© 2025 Antika Restaurant · Sicuani, Cusco - Perú</p>
+  </div>
+
+  <!-- Columna 3 -->
+  <div class="footer-col derecha">
+    <div class="footer-logo">ANTIKA</div>
+    <p data-i18n="parrafo10"></p>
+  </div>
+
+</footer>
+
+<script src="/frontend/js/index.js"></script>
+<script src="/frontend/js/lang.js"></script>
+<!-- Animaciones de scroll — no invasivo, cargado al final -->
+
+</body>
+</html>
