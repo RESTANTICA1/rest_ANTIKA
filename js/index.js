@@ -698,8 +698,23 @@ async function loadGoogleReviews() {
   }
 
   try {
-    const response  = await fetch('../assets/comentarios/data/comentarios.json');
-    const comentarios = await response.json();
+    const response  = await fetch('../assets/comentarios/data/reviews_data.json');
+    const reviewsData = await response.json();
+
+    // Mapear reviews_data.json al formato esperado por el código
+    const comentarios = reviewsData.map(reseña => ({
+      id: Math.random(),
+      nombre: reseña.user || '',
+      comentario: reseña.review_text || '',
+      calificacion: reseña.stars || 0,
+      tipoComida: '',
+      precio: '',
+      fecha: reseña.date || '',
+      hora: '—',
+      link: reseña.link || 'https://maps.app.goo.gl/iUyWFZhFPJ3UgouN6',
+      fotoCliente: reseña.profile_icon || '',
+      fotoComida: reseña.images && reseña.images.length > 0 ? reseña.images[0] : ''
+    }));
 
     const frag = new DocumentFragment();
 
