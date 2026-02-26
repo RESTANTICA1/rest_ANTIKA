@@ -15,7 +15,7 @@
   --wood-teal-light:  #2a7a76;
   --wood-teal-bright: #3aa09a;
 
-  /* Dorado de las vetas */
+  /* Dorado de las vetahero-cts */
   --gold:             #c8a84c;
   --gold-light:       #e8c97a;
   --gold-pale:        #f5e6b8;
@@ -143,6 +143,7 @@ body {
   align-items: center;
   gap: 14px;
   text-decoration: none;
+  flex-shrink: 0;
 }
 .logo-icon {
   width: 52px;
@@ -226,15 +227,18 @@ nav ul li.cta a:hover {
   box-shadow: 0 8px 24px rgba(160,32,48,0.5);
 }
 
-/* ===== HAMBURGER ===== */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
   background: none;
   border: none;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
 .hamburger span {
   display: block; width: 26px; height: 2px;
@@ -309,6 +313,8 @@ nav ul li.cta a:hover {
   z-index: 1;
   text-align: center;
   padding: 0 20px;
+  width: 100%;
+  max-width: 100%;
 }
 .hero-badge {
   display: inline-block;
@@ -360,8 +366,15 @@ nav ul li.cta a:hover {
   display: flex;
   gap: 16px;
   justify-content: center;
+  align-content: center;
   flex-wrap: wrap;
   animation: fadeInUp 1s ease 0.6s both;
+}
+
+.hero-ctas .btn-primary,
+.hero-ctas .btn-outline {
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-primary {
@@ -377,6 +390,10 @@ nav ul li.cta a:hover {
   transition: all 0.3s ease;
   box-shadow: 0 4px 22px rgba(10,26,24,0.5), inset 0 1px 0 rgba(200,168,76,0.15);
   border: 1px solid rgba(200,168,76,0.45);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--wood-teal-light), var(--wood-teal-mid));
@@ -398,6 +415,10 @@ nav ul li.cta a:hover {
   transition: all 0.3s ease;
   background: rgba(10,26,24,0.35);
   backdrop-filter: blur(6px);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn-outline:hover {
   border-color: var(--gold);
@@ -432,6 +453,8 @@ nav ul li.cta a:hover {
   0%,100% { opacity: 1; transform: scaleY(1); }
   50%      { opacity: 0.25; transform: scaleY(0.4); }
 }
+
+
 
 /* =========================================================
    SECTION BASE
@@ -581,6 +604,8 @@ section { position: relative; }
   border-bottom: 1px solid rgba(200,168,76,0.4);
   padding-bottom: 3px;
   transition: color 0.25s, border-color 0.25s;
+  min-height: 44px;
+  padding-top: 10px;
 }
 .info-block .map-link:hover { color: var(--gold-light); border-color: var(--gold-light); }
 .info-block.light .map-link { color: var(--wood-teal-mid); border-color: rgba(42,122,118,0.4); }
@@ -677,6 +702,9 @@ section { position: relative; }
   margin-bottom: -2px;
   border-radius: 6px 6px 0 0;
   position: relative;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 44px;
 }
 .tab-btn:hover {
   opacity: 0.9;
@@ -1052,6 +1080,7 @@ section { position: relative; }
   letter-spacing: 2.5px;
   text-transform: uppercase;
   transition: all 0.3s ease;
+  min-height: 44px;
 }
 .google-reviews-link:hover {
   background: rgba(200,168,76,0.08);
@@ -1454,1302 +1483,8 @@ footer .footer-logo {
 }
 
 /* =========================================================
-   RESPONSIVE - Media Queries para todos los breakpoints
+   GLOBAL OVERFLOW FIX — base level
    ========================================================= */
-
-/* =========================================================
-   LAPTOP PEQUEÑO - max-width: 1400px
-   ========================================================= */
-@media (max-width: 1400px) {
-  /* Header - ajustar padding */
-  #header-outer {
-    padding: 10px 30px;
-  }
-  
-  /* Hero - ajustar badge y botones */
-  .hero-badge {
-    padding: 6px 22px;
-    margin-bottom: 22px;
-  }
-  .hero-title {
-    font-size: clamp(50px, 11vw, 120px);
-  }
-  
-  /* Menu columns */
-  .menu-columns {
-    gap: 50px 60px;
-  }
-  
-  /* Info blocks */
-  .info-block {
-    padding: 52px 50px;
-  }
-  
-  /* Nosotros */
-  .nosotros-content {
-    padding: 70px 50px;
-  }
-  
-  /* Gallery */
-  .multi-carousel-container {
-    padding: 0 44px;
-  }
-  .multi-carousel-track .gallery-item {
-    flex: 0 0 calc(33.333% - 7px);
-  }
-  
-  /* Reserva */
-  #reserva {
-    padding: 70px 50px;
-  }
-}
-
-/* =========================================================
-   TABLET HORIZONTAL - max-width: 1200px
-   ========================================================= */
-@media (max-width: 1200px) {
-  /* Header */
-  #header-outer {
-    padding: 10px 24px;
-  }
-  
-  nav ul {
-    gap: 22px;
-  }
-  
-  /* Hero */
-  .hero-title {
-    font-size: clamp(42px, 10vw, 100px);
-    letter-spacing: 6px;
-  }
-  .hero-title span {
-    font-size: 0.34em;
-    letter-spacing: 12px;
-  }
-  .hero-desc {
-    max-width: 460px;
-    margin: 28px auto 40px;
-  }
-  
-  /* Menu */
-  .tab-panel {
-    padding: 0 40px 35px;
-  }
-  .menu-columns {
-    gap: 40px 50px;
-  }
-  
-  /* Info blocks */
-  .info-block {
-    padding: 44px 40px;
-  }
-  
-  /* Nosotros */
-  .nosotros-content {
-    padding: 60px 44px;
-  }
-  
-  /* Reviews carousel */
-  .reviews-carousel-viewport {
-    margin: 0 40px;
-  }
-  .opinion-card-link {
-    flex: 0 0 calc(50% - 10px);
-  }
-  
-  /* Gallery multi-carousel */
-  .multi-carousel-container {
-    padding: 0 36px;
-  }
-  .multi-carousel-track .gallery-item {
-    flex: 0 0 calc(33.333% - 7px);
-  }
-  
-  /* Reserva */
-  #reserva {
-    padding: 60px 40px;
-    gap: 30px;
-  }
-  .reserva-text .section-title {
-    font-size: 36px;
-  }
-  
-  /* Footer */
-  footer {
-    padding: 24px 40px;
-  }
-}
-
-/* =========================================================
-   TABLET VERTICAL - max-width: 992px
-   ========================================================= */
-@media (max-width: 992px) {
-  /* Header - iniciar menú hamburguesa */
-  nav ul {
-    display: none;
-  }
-  .hamburger {
-    display: flex;
-  }
-  
-  /* Mobile menu abierto */
-  nav.open ul {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(8,21,18,0.98);
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    z-index: 999;
-    backdrop-filter: blur(12px);
-    padding: 80px 20px;
-    overflow-y: auto;
-  }
-  nav.open ul li {
-    min-height: 44px;
-    display: flex;
-    align-items: center;
-  }
-  nav.open ul li a {
-    font-size: 20px;
-    color: var(--gold-light);
-    padding: 10px 0;
-  }
-  nav.open ul li.cta a {
-    padding: 12px 28px;
-  }
-  
-  /* Header */
-  #header-outer {
-    padding: 12px 20px;
-  }
-  .logo-text {
-    font-size: 20px;
-    letter-spacing: 4px;
-  }
-  .logo-icon {
-    width: 46px;
-    height: 46px;
-    font-size: 14px;
-  }
-  
-  /* Hero */
-  #hero {
-    min-height: 90vh;
-  }
-  .hero-title {
-    font-size: clamp(36px, 9vw, 80px);
-    letter-spacing: 5px;
-  }
-  .hero-title span {
-    font-size: 0.32em;
-    letter-spacing: 10px;
-    margin-top: 12px;
-  }
-  .hero-desc {
-    font-size: 16px;
-    max-width: 400px;
-    margin: 24px auto 36px;
-  }
-  .hero-badge {
-    font-size: 11px;
-    letter-spacing: 4px;
-    padding: 6px 18px;
-    margin-bottom: 18px;
-  }
-  
-  /* Botones hero */
-  .btn-primary,
-  .btn-outline {
-    padding: 13px 32px;
-    font-size: 12px;
-  }
-  .hero-ctas {
-    gap: 12px;
-  }
-  
-  /* Scroll hint */
-  .scroll-hint {
-    bottom: 24px;
-  }
-  .scroll-hint .line {
-    height: 36px;
-  }
-  
-  /* Nosotros grid */
-  .nosotros-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .nosotros-img {
-    min-height: 400px;
-  }
-  .nosotros-content {
-    padding: 50px 36px;
-  }
-  
-  /* Info blocks */
-  .info-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .info-block {
-    padding: 36px 30px;
-  }
-  .info-block .section-title {
-    font-size: 28px;
-  }
-  
-  /* Menu */
-  #menu {
-    padding: 70px 0;
-  }
-  .menu-header {
-    padding: 0 30px 50px;
-  }
-  .tab-nav {
-    margin: 0 20px 40px;
-    padding: 8px 16px 0;
-    top: 70px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
-  }
-  .tab-btn {
-    padding: 11px 18px;
-    font-size: 12px;
-  }
-  .tab-panel {
-    padding: 0 30px 30px;
-  }
-  .menu-columns {
-    grid-template-columns: 1fr 1fr;
-    gap: 36px 44px;
-  }
-  .menu-section-title {
-    font-size: 16px;
-  }
-  .item-name {
-    font-size: 18px;
-  }
-  
-  /* Gallery */
-  #galeria {
-    padding: 70px 40px;
-  }
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  .multi-carousel-container {
-    padding: 0 46px;
-  }
-  .multi-carousel-track .gallery-item {
-    flex: 0 0 calc(50% - 5px);
-  }
-  
-  /* Reviews */
-  #opiniones {
-    padding: 70px 30px;
-  }
-  .reviews-carousel-viewport {
-    margin: 0 44px;
-  }
-  .carousel-nav-prev-reviews,
-  .carousel-nav-next-reviews {
-    width: 38px;
-    height: 38px;
-  }
-  .opinion-card-link {
-    flex: 0 0 calc(50% - 10px);
-    min-height: 360px;
-  }
-  .opinion-card {
-    min-height: 360px;
-    padding: 24px 20px;
-  }
-  
-  /* Mapa */
-  #mapa iframe {
-    height: clamp(300px, 50vh, 500px);
-  }
-  
-  /* Reserva */
-  #reserva {
-    padding: 50px 30px;
-    flex-direction: column;
-    text-align: center;
-    gap: 28px;
-  }
-  .reserva-text .section-title {
-    font-size: 32px;
-  }
-  .reserva-actions {
-    justify-content: center;
-  }
-  
-  /* Footer */
-  footer {
-    padding: 24px 30px;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .primero {
-    grid-column: 1 / -1;
-    justify-content: center;
-  }
-  .copy {
-    grid-column: 1 / -1;
-  }
-}
-
-/* =========================================================
-   MÓVIL GRANDE - max-width: 768px
-   ========================================================= */
-@media (max-width: 768px) {
-  /* Header */
-  #header-outer {
-    padding: 10px 16px;
-    overflow-x: hidden;
-  }
-  .logo-text {
-    font-size: 18px;
-    letter-spacing: 3px;
-  }
-  .logo-sub {
-    font-size: 10px;
-    letter-spacing: 3px;
-  }
-  .logo-icon {
-    width: 42px;
-    height: 42px;
-    font-size: 13px;
-  }
-  
-  /* Mobile menu */
-  nav.open ul {
-    gap: 24px;
-  }
-  nav.open ul li a {
-    font-size: 18px;
-  }
-  
-  /* Hero */
-  #hero {
-    min-height: 90vh;
-    padding: 0 5vw;
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
-  .hero-badge {
-    font-size: 10px;
-    letter-spacing: 3px;
-    padding: 5px 14px;
-    margin-bottom: 16px;
-  }
-  .hero-title {
-    font-size: clamp(32px, 12vw, 64px);
-    letter-spacing: 4px;
-    line-height: 0.9;
-  }
-  .hero-title span {
-    font-size: 0.3em;
-    letter-spacing: 8px;
-    margin-top: 10px;
-  }
-  .hero-desc {
-    font-size: 15px;
-    max-width: 320px;
-    margin: 20px auto 28px;
-  }
-  .hero-ctas {
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-width: 280px;
-    align-items: center;
-  }
-  .btn-primary,
-  .btn-outline {
-    width: 100%;
-    padding: 14px 24px;
-    text-align: center;
-  }
-  .scroll-hint {
-    bottom: 20px;
-  }
-  .scroll-hint .line {
-    height: 28px;
-  }
-  
-  /* Nosotros */
-  .nosotros-grid {
-    grid-template-columns: 1fr;
-  }
-  .nosotros-img {
-    min-height: 280px;
-    aspect-ratio: 16/9;
-  }
-  .nosotros-content {
-    padding: 44px 28px;
-  }
-  .nosotros-content .section-title {
-    font-size: clamp(24px, 5vw, 36px);
-  }
-  
-  /* Info blocks - pasar a vertical */
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-  .info-block {
-    padding: 36px 24px;
-  }
-  .info-block .section-title {
-    font-size: 26px;
-  }
-  
-  /* Menu */
-  #menu {
-    padding: 50px 0;
-  }
-  .menu-header {
-    padding: 0 20px 40px;
-  }
-  .menu-header .section-title {
-    font-size: clamp(28px, 6vw, 48px);
-  }
-  .menu-header .section-desc {
-    font-size: 15px;
-  }
-  .tab-nav {
-    margin: 0 8px 32px;
-    padding: 6px 12px 0;
-    top: 62px;
-    border-radius: 6px 6px 0 0;
-  }
-  .tab-btn {
-    padding: 10px 14px;
-    font-size: 11px;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .tab-panel {
-    padding: 0 20px 28px;
-  }
-  .menu-columns {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .menu-item {
-    gap: 10px;
-  }
-  .item-name {
-    font-size: 17px;
-  }
-  .item-desc {
-    font-size: 13px;
-  }
-  .item-price {
-    font-size: 14px;
-    padding: 3px 10px;
-  }
-  .menu-note {
-    margin: 32px 0 0;
-    padding: 16px 20px;
-    font-size: 15px;
-  }
-  .sauce-tags {
-    gap: 6px;
-  }
-  .sauce-tag {
-    font-size: 9px;
-    padding: 4px 10px;
-  }
-  .broaster-table {
-    font-size: 13px;
-  }
-  .broaster-table th,
-  .broaster-table td {
-    padding: 10px 8px;
-  }
-  
-  /* Gallery */
-  #galeria {
-    padding: 50px 20px;
-  }
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .multi-carousel-container {
-    padding: 0 40px;
-  }
-  .multi-carousel-track .gallery-item {
-    flex: 0 0 calc(50% - 5px);
-    aspect-ratio: 4/3;
-  }
-  
-  /* Reviews - 1 card visible */
-  #opiniones {
-    padding: 50px 16px;
-  }
-  .opinions-header {
-    margin-bottom: 40px;
-  }
-  .reviews-carousel-viewport {
-    margin: 0 40px;
-  }
-  .carousel-nav-prev-reviews,
-  .carousel-nav-next-reviews {
-    width: 32px;
-    height: 32px;
-  }
-  .carousel-nav-prev-reviews {
-    left: 4px;
-  }
-  .carousel-nav-next-reviews {
-    right: 4px;
-  }
-  .opinion-card-link {
-    flex: 0 0 100%;
-    min-height: auto;
-  }
-  .opinion-card {
-    flex: 0 0 100%;
-    min-height: auto;
-    padding: 20px 16px;
-    height: auto;
-  }
-  .opinion-card-header {
-    margin-bottom: 10px;
-  }
-  .opinion-photo {
-    width: 44px;
-    height: 44px;
-  }
-  .opinion-name {
-    font-size: 13px;
-  }
-  .opinion-text {
-    font-size: 14px;
-    -webkit-line-clamp: 4;
-  }
-  .opinion-food-photo {
-    height: 120px;
-  }
-  
-  /* Mapa */
-  #mapa iframe {
-    width: 100%;
-    height: clamp(280px, 55vh, 450px);
-  }
-  
-  /* Reserva */
-  #reserva {
-    padding: 44px 20px;
-  }
-  .reserva-text .section-title {
-    font-size: 28px;
-  }
-  .reserva-text .section-desc {
-    font-size: 15px;
-  }
-  .reserva-actions {
-    flex-direction: column;
-    width: 100%;
-    max-width: 280px;
-  }
-  .reserva-actions .btn-primary,
-  .reserva-actions .btn-outline {
-    width: 100%;
-    padding: 14px 24px;
-    text-align: center;
-  }
-  
-  /* Footer - 2 columnas */
-  footer {
-    padding: 20px 20px;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-  .primero {
-    grid-column: 1 / -1;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-  footer p {
-    font-size: 12px;
-    text-align: center;
-  }
-  .footer-logo {
-    font-size: 18px;
-  }
-  .copy {
-    grid-column: 1 / -1;
-    padding-top: 10px;
-  }
-  
-  /* WhatsApp - safe area */
-  .whatsapp-btn {
-    right: calc(20px + env(safe-area-inset-right, 0px));
-    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
-    width: 56px;
-    height: 56px;
-  }
-  .whatsapp-btn img {
-    width: 30px;
-    height: 30px;
-  }
-}
-
-/* =========================================================
-   MÓVIL ESTÁNDAR - max-width: 576px
-   ========================================================= */
-@media (max-width: 576px) {
-  /* Header */
-  #header-outer {
-    padding: 8px 14px;
-  }
-  .logo-text {
-    font-size: 16px;
-    letter-spacing: 2px;
-  }
-  .logo-sub {
-    display: none;
-  }
-  .logo-icon {
-    width: 38px;
-    height: 38px;
-    font-size: 12px;
-  }
-  
-  /* Mobile menu */
-  nav.open ul {
-    gap: 20px;
-    padding: 70px 16px;
-  }
-  nav.open ul li a {
-    font-size: 16px;
-  }
-  nav.open ul li.cta a {
-    font-size: 14px;
-    padding: 10px 24px;
-  }
-  
-  /* Hero */
-  #hero {
-    min-height: 85vh;
-    padding: 0 4vw;
-  }
-  .hero-badge {
-    font-size: 9px;
-    letter-spacing: 2px;
-    padding: 4px 12px;
-    margin-bottom: 14px;
-  }
-  .hero-title {
-    font-size: clamp(28px, 14vw, 56px);
-    letter-spacing: 3px;
-  }
-  .hero-title span {
-    font-size: 0.28em;
-    letter-spacing: 6px;
-    margin-top: 8px;
-  }
-  .hero-desc {
-    font-size: 14px;
-    max-width: 280px;
-    margin: 16px auto 24px;
-  }
-  .hero-ctas {
-    max-width: 240px;
-    align-items: center;
-  }
-  .btn-primary,
-  .btn-outline {
-    padding: 12px 20px;
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
-  .scroll-hint {
-    display: none;
-  }
-  
-  /* Nosotros */
-  .nosotros-img {
-    min-height: 220px;
-  }
-  .nosotros-content {
-    padding: 36px 20px;
-  }
-  .nosotros-content .section-label {
-    font-size: 11px;
-    letter-spacing: 4px;
-  }
-  .nosotros-content .section-title {
-    font-size: clamp(22px, 5vw, 30px);
-  }
-  .nosotros-content .section-desc {
-    font-size: 15px;
-  }
-  
-  /* Info blocks */
-  .info-block {
-    padding: 28px 18px;
-  }
-  .info-block .section-label {
-    font-size: 11px;
-    letter-spacing: 4px;
-  }
-  .info-block .section-title {
-    font-size: 22px;
-  }
-  .info-block p {
-    font-size: 14px;
-  }
-  
-  /* Menu */
-  #menu {
-    padding: 40px 0;
-  }
-  .menu-header {
-    padding: 0 16px 32px;
-  }
-  .menu-header::after {
-    font-size: 14px;
-    letter-spacing: 8px;
-    margin-top: 16px;
-  }
-  .tab-nav {
-    margin: 0 6px 28px;
-    padding: 5px 10px 0;
-    top: 58px;
-  }
-  .tab-btn {
-    padding: 8px 12px;
-    font-size: 10px;
-    letter-spacing: 0.5px;
-  }
-  .tab-panel {
-    padding: 0 16px 24px;
-  }
-  .menu-columns {
-    gap: 24px;
-  }
-  .menu-section-title {
-    font-size: 14px;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
-  }
-  .menu-item {
-    padding: 12px 0;
-  }
-  .item-name {
-    font-size: 16px;
-  }
-  .item-desc {
-    font-size: 12px;
-    line-height: 1.4;
-  }
-  .item-price {
-    font-size: 13px;
-    padding: 3px 8px;
-  }
-  .menu-note {
-    margin: 28px 0 0;
-    padding: 14px 16px;
-    font-size: 14px;
-  }
-  .broaster-table {
-    font-size: 12px;
-  }
-  .broaster-table th,
-  .broaster-table td {
-    padding: 8px 6px;
-  }
-  
-  /* Gallery */
-  #galeria {
-    padding: 40px 16px;
-  }
-  .gallery-grid {
-    gap: 4px;
-  }
-  .multi-carousel-container {
-    padding: 0 36px;
-  }
-  .multi-carousel-track .gallery-item {
-    flex: 0 0 100%;
-    aspect-ratio: 4/3;
-  }
-  
-  /* Reviews */
-  #opiniones {
-    padding: 40px 12px;
-  }
-  .opinions-header .section-label {
-    font-size: 11px;
-    letter-spacing: 4px;
-  }
-  .opinions-header .section-title {
-    font-size: clamp(24px, 5vw, 34px);
-  }
-  .opinions-header .section-title::after {
-    font-size: 11px;
-    letter-spacing: 6px;
-    margin-top: 10px;
-  }
-  .opinions-header .section-desc {
-    font-size: 15px;
-  }
-  .reviews-carousel-viewport {
-    margin: 0 36px;
-  }
-  .carousel-nav-prev-reviews,
-  .carousel-nav-next-reviews {
-    width: 28px;
-    height: 28px;
-  }
-  .carousel-nav-prev-reviews {
-    left: 2px;
-  }
-  .carousel-nav-next-reviews {
-    right: 2px;
-  }
-  .opinion-card {
-    padding: 18px 14px;
-  }
-  .opinion-card::before,
-  .opinion-card::after {
-    width: 12px;
-    height: 12px;
-  }
-  .opinion-photo {
-    width: 40px;
-    height: 40px;
-  }
-  .opinion-name {
-    font-size: 12px;
-  }
-  .opinion-datetime {
-    font-size: 11px;
-  }
-  .opinion-stars {
-    font-size: 10px;
-  }
-  .opinion-food-info {
-    font-size: 12px;
-    padding-top: 10px;
-    margin-top: 10px;
-  }
-  .opinion-food-photo {
-    height: 100px;
-    margin-top: 10px;
-  }
-  .opinion-text {
-    font-size: 13px;
-    -webkit-line-clamp: 4;
-  }
-  .opinion-text::before {
-    font-size: 44px;
-    top: -8px;
-  }
-  .google-reviews-link {
-    font-size: 11px;
-    padding: 8px 20px;
-  }
-  
-  /* Mapa */
-  #mapa iframe {
-    width: 100%;
-    height: clamp(260px, 50vh, 400px);
-  }
-  
-  /* Reserva */
-  #reserva {
-    padding: 36px 16px;
-  }
-  .reserva-text .section-label {
-    font-size: 11px;
-    letter-spacing: 4px;
-  }
-  .reserva-text .section-title {
-    font-size: 24px;
-    margin-bottom: 12px;
-  }
-  .reserva-text .section-desc {
-    font-size: 14px;
-  }
-  .reserva-actions {
-    max-width: 220px;
-  }
-  .reserva-actions .btn-primary,
-  .reserva-actions .btn-outline {
-    padding: 12px 18px;
-    font-size: 11px;
-  }
-  
-  /* Footer */
-  footer {
-    padding: 18px 16px;
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-  .primero {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .footer-logo {
-    font-size: 16px;
-    letter-spacing: 3px;
-  }
-  footer p {
-    font-size: 11px;
-  }
-  
-  /* WhatsApp */
-  .whatsapp-btn {
-    width: 52px;
-    height: 52px;
-  }
-  .whatsapp-btn img {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-/* =========================================================
-   MÓVIL PEQUEÑO - max-width: 400px
-   ========================================================= */
-@media (max-width: 400px) {
-  /* Header */
-  #header-outer {
-    padding: 8px 12px;
-  }
-  .logo-text {
-    font-size: 14px;
-    letter-spacing: 1px;
-  }
-  .logo-icon {
-    width: 34px;
-    height: 34px;
-    font-size: 11px;
-  }
-  
-  /* Mobile menu */
-  nav.open ul {
-    gap: 18px;
-    padding: 60px 14px;
-  }
-  nav.open ul li a {
-    font-size: 15px;
-  }
-  nav.open ul li.cta a {
-    font-size: 13px;
-    padding: 10px 20px;
-  }
-  
-  /* Hero */
-  #hero {
-    min-height: 80vh;
-    padding: 0 3vw;
-  }
-  .hero-badge {
-    font-size: 8px;
-    letter-spacing: 1px;
-    padding: 3px 10px;
-    margin-bottom: 12px;
-  }
-  .hero-title {
-    font-size: clamp(24px, 16vw, 48px);
-    letter-spacing: 2px;
-  }
-  .hero-title span {
-    font-size: 0.26em;
-    letter-spacing: 4px;
-    margin-top: 6px;
-  }
-  .hero-desc {
-    font-size: 13px;
-    max-width: 240px;
-    margin: 14px auto 20px;
-    line-height: 1.6;
-  }
-  .hero-ctas {
-    max-width: 200px;
-    align-items: center;
-  }
-  .btn-primary,
-  .btn-outline {
-    padding: 11px 16px;
-    font-size: 10px;
-    letter-spacing: 1px;
-  }
-  
-  /* Nosotros */
-  .nosotros-img {
-    min-height: 180px;
-  }
-  .nosotros-content {
-    padding: 28px 16px;
-  }
-  .nosotros-content .section-title {
-    font-size: 20px;
-  }
-  .nosotros-content .section-desc {
-    font-size: 14px;
-    line-height: 1.7;
-  }
-  
-  /* Info blocks */
-  .info-block {
-    padding: 24px 14px;
-  }
-  .info-block .section-title {
-    font-size: 20px;
-  }
-  .info-block p {
-    font-size: 13px;
-  }
-  
-  /* Menu */
-  #menu {
-    padding: 32px 0;
-  }
-  .menu-header {
-    padding: 0 14px 28px;
-  }
-  .menu-header::after {
-    font-size: 12px;
-    letter-spacing: 6px;
-    margin-top: 12px;
-  }
-  .menu-header .section-title {
-    font-size: 24px;
-  }
-  .menu-header .section-desc {
-    font-size: 14px;
-  }
-  .tab-nav {
-    margin: 0 4px 24px;
-    padding: 4px 8px 0;
-    top: 54px;
-  }
-  .tab-btn {
-    padding: 7px 10px;
-    font-size: 9px;
-  }
-  .tab-panel {
-    padding: 0 14px 20px;
-  }
-  .menu-section-title {
-    font-size: 13px;
-    margin-bottom: 14px;
-    padding-bottom: 8px;
-  }
-  .menu-item {
-    padding: 10px 0;
-    gap: 8px;
-  }
-  .item-name {
-    font-size: 15px;
-  }
-  .item-desc {
-    font-size: 11px;
-  }
-  .item-price {
-    font-size: 12px;
-    padding: 2px 6px;
-  }
-  .menu-note {
-    margin: 24px 0 0;
-    padding: 12px 14px;
-    font-size: 13px;
-  }
-  .sauce-tags {
-    gap: 5px;
-  }
-  .sauce-tag {
-    font-size: 8px;
-    padding: 3px 8px;
-  }
-  .broaster-table {
-    font-size: 11px;
-  }
-  .broaster-table th,
-  .broaster-table td {
-    padding: 6px 5px;
-  }
-  
-  /* Gallery */
-  #galeria {
-    padding: 32px 12px;
-  }
-  .gallery-grid {
-    grid-template-columns: 1fr;
-  }
-  .multi-carousel-container {
-    padding: 0 32px;
-  }
-  .multi-carousel-track .gallery-item {
-    flex: 0 0 100%;
-    aspect-ratio: 1/1;
-  }
-  
-  /* Reviews */
-  #opiniones {
-    padding: 32px 10px;
-  }
-  .opinions-header {
-    margin-bottom: 32px;
-  }
-  .opinions-header .section-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-  }
-  .opinions-header .section-title {
-    font-size: 22px;
-  }
-  .opinions-header .section-title::after {
-    font-size: 10px;
-    letter-spacing: 4px;
-    margin-top: 8px;
-  }
-  .opinions-header .section-desc {
-    font-size: 14px;
-    margin-top: 12px;
-  }
-  .reviews-carousel-viewport {
-    margin: 0 32px;
-  }
-  .carousel-nav-prev-reviews,
-  .carousel-nav-next-reviews {
-    width: 24px;
-    height: 24px;
-  }
-  .carousel-nav-prev-reviews {
-    left: 2px;
-  }
-  .carousel-nav-next-reviews {
-    right: 2px;
-  }
-  .opinion-card {
-    padding: 14px 12px;
-  }
-  .opinion-card::before,
-  .opinion-card::after {
-    width: 10px;
-    height: 10px;
-  }
-  .opinion-card-header {
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .opinion-photo {
-    width: 36px;
-    height: 36px;
-  }
-  .opinion-name {
-    font-size: 11px;
-  }
-  .opinion-datetime {
-    font-size: 10px;
-  }
-  .opinion-stars {
-    font-size: 9px;
-    letter-spacing: 1px;
-  }
-  .opinion-food-info {
-    font-size: 11px;
-    padding-top: 8px;
-    margin-top: 8px;
-  }
-  .opinion-food-photo {
-    height: 90px;
-    margin-top: 8px;
-  }
-  .opinion-text {
-    font-size: 12px;
-    -webkit-line-clamp: 3;
-    padding-left: 4px;
-  }
-  .opinion-text::before {
-    font-size: 36px;
-    top: -6px;
-    left: -2px;
-  }
-  .google-reviews-link {
-    font-size: 10px;
-    padding: 7px 16px;
-    margin-top: 20px;
-  }
-  
-  /* Mapa */
-  #mapa iframe {
-    width: 100%;
-    height: clamp(240px, 45vh, 350px);
-  }
-  
-  /* Reserva */
-  #reserva {
-    padding: 28px 14px;
-  }
-  .reserva-text .section-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-  }
-  .reserva-text .section-title {
-    font-size: 20px;
-  }
-  .reserva-text .section-desc {
-    font-size: 13px;
-  }
-  .reserva-actions {
-    max-width: 180px;
-  }
-  .reserva-actions .btn-primary,
-  .reserva-actions .btn-outline {
-    padding: 10px 14px;
-    font-size: 10px;
-  }
-  
-  /* Footer */
-  footer {
-    padding: 16px 14px;
-  }
-  .footer-logo {
-    font-size: 14px;
-    letter-spacing: 2px;
-  }
-  footer p {
-    font-size: 10px;
-    letter-spacing: 0.5px;
-  }
-  
-  /* WhatsApp */
-  .whatsapp-btn {
-    width: 48px;
-    height: 48px;
-  }
-  .whatsapp-btn img {
-    width: 26px;
-    height: 26px;
-  }
-}
-
-/* =========================================================
-   AJUSTES FINALES PARA EVITAR SCROLL HORIZONTAL
-   ========================================================= */
-
-/* Fix overflow horizontal global */
-* {
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
 html, body {
   overflow-x: hidden;
   width: 100%;
@@ -2758,13 +1493,11 @@ html, body {
   max-width: 100vw;
 }
 
-/* Section containers - asegurar que no excedan viewport */
 section {
   overflow-x: hidden;
   max-width: 100vw;
 }
 
-/* Todas las secciones con overflow hidden en móvil */
 #hero,
 #nosotros,
 #menu,
@@ -2773,77 +1506,6 @@ section {
 #mapa,
 #reserva {
   max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Reviews carousel - arreglar botones que pueden desbordar */
-.reviews-carousel-container {
-  overflow: hidden;
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.reviews-carousel-viewport {
-  overflow: hidden;
-  flex: 1;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.carousel-nav-prev-reviews,
-.carousel-nav-next-reviews {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-  /* Asegurar que no excedan el contenedor */
-  max-width: calc(100% - 10px);
-}
-
-.carousel-nav-prev-reviews {
-  left: 8px;
-}
-
-.carousel-nav-next-reviews {
-  right: 8px;
-}
-
-/* Gallery multi-carousel */
-.multi-carousel-container {
-  overflow: hidden;
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.multi-carousel-viewport {
-  overflow: hidden;
-  width: 100%;
-}
-
-/* Tab navigation - asegurar scroll horizontal correcto */
-.tab-nav {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  max-width: 100%;
-  -ms-overflow-style: none;
-}
-
-.tab-nav::-webkit-scrollbar {
-  display: none;
-}
-
-/* Menu columns */
-.menu-columns {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Gallery grid */
-.gallery-grid {
-  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -2856,65 +1518,720 @@ iframe {
   max-width: 100%;
 }
 
-/* Mobile responsive overrides */
+/* =========================================================
+   RESPONSIVE — max-width: 1400px
+   ========================================================= */
+@media (max-width: 1400px) {
+  #header-outer { padding: 10px 30px; }
+  .hero-badge { padding: 6px 22px; margin-bottom: 22px; }
+  .hero-title { font-size: clamp(50px, 11vw, 120px); }
+  .menu-columns { gap: 50px 60px; }
+  .info-block { padding: 52px 50px; }
+  .nosotros-content { padding: 70px 50px; }
+  .multi-carousel-container { padding: 0 54px; }
+  .multi-carousel-track .gallery-item { flex: 0 0 calc(33.333% - 7px); }
+  #reserva { padding: 70px 50px; }
+}
+
+/* =========================================================
+   RESPONSIVE — max-width: 1200px
+   ========================================================= */
+@media (max-width: 1200px) {
+  #header-outer { padding: 10px 24px; }
+  nav ul { gap: 22px; }
+  .hero-title { font-size: clamp(42px, 10vw, 100px); letter-spacing: 6px; }
+  .hero-title span { font-size: 0.34em; letter-spacing: 12px; }
+  .hero-desc { max-width: 460px; margin: 28px auto 40px; }
+  .tab-panel { padding: 0 40px 35px; }
+  .menu-columns { gap: 40px 50px; }
+  .info-block { padding: 44px 40px; }
+  .nosotros-content { padding: 60px 44px; }
+  .reviews-carousel-viewport { margin: 0 40px; }
+  .opinion-card-link { flex: 0 0 calc(50% - 10px); }
+  .multi-carousel-container { padding: 0 54px; }
+  .multi-carousel-track .gallery-item { flex: 0 0 calc(33.333% - 7px); }
+  #reserva { padding: 60px 40px; gap: 30px; }
+  .reserva-text .section-title { font-size: 36px; }
+  footer { padding: 24px 40px; }
+}
+
+/* =========================================================
+   RESPONSIVE — max-width: 992px (Tablet horizontal)
+   ========================================================= */
+@media (max-width: 992px) {
+  /* Header - hamburguesa */
+  nav ul { display: none; }
+  .hamburger { display: flex; }
+
+  /* Menu overlay */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 998;
+  }
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Off-canvas menu */
+  nav.active ul {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: rgba(8, 21, 18, 0.98);
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    z-index: 999;
+    backdrop-filter: blur(12px);
+    padding: 80px 20px 40px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+  nav.active ul {
+    transform: translateX(0);
+  }
+  nav.active ul li {
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  nav.active ul li a {
+    font-size: 20px;
+    color: var(--gold-light);
+    padding: 12px 20px;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
+  nav.active ul li.cta a { padding: 14px 36px; }
+  nav.active .language-selector {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  /* Scroll lock when menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  #header-outer { padding: 12px 20px; }
+  .logo-text { font-size: 20px; letter-spacing: 4px; }
+  .logo-icon { width: 46px; height: 46px; font-size: 14px; }
+
+  #hero { min-height: 90vh; }
+  .hero-title { font-size: clamp(36px, 9vw, 80px); letter-spacing: 5px; }
+  .hero-title span { font-size: 0.32em; letter-spacing: 10px; margin-top: 12px; }
+  .hero-desc { font-size: 16px; max-width: 400px; margin: 24px auto 36px; }
+  .hero-badge { font-size: 11px; letter-spacing: 4px; padding: 6px 18px; margin-bottom: 18px; }
+  .btn-primary, .btn-outline { padding: 13px 32px; font-size: 12px; }
+  .hero-ctas { gap: 12px; }
+  .scroll-hint { bottom: 24px; }
+  .scroll-hint .line { height: 36px; }
+
+  .nosotros-grid { grid-template-columns: 1fr 1fr; }
+  .nosotros-img { min-height: 400px; }
+  .nosotros-content { padding: 50px 36px; }
+
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .info-block { padding: 36px 30px; }
+  .info-block .section-title { font-size: 28px; }
+
+  #menu { padding: 70px 0; }
+  .menu-header { padding: 0 30px 50px; }
+  .tab-nav {
+    margin: 0 20px 40px;
+    padding: 8px 16px 0;
+    top: 70px;
+    justify-content: flex-start;
+  }
+  .tab-btn { padding: 11px 18px; font-size: 12px; }
+  .tab-panel { padding: 0 30px 30px; }
+  .menu-columns { grid-template-columns: 1fr 1fr; gap: 36px 44px; }
+  .menu-section-title { font-size: 16px; }
+  .item-name { font-size: 18px; }
+
+  #galeria { padding: 70px 40px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .multi-carousel-container { padding: 0 52px; }
+  .multi-carousel-track .gallery-item { flex: 0 0 calc(50% - 5px); }
+
+  #opiniones { padding: 70px 30px; }
+  .reviews-carousel-viewport { margin: 0 44px; }
+  .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 38px; height: 38px; }
+  .opinion-card-link { flex: 0 0 calc(50% - 10px); min-height: 360px; }
+  .opinion-card { min-height: 360px; padding: 24px 20px; }
+
+  #mapa iframe { height: clamp(300px, 50vh, 500px); }
+
+  #reserva {
+    padding: 50px 30px;
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+  }
+  .reserva-text .section-title { font-size: 32px; }
+  .reserva-actions { justify-content: center; }
+
+  footer { padding: 24px 30px; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .primero { grid-column: 1 / -1; justify-content: center; }
+  .copy { grid-column: 1 / -1; }
+}
+
+/* =========================================================
+   RESPONSIVE — max-width: 768px (Móvil grande)
+   ========================================================= */
+@media (max-width: 768px) {
+  #header-outer { padding: 10px 16px; overflow-x: hidden; }
+  .logo-text { font-size: 18px; letter-spacing: 3px; }
+  .logo-sub { font-size: 10px; letter-spacing: 3px; }
+  .logo-icon { width: 42px; height: 42px; font-size: 13px; }
+
+  nav.active ul { gap: 6px; }
+  nav.active ul li a { font-size: 18px; }
+
+  /* Hero */
+  #hero { min-height: 90vh; padding: 0 5vw; max-width: 100vw; }
+  .hero-badge { font-size: 10px; letter-spacing: 3px; padding: 5px 14px; margin-bottom: 16px; }
+  .hero-title { font-size: clamp(32px, 12vw, 64px); letter-spacing: 4px; line-height: 0.9; }
+  .hero-title span { font-size: 0.3em; letter-spacing: 8px; margin-top: 10px; }
+  .hero-desc { font-size: 15px; max-width: 320px; margin: 20px auto 28px; }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+  .hero-ctas .btn-primary,
+  .hero-ctas .btn-outline {
+    width: 100%;
+    padding: 15px 24px;
+    text-align: center;
+    justify-content: center;
+  }
+  .scroll-hint { bottom: 20px; }
+  .scroll-hint .line { height: 28px; }
+
+  /* Nosotros */
+  .nosotros-grid { grid-template-columns: 1fr; min-height: unset; }
+  .nosotros-img { min-height: 280px; aspect-ratio: 16/9; }
+  .nosotros-content { padding: 44px 28px; }
+  .nosotros-content .section-title { font-size: clamp(24px, 5vw, 36px); }
+
+  /* Info blocks */
+  .info-grid { grid-template-columns: 1fr; }
+  .info-block { padding: 36px 24px; }
+  .info-block .section-title { font-size: 26px; }
+
+  /* Menu */
+  #menu { padding: 50px 0; }
+  .menu-header { padding: 0 20px 32px; }
+  .menu-header .section-title { font-size: clamp(28px, 6vw, 48px); }
+  .menu-header .section-desc { font-size: 15px; }
+  
+  /* Tab navigation - horizontal scroll with pill buttons */
+  .tab-nav {
+    margin: 0 0 24px;
+    padding: 6px 12px;
+    top: 62px;
+    border-radius: 30px;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .tab-btn {
+    padding: 10px 18px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    min-height: 44px;
+    border-radius: 22px;
+    border: 1px solid rgba(200, 168, 76, 0.3);
+  }
+  .tab-btn.active {
+    background: var(--gold);
+    color: var(--wood-teal-deep);
+    border-color: var(--gold);
+  }
+  
+  .tab-panel { padding: 0 16px 24px; }
+  
+  /* Menu items - compact card style */
+  .menu-columns { grid-template-columns: 1fr; gap: 16px; }
+  .menu-section-title { 
+    font-size: 14px; 
+    letter-spacing: 2px; 
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(200, 168, 76, 0.2);
+  }
+  .menu-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-start;
+    padding: 14px 16px; 
+    gap: 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: none;
+  }
+  .menu-item:hover {
+    transform: none;
+    padding-left: 16px;
+    background: rgba(255, 255, 255, 0.6);
+  }
+  .menu-item::before { display: none; }
+  .item-info { flex: 1; min-width: 0; padding-right: 12px; }
+  .item-name { font-size: 16px; margin-bottom: 4px; }
+  .item-desc { font-size: 13px; line-height: 1.4; }
+  .item-price { 
+    font-size: 14px; 
+    padding: 4px 10px; 
+    border-radius: 4px;
+    background: var(--wood-teal-deep);
+    color: var(--gold-light);
+    white-space: nowrap;
+  }
+  .menu-note { margin: 24px 0 0; padding: 14px 16px; font-size: 14px; border-radius: 8px; }
+  .sauce-tags { gap: 6px; }
+  .sauce-tag { font-size: 9px; padding: 4px 10px; }
+  .broaster-table { font-size: 13px; }
+  .broaster-table th, .broaster-table td { padding: 10px 8px; }
+
+  /* Gallery */
+  #galeria { padding: 50px 20px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .multi-carousel-container { padding: 0 48px; }
+  .multi-carousel-track .gallery-item { flex: 0 0 calc(50% - 5px); aspect-ratio: 4/3; }
+
+  /* Reviews */
+  #opiniones { padding: 50px 16px; }
+  .opinions-header { margin-bottom: 40px; }
+  .reviews-carousel-viewport { margin: 0 44px; }
+  .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 36px; height: 36px; }
+  .carousel-nav-prev-reviews { left: 4px; }
+  .carousel-nav-next-reviews { right: 4px; }
+  .opinion-card-link { flex: 0 0 100%; min-height: auto; }
+  .opinion-card { flex: 0 0 100%; min-height: auto; padding: 20px 16px; height: auto; }
+  .opinion-card-header { margin-bottom: 10px; }
+  .opinion-photo { width: 44px; height: 44px; }
+  .opinion-name { font-size: 13px; }
+  .opinion-text { font-size: 14px; -webkit-line-clamp: 4; }
+  .opinion-food-photo { height: 120px; }
+
+  #mapa iframe { height: clamp(280px, 55vh, 450px); }
+
+  /* Reserva */
+  #reserva { padding: 44px 20px; }
+  .reserva-text .section-title { font-size: 28px; }
+  .reserva-text .section-desc { font-size: 15px; }
+  .reserva-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    align-items: stretch;
+  }
+  .reserva-actions .btn-primary,
+  .reserva-actions .btn-outline {
+    width: 100%;
+    padding: 15px 24px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Footer */
+  footer { padding: 20px 20px; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .primero { grid-column: 1 / -1; flex-direction: column; align-items: center; gap: 12px; }
+  footer p { font-size: 12px; text-align: center; }
+  .footer-logo { font-size: 18px; }
+  .copy { grid-column: 1 / -1; padding-top: 10px; }
+
+  .whatsapp-btn {
+    right: calc(20px + env(safe-area-inset-right, 0px));
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    width: 56px; height: 56px;
+  }
+  .whatsapp-btn img { width: 30px; height: 30px; }
+}
+
+/* =========================================================
+   RESPONSIVE — max-width: 576px (Móvil estándar)
+   ========================================================= */
+@media (max-width: 576px) {
+  #header-outer { padding: 8px 14px; }
+  .logo-text { font-size: 16px; letter-spacing: 2px; }
+  .logo-sub { display: none; }
+  .logo-icon { width: 38px; height: 38px; font-size: 12px; }
+
+  nav.active ul { gap: 4px; padding: 70px 16px 40px; }
+  nav.active ul li a { font-size: 16px; }
+  nav.active ul li.cta a { font-size: 14px; padding: 12px 28px; }
+
+  #hero { min-height: 85vh; padding: 0 4vw; }
+  .hero-badge { font-size: 9px; letter-spacing: 2px; padding: 4px 12px; margin-bottom: 14px; }
+  .hero-title { font-size: clamp(28px, 14vw, 56px); letter-spacing: 3px; }
+  .hero-title span { font-size: 0.28em; letter-spacing: 6px; margin-top: 8px; }
+  .hero-desc { font-size: 14px; max-width: 280px; margin: 16px auto 24px; }
+  .hero-ctas { max-width: 260px; }
+  .btn-primary, .btn-outline {
+    padding: 13px 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  .scroll-hint { display: none; }
+
+  .nosotros-img { min-height: 220px; }
+  .nosotros-content { padding: 36px 20px; }
+  .nosotros-content .section-label { font-size: 11px; letter-spacing: 4px; }
+  .nosotros-content .section-title { font-size: clamp(22px, 5vw, 30px); }
+  .nosotros-content .section-desc { font-size: 15px; }
+
+  .info-block { padding: 28px 18px; }
+  .info-block .section-label { font-size: 11px; letter-spacing: 4px; }
+  .info-block .section-title { font-size: 22px; }
+  .info-block p { font-size: 14px; }
+
+  #menu { padding: 40px 0; }
+  .menu-header { padding: 0 16px 32px; }
+  .menu-header::after { font-size: 14px; letter-spacing: 8px; margin-top: 16px; }
+  .tab-nav {
+    margin: 0 6px 28px;
+    padding: 5px 0 0;
+    top: 58px;
+  }
+  .tab-btn { padding: 8px 12px; font-size: 10px; letter-spacing: 0.5px; }
+  .tab-panel { padding: 0 16px 24px; }
+  .menu-columns { gap: 24px; }
+  .menu-section-title { font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
+  .menu-item { padding: 12px 0; }
+  .item-name { font-size: 16px; }
+  .item-desc { font-size: 12px; line-height: 1.4; }
+  .item-price { font-size: 13px; padding: 3px 8px; }
+  .menu-note { margin: 28px 0 0; padding: 14px 16px; font-size: 14px; }
+  .broaster-table { font-size: 12px; }
+  .broaster-table th, .broaster-table td { padding: 8px 6px; }
+
+  #galeria { padding: 40px 16px; }
+  .gallery-grid { gap: 4px; }
+  .multi-carousel-container { padding: 0 42px; }
+  .multi-carousel-track .gallery-item { flex: 0 0 100%; aspect-ratio: 4/3; }
+
+  #opiniones { padding: 40px 12px; }
+  .opinions-header .section-label { font-size: 11px; letter-spacing: 4px; }
+  .opinions-header .section-title { font-size: clamp(24px, 5vw, 34px); }
+  .opinions-header .section-title::after { font-size: 11px; letter-spacing: 6px; margin-top: 10px; }
+  .opinions-header .section-desc { font-size: 15px; }
+  .reviews-carousel-viewport { margin: 0 38px; }
+  .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 30px; height: 30px; }
+  .carousel-nav-prev-reviews { left: 2px; }
+  .carousel-nav-next-reviews { right: 2px; }
+  .opinion-card { padding: 18px 14px; }
+  .opinion-card::before, .opinion-card::after { width: 12px; height: 12px; }
+  .opinion-photo { width: 40px; height: 40px; }
+  .opinion-name { font-size: 12px; }
+  .opinion-datetime { font-size: 11px; }
+  .opinion-stars { font-size: 10px; }
+  .opinion-food-info { font-size: 12px; padding-top: 10px; margin-top: 10px; }
+  .opinion-food-photo { height: 100px; margin-top: 10px; }
+  .opinion-text { font-size: 13px; -webkit-line-clamp: 4; }
+  .opinion-text::before { font-size: 44px; top: -8px; }
+  .google-reviews-link { font-size: 11px; padding: 8px 20px; }
+
+  #mapa iframe { height: clamp(260px, 50vh, 400px); }
+
+  #reserva { padding: 36px 16px; }
+  .reserva-text .section-label { font-size: 11px; letter-spacing: 4px; }
+  .reserva-text .section-title { font-size: 24px; margin-bottom: 12px; }
+  .reserva-text .section-desc { font-size: 14px; }
+  .reserva-actions { max-width: 260px; }
+  .reserva-actions .btn-primary,
+  .reserva-actions .btn-outline { padding: 13px 18px; font-size: 11px; }
+
+  footer { padding: 18px 16px; grid-template-columns: 1fr; gap: 10px; }
+  .primero { flex-direction: column; gap: 10px; }
+  .footer-logo { font-size: 16px; letter-spacing: 3px; }
+  footer p { font-size: 11px; }
+
+  .whatsapp-btn { width: 52px; height: 52px; }
+  .whatsapp-btn img { width: 28px; height: 28px; }
+}
+
+/* =========================================================
+   RESPONSIVE — max-width: 400px (Móvil pequeño)
+   ========================================================= */
+@media (max-width: 400px) {
+  #header-outer { padding: 8px 12px; }
+  .logo-text { font-size: 14px; letter-spacing: 1px; }
+  .logo-icon { width: 34px; height: 34px; font-size: 11px; }
+
+  nav.active ul { gap: 2px; padding: 60px 14px 30px; }
+  nav.active ul li a { font-size: 15px; }
+  nav.active ul li.cta a { font-size: 13px; padding: 10px 20px; }
+
+  #hero { min-height: 80vh; padding: 0 3vw; }
+  .hero-badge { font-size: 8px; letter-spacing: 1px; padding: 3px 10px; margin-bottom: 12px; }
+  .hero-title { font-size: clamp(24px, 16vw, 48px); letter-spacing: 2px; }
+  .hero-title span { font-size: 0.26em; letter-spacing: 4px; margin-top: 6px; }
+  .hero-desc { font-size: 13px; max-width: 240px; margin: 14px auto 20px; line-height: 1.6; }
+  .hero-ctas { max-width: 220px; }
+  .btn-primary, .btn-outline { padding: 12px 16px; font-size: 10px; letter-spacing: 1px; }
+
+  .nosotros-img { min-height: 180px; }
+  .nosotros-content { padding: 28px 16px; }
+  .nosotros-content .section-title { font-size: 20px; }
+  .nosotros-content .section-desc { font-size: 14px; line-height: 1.7; }
+
+  .info-block { padding: 24px 14px; }
+  .info-block .section-title { font-size: 20px; }
+  .info-block p { font-size: 13px; }
+
+  #menu { padding: 32px 0; }
+  .menu-header { padding: 0 14px 24px; }
+  .menu-header::after { font-size: 12px; letter-spacing: 6px; margin-top: 12px; }
+  .menu-header .section-title { font-size: 24px; }
+  .menu-header .section-desc { font-size: 14px; }
+  
+  /* Tab navigation - even more compact */
+  .tab-nav { margin: 0 0 20px; padding: 5px 10px; top: 54px; gap: 6px; }
+  .tab-btn { 
+    padding: 8px 14px; 
+    font-size: 11px; 
+    min-height: 44px;
+    border-radius: 20px;
+  }
+  .tab-panel { padding: 0 12px 16px; }
+  
+  /* Menu items - very compact */
+  .menu-columns { gap: 12px; }
+  .menu-section-title { font-size: 13px; margin-bottom: 12px; padding-bottom: 6px; }
+  .menu-item { 
+    padding: 12px 14px; 
+    gap: 10px;
+    border-radius: 6px;
+  }
+  .item-name { font-size: 15px; }
+  .item-desc { font-size: 12px; }
+  .item-price { font-size: 13px; padding: 3px 8px; }
+  .menu-note { margin: 20px 0 0; padding: 12px 14px; font-size: 13px; border-radius: 6px; }
+  .sauce-tags { gap: 4px; }
+  .sauce-tag { font-size: 8px; padding: 3px 8px; }
+  .broaster-table { font-size: 11px; }
+  .broaster-table th, .broaster-table td { padding: 6px 5px; }
+
+  #galeria { padding: 32px 12px; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .multi-carousel-container { padding: 0 38px; }
+  .multi-carousel-track .gallery-item { flex: 0 0 100%; aspect-ratio: 1/1; }
+
+  #opiniones { padding: 32px 10px; }
+  .opinions-header { margin-bottom: 32px; }
+  .opinions-header .section-label { font-size: 10px; letter-spacing: 3px; }
+  .opinions-header .section-title { font-size: 22px; }
+  .opinions-header .section-title::after { font-size: 10px; letter-spacing: 4px; margin-top: 8px; }
+  .opinions-header .section-desc { font-size: 14px; margin-top: 12px; }
+  .reviews-carousel-viewport { margin: 0 32px; }
+  .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 26px; height: 26px; }
+  .carousel-nav-prev-reviews { left: 2px; }
+  .carousel-nav-next-reviews { right: 2px; }
+  .opinion-card { padding: 14px 12px; }
+  .opinion-card::before, .opinion-card::after { width: 10px; height: 10px; }
+  .opinion-card-header { gap: 10px; margin-bottom: 8px; }
+  .opinion-photo { width: 36px; height: 36px; }
+  .opinion-name { font-size: 11px; }
+  .opinion-datetime { font-size: 10px; }
+  .opinion-stars { font-size: 9px; letter-spacing: 1px; }
+  .opinion-food-info { font-size: 11px; padding-top: 8px; margin-top: 8px; }
+  .opinion-food-photo { height: 90px; margin-top: 8px; }
+  .opinion-text { font-size: 12px; -webkit-line-clamp: 3; padding-left: 4px; }
+  .opinion-text::before { font-size: 36px; top: -6px; left: -2px; }
+  .google-reviews-link { font-size: 10px; padding: 7px 16px; margin-top: 20px; }
+
+  #mapa iframe { height: clamp(240px, 45vh, 350px); }
+
+  #reserva { padding: 28px 14px; }
+  .reserva-text .section-label { font-size: 10px; letter-spacing: 3px; }
+  .reserva-text .section-title { font-size: 20px; }
+  .reserva-text .section-desc { font-size: 13px; }
+  .reserva-actions { max-width: 200px; }
+  .reserva-actions .btn-primary,
+  .reserva-actions .btn-outline { padding: 10px 14px; font-size: 10px; }
+
+  footer { padding: 16px 14px; }
+  .footer-logo { font-size: 14px; letter-spacing: 2px; }
+  footer p { font-size: 10px; letter-spacing: 0.5px; }
+
+  .whatsapp-btn { width: 48px; height: 48px; }
+  .whatsapp-btn img { width: 26px; height: 26px; }
+}
+
+/* =========================================================
+   MOBILE — TAB NAV SCROLL INDICATOR
+   Pequeño indicador visual de que hay más tabs a la derecha
+   ========================================================= */
+@media (max-width: 768px) {
+  .tab-nav {
+    position: relative;
+  }
+  .tab-nav::after {
+    content: '';
+    position: sticky;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 32px;
+    background: linear-gradient(to right, transparent, rgba(15,50,48,0.95));
+    pointer-events: none;
+    flex-shrink: 0;
+    align-self: stretch;
+    display: block;
+  }
+}
+
+/* =========================================================
+   MOBILE — GALLERY LABEL always visible on touch devices
+   ========================================================= */
+@media (hover: none) {
+  .gallery-label {
+    opacity: 1;
+    background: linear-gradient(transparent 30%, rgba(10,26,24,0.85));
+    padding: 20px 10px 10px;
+    font-size: 10px;
+  }
+  .multi-carousel-track .gallery-label {
+    opacity: 1;
+    background: linear-gradient(transparent 30%, rgba(10,26,24,0.85));
+    padding: 20px 10px 10px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   MOBILE — CAROUSEL NAV BUTTONS visibility & hit area fix
+   ========================================================= */
 @media (max-width: 768px) {
   .reviews-carousel-container {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .reviews-carousel-viewport {
+    margin: 0 44px;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .carousel-nav-prev-reviews,
+  .carousel-nav-next-reviews {
+    background: rgba(10, 26, 24, 0.7);
+    border: 1px solid rgba(200,168,76,0.5);
+  }
+
+  .multi-carousel-container {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .multi-carousel-viewport {
+    overflow: hidden;
+    flex: 1;
+    margin: 0 48px;
+    border-radius: 5px;
+  }
+
+  .carousel-nav-prev {
+    left: 0;
+    background: rgba(10, 26, 24, 0.7);
+    border: 1px solid rgba(200,168,76,0.5);
+  }
+  .carousel-nav-next {
+    right: 0;
+    background: rgba(10, 26, 24, 0.7);
+    border: 1px solid rgba(200,168,76,0.5);
+  }
+}
+
+/* =========================================================
+   MOBILE — MENU ITEM hover suppressed on touch
+   ========================================================= */
+@media (hover: none) {
+  .menu-item:hover {
+    background: transparent;
+    transform: none;
     padding-left: 0;
-    padding-right: 0;
   }
-  
-  .carousel-nav-prev-reviews,
-  .carousel-nav-next-reviews {
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
+  .menu-item:hover::before { opacity: 0; }
+  .menu-item:hover .item-name { color: var(--wood-teal-deep); }
+  .menu-item:hover .item-price {
+    background: rgba(26,74,72,0.1);
+    color: var(--wood-teal-deep);
+    transform: none;
+    box-shadow: none;
   }
-  
-  .carousel-nav-prev-reviews {
-    left: 4px;
+  .sauce-tag:hover {
+    background: var(--wood-teal-deep);
+    color: var(--gold-light);
+    border-color: rgba(200,168,76,0.3);
+    transform: none;
+    box-shadow: none;
   }
-  
-  .carousel-nav-next-reviews {
-    right: 4px;
-  }
-  
-  .multi-carousel-track .gallery-item img {
-    max-width: 100%;
-  }
-  
-  /* Todas las secciones con overflow hidden en móvil */
-  #hero,
-  #nosotros,
-  #menu,
-  #galeria,
-  #opiniones,
-  #mapa,
+}
+
+/* =========================================================
+   MOBILE — RESERVA block display on small screens
+   ========================================================= */
+@media (max-width: 768px) {
   #reserva {
-    overflow-x: hidden;
-    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .reserva-text {
+    width: 100%;
+    max-width: 480px;
   }
 }
 
-@media (max-width: 576px) {
-  .carousel-nav-prev-reviews,
-  .carousel-nav-next-reviews {
-    width: 28px;
-    height: 28px;
-  }
-  
-  .carousel-nav-prev-reviews {
-    left: 2px;
-  }
-  
-  .carousel-nav-next-reviews {
-    right: 2px;
+/* =========================================================
+   MOBILE — NOSOTROS content no min-height
+   ========================================================= */
+@media (max-width: 768px) {
+  .nosotros-grid {
+    min-height: unset;
   }
 }
 
-@media (max-width: 400px) {
-  .carousel-nav-prev-reviews,
-  .carousel-nav-next-reviews {
-    width: 24px;
-    height: 24px;
-  }
+/* =========================================================
+   ACCESSIBILITY — focus styles for keyboard nav
+   ========================================================= */
+.tab-btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-outline:focus-visible,
+.carousel-nav-btn:focus-visible,
+.carousel-nav-prev-reviews:focus-visible,
+.carousel-nav-next-reviews:focus-visible,
+.hamburger:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }

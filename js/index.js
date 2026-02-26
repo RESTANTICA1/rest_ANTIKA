@@ -438,8 +438,16 @@ function showTab(id, btn) {
 }
 
 /* Mobile menu */
-function toggleMenu() { $.nav?.classList.toggle('open'); }
-function closeMenu()  { $.nav?.classList.remove('open'); }
+function toggleMenu() {
+  $.nav?.classList.toggle('active');
+  document.querySelector('.menu-overlay')?.classList.toggle('active');
+  document.body.classList.toggle('menu-open');
+}
+function closeMenu() {
+  $.nav?.classList.remove('active');
+  document.querySelector('.menu-overlay')?.classList.remove('active');
+  document.body.classList.remove('menu-open');
+}
 
 /* Motor de render unificado - usa DocumentFragment */
 
@@ -870,6 +878,33 @@ function initReviewsCarousel() {
     container.dataset.revBound = 'true';
   }
 
+  /* Touch/swipe support for reviews carousel */
+  if (track && !track.dataset.swipeBound) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      pauseAutoPlay();
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > minSwipeDistance) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+      setTimeout(resumeAutoPlay, 3000);
+    }, { passive: true });
+
+    track.dataset.swipeBound = 'true';
+  }
+
   if (!window._antika.reviewsResizeFn) {
     let rTick = false;
     const fn  = () => {
@@ -958,6 +993,33 @@ function initGalleryCarousel() {
     $.galleryContainer.dataset.galBound = 'true';
   }
 
+  /* Touch/swipe support for gallery carousel */
+  if (track && !track.dataset.galSwipeBound) {
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      pauseAutoPlay();
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > minSwipeDistance) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+      setTimeout(resumeAutoPlay, 3000);
+    }, { passive: true });
+
+    track.dataset.galSwipeBound = 'true';
+  }
+
   if (!window._antika.galleryResizeFn) {
     let rTick = false;
     const fn  = () => {
@@ -1027,6 +1089,8 @@ function initGalleryCarousel() {
   /* ─── Parallax Hero (throttle por rAF) ─── */
   function initHeroParallax() {
     if (!$.heroBg || window._antika.heroParallaxFn) return;
+    /* Disable parallax on mobile for performance */
+    if (window.innerWidth <= 768) return;
     let ticking = false;
     const fn = () => {
       if (!ticking) {
