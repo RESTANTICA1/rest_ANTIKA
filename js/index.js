@@ -681,7 +681,7 @@ async function loadMenuFromJSON() {
   if (window._antika.menuLoaded) return;
 
   try {
-    const menuData = await safeFetchJSON('./menu.json');
+    const menuData = await safeFetchJSON('assets/menu.json');
     renderMenuContent(menuData);    
     window._antika.menuLoaded = true;
   } catch (err) {
@@ -714,7 +714,7 @@ async function loadGoogleReviews() {
   }
 
   try {
-    const reviewsData = await safeFetchJSON('./assets/comentarios/data/reviews_data.json');
+    const reviewsData = await safeFetchJSON('assets/comentarios/data/reviews_data.json');
 
     // Mapear reviews_data.json al formato esperado por el código
     const comentarios = reviewsData.map(reseña => ({
