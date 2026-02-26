@@ -1,20 +1,32 @@
 .language-selector {
   display: flex;
-  gap: 8px;
   align-items: center;
+}
+
+.lang-selector {
+  display: flex;
+  align-items: center;
+}
+
+.flags {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  height: 24px;
 }
 
 .lang-btn {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
-  padding: 4px 6px;
+  padding: 2px 4px;
   cursor: pointer;
   transition: all 0.2s ease;
-  line-height: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 24px;
+  box-sizing: border-box;
 }
 
 .lang-btn:hover {
@@ -29,9 +41,11 @@
 }
 
 .flag-img {
-  width: 20px !important;
-  height: auto !important;
-  max-width: 20px !important;
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px !important;
+  max-height: 18px !important;
+  object-fit: contain;
   display: block;
 }
 
