@@ -32,11 +32,14 @@
       <li class="cta"><a href="https://wa.me/51999999999?text=Hola,%20quisiera%20hacer%20una%20reserva" target="_blank" onclick="closeMenu()" data-i18n="Reserva">Reservar</a></li>
       <!--Lenguaje-->
       <div class="language-selector">
-        <select id="language-select" class="form-select">
-          <option value="es" onclick="closeMenu()">🇪🇸 Español</option>
-          <option value="en" onclick="closeMenu()">🇺🇸 English</option>
-          <option value="pt" onclick="closeMenu()">🇧🇷 Português</option>
+        <select id="language-select" class="form-select" style="display:none;">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="pt">Português</option>
         </select>
+        <button class="lang-btn" onclick="changeLanguage('es')" title="Español"><img src="assets/icons/peru.jpg" alt="Perú" class="flag-img"></button>
+        <button class="lang-btn" onclick="changeLanguage('en')" title="English"><img src="assets/icons/eeuu.webp" alt="USA" class="flag-img"></button>
+        <button class="lang-btn" onclick="changeLanguage('pt')" title="Português"><img src="assets/icons/brasil.png" alt="Brasil" class="flag-img"></button>
       </div>
     </ul>
   </nav>
