@@ -29,8 +29,9 @@
 }
 
 .flag-img {
-  width: 22px;
-  height: auto;
+  width: 20px !important;
+  height: auto !important;
+  max-width: 20px !important;
   display: block;
 }
 
