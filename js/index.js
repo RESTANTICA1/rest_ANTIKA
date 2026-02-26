@@ -658,14 +658,30 @@ function renderMenuContent(menuData) {
      layout aunque el usuario nunca abriera esos tabs. */
 }
 
+/* Función segura para cargar JSON con manejo de errores mejorado */
+async function safeFetchJSON(path) {
+  const response = await fetch(path, { cache: "no-store" });
+  
+  if (!response.ok) {
+    throw new Error(`No se pudo cargar ${path} - status ${response.status}`);
+  }
+  
+  const text = await response.text();
+  
+  if (text.trim().startsWith("<")) {
+    throw new Error(`${path} devolvió HTML en lugar de JSON (ruta incorrecta)`);
+  }
+  
+  return JSON.parse(text);
+}
+
 /* Carga de menu desde JSON */
 async function loadMenuFromJSON() {
   if (!$.menuSection) return;
   if (window._antika.menuLoaded) return;
 
   try {
-    const response = await fetch('../menu.json');
-    const menuData = await response.json();
+    const menuData = await safeFetchJSON('assets/menu.json');
     renderMenuContent(menuData);    
     window._antika.menuLoaded = true;
   } catch (err) {
@@ -698,8 +714,7 @@ async function loadGoogleReviews() {
   }
 
   try {
-    const response  = await fetch('../assets/comentarios/data/reviews_data.json');
-    const reviewsData = await response.json();
+    const reviewsData = await safeFetchJSON('assets/comentarios/data/reviews_data.json');
 
     // Mapear reviews_data.json al formato esperado por el código
     const comentarios = reviewsData.map(reseña => ({
