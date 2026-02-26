@@ -826,7 +826,7 @@ function initReviewsCarousel() {
   function getItems()       { return track.querySelectorAll('.opinion-card'); }
   function getItemsPerView() {
     const w = window.innerWidth;
-    return w <= 600 ? 1 : w <= 1024 ? 2 : 3;
+    return w <= 768 ? 1 : w <= 992 ? 2 : 3;
   }
 
   function updateCarousel() {
