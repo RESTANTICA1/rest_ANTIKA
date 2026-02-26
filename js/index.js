@@ -807,6 +807,12 @@ async function loadGoogleReviews() {
 function initReviewsCarousel() {
   if (window._antika.reviewsCarouselInit) return;
 
+  // En móvil usar CSS scroll-snap en lugar de JS carousel
+  if (window.innerWidth <= 768) {
+    window._antika.reviewsCarouselInit = true;
+    return;
+  }
+
   const track   = $.reviewsContainer;
   const prevBtn = $.revPrev;
   const nextBtn = $.revNext;

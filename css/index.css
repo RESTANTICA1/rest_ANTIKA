@@ -2172,6 +2172,27 @@ iframe {
   .reviews-carousel-track {
     display: flex;
     gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    will-change: scroll-position;
+  }
+
+  .reviews-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviews-carousel-track * {
+    will-change: auto;
+  }
+
+  .opinion-card-link {
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+    min-width: 100%;
   }
 
   .carousel-nav-prev-reviews,
