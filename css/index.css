@@ -1243,20 +1243,6 @@ section { position: relative; }
   transform: translateY(-50%) scale(1.08);
 }
 
-@media (max-width: 1024px) {
-  .opinion-card-link { flex: 0 0 calc(50% - 10px); min-height: 380px; }
-  .opinion-card      { flex: 0 0 calc(50% - 10px); min-height: 380px; }
-}
-@media (max-width: 600px) {
-  #opiniones { padding: 60px 16px; }
-  .reviews-carousel-viewport { margin: 0 36px; }
-  .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 30px; height: 30px; }
-  .carousel-nav-prev-reviews { left: 2px; }
-  .carousel-nav-next-reviews { right: 2px; }
-  .opinion-card-link { flex: 0 0 100%; min-height: auto; }
-  .opinion-card      { flex: 0 0 100%; padding: 22px 18px; min-height: auto; height: auto; }
-}
-
 /* =========================================================
    MAPA
    ========================================================= */
@@ -1449,52 +1435,476 @@ footer .footer-logo {
 }
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE - Media Queries para todos los breakpoints
    ========================================================= */
-@media (max-width: 900px) {
-  nav ul { display: none; }
-  .hamburger { display: flex; }
+
+/* =========================================================
+   LAPTOP PEQUEÑO - max-width: 1400px
+   ========================================================= */
+@media (max-width: 1400px) {
+  /* Header - ajustar padding */
+  #header-outer {
+    padding: 10px 30px;
+  }
+  
+  /* Hero - ajustar badge y botones */
+  .hero-badge {
+    padding: 6px 22px;
+    margin-bottom: 22px;
+  }
+  .hero-title {
+    font-size: clamp(50px, 11vw, 120px);
+  }
+  
+  /* Menu columns */
+  .menu-columns {
+    gap: 50px 60px;
+  }
+  
+  /* Info blocks */
+  .info-block {
+    padding: 52px 50px;
+  }
+  
+  /* Nosotros */
+  .nosotros-content {
+    padding: 70px 50px;
+  }
+  
+  /* Gallery */
+  .multi-carousel-container {
+    padding: 0 44px;
+  }
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 calc(33.333% - 7px);
+  }
+  
+  /* Reserva */
+  #reserva {
+    padding: 70px 50px;
+  }
+}
+
+/* =========================================================
+   TABLET HORIZONTAL - max-width: 1200px
+   ========================================================= */
+@media (max-width: 1200px) {
+  /* Header */
+  #header-outer {
+    padding: 10px 24px;
+  }
+  
+  nav ul {
+    gap: 22px;
+  }
+  
+  /* Hero */
+  .hero-title {
+    font-size: clamp(42px, 10vw, 100px);
+    letter-spacing: 6px;
+  }
+  .hero-title span {
+    font-size: 0.34em;
+    letter-spacing: 12px;
+  }
+  .hero-desc {
+    max-width: 460px;
+    margin: 28px auto 40px;
+  }
+  
+  /* Menu */
+  .tab-panel {
+    padding: 0 40px 35px;
+  }
+  .menu-columns {
+    gap: 40px 50px;
+  }
+  
+  /* Info blocks */
+  .info-block {
+    padding: 44px 40px;
+  }
+  
+  /* Nosotros */
+  .nosotros-content {
+    padding: 60px 44px;
+  }
+  
+  /* Reviews carousel */
+  .reviews-carousel-viewport {
+    margin: 0 40px;
+  }
+  .opinion-card-link {
+    flex: 0 0 calc(50% - 10px);
+  }
+  
+  /* Gallery multi-carousel */
+  .multi-carousel-container {
+    padding: 0 36px;
+  }
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 calc(33.333% - 7px);
+  }
+  
+  /* Reserva */
+  #reserva {
+    padding: 60px 40px;
+    gap: 30px;
+  }
+  .reserva-text .section-title {
+    font-size: 36px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 24px 40px;
+  }
+}
+
+/* =========================================================
+   TABLET VERTICAL - max-width: 992px
+   ========================================================= */
+@media (max-width: 992px) {
+  /* Header - iniciar menú hamburguesa */
+  nav ul {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  
+  /* Mobile menu abierto */
   nav.open ul {
     display: flex;
     flex-direction: column;
     position: fixed;
-    inset: 0;
-    background: rgba(8,21,18,0.99);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(8,21,18,0.98);
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 28px;
     z-index: 999;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    padding: 80px 20px;
+    overflow-y: auto;
   }
-  nav.open ul li a { font-size: 22px; color: var(--gold-light); }
-  .nosotros-grid, .info-grid { grid-template-columns: 1fr; }
-  .nosotros-img { min-height: 280px; }
-  .nosotros-content { padding: 50px 30px; }
-  .info-block { padding: 40px 30px; }
-  .menu-columns { grid-template-columns: 1fr; gap: 40px; }
-  .tab-panel { padding: 0 20px 40px; }
+  nav.open ul li {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  nav.open ul li a {
+    font-size: 20px;
+    color: var(--gold-light);
+    padding: 10px 0;
+  }
+  nav.open ul li.cta a {
+    padding: 12px 28px;
+  }
+  
+  /* Header */
+  #header-outer {
+    padding: 12px 20px;
+  }
+  .logo-text {
+    font-size: 20px;
+    letter-spacing: 4px;
+  }
+  .logo-icon {
+    width: 46px;
+    height: 46px;
+    font-size: 14px;
+  }
+  
+  /* Hero */
+  #hero {
+    min-height: 90vh;
+  }
+  .hero-title {
+    font-size: clamp(36px, 9vw, 80px);
+    letter-spacing: 5px;
+  }
+  .hero-title span {
+    font-size: 0.32em;
+    letter-spacing: 10px;
+    margin-top: 12px;
+  }
+  .hero-desc {
+    font-size: 16px;
+    max-width: 400px;
+    margin: 24px auto 36px;
+  }
+  .hero-badge {
+    font-size: 11px;
+    letter-spacing: 4px;
+    padding: 6px 18px;
+    margin-bottom: 18px;
+  }
+  
+  /* Botones hero */
+  .btn-primary,
+  .btn-outline {
+    padding: 13px 32px;
+    font-size: 12px;
+  }
+  .hero-ctas {
+    gap: 12px;
+  }
+  
+  /* Scroll hint */
+  .scroll-hint {
+    bottom: 24px;
+  }
+  .scroll-hint .line {
+    height: 36px;
+  }
+  
+  /* Nosotros grid */
+  .nosotros-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nosotros-img {
+    min-height: 400px;
+  }
+  .nosotros-content {
+    padding: 50px 36px;
+  }
+  
+  /* Info blocks */
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .info-block {
+    padding: 36px 30px;
+  }
+  .info-block .section-title {
+    font-size: 28px;
+  }
+  
+  /* Menu */
+  #menu {
+    padding: 70px 0;
+  }
+  .menu-header {
+    padding: 0 30px 50px;
+  }
   .tab-nav {
-    margin: 0 0 40px;
-    overflow-x: auto;
-    justify-content: flex-start;
+    margin: 0 20px 40px;
     padding: 8px 16px 0;
-    border-radius: 6px 6px 0 0;
+    top: 70px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
   }
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
-  #reserva { flex-direction: column; text-align: center; padding: 60px 30px; }
-  footer  { flex-direction: column; text-align: center; padding: 24px 30px; }
-  #galeria { padding: 60px 20px; }
-  #opiniones { padding: 60px 20px; }
-  .menu-note { margin: 40px 0 0; }
-  #header-outer { padding: 12px 24px; }
-  .multi-carousel-container { padding: 0 46px; }
-  .multi-carousel-track .gallery-item { flex: 0 0 calc(50% - 5px); }
+  .tab-btn {
+    padding: 11px 18px;
+    font-size: 12px;
+  }
+  .tab-panel {
+    padding: 0 30px 30px;
+  }
+  .menu-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 44px;
+  }
+  .menu-section-title {
+    font-size: 16px;
+  }
+  .item-name {
+    font-size: 18px;
+  }
+  
+  /* Gallery */
+  #galeria {
+    padding: 70px 40px;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .multi-carousel-container {
+    padding: 0 46px;
+  }
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 calc(50% - 5px);
+  }
+  
+  /* Reviews */
+  #opiniones {
+    padding: 70px 30px;
+  }
+  .reviews-carousel-viewport {
+    margin: 0 44px;
+  }
+  .carousel-nav-prev-reviews,
+  .carousel-nav-next-reviews {
+    width: 38px;
+    height: 38px;
+  }
+  .opinion-card-link {
+    flex: 0 0 calc(50% - 10px);
+    min-height: 360px;
+  }
+  .opinion-card {
+    min-height: 360px;
+    padding: 24px 20px;
+  }
+  
+  /* Mapa */
+  #mapa iframe {
+    height: clamp(300px, 50vh, 500px);
+  }
+  
+  /* Reserva */
+  #reserva {
+    padding: 50px 30px;
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+  }
+  .reserva-text .section-title {
+    font-size: 32px;
+  }
+  .reserva-actions {
+    justify-content: center;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 24px 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .primero {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+  .copy {
+    grid-column: 1 / -1;
+  }
 }
 
+/* =========================================================
+   MÓVIL GRANDE - max-width: 768px
+   ========================================================= */
 @media (max-width: 768px) {
+  /* Header */
+  #header-outer {
+    padding: 10px 16px;
+  }
+  .logo-text {
+    font-size: 18px;
+    letter-spacing: 3px;
+  }
+  .logo-sub {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+  .logo-icon {
+    width: 42px;
+    height: 42px;
+    font-size: 13px;
+  }
+  
+  /* Mobile menu */
+  nav.open ul {
+    gap: 24px;
+  }
+  nav.open ul li a {
+    font-size: 18px;
+  }
+  
+  /* Hero */
+  #hero {
+    min-height: 90vh;
+    padding: 0 5vw;
+  }
+  .hero-badge {
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 5px 14px;
+    margin-bottom: 16px;
+  }
+  .hero-title {
+    font-size: clamp(32px, 12vw, 64px);
+    letter-spacing: 4px;
+    line-height: 0.9;
+  }
+  .hero-title span {
+    font-size: 0.3em;
+    letter-spacing: 8px;
+    margin-top: 10px;
+  }
+  .hero-desc {
+    font-size: 15px;
+    max-width: 320px;
+    margin: 20px auto 28px;
+  }
+  .hero-ctas {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 280px;
+  }
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    padding: 14px 24px;
+    text-align: center;
+  }
+  .scroll-hint {
+    bottom: 20px;
+  }
+  .scroll-hint .line {
+    height: 28px;
+  }
+  
+  /* Nosotros */
+  .nosotros-grid {
+    grid-template-columns: 1fr;
+  }
+  .nosotros-img {
+    min-height: 280px;
+    aspect-ratio: 16/9;
+  }
+  .nosotros-content {
+    padding: 44px 28px;
+  }
+  .nosotros-content .section-title {
+    font-size: clamp(24px, 5vw, 36px);
+  }
+  
+  /* Info blocks - pasar a vertical */
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+  .info-block {
+    padding: 36px 24px;
+  }
+  .info-block .section-title {
+    font-size: 26px;
+  }
+  
+  /* Menu */
+  #menu {
+    padding: 50px 0;
+  }
+  .menu-header {
+    padding: 0 20px 40px;
+  }
+  .menu-header .section-title {
+    font-size: clamp(28px, 6vw, 48px);
+  }
+  .menu-header .section-desc {
+    font-size: 15px;
+  }
   .tab-nav {
-    margin: 0 8px 35px;
-    top: 60px;
+    margin: 0 8px 32px;
+    padding: 6px 12px 0;
+    top: 62px;
+    border-radius: 6px 6px 0 0;
   }
   .tab-btn {
     padding: 10px 14px;
@@ -1503,31 +1913,825 @@ footer .footer-logo {
     white-space: nowrap;
     flex-shrink: 0;
   }
+  .tab-panel {
+    padding: 0 20px 28px;
+  }
+  .menu-columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .menu-item {
+    gap: 10px;
+  }
+  .item-name {
+    font-size: 17px;
+  }
+  .item-desc {
+    font-size: 13px;
+  }
+  .item-price {
+    font-size: 14px;
+    padding: 3px 10px;
+  }
+  .menu-note {
+    margin: 32px 0 0;
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+  .sauce-tags {
+    gap: 6px;
+  }
+  .sauce-tag {
+    font-size: 9px;
+    padding: 4px 10px;
+  }
+  .broaster-table {
+    font-size: 13px;
+  }
+  .broaster-table th,
+  .broaster-table td {
+    padding: 10px 8px;
+  }
+  
+  /* Gallery */
+  #galeria {
+    padding: 50px 20px;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .multi-carousel-container {
+    padding: 0 40px;
+  }
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 calc(50% - 5px);
+    aspect-ratio: 4/3;
+  }
+  
+  /* Reviews - 1 card visible */
+  #opiniones {
+    padding: 50px 16px;
+  }
+  .opinions-header {
+    margin-bottom: 40px;
+  }
+  .reviews-carousel-viewport {
+    margin: 0 40px;
+  }
+  .carousel-nav-prev-reviews,
+  .carousel-nav-next-reviews {
+    width: 32px;
+    height: 32px;
+  }
+  .carousel-nav-prev-reviews {
+    left: 4px;
+  }
+  .carousel-nav-next-reviews {
+    right: 4px;
+  }
+  .opinion-card-link {
+    flex: 0 0 100%;
+    min-height: auto;
+  }
+  .opinion-card {
+    flex: 0 0 100%;
+    min-height: auto;
+    padding: 20px 16px;
+    height: auto;
+  }
+  .opinion-card-header {
+    margin-bottom: 10px;
+  }
+  .opinion-photo {
+    width: 44px;
+    height: 44px;
+  }
+  .opinion-name {
+    font-size: 13px;
+  }
+  .opinion-text {
+    font-size: 14px;
+    -webkit-line-clamp: 4;
+  }
+  .opinion-food-photo {
+    height: 120px;
+  }
+  
+  /* Mapa */
+  #mapa iframe {
+    width: 100%;
+    height: clamp(280px, 55vh, 450px);
+  }
+  
+  /* Reserva */
+  #reserva {
+    padding: 44px 20px;
+  }
+  .reserva-text .section-title {
+    font-size: 28px;
+  }
+  .reserva-text .section-desc {
+    font-size: 15px;
+  }
+  .reserva-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+  .reserva-actions .btn-primary,
+  .reserva-actions .btn-outline {
+    width: 100%;
+    padding: 14px 24px;
+    text-align: center;
+  }
+  
+  /* Footer - 2 columnas */
+  footer {
+    padding: 20px 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .primero {
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  footer p {
+    font-size: 12px;
+    text-align: center;
+  }
+  .footer-logo {
+    font-size: 18px;
+  }
+  .copy {
+    grid-column: 1 / -1;
+    padding-top: 10px;
+  }
+  
+  /* WhatsApp - safe area */
+  .whatsapp-btn {
+    right: calc(20px + env(safe-area-inset-right, 0px));
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    width: 56px;
+    height: 56px;
+  }
+  .whatsapp-btn img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
-@media (max-width: 600px) {
-  #menu { padding: 50px 0; }
-  .menu-header { padding: 0 20px 40px; }
-  .menu-header .section-title { font-size: 28px; }
-  .tab-panel { padding: 0 16px 25px; }
+/* =========================================================
+   MÓVIL ESTÁNDAR - max-width: 576px
+   ========================================================= */
+@media (max-width: 576px) {
+  /* Header */
+  #header-outer {
+    padding: 8px 14px;
+  }
+  .logo-text {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  .logo-sub {
+    display: none;
+  }
+  .logo-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 12px;
+  }
+  
+  /* Mobile menu */
+  nav.open ul {
+    gap: 20px;
+    padding: 70px 16px;
+  }
+  nav.open ul li a {
+    font-size: 16px;
+  }
+  nav.open ul li.cta a {
+    font-size: 14px;
+    padding: 10px 24px;
+  }
+  
+  /* Hero */
+  #hero {
+    min-height: 85vh;
+    padding: 0 4vw;
+  }
+  .hero-badge {
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    margin-bottom: 14px;
+  }
+  .hero-title {
+    font-size: clamp(28px, 14vw, 56px);
+    letter-spacing: 3px;
+  }
+  .hero-title span {
+    font-size: 0.28em;
+    letter-spacing: 6px;
+    margin-top: 8px;
+  }
+  .hero-desc {
+    font-size: 14px;
+    max-width: 280px;
+    margin: 16px auto 24px;
+  }
+  .hero-ctas {
+    max-width: 240px;
+  }
+  .btn-primary,
+  .btn-outline {
+    padding: 12px 20px;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+  .scroll-hint {
+    display: none;
+  }
+  
+  /* Nosotros */
+  .nosotros-img {
+    min-height: 220px;
+  }
+  .nosotros-content {
+    padding: 36px 20px;
+  }
+  .nosotros-content .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+  .nosotros-content .section-title {
+    font-size: clamp(22px, 5vw, 30px);
+  }
+  .nosotros-content .section-desc {
+    font-size: 15px;
+  }
+  
+  /* Info blocks */
+  .info-block {
+    padding: 28px 18px;
+  }
+  .info-block .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+  .info-block .section-title {
+    font-size: 22px;
+  }
+  .info-block p {
+    font-size: 14px;
+  }
+  
+  /* Menu */
+  #menu {
+    padding: 40px 0;
+  }
+  .menu-header {
+    padding: 0 16px 32px;
+  }
+  .menu-header::after {
+    font-size: 14px;
+    letter-spacing: 8px;
+    margin-top: 16px;
+  }
+  .tab-nav {
+    margin: 0 6px 28px;
+    padding: 5px 10px 0;
+    top: 58px;
+  }
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .tab-panel {
+    padding: 0 16px 24px;
+  }
+  .menu-columns {
+    gap: 24px;
+  }
+  .menu-section-title {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
   .menu-item {
+    padding: 12px 0;
+  }
+  .item-name {
+    font-size: 16px;
+  }
+  .item-desc {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+  .item-price {
+    font-size: 13px;
+    padding: 3px 8px;
+  }
+  .menu-note {
+    margin: 28px 0 0;
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+  .broaster-table {
+    font-size: 12px;
+  }
+  .broaster-table th,
+  .broaster-table td {
+    padding: 8px 6px;
+  }
+  
+  /* Gallery */
+  #galeria {
+    padding: 40px 16px;
+  }
+  .gallery-grid {
+    gap: 4px;
+  }
+  .multi-carousel-container {
+    padding: 0 36px;
+  }
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 100%;
+    aspect-ratio: 4/3;
+  }
+  
+  /* Reviews */
+  #opiniones {
+    padding: 40px 12px;
+  }
+  .opinions-header .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+  .opinions-header .section-title {
+    font-size: clamp(24px, 5vw, 34px);
+  }
+  .opinions-header .section-title::after {
+    font-size: 11px;
+    letter-spacing: 6px;
+    margin-top: 10px;
+  }
+  .opinions-header .section-desc {
+    font-size: 15px;
+  }
+  .reviews-carousel-viewport {
+    margin: 0 36px;
+  }
+  .carousel-nav-prev-reviews,
+  .carousel-nav-next-reviews {
+    width: 28px;
+    height: 28px;
+  }
+  .carousel-nav-prev-reviews {
+    left: 2px;
+  }
+  .carousel-nav-next-reviews {
+    right: 2px;
+  }
+  .opinion-card {
+    padding: 18px 14px;
+  }
+  .opinion-card::before,
+  .opinion-card::after {
+    width: 12px;
+    height: 12px;
+  }
+  .opinion-photo {
+    width: 40px;
+    height: 40px;
+  }
+  .opinion-name {
+    font-size: 12px;
+  }
+  .opinion-datetime {
+    font-size: 11px;
+  }
+  .opinion-stars {
+    font-size: 10px;
+  }
+  .opinion-food-info {
+    font-size: 12px;
+    padding-top: 10px;
+    margin-top: 10px;
+  }
+  .opinion-food-photo {
+    height: 100px;
+    margin-top: 10px;
+  }
+  .opinion-text {
+    font-size: 13px;
+    -webkit-line-clamp: 4;
+  }
+  .opinion-text::before {
+    font-size: 44px;
+    top: -8px;
+  }
+  .google-reviews-link {
+    font-size: 11px;
+    padding: 8px 20px;
+  }
+  
+  /* Mapa */
+  #mapa iframe {
+    width: 100%;
+    height: clamp(260px, 50vh, 400px);
+  }
+  
+  /* Reserva */
+  #reserva {
+    padding: 36px 16px;
+  }
+  .reserva-text .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+  }
+  .reserva-text .section-title {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .reserva-text .section-desc {
+    font-size: 14px;
+  }
+  .reserva-actions {
+    max-width: 220px;
+  }
+  .reserva-actions .btn-primary,
+  .reserva-actions .btn-outline {
+    padding: 12px 18px;
+    font-size: 11px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 18px 16px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .primero {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
+  }
+  .footer-logo {
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+  footer p {
+    font-size: 11px;
+  }
+  
+  /* WhatsApp */
+  .whatsapp-btn {
+    width: 52px;
+    height: 52px;
+  }
+  .whatsapp-btn img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* =========================================================
+   MÓVIL PEQUEÑO - max-width: 400px
+   ========================================================= */
+@media (max-width: 400px) {
+  /* Header */
+  #header-outer {
+    padding: 8px 12px;
+  }
+  .logo-text {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 11px;
+  }
+  
+  /* Mobile menu */
+  nav.open ul {
+    gap: 18px;
+    padding: 60px 14px;
+  }
+  nav.open ul li a {
+    font-size: 15px;
+  }
+  nav.open ul li.cta a {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+  
+  /* Hero */
+  #hero {
+    min-height: 80vh;
+    padding: 0 3vw;
+  }
+  .hero-badge {
+    font-size: 8px;
+    letter-spacing: 1px;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+  .hero-title {
+    font-size: clamp(24px, 16vw, 48px);
+    letter-spacing: 2px;
+  }
+  .hero-title span {
+    font-size: 0.26em;
+    letter-spacing: 4px;
+    margin-top: 6px;
+  }
+  .hero-desc {
+    font-size: 13px;
+    max-width: 240px;
+    margin: 14px auto 20px;
+    line-height: 1.6;
+  }
+  .hero-ctas {
+    max-width: 200px;
+  }
+  .btn-primary,
+  .btn-outline {
+    padding: 11px 16px;
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+  
+  /* Nosotros */
+  .nosotros-img {
+    min-height: 180px;
+  }
+  .nosotros-content {
+    padding: 28px 16px;
+  }
+  .nosotros-content .section-title {
+    font-size: 20px;
+  }
+  .nosotros-content .section-desc {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  
+  /* Info blocks */
+  .info-block {
+    padding: 24px 14px;
+  }
+  .info-block .section-title {
+    font-size: 20px;
+  }
+  .info-block p {
+    font-size: 13px;
+  }
+  
+  /* Menu */
+  #menu {
+    padding: 32px 0;
+  }
+  .menu-header {
+    padding: 0 14px 28px;
+  }
+  .menu-header::after {
+    font-size: 12px;
+    letter-spacing: 6px;
+    margin-top: 12px;
+  }
+  .menu-header .section-title {
+    font-size: 24px;
+  }
+  .menu-header .section-desc {
+    font-size: 14px;
+  }
+  .tab-nav {
+    margin: 0 4px 24px;
+    padding: 4px 8px 0;
+    top: 54px;
+  }
+  .tab-btn {
+    padding: 7px 10px;
+    font-size: 9px;
+  }
+  .tab-panel {
+    padding: 0 14px 20px;
+  }
+  .menu-section-title {
+    font-size: 13px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+  }
+  .menu-item {
+    padding: 10px 0;
     gap: 8px;
   }
-  .menu-item::before { display: none; }
-  .menu-item:hover { transform: none; padding-left: 0; }
-  .item-name { font-size: 17px; }
-  .item-desc { font-size: 13px; }
-  .item-price { align-self: flex-start; }
-  .menu-note { padding: 14px 18px; font-size: 14px; }
-  .sauce-tag { font-size: 10px; padding: 4px 10px; }
-  .broaster-table { font-size: 12px; }
-  .broaster-table th, .broaster-table td { padding: 9px 8px; }
-  .multi-carousel-container { padding: 0 38px; }
-  .multi-carousel-track .gallery-item { flex: 0 0 100%; aspect-ratio: 4/3; }
+  .item-name {
+    font-size: 15px;
+  }
+  .item-desc {
+    font-size: 11px;
+  }
+  .item-price {
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+  .menu-note {
+    margin: 24px 0 0;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+  .sauce-tags {
+    gap: 5px;
+  }
+  .sauce-tag {
+    font-size: 8px;
+    padding: 3px 8px;
+  }
+  .broaster-table {
+    font-size: 11px;
+  }
+  .broaster-table th,
+  .broaster-table td {
+    padding: 6px 5px;
+  }
+  
+  /* Gallery */
+  #galeria {
+    padding: 32px 12px;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .multi-carousel-container {
+    padding: 0 32px;
+  }
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 100%;
+    aspect-ratio: 1/1;
+  }
+  
+  /* Reviews */
+  #opiniones {
+    padding: 32px 10px;
+  }
+  .opinions-header {
+    margin-bottom: 32px;
+  }
+  .opinions-header .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+  .opinions-header .section-title {
+    font-size: 22px;
+  }
+  .opinions-header .section-title::after {
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-top: 8px;
+  }
+  .opinions-header .section-desc {
+    font-size: 14px;
+    margin-top: 12px;
+  }
+  .reviews-carousel-viewport {
+    margin: 0 32px;
+  }
+  .carousel-nav-prev-reviews,
+  .carousel-nav-next-reviews {
+    width: 24px;
+    height: 24px;
+  }
+  .carousel-nav-prev-reviews {
+    left: 2px;
+  }
+  .carousel-nav-next-reviews {
+    right: 2px;
+  }
+  .opinion-card {
+    padding: 14px 12px;
+  }
+  .opinion-card::before,
+  .opinion-card::after {
+    width: 10px;
+    height: 10px;
+  }
+  .opinion-card-header {
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .opinion-photo {
+    width: 36px;
+    height: 36px;
+  }
+  .opinion-name {
+    font-size: 11px;
+  }
+  .opinion-datetime {
+    font-size: 10px;
+  }
+  .opinion-stars {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .opinion-food-info {
+    font-size: 11px;
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+  .opinion-food-photo {
+    height: 90px;
+    margin-top: 8px;
+  }
+  .opinion-text {
+    font-size: 12px;
+    -webkit-line-clamp: 3;
+    padding-left: 4px;
+  }
+  .opinion-text::before {
+    font-size: 36px;
+    top: -6px;
+    left: -2px;
+  }
+  .google-reviews-link {
+    font-size: 10px;
+    padding: 7px 16px;
+    margin-top: 20px;
+  }
+  
+  /* Mapa */
+  #mapa iframe {
+    width: 100%;
+    height: clamp(240px, 45vh, 350px);
+  }
+  
+  /* Reserva */
+  #reserva {
+    padding: 28px 14px;
+  }
+  .reserva-text .section-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+  .reserva-text .section-title {
+    font-size: 20px;
+  }
+  .reserva-text .section-desc {
+    font-size: 13px;
+  }
+  .reserva-actions {
+    max-width: 180px;
+  }
+  .reserva-actions .btn-primary,
+  .reserva-actions .btn-outline {
+    padding: 10px 14px;
+    font-size: 10px;
+  }
+  
+  /* Footer */
+  footer {
+    padding: 16px 14px;
+  }
+  .footer-logo {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+  footer p {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  
+  /* WhatsApp */
+  .whatsapp-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .whatsapp-btn img {
+    width: 26px;
+    height: 26px;
+  }
 }
 
-@media (max-width: 400px) {
-  .multi-carousel-container { padding: 0 32px; }
+/* =========================================================
+   AJUSTES FINALES PARA EVITAR SCROLL HORIZONTAL
+   ========================================================= */
+* {
+  max-width: 100%;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  max-width: 100%;
 }
