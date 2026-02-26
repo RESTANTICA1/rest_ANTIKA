@@ -25,7 +25,6 @@ const translations = {
     parrafo5: "Aceptamos pagos en efectivo. El pago con tarjeta tiene un cargo adicional de 5%.",
     parrafo6: "¿Tienes alguna consulta o quieres hacer una reserva? Contáctanos directamente:",
     whatsapp: "Escribir por WhatsApp →",
-
     titulo: "Nuestra propuesta",
     carta: "La Carta",
     pcarta: "Tradición, creatividad y calidad en cada plato. Desde desayunos criollos hasta fondos especiales, nuestra carta celebra los sabores del Perú.",
@@ -40,7 +39,7 @@ const translations = {
     comida9: "Domingo",
     vegetariana: "Vegetariana",
     desayuno: "Desayunos · Disponibles hasta las 11:00 a.m.",
-    des:"Desayuno Antika",
+    des: "Desayuno Antika",
     opD: "Opción A: Bistec encebollado con arroz y papa sancochada, incluye café o jugo. / Opción B: Saltado casero de pollo con arroz y papas fritas, incluye café o jugo.",
     opD1: "Desayuno Americano",
     opD2: "Pan artesanal con mantequilla y mermelada, huevos al gusto (fritos o revueltos) con tocino crocante o jamón, jugo natural de fruta de estación y café pasado.",
@@ -90,7 +89,6 @@ const translations = {
     medio7: "Res cocida, crujiente por fuera y jugosa por dentro, con choclo tierno, sarsa fresca y papas doradas.",
     medio8: "Bistec rebozado y frito, cocido en jugo aromático de vegetales y especias. Con arroz blanco y papas.",
     medio9: "★ Especiales de Domingo -> Chicharrón de cerdo S/ 23 · Caja China S/ 28 · Triple Arequipeño S/ 35 · Adobo Arequipeño de Antaño S/ 22",
-
     casa: "Nuestra casa",
     galeria: "Galería",
     parrafo7: "Conoce Antika a través de nuestros platillos y ambiente. Una experiencia que va más allá del plato.",
@@ -109,13 +107,14 @@ const translations = {
     parrafo9: "Reserva fácilmente y prepárate para vivir una experiencia gastronómica auténtica en el corazón de Sicuani.",
     whatsapp2: "Reservar por WhatsApp",
     celular: "Llamar ahora",
-    parrafo10: "Pago con tarjeta: cargo adicional del 5%<",
+    parrafo10: "Pago con tarjeta: cargo adicional del 5%",
+    ver_en_google: "Ver todas las reseñas en Google",
   },
   en: {
     restaurant_name: "Restaurant - Sicuani",
     link1: "About us",
     link2: "Menu",
-    link3: "Galery",
+    link3: "Gallery",
     link4: "Reviews",
     Reserva: "Reservation",
     spanRes: "Restaurant",
@@ -123,13 +122,13 @@ const translations = {
     menu: "View Menu",
     conocenos: "About Us",
     pie1: "Explore",
-    span2: "Out History",
+    span2: "Our History",
     tradicion: "Tradition & Flavor",
     parrafo1: "At Antika Restaurant, we celebrate the authentic flavors of Creole and Peruvian cuisine. Every dish we serve carries the soul of our land: fresh ingredients, time-honored recipes, and the warmth of the people of Sicuani.",
     parrafo2: "From our handcrafted breakfasts to our most hearty main dishes, every visit is an experience that pays tribute to the culinary heritage of southern Peru.",
     span3: "Find Us",
     ubicacion: "Location & Opening Hours",
-    parrafo3:"We are in the heart of Sicuani, ready to welcome you with the finest flavors of our cuisine.",
+    parrafo3: "We are in the heart of Sicuani, ready to welcome you with the finest flavors of our cuisine.",
     parrafo4: "Open daily — Breakfast served until 11:00 a.m.",
     mapa: "View on map ↓",
     contacto: "Payment & Contact",
@@ -137,12 +136,11 @@ const translations = {
     parrafo5: "We accept cash payments. Card payments are subject to an additional 5% charge.",
     parrafo6: "Do you have any questions or would you like to make a reservation? Contact us directly:",
     whatsapp: "Message us on WhatsApp →",
-
     titulo: "Our Concept",
     carta: "Menu",
     pcarta: "Tradition, creativity, and quality in every dish. From Creole breakfasts to special main courses, our menu celebrates the flavors of Peru.",
     comida1: "Breakfasts",
-    comida2: "Sándwiches",
+    comida2: "Sandwiches",
     comida3: "Salads & Soups",
     comida4: "Lunch",
     comida5: "Main Dishes",
@@ -153,7 +151,7 @@ const translations = {
     vegetariana: "Vegetarian",
     desayuno: "Breakfasts · Available until 11:00 a.m.",
     des: "Antika Breakfast",
-    opD:"Option A: Onion steak with rice and boiled potatoes, includes coffee or juice. / Option B: Homemade chicken stir-fry with rice and French fries, includes coffee or juice.",
+    opD: "Option A: Onion steak with rice and boiled potatoes, includes coffee or juice. / Option B: Homemade chicken stir-fry with rice and French fries, includes coffee or juice.",
     opD1: "American Breakfast",
     opD2: "Artisan bread with butter and jam, eggs cooked to your liking (fried or scrambled) with crispy bacon or ham, fresh seasonal fruit juice, and brewed coffee.",
     opD3: "Peruvian Tamal",
@@ -201,8 +199,7 @@ const translations = {
     medio6: "Beef roast cooked with vegetables and aromatic herbs, served with your choice of mashed potatoes or noodles.",
     medio7: "Beef cooked to perfection, crispy on the outside and juicy on the inside, served with tender corn, fresh salsa, and golden potatoes.",
     medio8: "Breaded and fried beef steak, cooked in an aromatic vegetable and spice sauce. Served with white rice and potatoes.",
-    medio9: "★ Sunday Specials → Pork Chicharrón S/ 23 - Caja China S/ 28 - Triple Arequipeño S/ 35  - Traditional Arequipeño Adobo S/ 22",
-
+    medio9: "★ Sunday Specials → Pork Chicharrón S/ 23 - Caja China S/ 28 - Triple Arequipeño S/ 35 - Traditional Arequipeño Adobo S/ 22",
     casa: "Our Place",
     galeria: "Gallery",
     parrafo7: "Discover Antika through our dishes and atmosphere. An experience that goes beyond the plate.",
@@ -217,11 +214,12 @@ const translations = {
     coment2: "The trucha fungi is outstanding. The creamy mushroom and béchamel sauce is perfectly balanced. Easily the best restaurant in Sicuani.",
     coment3: "We loved the Antika breakfast during our trip. The bistec encebollado was perfectly cooked, and the coffee was excellent. Highly recommended to start the day.",
     span5: "Your table awaits",
-    reserva:"Book a Table",
+    reserva: "Book a Table",
     parrafo9: "Book easily and get ready to enjoy an authentic gastronomic experience in the heart of Sicuani.",
     whatsapp2: "Book on WhatsApp",
     celular: "Call Now",
     parrafo10: "Card payments: 5% additional charge",
+    ver_en_google: "View all reviews on Google",
   },
   pt: {
     restaurant_name: "Restaurante - Sicuani",
@@ -249,7 +247,6 @@ const translations = {
     parrafo5: "Aceitamos pagamentos em dinheiro. Pagamentos com cartão têm uma taxa adicional de 5%.",
     parrafo6: "Tem alguma dúvida ou gostaria de fazer uma reserva? Entre em contato conosco diretamente:",
     whatsapp: "Fale conosco pelo WhatsApp",
-
     titulo: "Nossa proposta",
     carta: "Cardápio",
     pcarta: "Tradição, criatividade e qualidade em cada prato. Dos cafés da manhã crioulos aos pratos principais especiais, o nosso cardápio celebra os sabores do Peru.",
@@ -306,7 +303,7 @@ const translations = {
     soup6: "Caldo concentrado com galinha caipira, macarrão, batata, ovo cozido e um toque de cebolinha.",
     medio: "Almoço Tradicional Criollo",
     medio1: "Arroz realçado com coentro e frango dourado, com molho crioulo e batatas à huancaína.",
-    medio2: "Tender slices of beef tongue in a creamy roasted peanut sauce, served with rice.",
+    medio2: "Fatias tenras de língua bovina em cremoso molho de amendoim torrado, servida com arroz.",
     medio3: "Carne bovina suculenta cozida em molho de vinho tinto, tomate, cebola e alho. Servida com arroz branco.",
     medio4: "Costela de boi em molho aromático de coentro e especiarias, com feijão e arroz branco.",
     medio5: "Frango desfiado em molho cremoso de pimenta amarela, sobre batatas cozidas e arroz branco.",
@@ -314,7 +311,6 @@ const translations = {
     medio7: "Carne bovina cozida, crocante por fora e suculenta por dentro, com milho macio, molho fresco e batatas douradas.",
     medio8: "Bife empanado e frito, cozido em molho aromático de vegetais e especiarias. Servido com arroz branco e batatas.",
     medio9: "★ Especiais de Domingo → Chicharrón de Porco S/ 23 - Caja China S/ 28 - Triple Arequipeño S/ 35 - Adobo Arequipeño Tradicional S/ 22",
-
     casa: "Nossa casa",
     galeria: "Galeria",
     parrafo7: "Conheça o Antika por meio dos nossos pratos e do nosso ambiente. Uma experiência que vai além do prato.",
@@ -334,26 +330,118 @@ const translations = {
     whatsapp2: "Reserve pelo WhatsApp",
     celular: "Ligue agora",
     parrafo10: "Pagamento com cartão: taxa adicional de 5%",
+    ver_en_google: "Ver todas as avaliações no Google",
   }
 };
 
-const select = document.getElementById("language-select");
+/* ─────────────────────────────────────────────
+   Núcleo del sistema de idiomas
+   ───────────────────────────────────────────── */
 
-function changeLanguage(lang) {
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.dataset.i18n;
-    el.textContent = translations[lang][key];
-  });
-
-  localStorage.setItem("lang", lang);
+/**
+ * Devuelve el idioma activo (del select o localStorage).
+ */
+function getCurrentLanguage() {
+  const select = document.getElementById('language-select');
+  return (select && select.value) || localStorage.getItem('lang') || 'es';
 }
 
-// Evento del select
-select.addEventListener("change", () => {
-  changeLanguage(select.value);
-});
+/**
+ * Aplica todas las traducciones estáticas (data-i18n).
+ */
+function applyStaticTranslations(lang) {
+  const t = translations[lang];
+  if (!t) return;
 
-// Idioma al cargar
-const savedLang = localStorage.getItem("lang") || "es";
-select.value = savedLang;
-changeLanguage(savedLang);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) {
+      el.textContent = t[key];
+    }
+  });
+}
+
+/**
+ * Re-renderiza el tab activo del menú dinámico en el nuevo idioma.
+ * Marca todos los tabs como "no renderizados" para que se regeneren
+ * con el idioma correcto la próxima vez que el usuario los abra.
+ */
+function refreshMenuForLanguage() {
+  const antika = window._antika;
+  if (!antika || !antika.menuData) return;
+
+  // Marcar todos los tabs como no renderizados excepto el activo
+  const activePanel = document.querySelector('.tab-panel.active');
+  const activePanelId = activePanel ? activePanel.id.replace('tab-', '') : 'desayunos';
+
+  // Resetear todos los flags de render
+  Object.keys(antika.tabRendered).forEach(key => {
+    antika.tabRendered[key] = false;
+  });
+
+  // Re-renderizar el tab activo inmediatamente
+  if (typeof renderMenu === 'function') {
+    renderMenu(activePanelId);
+    antika.tabRendered[activePanelId] = true;
+  }
+}
+
+/**
+ * Función principal de cambio de idioma.
+ * Llamada tanto desde los botones de bandera como desde el select.
+ */
+function changeLanguage(lang) {
+  if (!translations[lang]) return;
+
+  // 1. Actualizar el select (por si se llamó desde botón de bandera)
+  const select = document.getElementById('language-select');
+  if (select) select.value = lang;
+
+  // 2. Aplicar todas las traducciones estáticas
+  applyStaticTranslations(lang);
+
+  // 3. Refrescar el menú dinámico
+  refreshMenuForLanguage();
+
+  // 4. Persistir en localStorage
+  localStorage.setItem('lang', lang);
+
+  // 5. Actualizar atributo lang del documento
+  document.documentElement.lang = lang;
+}
+
+/* ─────────────────────────────────────────────
+   Inicialización al cargar la página
+   ───────────────────────────────────────────── */
+(function initLanguage() {
+  const select = document.getElementById('language-select');
+
+  // Escuchar cambios en el select (por compatibilidad)
+  if (select) {
+    select.addEventListener('change', () => changeLanguage(select.value));
+  }
+
+  // Aplicar idioma guardado (o español por defecto)
+  const savedLang = localStorage.getItem('lang') || 'es';
+  if (select) select.value = savedLang;
+
+  // Si el menú dinámico ya cargó, aplicar todo de inmediato
+  if (window._antika && window._antika.menuLoaded) {
+    changeLanguage(savedLang);
+  } else {
+    // Aplicar traducciones estáticas ahora
+    applyStaticTranslations(savedLang);
+    document.documentElement.lang = savedLang;
+
+    // Esperar a que el menú cargue para refrescarlo también
+    const waitForMenu = setInterval(() => {
+      if (window._antika && window._antika.menuLoaded) {
+        clearInterval(waitForMenu);
+        refreshMenuForLanguage();
+      }
+    }, 100);
+
+    // Seguro: parar de esperar tras 10 segundos
+    setTimeout(() => clearInterval(waitForMenu), 10000);
+  }
+})();
