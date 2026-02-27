@@ -85,9 +85,6 @@ function initHeaderScroll() {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        // Si el hero NO está visible (entry.isIntersecting = false), agregar clase scrolled
-        // Si el hero está visible, remover clase scrolled
-        $.header.classList.toggle('scrolled', !entry.isIntersecting);
       });
     },
     {
