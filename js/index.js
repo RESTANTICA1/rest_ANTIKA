@@ -89,7 +89,6 @@ function initHeaderScroll() {
     }
   };
 
-  window.addEventListener('scroll', fn, { passive: true });
   window._antika.headerScrollFn   = fn;
   window._antika.headerScrollInit = true;
 }
