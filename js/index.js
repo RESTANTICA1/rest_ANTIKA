@@ -78,17 +78,16 @@ function cacheNodes() {
 function initHeaderScroll() {
   if (window._antika.headerScrollInit) return;
 
-  let lastScroll = 0;
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
-  if (currentScroll > lastScroll) {
-    header.style.top = "-100px"; // ocultar
-  } else {
-    header.style.top = "0"; // mostrar
-  }
-  lastScroll = currentScroll;
-  });
+  let ticking = false;
+  const fn = () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        $.header?.classList.toggle('scrolled', window.scrollY > 60);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
 
   window._antika.headerScrollFn   = fn;
   window._antika.headerScrollInit = true;
