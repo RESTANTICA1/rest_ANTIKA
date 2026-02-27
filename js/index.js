@@ -796,6 +796,16 @@ async function loadGoogleReviews() {
 
     window._antika.reviewsLoaded = true;
     initReviewsCarousel();
+    
+    // Auto-slide para móvil
+    initMobileAutoSlide();
+    
+    // También escuchar resize para cambiar entre desktop/mobile
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 768 && !window._antika.mobileAutoSlideInit) {
+        setTimeout(initMobileAutoSlide, 500);
+      }
+    }, { passive: true });
 
   } catch (err) {
     console.error('Error loading reviews:', err);
@@ -806,6 +816,12 @@ async function loadGoogleReviews() {
 /* ─── Carrusel de reseñas ─── */
 function initReviewsCarousel() {
   if (window._antika.reviewsCarouselInit) return;
+
+  // En móvil usar CSS scroll-snap en lugar de JS carousel
+  if (window.innerWidth <= 768) {
+    window._antika.reviewsCarouselInit = true;
+    return;
+  }
 
   const track   = $.reviewsContainer;
   const prevBtn = $.revPrev;
@@ -820,13 +836,13 @@ function initReviewsCarousel() {
   let currentIndex = 0;
   let isPaused     = false;
 
-  const AUTO_PLAY_INTERVAL  = 4000;
+  const AUTO_PLAY_INTERVAL  = 5000;
   const TRANSITION_DURATION = 500;
 
   function getItems()       { return track.querySelectorAll('.opinion-card'); }
   function getItemsPerView() {
     const w = window.innerWidth;
-    return w <= 600 ? 1 : w <= 1024 ? 2 : 3;
+    return w <= 768 ? 1 : w <= 992 ? 2 : 3;
   }
 
   function updateCarousel() {
@@ -920,6 +936,94 @@ function initReviewsCarousel() {
   updateCarousel();
   startAutoPlay();
   window._antika.reviewsCarouselInit = true;
+}
+
+/* ─── Auto-slide para móvil (CSS scroll-snap) ─── */
+function initMobileAutoSlide() {
+  if (window.innerWidth > 768) return;
+  
+  const track = $.reviewsContainer;
+  if (!track) return;
+  if (window._antika.mobileAutoSlideInit) return;
+  window._antika.mobileAutoSlideInit = true;
+
+  let autoSlideInterval = null;
+  let isPaused = false;
+  let pauseTimeout = null;
+  let cardWidth = track.offsetWidth;
+  let totalCards = 0;
+
+  function countCards() {
+    const cards = track.querySelectorAll('.opinion-card-link');
+    totalCards = cards.length;
+    cardWidth = track.offsetWidth || window.innerWidth - 88; // 44px margin each side
+  }
+
+  function getCurrentIndex() {
+    return Math.round(track.scrollLeft / cardWidth);
+  }
+
+  function slideToNext() {
+    if (isPaused || totalCards === 0) return;
+    
+    const currentIndex = getCurrentIndex();
+    const nextIndex = (currentIndex + 1) % totalCards;
+    
+    track.scrollTo({
+      left: nextIndex * cardWidth,
+      behavior: 'smooth'
+    });
+  }
+
+  function startAutoSlide() {
+    countCards();
+    if (totalCards === 0) return;
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(slideToNext, 5000);
+  }
+
+  function pauseAutoSlide() {
+    isPaused = true;
+    if (autoSlideInterval) {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = null;
+    }
+    
+    // Reanudar después de 3 segundos sin interacción
+    if (pauseTimeout) clearTimeout(pauseTimeout);
+    pauseTimeout = setTimeout(() => {
+      isPaused = false;
+      startAutoSlide();
+    }, 3000);
+  }
+
+  // Detectar interacción táctil para pausar
+  track.addEventListener('touchstart', pauseAutoSlide, { passive: true });
+  track.addEventListener('touchmove', pauseAutoSlide, { passive: true });
+  track.addEventListener('mousedown', pauseAutoSlide);
+  
+  // Pausar mientras hace scroll manual
+  let scrollTimeout;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(pauseAutoSlide, 200);
+  }, { passive: true });
+
+  // Esperar a que se carguen las tarjetas
+  setTimeout(startAutoSlide, 1000);
+
+  // Actualizar al redimensionar
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      if (autoSlideInterval) {
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = null;
+      }
+    } else {
+      countCards();
+      if (!autoSlideInterval) startAutoSlide();
+    }
+  }, { passive: true });
 }
 
 /* Carrusel de galería */

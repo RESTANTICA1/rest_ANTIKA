@@ -1831,13 +1831,26 @@ iframe {
   .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 36px; height: 36px; }
   .carousel-nav-prev-reviews { left: 4px; }
   .carousel-nav-next-reviews { right: 4px; }
-  .opinion-card-link { flex: 0 0 100%; min-height: auto; }
-  .opinion-card { flex: 0 0 100%; min-height: auto; padding: 20px 16px; height: auto; }
-  .opinion-card-header { margin-bottom: 10px; }
+  .opinion-card-link { 
+    flex: 0 0 100%; 
+    min-height: 420px; 
+    box-sizing: border-box;
+  }
+  .opinion-card { 
+    flex: 0 0 100%; 
+    min-height: 420px; 
+    padding: 20px 16px; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .opinion-card-header { margin-bottom: 10px; flex-shrink: 0; }
   .opinion-photo { width: 44px; height: 44px; }
   .opinion-name { font-size: 13px; }
-  .opinion-text { font-size: 14px; -webkit-line-clamp: 4; }
-  .opinion-food-photo { height: 120px; }
+  .opinion-text { font-size: 14px; -webkit-line-clamp: 4; flex-shrink: 0; }
+  .opinion-food-photo { height: 120px; flex-shrink: 0; }
 
   #mapa iframe { height: clamp(280px, 55vh, 450px); }
 
@@ -1946,15 +1959,23 @@ iframe {
   .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 30px; height: 30px; }
   .carousel-nav-prev-reviews { left: 2px; }
   .carousel-nav-next-reviews { right: 2px; }
-  .opinion-card { padding: 18px 14px; }
+  .opinion-card-link { min-height: 400px; }
+  .opinion-card { 
+    padding: 18px 14px; 
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .opinion-card::before, .opinion-card::after { width: 12px; height: 12px; }
+  .opinion-card-header { margin-bottom: 8px; flex-shrink: 0; }
   .opinion-photo { width: 40px; height: 40px; }
   .opinion-name { font-size: 12px; }
   .opinion-datetime { font-size: 11px; }
   .opinion-stars { font-size: 10px; }
   .opinion-food-info { font-size: 12px; padding-top: 10px; margin-top: 10px; }
-  .opinion-food-photo { height: 100px; margin-top: 10px; }
-  .opinion-text { font-size: 13px; -webkit-line-clamp: 4; }
+  .opinion-food-photo { height: 100px; margin-top: 10px; flex-shrink: 0; }
+  .opinion-text { font-size: 13px; -webkit-line-clamp: 4; flex-shrink: 0; }
   .opinion-text::before { font-size: 44px; top: -8px; }
   .google-reviews-link { font-size: 11px; padding: 8px 20px; }
 
@@ -2054,16 +2075,23 @@ iframe {
   .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 26px; height: 26px; }
   .carousel-nav-prev-reviews { left: 2px; }
   .carousel-nav-next-reviews { right: 2px; }
-  .opinion-card { padding: 14px 12px; }
+  .opinion-card-link { min-height: 380px; }
+  .opinion-card { 
+    padding: 14px 12px; 
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .opinion-card::before, .opinion-card::after { width: 10px; height: 10px; }
-  .opinion-card-header { gap: 10px; margin-bottom: 8px; }
+  .opinion-card-header { gap: 10px; margin-bottom: 8px; flex-shrink: 0; }
   .opinion-photo { width: 36px; height: 36px; }
   .opinion-name { font-size: 11px; }
   .opinion-datetime { font-size: 10px; }
   .opinion-stars { font-size: 9px; letter-spacing: 1px; }
   .opinion-food-info { font-size: 11px; padding-top: 8px; margin-top: 8px; }
-  .opinion-food-photo { height: 90px; margin-top: 8px; }
-  .opinion-text { font-size: 12px; -webkit-line-clamp: 3; padding-left: 4px; }
+  .opinion-food-photo { height: 90px; margin-top: 8px; flex-shrink: 0; }
+  .opinion-text { font-size: 12px; -webkit-line-clamp: 3; padding-left: 4px; flex-shrink: 0; }
   .opinion-text::before { font-size: 36px; top: -6px; left: -2px; }
   .google-reviews-link { font-size: 10px; padding: 7px 16px; margin-top: 20px; }
 
@@ -2139,6 +2167,32 @@ iframe {
     margin: 0 44px;
     flex: 1;
     overflow: hidden;
+  }
+
+  .reviews-carousel-track {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    will-change: scroll-position;
+  }
+
+  .reviews-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviews-carousel-track * {
+    will-change: auto;
+  }
+
+  .opinion-card-link {
+    scroll-snap-align: center;
+    flex: 0 0 100%;
+    min-width: 100%;
   }
 
   .carousel-nav-prev-reviews,
