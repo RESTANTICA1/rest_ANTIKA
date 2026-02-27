@@ -8,33 +8,28 @@
 
 :root {
   /* === PALETA BASADA EN IMAGEN 1 === */
-  /* Madera teal oscura + vetas doradas */
   --wood-teal-deep:   #0d2b2a;
   --wood-teal:        #1a4a48;
   --wood-teal-mid:    #1f5a57;
   --wood-teal-light:  #2a7a76;
   --wood-teal-bright: #3aa09a;
 
-  /* Dorado de las vetahero-cts */
   --gold:             #c8a84c;
   --gold-light:       #e8c97a;
   --gold-pale:        #f5e6b8;
   --gold-dark:        #8a6a1e;
   --gold-glow:        rgba(200, 168, 76, 0.35);
 
-  /* Crema / papel envejecido (menú) */
   --parchment:        #f4ead4;
   --parchment-dark:   #e8d8b0;
   --parchment-deep:   #d4c090;
   --parchment-shadow: rgba(80, 50, 10, 0.18);
 
-  /* Oscuros */
   --dark-ink:         #0a1a18;
   --dark-wood:        #081512;
   --navy-deep:        #0c1e1c;
   --navy-mid:         #132e2c;
 
-  /* Texto */
   --text-dark:        #1e0e04;
   --text-mid:         #3a2510;
   --text-muted:       #6a5030;
@@ -42,11 +37,9 @@
   --cream-light:      #faf5ec;
   --silver-light:     #dde8e6;
 
-  /* Acento rojo/crimson */
   --crimson:          #a02030;
   --crimson-light:    #c83040;
 
-  /* Variables funcionales */
   --teal:             var(--wood-teal);
   --teal-dark:        var(--wood-teal-deep);
   --teal-light:       var(--wood-teal-light);
@@ -58,7 +51,6 @@
   --text:             var(--text-dark);
   --dark:             var(--dark-ink);
 
-  /* Sombras */
   --shadow-sm:   0 2px 10px rgba(10,26,24,0.25);
   --shadow-md:   0 6px 28px rgba(10,26,24,0.40);
   --shadow-lg:   0 14px 56px rgba(10,26,24,0.55);
@@ -85,7 +77,7 @@ body {
 }
 
 /* =========================================================
-   SCROLL REVEAL — clases agregadas por animations.js
+   SCROLL REVEAL
    ========================================================= */
 .reveal {
   opacity: 0;
@@ -247,7 +239,7 @@ nav ul li.cta a:hover {
 }
 
 /* =========================================================
-   HERO — Fondo de madera teal con vetas doradas
+   HERO
    ========================================================= */
 #hero {
   min-height: 100vh;
@@ -257,8 +249,6 @@ nav ul li.cta a:hover {
   justify-content: center;
   overflow: hidden;
 }
-
-/* Fondo: madera teal oscura tipo imagen 1 */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -270,20 +260,16 @@ nav ul li.cta a:hover {
     url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
     center/cover no-repeat;
 }
-
-/* Vetas doradas sobre el hero (estilo imagen 1) */
 .hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    /* Tabla madera vertical */
     repeating-linear-gradient(
       90deg,
       rgba(200,168,76,0.06) 0px, rgba(200,168,76,0.06) 1px,
       transparent 1px, transparent 120px
     ),
-    /* Vetas diagonales doradas */
     repeating-linear-gradient(
       165deg,
       transparent 0px, transparent 80px,
@@ -292,8 +278,6 @@ nav ul li.cta a:hover {
     );
   pointer-events: none;
 }
-
-/* Línea dorada en la parte inferior del hero */
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -370,7 +354,6 @@ nav ul li.cta a:hover {
   flex-wrap: wrap;
   animation: fadeInUp 1s ease 0.6s both;
 }
-
 .hero-ctas .btn-primary,
 .hero-ctas .btn-outline {
   display: inline-block;
@@ -427,7 +410,6 @@ nav ul li.cta a:hover {
   background: rgba(200,168,76,0.1);
 }
 
-/* Scroll hint */
 .scroll-hint {
   position: absolute;
   bottom: 36px;
@@ -453,8 +435,6 @@ nav ul li.cta a:hover {
   0%,100% { opacity: 1; transform: scaleY(1); }
   50%      { opacity: 0.25; transform: scaleY(0.4); }
 }
-
-
 
 /* =========================================================
    SECTION BASE
@@ -523,7 +503,6 @@ section { position: relative; }
   content: '';
   position: absolute; inset: 0;
   background:
-    /* Vetas de madera verticales */
     repeating-linear-gradient(
       90deg,
       rgba(200,168,76,0.04) 0px, rgba(200,168,76,0.04) 1px,
@@ -537,7 +516,6 @@ section { position: relative; }
 .nosotros-content .section-title { color: var(--gold-pale); }
 .nosotros-content .section-desc { color: var(--silver-light); opacity: 0.9; }
 
-/* Línea dorada decorativa en el nosotros */
 .nosotros-content::after {
   content: '';
   position: absolute;
@@ -615,25 +593,24 @@ section { position: relative; }
 .info-block.teal .section-title { color: var(--gold-pale); }
 
 /* =========================================================
-   MENÚ — Fondo papel envejecido tipo imagen 2
+   MENÚ — Optimizado: densidad, legibilidad, jerarquía, precio
    ========================================================= */
 #menu {
-  /* Fondo papel envejecido con textura */
   background:
-    /* Grano de papel sutil */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"),
-    /* Color papel envejecido + manchas cálidas */
     radial-gradient(ellipse 80% 40% at 20% 80%, rgba(180,140,60,0.12) 0%, transparent 50%),
     radial-gradient(ellipse 60% 40% at 80% 20%, rgba(160,120,40,0.08) 0%, transparent 50%),
     linear-gradient(160deg, #f0e6c8 0%, #ede0b8 40%, #e8d8a8 100%);
   color: var(--text-dark);
-  padding: 80px 0;
+  /* [MEJORA 5] Padding vertical reducido para mayor densidad */
+  padding: 64px 0;
   overflow-x: hidden;
 }
 
 .menu-header {
   text-align: center;
-  padding: 0 40px 60px;
+  /* [MEJORA 5] Menos espacio bajo el header */
+  padding: 0 40px 44px;
   position: relative;
 }
 .menu-header::after {
@@ -643,7 +620,7 @@ section { position: relative; }
   font-size: 16px;
   color: var(--gold-dark);
   letter-spacing: 12px;
-  margin-top: 20px;
+  margin-top: 16px;
   opacity: 0.5;
 }
 .menu-header .section-label { color: var(--wood-teal); }
@@ -653,20 +630,21 @@ section { position: relative; }
 }
 .menu-header .section-desc { margin: 0 auto; color: var(--text-muted); opacity: 1; }
 
-/* TABS — Estilo madera + papel */
+/* ─── TABS ─── */
 .tab-nav {
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
   border-bottom: 2px solid rgba(30,80,76,0.5);
-  margin: 0 40px 50px;
+  /* [MEJORA 5] Margen inferior reducido */
+  margin: 0 40px 40px;
   position: sticky;
   top: 72px;
-  /* Madera teal oscura */
   background: linear-gradient(135deg, #1a4a48 0%, #0f3230 50%, #1a4a48 100%);
   z-index: 10;
   padding-top: 10px;
-  border-radius: 8px 8px 0 0;
+  /* [MEJORA 1] Menos border-radius */
+  border-radius: 6px 6px 0 0;
   box-shadow: 0 6px 28px rgba(10,26,24,0.4), inset 0 1px 0 rgba(200,168,76,0.2);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -686,21 +664,25 @@ section { position: relative; }
 .tab-nav::-webkit-scrollbar-track { background: transparent; }
 .tab-nav::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
 
+/* [MEJORA 2] Tab buttons más compactos */
 .tab-btn {
   font-family: 'Special Elite', cursive;
-  font-size: 13px;
-  letter-spacing: 1.5px;
+  /* [MEJORA 2] Fuente ligeramente más pequeña */
+  font-size: 12px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--parchment-dark);
   background: none;
   border: none;
-  padding: 13px 22px;
+  /* [MEJORA 2] Padding reducido */
+  padding: 11px 18px;
   cursor: pointer;
   opacity: 0.6;
   transition: all 0.25s ease;
   border-bottom: 3px solid transparent;
   margin-bottom: -2px;
-  border-radius: 6px 6px 0 0;
+  /* [MEJORA 1] Menos redondeado */
+  border-radius: 4px 4px 0 0;
   position: relative;
   white-space: nowrap;
   flex-shrink: 0;
@@ -710,7 +692,8 @@ section { position: relative; }
   opacity: 0.9;
   color: var(--gold-light);
   background: rgba(200,168,76,0.08);
-  transform: translateY(-2px);
+  /* [MEJORA 1] Movimiento más sutil */
+  transform: translateY(-1px);
 }
 .tab-btn.active {
   opacity: 1;
@@ -720,143 +703,181 @@ section { position: relative; }
   box-shadow: 0 -2px 12px rgba(200,168,76,0.1);
 }
 
-/* TAB PANELS — Papel envejecido */
-.tab-panel { 
-  display: none; 
-  padding: 0 60px 40px; 
+/* ─── TAB PANELS ─── */
+.tab-panel {
+  display: none;
+  /* [MEJORA 5] Padding reducido */
+  padding: 0 52px 32px;
   overflow-x: hidden;
   max-width: 100%;
 }
-.tab-panel.active { display: block; animation: tabFadeIn 0.4s ease; }
+.tab-panel.active { display: block; animation: tabFadeIn 0.35s ease; }
 
 @keyframes tabFadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
+/* [MEJORA 5] Gap reducido para mayor densidad */
 .menu-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px 80px;
+  gap: 40px 64px;
   overflow-x: hidden;
   max-width: 100%;
 }
 
-/* Título de sección del menú — estilo imagen 2 */
+/* ─── Título de sección ─── */
+/* [MEJORA 3] Más discreto: no compite con nombres de platos */
 .menu-section-title {
   font-family: 'Special Elite', cursive;
-  font-size: 18px;
-  letter-spacing: 3px;
+  font-size: 13px;
+  letter-spacing: 3.5px;
   text-transform: uppercase;
-  color: var(--wood-teal-deep);
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid rgba(26,74,72,0.35);
+  color: var(--wood-teal-mid);
+  /* [MEJORA 5] Márgenes reducidos */
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  /* [MEJORA 1] Borde más fino y discreto */
+  border-bottom: 1px solid rgba(26,74,72,0.25);
   position: relative;
 }
 .menu-section-title::after {
   content: '';
   position: absolute;
-  bottom: -2px; left: 0;
-  width: 50px; height: 2px;
+  bottom: -1px; left: 0;
+  width: 36px; height: 2px;
   background: var(--gold-dark);
 }
 
-/* Item del menú */
+/* ─── Item del menú ─── */
+/* [MEJORA 2][MEJORA 4] Layout compacto con precio siempre alineado */
 .menu-item {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  padding: 14px 0;
-  border-bottom: 1px dotted rgba(80,50,10,0.25);
+  /* [MEJORA 4] Alineación superior para precio consistente */
+  align-items: flex-start;
+  /* [MEJORA 2] Padding vertical más ajustado */
+  padding: 8px 0 8px 10px;
+  border-bottom: 1px dotted rgba(80,50,10,0.2);
   gap: 12px;
-  transition: all 0.3s ease;
+  transition: background 0.25s ease, transform 0.25s ease;
   position: relative;
 }
+/* [MEJORA 1] Acento lateral más fino y sutil */
 .menu-item::before {
   content: '';
   position: absolute;
-  left: -12px; top: 0; bottom: 0;
-  width: 3px;
+  left: 0; top: 6px; bottom: 6px;
+  width: 2px;
   background: var(--gold);
   opacity: 0;
-  transition: opacity 0.3s, transform 0.3s;
-  transform: scaleY(0.5);
+  transition: opacity 0.25s, transform 0.25s;
+  transform: scaleY(0.4);
+  border-radius: 1px;
 }
 .menu-item:hover::before {
-  opacity: 1;
+  opacity: 0.8;
   transform: scaleY(1);
 }
 .menu-item:hover {
-  background: rgba(26,74,72,0.05);
-  transform: translateX(6px);
-  padding-left: 4px;
+  background: rgba(26,74,72,0.04);
+  /* [MEJORA 1] Desplazamiento más sutil */
+  transform: translateX(4px);
+  border-radius: 0 3px 3px 0;
 }
 .menu-item:last-child { border-bottom: none; }
 
-.item-info { flex: 1; min-width: 0; }
+/* ─── Info del plato ─── */
+.item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+/* [MEJORA 3] Nombre: elemento dominante */
 .item-name {
   font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 600;
+  /* [MEJORA 2][MEJORA 3] Más compacto pero más bold */
+  font-size: 17px;
+  font-weight: 700;
   color: var(--wood-teal-deep);
   display: block;
-  margin-bottom: 4px;
-  line-height: 1.3;
+  /* [MEJORA 2] Separación mínima del nombre a la descripción */
+  margin-bottom: 1px;
+  line-height: 1.25;
   transition: color 0.2s;
 }
 .menu-item:hover .item-name { color: var(--wood-teal-mid); }
 
+/* [MEJORA 3] Descripción: elemento secundario y ligero */
 .item-desc {
   font-family: 'Crimson Text', serif;
-  font-size: 14px;
+  /* [MEJORA 2] Tamaño reducido para crear más contraste con el nombre */
+  font-size: 13px;
   color: var(--text-muted);
-  line-height: 1.5;
+  /* [MEJORA 2] Line-height más compacto */
+  line-height: 1.35;
   font-style: italic;
-  opacity: 0.9;
+  font-weight: 400;
+  opacity: 0.85;
 }
 
+/* [MEJORA 4] Precio: siempre alineado, siempre visible */
 .item-price {
   font-family: 'Special Elite', cursive;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--wood-teal-deep);
   white-space: nowrap;
   flex-shrink: 0;
-  background: rgba(26,74,72,0.1);
-  padding: 4px 12px;
-  border-radius: 3px;
-  border: 1px solid rgba(26,74,72,0.2);
-  transition: all 0.25s ease;
+  /* [MEJORA 4] Siempre alineado al top, a la misma altura que el nombre */
+  align-self: flex-start;
+  margin-top: 2px;
+  background: rgba(26,74,72,0.08);
+  /* [MEJORA 2] Padding reducido */
+  padding: 2px 9px;
+  /* [MEJORA 1] Más plano */
+  border-radius: 2px;
+  border: 1px solid rgba(26,74,72,0.18);
+  transition: all 0.2s ease;
+  font-weight: 600;
+  /* [MEJORA 4] Ancho mínimo para consistencia visual entre tarjetas */
+  min-width: 52px;
+  text-align: center;
 }
 .menu-item:hover .item-price {
   background: var(--wood-teal-mid);
   color: var(--gold-light);
-  transform: scale(1.05);
-  box-shadow: 0 3px 12px rgba(10,26,24,0.3);
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(10,26,24,0.25);
 }
 
-/* Nota del menú */
+/* ─── Nota del menú ─── */
+/* [MEJORA 1][MEJORA 5] Más plana y compacta */
 .menu-note {
   background: linear-gradient(135deg, var(--wood-teal-deep), var(--wood-teal-mid));
   color: var(--cream);
   text-align: center;
-  padding: 20px 36px;
-  margin: 40px 0 0;
-  border-radius: 4px;
-  font-size: 17px;
+  padding: 16px 32px;
+  margin: 28px 0 0;
+  /* [MEJORA 1] Menos redondeado */
+  border-radius: 3px;
+  font-size: 15px;
   font-style: italic;
-  border-left: 4px solid var(--gold);
-  box-shadow: var(--shadow-md);
+  border-left: 3px solid var(--gold);
+  box-shadow: var(--shadow-sm);
+  line-height: 1.55;
 }
 .menu-note strong { color: var(--gold-light); }
 
-/* Tabla Broaster */
+/* ─── Tabla Broaster ─── */
+/* [MEJORA 1][MEJORA 2] Más compacta y plana */
 .broaster-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  font-size: 15px;
-  border-radius: 6px;
+  margin-top: 16px;
+  font-size: 14px;
+  /* [MEJORA 1] Menos redondeado */
+  border-radius: 4px;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
 }
@@ -864,15 +885,17 @@ section { position: relative; }
   background: var(--wood-teal-deep);
   color: var(--gold-light);
   font-family: 'Special Elite', cursive;
-  font-size: 11px;
-  letter-spacing: 2.5px;
+  font-size: 10px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 14px 16px;
+  /* [MEJORA 2] Padding reducido */
+  padding: 11px 14px;
   text-align: left;
 }
 .broaster-table td {
-  padding: 13px 16px;
-  border-bottom: 1px solid rgba(80,50,10,0.15);
+  /* [MEJORA 2] Padding reducido */
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(80,50,10,0.12);
   color: var(--text-dark);
   background: rgba(240,228,192,0.7);
   transition: background 0.2s;
@@ -881,27 +904,28 @@ section { position: relative; }
   background: rgba(220,205,160,0.6);
 }
 .broaster-table tr:hover td {
-  background: rgba(26,74,72,0.1);
+  background: rgba(26,74,72,0.08);
 }
 .broaster-table .price-col {
   font-family: 'Special Elite', cursive;
   color: var(--wood-teal-deep);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 }
 .broaster-table .promo-name {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   color: var(--wood-teal-deep);
 }
 
-/* Sauce tags */
+/* ─── Sauce tags ─── */
+/* [MEJORA 1] Eliminada apariencia de cápsula/burbuja */
 .sauce-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
-  margin-top: 14px;
+  gap: 6px;
+  margin-top: 12px;
 }
 .sauce-tag {
   background: var(--wood-teal-deep);
@@ -909,18 +933,19 @@ section { position: relative; }
   font-size: 10px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 5px 14px;
-  border-radius: 20px;
+  padding: 4px 12px;
+  /* [MEJORA 1] Esquinas cuadradas en lugar de pill */
+  border-radius: 2px;
   font-family: 'Crimson Text', serif;
-  border: 1px solid rgba(200,168,76,0.3);
-  transition: all 0.25s ease;
+  border: 1px solid rgba(200,168,76,0.25);
+  transition: all 0.2s ease;
 }
 .sauce-tag:hover {
   background: var(--gold-dark);
   color: var(--cream-light);
   border-color: var(--gold);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(10,26,24,0.35);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(10,26,24,0.3);
 }
 
 /* =========================================================
@@ -933,7 +958,6 @@ section { position: relative; }
   position: relative;
   overflow: hidden;
 }
-/* Fondo tipo madera con vetas */
 #galeria::before {
   content: '';
   position: absolute; inset: 0;
@@ -1091,7 +1115,6 @@ section { position: relative; }
   width: 16px; height: 16px; filter: grayscale(20%);
 }
 
-/* Carrusel reseñas */
 .reviews-carousel-container {
   display: flex;
   align-items: stretch;
@@ -1112,7 +1135,6 @@ section { position: relative; }
   will-change: transform;
 }
 
-/* Card reseña */
 .opinion-card-link {
   display: block;
   text-decoration: none;
@@ -1237,7 +1259,6 @@ section { position: relative; }
   pointer-events: none;
 }
 
-/* Botones carrusel */
 .carousel-nav-btn {
   position: absolute;
   top: 50%; transform: translateY(-50%);
@@ -1483,7 +1504,7 @@ footer .footer-logo {
 }
 
 /* =========================================================
-   GLOBAL OVERFLOW FIX — base level
+   GLOBAL OVERFLOW FIX
    ========================================================= */
 html, body {
   overflow-x: hidden;
@@ -1492,31 +1513,16 @@ html, body {
   padding: 0;
   max-width: 100vw;
 }
-
 section {
   overflow-x: hidden;
   max-width: 100vw;
 }
-
-#hero,
-#nosotros,
-#menu,
-#galeria,
-#opiniones,
-#mapa,
-#reserva {
+#hero, #nosotros, #menu, #galeria, #opiniones, #mapa, #reserva {
   max-width: 100vw;
   overflow-x: hidden;
 }
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-iframe {
-  max-width: 100%;
-}
+img { max-width: 100%; height: auto; }
+iframe { max-width: 100%; }
 
 /* =========================================================
    RESPONSIVE — max-width: 1400px
@@ -1525,7 +1531,8 @@ iframe {
   #header-outer { padding: 10px 30px; }
   .hero-badge { padding: 6px 22px; margin-bottom: 22px; }
   .hero-title { font-size: clamp(50px, 11vw, 120px); }
-  .menu-columns { gap: 50px 60px; }
+  /* [MEJORA 5] Gap reducido en 1400 */
+  .menu-columns { gap: 36px 52px; }
   .info-block { padding: 52px 50px; }
   .nosotros-content { padding: 70px 50px; }
   .multi-carousel-container { padding: 0 54px; }
@@ -1542,8 +1549,10 @@ iframe {
   .hero-title { font-size: clamp(42px, 10vw, 100px); letter-spacing: 6px; }
   .hero-title span { font-size: 0.34em; letter-spacing: 12px; }
   .hero-desc { max-width: 460px; margin: 28px auto 40px; }
-  .tab-panel { padding: 0 40px 35px; }
-  .menu-columns { gap: 40px 50px; }
+  /* [MEJORA 5] Padding panel reducido */
+  .tab-panel { padding: 0 36px 28px; }
+  /* [MEJORA 5] Gap reducido */
+  .menu-columns { gap: 32px 44px; }
   .info-block { padding: 44px 40px; }
   .nosotros-content { padding: 60px 44px; }
   .reviews-carousel-viewport { margin: 0 40px; }
@@ -1559,11 +1568,9 @@ iframe {
    RESPONSIVE — max-width: 992px (Tablet horizontal)
    ========================================================= */
 @media (max-width: 992px) {
-  /* Header - hamburguesa */
   nav ul { display: none; }
   .hamburger { display: flex; }
 
-  /* Menu overlay */
   .menu-overlay {
     position: fixed;
     inset: 0;
@@ -1578,7 +1585,6 @@ iframe {
     visibility: visible;
   }
 
-  /* Off-canvas menu */
   nav.active ul {
     display: flex;
     flex-direction: column;
@@ -1626,11 +1632,7 @@ iframe {
     justify-content: center;
     margin-top: 16px;
   }
-
-  /* Scroll lock when menu is open */
-  body.menu-open {
-    overflow: hidden;
-  }
+  body.menu-open { overflow: hidden; }
 
   #header-outer { padding: 12px 20px; }
   .logo-text { font-size: 20px; letter-spacing: 4px; }
@@ -1654,19 +1656,26 @@ iframe {
   .info-block { padding: 36px 30px; }
   .info-block .section-title { font-size: 28px; }
 
-  #menu { padding: 70px 0; }
-  .menu-header { padding: 0 30px 50px; }
+  /* [MEJORA 5] Padding vertical del menú reducido en tablet */
+  #menu { padding: 56px 0; }
+  .menu-header { padding: 0 30px 40px; }
   .tab-nav {
-    margin: 0 20px 40px;
+    margin: 0 20px 32px;
     padding: 8px 16px 0;
     top: 70px;
     justify-content: flex-start;
   }
-  .tab-btn { padding: 11px 18px; font-size: 12px; }
-  .tab-panel { padding: 0 30px 30px; }
-  .menu-columns { grid-template-columns: 1fr 1fr; gap: 36px 44px; }
-  .menu-section-title { font-size: 16px; }
-  .item-name { font-size: 18px; }
+  /* [MEJORA 2] Tabs más compactos */
+  .tab-btn { padding: 10px 16px; font-size: 11px; }
+  /* [MEJORA 5] Panel más compacto */
+  .tab-panel { padding: 0 24px 24px; }
+  /* [MEJORA 5] Gap reducido en tablet — manteniendo 2 columnas */
+  .menu-columns { grid-template-columns: 1fr 1fr; gap: 28px 36px; }
+  .menu-section-title { font-size: 12px; }
+  /* [MEJORA 3] Jerarquía compacta en tablet */
+  .item-name { font-size: 15px; }
+  .item-desc { font-size: 12px; }
+  .item-price { font-size: 13px; }
 
   #galeria { padding: 70px 40px; }
   .gallery-grid { grid-template-columns: 1fr 1fr 1fr; }
@@ -1707,7 +1716,6 @@ iframe {
   nav.active ul { gap: 6px; }
   nav.active ul li a { font-size: 18px; }
 
-  /* Hero */
   #hero { min-height: 90vh; padding: 0 5vw; max-width: 100vw; }
   .hero-badge { font-size: 10px; letter-spacing: 3px; padding: 5px 14px; margin-bottom: 16px; }
   .hero-title { font-size: clamp(32px, 12vw, 64px); letter-spacing: 4px; line-height: 0.9; }
@@ -1731,115 +1739,129 @@ iframe {
   .scroll-hint { bottom: 20px; }
   .scroll-hint .line { height: 28px; }
 
-  /* Nosotros */
   .nosotros-grid { grid-template-columns: 1fr; min-height: unset; }
   .nosotros-img { min-height: 280px; aspect-ratio: 16/9; }
   .nosotros-content { padding: 44px 28px; }
   .nosotros-content .section-title { font-size: clamp(24px, 5vw, 36px); }
 
-  /* Info blocks */
   .info-grid { grid-template-columns: 1fr; }
   .info-block { padding: 36px 24px; }
   .info-block .section-title { font-size: 26px; }
 
-  /* Menu */
-  #menu { padding: 50px 0; }
-  .menu-header { padding: 0 20px 32px; }
-  .menu-header .section-title { font-size: clamp(28px, 6vw, 48px); }
-  .menu-header .section-desc { font-size: 15px; }
-  
-  /* Tab navigation - horizontal scroll with pill buttons */
+  /* ══ MENÚ MOBILE — lista fluida y compacta [MEJORA 6] ══ */
+  #menu { padding: 44px 0; }
+  .menu-header { padding: 0 18px 28px; }
+  .menu-header .section-title { font-size: clamp(26px, 6vw, 44px); }
+  .menu-header .section-desc { font-size: 14px; }
+
+  /* [MEJORA 6] Tabs pastilla con scroll horizontal */
   .tab-nav {
-    margin: 0 0 24px;
+    margin: 0 0 20px;
     padding: 6px 12px;
     top: 62px;
-    border-radius: 30px;
+    border-radius: 24px;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 6px;
   }
   .tab-btn {
-    padding: 10px 18px;
-    font-size: 12px;
+    padding: 9px 14px;
+    font-size: 11px;
     letter-spacing: 0.5px;
     white-space: nowrap;
     flex-shrink: 0;
     min-height: 44px;
-    border-radius: 22px;
-    border: 1px solid rgba(200, 168, 76, 0.3);
+    border-radius: 18px;
+    /* Override del border-bottom de escritorio */
+    border: 1px solid rgba(200, 168, 76, 0.25);
+    border-bottom: 1px solid rgba(200, 168, 76, 0.25);
+    margin-bottom: 0;
   }
   .tab-btn.active {
     background: var(--gold);
     color: var(--wood-teal-deep);
     border-color: var(--gold);
+    border-bottom-color: var(--gold);
   }
-  
-  .tab-panel { padding: 0 16px 24px; }
-  
-  /* Menu items - compact card style */
-  .menu-columns { grid-template-columns: 1fr; gap: 16px; }
-  .menu-section-title { 
-    font-size: 14px; 
-    letter-spacing: 2px; 
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(200, 168, 76, 0.2);
+
+  /* [MEJORA 6] Panel compacto */
+  .tab-panel { padding: 0 14px 20px; }
+
+  /* [MEJORA 6] Una columna, tarjetas tipo lista */
+  .menu-columns { grid-template-columns: 1fr; gap: 12px; }
+
+  /* [MEJORA 3] Título de sección discreto en mobile */
+  .menu-section-title {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(200, 168, 76, 0.18);
   }
-  .menu-item { 
-    display: flex; 
-    justify-content: space-between; 
+
+  /* [MEJORA 1][MEJORA 2] Items más planos y compactos */
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
     align-items: flex-start;
-    padding: 14px 16px; 
-    gap: 12px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 9px 10px;
+    gap: 10px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.38);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     border: none;
+    border-bottom: none;
   }
   .menu-item:hover {
     transform: none;
-    padding-left: 16px;
-    background: rgba(255, 255, 255, 0.6);
+    padding-left: 10px;
+    background: rgba(255, 255, 255, 0.55);
   }
   .menu-item::before { display: none; }
-  .item-info { flex: 1; min-width: 0; padding-right: 12px; }
-  .item-name { font-size: 16px; margin-bottom: 4px; }
-  .item-desc { font-size: 13px; line-height: 1.4; }
-  .item-price { 
-    font-size: 14px; 
-    padding: 4px 10px; 
-    border-radius: 4px;
+  .item-info { flex: 1; min-width: 0; }
+  /* [MEJORA 3] Nombre dominante en mobile */
+  .item-name { font-size: 15px; font-weight: 700; margin-bottom: 1px; line-height: 1.2; }
+  /* [MEJORA 3] Descripción ligera */
+  .item-desc { font-size: 12px; line-height: 1.3; opacity: 0.8; }
+  /* [MEJORA 4] Precio fijo arriba a la derecha */
+  .item-price {
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 2px;
     background: var(--wood-teal-deep);
     color: var(--gold-light);
+    border-color: transparent;
     white-space: nowrap;
+    align-self: flex-start;
+    margin-top: 1px;
+    min-width: 48px;
+    text-align: center;
   }
-  .menu-note { margin: 24px 0 0; padding: 14px 16px; font-size: 14px; border-radius: 8px; }
-  .sauce-tags { gap: 6px; }
-  .sauce-tag { font-size: 9px; padding: 4px 10px; }
-  .broaster-table { font-size: 13px; }
-  .broaster-table th, .broaster-table td { padding: 10px 8px; }
+  .menu-note { margin: 20px 0 0; padding: 12px 14px; font-size: 13px; border-radius: 3px; line-height: 1.5; }
+  .sauce-tags { gap: 5px; }
+  .sauce-tag { font-size: 9px; padding: 3px 9px; border-radius: 2px; }
+  .broaster-table { font-size: 12px; }
+  .broaster-table th, .broaster-table td { padding: 9px 8px; }
 
-  /* Gallery */
   #galeria { padding: 50px 20px; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .multi-carousel-container { padding: 0 48px; }
   .multi-carousel-track .gallery-item { flex: 0 0 calc(50% - 5px); aspect-ratio: 4/3; }
 
-  /* Reviews */
   #opiniones { padding: 50px 16px; }
   .opinions-header { margin-bottom: 40px; }
   .reviews-carousel-viewport { margin: 0 44px; }
   .carousel-nav-prev-reviews, .carousel-nav-next-reviews { width: 36px; height: 36px; }
   .carousel-nav-prev-reviews { left: 4px; }
   .carousel-nav-next-reviews { right: 4px; }
-  .opinion-card-link { 
-    flex: 0 0 100%; 
-    min-height: 420px; 
+  .opinion-card-link {
+    flex: 0 0 100%;
+    min-height: 420px;
     box-sizing: border-box;
   }
-  .opinion-card { 
-    flex: 0 0 100%; 
-    min-height: 420px; 
-    padding: 20px 16px; 
+  .opinion-card {
+    flex: 0 0 100%;
+    min-height: 420px;
+    padding: 20px 16px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -1854,7 +1876,6 @@ iframe {
 
   #mapa iframe { height: clamp(280px, 55vh, 450px); }
 
-  /* Reserva */
   #reserva { padding: 44px 20px; }
   .reserva-text .section-title { font-size: 28px; }
   .reserva-text .section-desc { font-size: 15px; }
@@ -1873,7 +1894,6 @@ iframe {
     justify-content: center;
   }
 
-  /* Footer */
   footer { padding: 20px 20px; grid-template-columns: 1fr 1fr; gap: 12px; }
   .primero { grid-column: 1 / -1; flex-direction: column; align-items: center; gap: 12px; }
   footer p { font-size: 12px; text-align: center; }
@@ -1907,11 +1927,7 @@ iframe {
   .hero-title span { font-size: 0.28em; letter-spacing: 6px; margin-top: 8px; }
   .hero-desc { font-size: 14px; max-width: 280px; margin: 16px auto 24px; }
   .hero-ctas { max-width: 260px; }
-  .btn-primary, .btn-outline {
-    padding: 13px 20px;
-    font-size: 11px;
-    letter-spacing: 2px;
-  }
+  .btn-primary, .btn-outline { padding: 13px 20px; font-size: 11px; letter-spacing: 2px; }
   .scroll-hint { display: none; }
 
   .nosotros-img { min-height: 220px; }
@@ -1925,24 +1941,28 @@ iframe {
   .info-block .section-title { font-size: 22px; }
   .info-block p { font-size: 14px; }
 
-  #menu { padding: 40px 0; }
-  .menu-header { padding: 0 16px 32px; }
-  .menu-header::after { font-size: 14px; letter-spacing: 8px; margin-top: 16px; }
+  /* [MEJORA 6] Máxima compacidad en 576 */
+  #menu { padding: 36px 0; }
+  .menu-header { padding: 0 14px 24px; }
+  .menu-header::after { font-size: 13px; letter-spacing: 8px; margin-top: 14px; }
   .tab-nav {
-    margin: 0 6px 28px;
-    padding: 5px 0 0;
+    margin: 0 6px 20px;
+    padding: 4px 0 0;
     top: 58px;
   }
-  .tab-btn { padding: 8px 12px; font-size: 10px; letter-spacing: 0.5px; }
-  .tab-panel { padding: 0 16px 24px; }
-  .menu-columns { gap: 24px; }
-  .menu-section-title { font-size: 14px; letter-spacing: 2px; margin-bottom: 16px; }
-  .menu-item { padding: 12px 0; }
-  .item-name { font-size: 16px; }
-  .item-desc { font-size: 12px; line-height: 1.4; }
-  .item-price { font-size: 13px; padding: 3px 8px; }
-  .menu-note { margin: 28px 0 0; padding: 14px 16px; font-size: 14px; }
-  .broaster-table { font-size: 12px; }
+  .tab-btn { padding: 8px 11px; font-size: 10px; letter-spacing: 0.5px; min-height: 44px; }
+  /* [MEJORA 6] Panel más compacto */
+  .tab-panel { padding: 0 12px 18px; }
+  /* [MEJORA 5] Gap mínimo entre items */
+  .menu-columns { gap: 8px; }
+  .menu-section-title { font-size: 10px; letter-spacing: 2px; margin-bottom: 8px; }
+  /* [MEJORA 2] Items muy compactos */
+  .menu-item { padding: 7px 8px; gap: 8px; }
+  .item-name { font-size: 14px; margin-bottom: 0; }
+  .item-desc { font-size: 11px; line-height: 1.25; }
+  .item-price { font-size: 12px; padding: 2px 7px; min-width: 44px; }
+  .menu-note { margin: 20px 0 0; padding: 11px 14px; font-size: 13px; }
+  .broaster-table { font-size: 11px; }
   .broaster-table th, .broaster-table td { padding: 8px 6px; }
 
   #galeria { padding: 40px 16px; }
@@ -1960,8 +1980,8 @@ iframe {
   .carousel-nav-prev-reviews { left: 2px; }
   .carousel-nav-next-reviews { right: 2px; }
   .opinion-card-link { min-height: 400px; }
-  .opinion-card { 
-    padding: 18px 14px; 
+  .opinion-card {
+    padding: 18px 14px;
     min-height: 400px;
     display: flex;
     flex-direction: column;
@@ -2027,34 +2047,25 @@ iframe {
   .info-block .section-title { font-size: 20px; }
   .info-block p { font-size: 13px; }
 
-  #menu { padding: 32px 0; }
-  .menu-header { padding: 0 14px 24px; }
-  .menu-header::after { font-size: 12px; letter-spacing: 6px; margin-top: 12px; }
-  .menu-header .section-title { font-size: 24px; }
-  .menu-header .section-desc { font-size: 14px; }
-  
-  /* Tab navigation - even more compact */
-  .tab-nav { margin: 0 0 20px; padding: 5px 10px; top: 54px; gap: 6px; }
-  .tab-btn { 
-    padding: 8px 14px; 
-    font-size: 11px; 
-    min-height: 44px;
-    border-radius: 20px;
-  }
-  .tab-panel { padding: 0 12px 16px; }
-  
-  /* Menu items - very compact */
-  .menu-columns { gap: 12px; }
-  .menu-section-title { font-size: 13px; margin-bottom: 12px; padding-bottom: 6px; }
-  .menu-item { 
-    padding: 12px 14px; 
-    gap: 10px;
-    border-radius: 6px;
-  }
-  .item-name { font-size: 15px; }
-  .item-desc { font-size: 12px; }
-  .item-price { font-size: 13px; padding: 3px 8px; }
-  .menu-note { margin: 20px 0 0; padding: 12px 14px; font-size: 13px; border-radius: 6px; }
+  /* [MEJORA 6] Ultra-compacto en 400px */
+  #menu { padding: 28px 0; }
+  .menu-header { padding: 0 12px 20px; }
+  .menu-header::after { font-size: 11px; letter-spacing: 5px; margin-top: 10px; }
+  .menu-header .section-title { font-size: 22px; }
+  .menu-header .section-desc { font-size: 13px; }
+  .tab-nav { margin: 0 0 16px; padding: 4px 8px; top: 54px; gap: 4px; border-radius: 20px; }
+  .tab-btn { padding: 7px 11px; font-size: 10px; min-height: 44px; border-radius: 16px; }
+  /* [MEJORA 6] Panel ultra-compacto */
+  .tab-panel { padding: 0 10px 14px; }
+  /* [MEJORA 5] Gap mínimo absoluto */
+  .menu-columns { gap: 6px; }
+  .menu-section-title { font-size: 10px; margin-bottom: 7px; padding-bottom: 4px; }
+  /* [MEJORA 2] Items ultra-compactos en 400px */
+  .menu-item { padding: 6px 8px; gap: 6px; border-radius: 2px; }
+  .item-name { font-size: 13px; margin-bottom: 0; }
+  .item-desc { font-size: 11px; line-height: 1.2; }
+  .item-price { font-size: 12px; padding: 1px 6px; min-width: 40px; border-radius: 2px; }
+  .menu-note { margin: 16px 0 0; padding: 10px 12px; font-size: 12px; border-radius: 2px; }
   .sauce-tags { gap: 4px; }
   .sauce-tag { font-size: 8px; padding: 3px 8px; }
   .broaster-table { font-size: 11px; }
@@ -2076,8 +2087,8 @@ iframe {
   .carousel-nav-prev-reviews { left: 2px; }
   .carousel-nav-next-reviews { right: 2px; }
   .opinion-card-link { min-height: 380px; }
-  .opinion-card { 
-    padding: 14px 12px; 
+  .opinion-card {
+    padding: 14px 12px;
     min-height: 380px;
     display: flex;
     flex-direction: column;
@@ -2115,12 +2126,9 @@ iframe {
 
 /* =========================================================
    MOBILE — TAB NAV SCROLL INDICATOR
-   Pequeño indicador visual de que hay más tabs a la derecha
    ========================================================= */
 @media (max-width: 768px) {
-  .tab-nav {
-    position: relative;
-  }
+  .tab-nav { position: relative; }
   .tab-nav::after {
     content: '';
     position: sticky;
@@ -2137,7 +2145,7 @@ iframe {
 }
 
 /* =========================================================
-   MOBILE — GALLERY LABEL always visible on touch devices
+   MOBILE — GALLERY LABEL always visible on touch
    ========================================================= */
 @media (hover: none) {
   .gallery-label {
@@ -2155,20 +2163,11 @@ iframe {
 }
 
 /* =========================================================
-   MOBILE — CAROUSEL NAV BUTTONS visibility & hit area fix
+   MOBILE — CAROUSEL NAV BUTTONS
    ========================================================= */
 @media (max-width: 768px) {
-  .reviews-carousel-container {
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .reviews-carousel-viewport {
-    margin: 0 44px;
-    flex: 1;
-    overflow: hidden;
-  }
-
+  .reviews-carousel-container { padding: 0; overflow: hidden; }
+  .reviews-carousel-viewport { margin: 0 44px; flex: 1; overflow: hidden; }
   .reviews-carousel-track {
     display: flex;
     gap: 0;
@@ -2180,39 +2179,20 @@ iframe {
     -ms-overflow-style: none;
     will-change: scroll-position;
   }
-
-  .reviews-carousel-track::-webkit-scrollbar {
-    display: none;
-  }
-
-  .reviews-carousel-track * {
-    will-change: auto;
-  }
-
+  .reviews-carousel-track::-webkit-scrollbar { display: none; }
+  .reviews-carousel-track * { will-change: auto; }
   .opinion-card-link {
     scroll-snap-align: center;
     flex: 0 0 100%;
     min-width: 100%;
   }
-
   .carousel-nav-prev-reviews,
   .carousel-nav-next-reviews {
     background: rgba(10, 26, 24, 0.7);
     border: 1px solid rgba(200,168,76,0.5);
   }
-
-  .multi-carousel-container {
-    padding: 0;
-    overflow: hidden;
-  }
-
-  .multi-carousel-viewport {
-    overflow: hidden;
-    flex: 1;
-    margin: 0 48px;
-    border-radius: 5px;
-  }
-
+  .multi-carousel-container { padding: 0; overflow: hidden; }
+  .multi-carousel-viewport { overflow: hidden; flex: 1; margin: 0 48px; border-radius: 5px; }
   .carousel-nav-prev {
     left: 0;
     background: rgba(10, 26, 24, 0.7);
@@ -2230,15 +2210,16 @@ iframe {
    ========================================================= */
 @media (hover: none) {
   .menu-item:hover {
-    background: transparent;
+    background: rgba(255, 255, 255, 0.38);
     transform: none;
-    padding-left: 0;
+    padding-left: 10px;
+    border-radius: 3px;
   }
   .menu-item:hover::before { opacity: 0; }
   .menu-item:hover .item-name { color: var(--wood-teal-deep); }
   .menu-item:hover .item-price {
-    background: rgba(26,74,72,0.1);
-    color: var(--wood-teal-deep);
+    background: var(--wood-teal-deep);
+    color: var(--gold-light);
     transform: none;
     box-shadow: none;
   }
@@ -2252,7 +2233,7 @@ iframe {
 }
 
 /* =========================================================
-   MOBILE — RESERVA block display on small screens
+   MOBILE — RESERVA block display
    ========================================================= */
 @media (max-width: 768px) {
   #reserva {
@@ -2268,16 +2249,14 @@ iframe {
 }
 
 /* =========================================================
-   MOBILE — NOSOTROS content no min-height
+   MOBILE — NOSOTROS no min-height
    ========================================================= */
 @media (max-width: 768px) {
-  .nosotros-grid {
-    min-height: unset;
-  }
+  .nosotros-grid { min-height: unset; }
 }
 
 /* =========================================================
-   ACCESSIBILITY — focus styles for keyboard nav
+   ACCESSIBILITY — focus styles
    ========================================================= */
 .tab-btn:focus-visible,
 .btn-primary:focus-visible,
