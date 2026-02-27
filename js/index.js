@@ -798,9 +798,14 @@ async function loadGoogleReviews() {
     initReviewsCarousel();
     
     // Auto-slide para móvil
-    if (window.innerWidth <= 768) {
-      setTimeout(initMobileAutoSlide, 1500);
-    }
+    initMobileAutoSlide();
+    
+    // También escuchar resize para cambiar entre desktop/mobile
+    window.addEventListener('resize', () => {
+      if (window.innerWidth <= 768 && !window._antika.mobileAutoSlideInit) {
+        setTimeout(initMobileAutoSlide, 500);
+      }
+    }, { passive: true });
 
   } catch (err) {
     console.error('Error loading reviews:', err);
@@ -831,7 +836,7 @@ function initReviewsCarousel() {
   let currentIndex = 0;
   let isPaused     = false;
 
-  const AUTO_PLAY_INTERVAL  = 4000;
+  const AUTO_PLAY_INTERVAL  = 5000;
   const TRANSITION_DURATION = 500;
 
   function getItems()       { return track.querySelectorAll('.opinion-card'); }
