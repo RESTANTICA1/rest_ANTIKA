@@ -137,10 +137,13 @@ body {
   text-decoration: none;
   flex-shrink: 0;
 }
-.logo-icon {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, var(--wood-teal-mid), var(--wood-teal-deep));
+.logo-icon {  
+  width: 55px;
+  height: 55px;
+  background-image: url("../assets/images/logo\ antika.png");
+  background-repeat: no-repeat;   /* no se repite */
+  background-position: center;    /* centrada */
+  background-size: contain;       /* completa dentro del contenedor */
   border-radius: 6px;
   display: flex;
   align-items: center;
