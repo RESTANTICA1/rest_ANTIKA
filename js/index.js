@@ -74,22 +74,33 @@ function cacheNodes() {
   $.tabPanels        = document.querySelectorAll('.tab-panel');
 }
 
-/* Header scroll effect */
+/* Header scroll effect using IntersectionObserver */
 function initHeaderScroll() {
   if (window._antika.headerScrollInit) return;
 
-  let ticking = false;
-  const fn = () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        $.header?.classList.toggle('scrolled', window.scrollY > 60);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  };
+  const hero = document.getElementById('hero');
+  if (!hero || !$.header) return;
 
-  window._antika.headerScrollFn   = fn;
+  // IntersectionObserver para detectar si el hero está visible
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // Si el hero NO está visible (entry.isIntersecting = false), agregar clase scrolled
+        // Si el hero está visible, remover clase scrolled
+        $.header.classList.toggle('scrolled', !entry.isIntersecting);
+      });
+    },
+    {
+      // threshold: 0 significa que se activa cuando cualquier parte del hero está visible
+      // Usamos threshold: 0 para detectar cuando el hero sale completamente de la vista
+      threshold: 0,
+      // rootMargin: '0px' para que observe el viewport exactamente
+      rootMargin: '0px'
+    }
+  );
+
+  observer.observe(hero);
+
   window._antika.headerScrollInit = true;
 }
 
