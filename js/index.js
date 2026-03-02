@@ -820,6 +820,47 @@ async function loadGoogleReviews() {
   }
 }
 
+/* ─── Carrusel de reseñas (Mobile) ─── */
+function initReviewsCarouselMobile() {
+  const track   = $.reviewsContainer;
+  const prevBtn = $.revPrev;
+  const nextBtn = $.revNext;
+  
+  if (!track || !prevBtn || !nextBtn) return;
+  
+  // Función para obtener el ancho visible de una tarjeta
+  function getCardWidth() {
+    const firstCard = track.querySelector('.opinion-card-link');
+    if (firstCard) {
+      return firstCard.offsetWidth;
+    }
+    return track.offsetWidth;
+  }
+  
+  // Función para scroll al siguiente
+  function scrollNext() {
+    const cardWidth = getCardWidth();
+    track.scrollBy({ left: cardWidth, behavior: 'smooth' });
+  }
+  
+  // Función para scroll al anterior
+  function scrollPrev() {
+    const cardWidth = getCardWidth();
+    track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+  }
+  
+  // Agregar event listeners a los botones
+  if (!prevBtn.dataset.mobileBound) {
+    prevBtn.addEventListener('click', scrollPrev);
+    prevBtn.dataset.mobileBound = 'true';
+  }
+  
+  if (!nextBtn.dataset.mobileBound) {
+    nextBtn.addEventListener('click', scrollNext);
+    nextBtn.dataset.mobileBound = 'true';
+  }
+}
+
 /* ─── Carrusel de reseñas ─── */
 function initReviewsCarousel() {
   if (window._antika.reviewsCarouselInit) return;
@@ -827,6 +868,8 @@ function initReviewsCarousel() {
   // En móvil usar CSS scroll-snap en lugar de JS carousel
   if (window.innerWidth <= 768) {
     window._antika.reviewsCarouselInit = true;
+    // Agregar funcionalidad a los botones en responsive
+    initReviewsCarouselMobile();
     return;
   }
 
