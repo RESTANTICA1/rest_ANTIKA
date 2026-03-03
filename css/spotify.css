@@ -33,13 +33,6 @@
 .spotify-playlist{
   height: 152px
 }
-/* Logo */
-.footer-logo{
-  font-size:28px;
-  font-weight:bold;
-  letter-spacing:3px;
-}
-
 @media (max-width:768px){
   .footer{
     grid-template-columns:1fr;

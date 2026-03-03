@@ -1,7 +1,7 @@
 /* ====================================================
-   ANTIKA RESTAURANT — CSS Rediseñado
-   Inspirado en: madera teal/dorada + menú papel envejecido
-   Paleta: Verde-teal oscuro + dorado + crema envejecida
+  ANTIKA RESTAURANT — CSS Rediseñado
+  Inspirado en: madera teal/dorada + menú papel envejecido
+  Paleta: Verde-teal oscuro + dorado + crema envejecida
    ==================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap');
@@ -77,39 +77,7 @@ body {
 }
 
 /* =========================================================
-   SCROLL REVEAL
-   ========================================================= */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1),
-              transform 0.7s cubic-bezier(0.4,0,0.2,1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-40px);
-  transition: opacity 0.7s 0.1s cubic-bezier(0.4,0,0.2,1),
-              transform 0.7s 0.1s cubic-bezier(0.4,0,0.2,1);
-}
-.reveal-left.visible {
-  opacity: 1; transform: translateX(0);
-}
-.reveal-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.7s 0.1s cubic-bezier(0.4,0,0.2,1),
-              transform 0.7s 0.1s cubic-bezier(0.4,0,0.2,1);
-}
-.reveal-right.visible {
-  opacity: 1; transform: translateX(0);
-}
-
-/* =========================================================
-   HEADER
+  HEADER
    ========================================================= */
 #header-outer {
   position: fixed;
@@ -950,7 +918,7 @@ section { position: relative; }
 }
 
 /* =========================================================
-   GALERÍA
+  GALERÍA
    ========================================================= */
 #galeria {
   background: var(--wood-teal-deep);
@@ -981,6 +949,7 @@ section { position: relative; }
   border-radius: 6px;
   overflow: hidden;
 }
+
 .gallery-item {
   aspect-ratio: 3/4;
   background: var(--wood-teal-mid);
@@ -1015,7 +984,7 @@ section { position: relative; }
 .gallery-item:hover .gallery-label { opacity: 1; }
 
 /* =========================================================
-   OPINIONES
+  OPINIONES
    ========================================================= */
 #opiniones {
   background: #130d06;
@@ -1678,7 +1647,6 @@ iframe { max-width: 100%; }
   .item-price { font-size: 13px; }
 
   #galeria { padding: 70px 40px; }
-  .gallery-grid { grid-template-columns: 1fr 1fr 1fr; }
   .multi-carousel-container { padding: 0 52px; }
   .multi-carousel-track .gallery-item { flex: 0 0 calc(50% - 5px); }
 
@@ -1844,7 +1812,6 @@ iframe { max-width: 100%; }
   .broaster-table th, .broaster-table td { padding: 9px 8px; }
 
   #galeria { padding: 50px 20px; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; }
   .multi-carousel-container { padding: 0 48px; }
   .multi-carousel-track .gallery-item { flex: 0 0 calc(50% - 5px); aspect-ratio: 4/3; }
 
@@ -2073,7 +2040,6 @@ iframe { max-width: 100%; }
   .broaster-table th, .broaster-table td { padding: 6px 5px; }
 
   #galeria { padding: 32px 12px; }
-  .gallery-grid { grid-template-columns: 1fr; }
   .multi-carousel-container { padding: 0 38px; }
   .multi-carousel-track .gallery-item { flex: 0 0 100%; aspect-ratio: 1/1; }
 
