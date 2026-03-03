@@ -81,6 +81,23 @@ function initHeaderScroll() {
   const hero = document.getElementById('hero');
   if (!hero || !$.header) return;
 
+  // IntersectionObserver para detectar si el hero está visible
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+      });
+    },
+    {
+      // threshold: 0 significa que se activa cuando cualquier parte del hero está visible
+      // Usamos threshold: 0 para detectar cuando el hero sale completamente de la vista
+      threshold: 0,
+      // rootMargin: '0px' para que observe el viewport exactamente
+      rootMargin: '0px'
+    }
+  );
+
+  observer.observe(hero);
+
   window._antika.headerScrollInit = true;
 }
 
@@ -488,6 +505,17 @@ function createSectionTitle(text, hidden = false) {
   return p;
 }
 
+/**
+ * Renderiza un array de items en un DocumentFragment.
+ */
+function renderItems(items) {
+  const lang = getCurrentLang();
+  return renderItemsLang(items, lang);
+}
+
+/**
+ * Renderiza un array de items en un DocumentFragment con idioma específico.
+ */
 function renderItemsLang(items, lang) {
   const frag = new DocumentFragment();
   items.forEach(item => {
@@ -496,6 +524,47 @@ function renderItemsLang(items, lang) {
   });
   return frag;
 }
+
+/* ─── Renderers específicos (usan el motor genérico) ─── */
+
+function renderDesayunos(data) {
+  const lang = getCurrentLang();
+  const panel = document.getElementById('tab-desayunos');
+  if (!panel) return;
+
+  const frag = new DocumentFragment();
+  const cols = document.createElement('div');
+  cols.className = 'menu-columns';
+
+  /* Col 1 */
+  const col1 = document.createElement('div');
+  col1.appendChild(createSectionTitle(getTranslatedTitle(data, lang)));
+  data.items.forEach(item => {
+    const desc = lang === 'es' ? item.description : (lang === 'en' ? (item.description_en || item.description) : (item.description_pt || item.description));
+    col1.appendChild(createMenuItem(item.name, desc, item.price));
+  });
+
+  /* Col 2 — nota visual */
+  const col2  = document.createElement('div');
+  col2.style.cssText = 'display:flex;align-items:center;justify-content:center;';
+  const noteBox = document.createElement('div');
+  noteBox.style.cssText = 'text-align:center;padding:40px;border:1px solid rgba(42,107,112,0.3);border-radius:4px;';
+  const icon = document.createElement('div');
+  icon.style.cssText = "font-family:'Special Elite',cursive;font-size:48px;color:var(--teal);margin-bottom:12px;";
+  icon.textContent = data.note.icon;
+  const txt  = document.createElement('p');
+  txt.className = 'tab-note-text';
+  txt.style.cssText = 'color:var(--teal-dark);font-style:italic;font-size:17px;';
+  txt.textContent = lang === 'es' ? data.note.text : (lang === 'en' ? data.note.text_en : data.note.text_pt);
+  noteBox.append(icon, txt);
+  col2.appendChild(noteBox);
+
+  cols.append(col1, col2);
+  frag.appendChild(cols);
+  panel.replaceChildren(frag);
+}
+
+/* Helpers del motor de render */
 
 function buildSauceTags(sauces) {
   const div = document.createElement('div');
