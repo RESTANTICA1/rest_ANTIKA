@@ -33,7 +33,7 @@ const translations = {
     pcarta: "Tradición, creatividad y calidad en cada plato. Desde desayunos criollos hasta fondos especiales, nuestra carta celebra los sabores del Perú.",
     comida1: "Desayunos",
     comida2: "Sándwiches",
-    comida3: "Ensaldas & Sopas",
+    comida3: "Ensaladas & Sopas",
     comida4: "Medio Dia",
     comida5: "Fondos",
     comida6: "Burgers",
