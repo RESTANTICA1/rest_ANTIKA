@@ -40,11 +40,6 @@
       <li class="cta"><a href="https://wa.me/51954172636?text=Hola,%20quisiera%20hacer%20una%20reserva" target="_blank" onclick="closeMenu()" data-i18n="Reserva">Reservar</a></li>
       <!--Lenguaje-->
       <div class="language-selector">
-        <select id="language-select" class="form-select" style="display:none;">
-          <option value="es">Español</option>
-          <option value="en">English</option>
-          <option value="pt">Português</option>
-        </select>
         <div class="lang-selector">
           <div class="flags">
             <button class="lang-btn" onclick="changeLanguage('es')" title="Español"><img src="assets/icons/peru.jpg" alt="Perú" class="flag-img"></button>
@@ -334,8 +329,31 @@
 
 <script src="js/index.js" defer></script>
 <script src="js/lang.js" defer></script>
-<!-- Animaciones de scroll — no invasivo, cargado al final -->
+<!-- Service Worker Registration -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('[App] Service Worker registrado:', registration);
+        
+        /* Notificar cuando hay update disponible */
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'activated') {
+              console.log('[App] Nueva versión disponible, recargando...');
+              window.location.reload();
+            }
+          });
+        });
+      })
+      .catch(error => {
+        console.log('[App] Error al registrar Service Worker:', error);
+      });
+  });
+}
+</script>
 
 </body>
 </html>
-<!-- hola me llamo ...-->
