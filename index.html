@@ -329,31 +329,6 @@
 
 <script src="js/index.js" defer></script>
 <script src="js/lang.js" defer></script>
-<!-- Service Worker Registration -->
-<script>
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(registration => {
-        console.log('[App] Service Worker registrado:', registration);
-        
-        /* Notificar cuando hay update disponible */
-        registration.addEventListener('updatefound', () => {
-          const newWorker = registration.installing;
-          newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'activated') {
-              console.log('[App] Nueva versión disponible, recargando...');
-              window.location.reload();
-            }
-          });
-        });
-      })
-      .catch(error => {
-        console.log('[App] Error al registrar Service Worker:', error);
-      });
-  });
-}
-</script>
 
 </body>
 </html>
