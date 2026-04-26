@@ -13,12 +13,20 @@ function changeTheme(theme) {
   updateActiveThemeButton(theme);
 }
 
-// Actualizar botón activo
+// Actualizar botón activo (desktop dropdown + mobile buttons)
 function updateActiveThemeButton(theme) {
-  document.querySelectorAll('.theme-btn').forEach(btn => {
+  // Actualizar items del dropdown desktop
+  document.querySelectorAll('.theme-dropdown-item').forEach(item => {
+    item.classList.remove('active');
+  });
+  
+  // Actualizar botones mobile
+  document.querySelectorAll('.theme-btn-mobile').forEach(btn => {
     btn.classList.remove('active');
   });
   
+  // Activar el item correspondiente en dropdown
+  const dropdownItems = document.querySelectorAll('.theme-dropdown-item');
   const themeMap = {
     'dark': 0,
     'light': 1,
@@ -26,11 +34,59 @@ function updateActiveThemeButton(theme) {
     'neon': 3
   };
   
-  const buttons = document.querySelectorAll('.theme-btn');
-  if (buttons[themeMap[theme]]) {
-    buttons[themeMap[theme]].classList.add('active');
+  if (dropdownItems[themeMap[theme]]) {
+    dropdownItems[themeMap[theme]].classList.add('active');
+  }
+  
+  // Activar el botón mobile correspondiente
+  const mobileButtons = document.querySelectorAll('.theme-btn-mobile');
+  if (mobileButtons[themeMap[theme]]) {
+    mobileButtons[themeMap[theme]].classList.add('active');
   }
 }
+
+// Toggle dropdown de temas (desktop)
+function toggleThemeDropdown() {
+  const dropdown = document.getElementById('themeDropdown');
+  const btn = document.querySelector('.theme-dropdown-btn');
+  
+  if (dropdown && btn) {
+    const isActive = dropdown.classList.contains('active');
+    
+    if (isActive) {
+      dropdown.classList.remove('active');
+      btn.classList.remove('active');
+    } else {
+      dropdown.classList.add('active');
+      btn.classList.add('active');
+    }
+  }
+}
+
+// Cerrar dropdown de temas
+function closeThemeDropdown() {
+  const dropdown = document.getElementById('themeDropdown');
+  const btn = document.querySelector('.theme-dropdown-btn');
+  
+  if (dropdown && btn) {
+    dropdown.classList.remove('active');
+    btn.classList.remove('active');
+  }
+}
+
+// Cerrar dropdown al hacer click fuera
+document.addEventListener('click', function(event) {
+  const dropdown = document.getElementById('themeDropdown');
+  const btn = document.querySelector('.theme-dropdown-btn');
+  
+  if (dropdown && btn) {
+    const isClickInside = btn.contains(event.target) || dropdown.contains(event.target);
+    
+    if (!isClickInside && dropdown.classList.contains('active')) {
+      closeThemeDropdown();
+    }
+  }
+});
 
 /* ===== TRADUCCIONES ===== */
 const translations = {
