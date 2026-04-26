@@ -1594,6 +1594,7 @@ footer .footer-logo {
 
 /* =========================================================
    CARRUSEL GALERÍA MULTI-IMAGEN
+   Desktop: 3 items | Mobile: 1 item con auto-scroll
    ========================================================= */
 .multi-carousel-container {
   position: relative;
@@ -1649,6 +1650,51 @@ footer .footer-logo {
   transition: opacity 0.35s;
 }
 .multi-carousel-track .gallery-item:hover .gallery-label { opacity: 1; }
+
+/* Indicadores de paginación */
+.gallery-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(200,168,76,0.3);
+  border: 1px solid rgba(200,168,76,0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.gallery-dot.active {
+  background: var(--gold);
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(200,168,76,0.6);
+}
+
+/* ===== RESPONSIVE: MOBILE (1 item) ===== */
+@media (max-width: 768px) {
+  .multi-carousel-track .gallery-item {
+    flex: 0 0 100%;
+    aspect-ratio: 4/3;
+  }
+  
+  .multi-carousel-track .gallery-label {
+    opacity: 1;
+    background: linear-gradient(transparent 30%, rgba(10,26,24,0.9));
+    font-size: 14px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .multi-carousel-track .gallery-item {
+    aspect-ratio: 1/1;
+  }
+}
 
 /* =========================================================
    ANIMACIONES
