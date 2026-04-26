@@ -361,14 +361,20 @@ nav ul li.cta a:hover {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(to bottom,
-      rgba(10,26,24,0.25) 0%,
-      rgba(10,26,24,0.50) 60%,
-      rgba(10,26,24,0.75) 100%),
-    url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
+  background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=90')
     center/cover no-repeat;
 }
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(10,26,24,0.40) 0%,
+    rgba(10,26,24,0.65) 60%,
+    rgba(10,26,24,0.85) 100%);
+  z-index: 1;
+}
+
 .hero-bg::before {
   content: '';
   position: absolute;
@@ -386,7 +392,10 @@ nav ul li.cta a:hover {
       transparent 82px, transparent 180px
     );
   pointer-events: none;
+  z-index: 2;
+  opacity: 0.5;
 }
+
 .hero-bg::after {
   content: '';
   position: absolute;
@@ -399,6 +408,7 @@ nav ul li.cta a:hover {
     rgba(200,168,76,0.5) 75%,
     transparent 100%
   );
+  z-index: 3;
 }
 
 .hero-content {
