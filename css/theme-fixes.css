@@ -1,0 +1,516 @@
+/* ====================================================
+   CORRECCIONES DE TEMA - Antika Restaurant
+   Este archivo asegura que TODOS los elementos usen
+   las variables CSS y se adapten correctamente al tema
+   ==================================================== */
+
+/* ===== HEADER ===== */
+#header-outer {
+  background: var(--wood-teal-deep);
+  border-bottom: 1px solid var(--gold-glow);
+}
+
+.logo-icon {
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gold-glow);
+}
+
+.logo-icon:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.logo-text {
+  text-shadow: 0 2px 12px var(--gold-glow);
+}
+
+nav ul li.cta a {
+  border: 1px solid var(--gold-glow);
+  box-shadow: var(--shadow-md);
+}
+
+nav ul li.cta a:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== HERO ===== */
+.hero-bg {
+  background:
+    linear-gradient(to bottom,
+      var(--wood-teal-deep) 0%,
+      var(--wood-teal) 60%,
+      var(--dark-ink) 100%),
+    url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
+    center/cover no-repeat;
+}
+
+.hero-bg::before {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--gold-glow) 0px, var(--gold-glow) 1px,
+      transparent 1px, transparent 120px
+    ),
+    repeating-linear-gradient(
+      165deg,
+      transparent 0px, transparent 80px,
+      var(--gold-glow) 80px, var(--gold-glow) 82px,
+      transparent 82px, transparent 180px
+    );
+}
+
+.hero-bg::after {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--gold) 25%,
+    var(--gold-light) 50%,
+    var(--gold) 75%,
+    transparent 100%
+  );
+}
+
+.hero-badge {
+  border: 1px solid var(--gold);
+  background: var(--wood-teal-deep);
+  backdrop-filter: blur(8px);
+}
+
+.hero-title {
+  text-shadow:
+    0 4px 60px var(--dark-ink),
+    0 0 100px var(--gold-glow);
+}
+
+.hero-title span {
+  text-shadow: 0 2px 24px var(--gold-glow);
+}
+
+.hero-desc {
+  text-shadow: 0 1px 12px var(--dark-ink);
+}
+
+/* ===== NOSOTROS ===== */
+.nosotros-img::after {
+  background: linear-gradient(135deg, var(--wood-teal-deep), var(--gold-glow));
+}
+
+.nosotros-content::before {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      var(--gold-glow) 0px, var(--gold-glow) 1px,
+      transparent 1px, transparent 80px
+    ),
+    radial-gradient(ellipse 90% 60% at 110% 10%,
+      var(--gold-glow) 0%, transparent 55%);
+}
+
+.nosotros-content::after {
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    var(--gold) 20%,
+    var(--gold-light) 50%,
+    var(--gold) 80%,
+    transparent 100%
+  );
+}
+
+.info-block.teal::before {
+  background:
+    repeating-linear-gradient(90deg,
+      var(--gold-glow) 0px, var(--gold-glow) 1px,
+      transparent 1px, transparent 80px),
+    radial-gradient(ellipse 70% 50% at 0% 100%,
+      var(--gold-glow) 0%, transparent 55%);
+}
+
+.info-block .map-link {
+  border-bottom: 1px solid var(--gold);
+}
+
+.info-block .map-link:hover {
+  border-color: var(--gold-light);
+}
+
+.info-block.light .map-link {
+  color: var(--wood-teal-mid);
+  border-color: var(--wood-teal-mid);
+}
+
+.info-block.light .map-link:hover {
+  color: var(--wood-teal-deep);
+}
+
+/* ===== MENÚ ===== */
+#menu {
+  background:
+    radial-gradient(ellipse 80% 40% at 20% 80%, var(--gold-glow) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, var(--gold-glow) 0%, transparent 50%),
+    linear-gradient(160deg, var(--parchment) 0%, var(--parchment-dark) 40%, var(--parchment-deep) 100%);
+}
+
+.menu-header::after {
+  color: var(--gold-dark);
+}
+
+.tab-nav {
+  background: linear-gradient(135deg, var(--wood-teal) 0%, var(--wood-teal-deep) 50%, var(--wood-teal) 100%);
+  border-bottom: 2px solid var(--wood-teal-light);
+  box-shadow: var(--shadow-md);
+}
+
+.tab-nav::before {
+  background: linear-gradient(90deg,
+    transparent, var(--gold) 30%, var(--gold-light) 50%,
+    var(--gold) 70%, transparent
+  );
+}
+
+.tab-btn {
+  color: var(--parchment-dark);
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+  color: var(--gold-light);
+  background: var(--gold-glow);
+}
+
+.tab-btn.active {
+  color: var(--gold-light);
+  border-bottom-color: var(--gold);
+  background: var(--gold-glow);
+  box-shadow: 0 -2px 12px var(--gold-glow);
+}
+
+.menu-section-title {
+  color: var(--wood-teal-mid);
+  border-bottom: 1px solid var(--wood-teal-light);
+}
+
+.menu-section-title::after {
+  background: var(--gold-dark);
+}
+
+.menu-item {
+  border-bottom: 1px dotted var(--parchment-shadow);
+}
+
+.menu-item::before {
+  background: var(--gold);
+}
+
+.menu-item:hover {
+  background: var(--gold-glow);
+}
+
+.item-name {
+  color: var(--wood-teal-deep);
+}
+
+.menu-item:hover .item-name {
+  color: var(--wood-teal-mid);
+}
+
+.item-desc {
+  color: var(--text-muted);
+}
+
+.item-price {
+  color: var(--wood-teal-deep);
+  background: var(--wood-teal-light);
+  border: 1px solid var(--wood-teal-mid);
+}
+
+.menu-item:hover .item-price {
+  background: var(--wood-teal-mid);
+  color: var(--gold-light);
+  border-color: transparent;
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-note {
+  background: linear-gradient(135deg, var(--wood-teal-deep), var(--wood-teal-mid));
+  color: var(--cream);
+  border-left: 3px solid var(--gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-note strong {
+  color: var(--gold-light);
+}
+
+.broaster-table {
+  box-shadow: var(--shadow-sm);
+}
+
+.broaster-table th {
+  background: var(--wood-teal-deep);
+  color: var(--gold-light);
+}
+
+.broaster-table td {
+  border-bottom: 1px solid var(--parchment-shadow);
+  color: var(--text-dark);
+  background: var(--parchment);
+}
+
+.broaster-table tr:nth-child(even) td {
+  background: var(--parchment-dark);
+}
+
+.broaster-table tr:hover td {
+  background: var(--gold-glow);
+}
+
+.broaster-table .price-col {
+  color: var(--wood-teal-deep);
+}
+
+.broaster-table .promo-name {
+  color: var(--wood-teal-deep);
+}
+
+.sauce-tag {
+  background: var(--wood-teal-deep);
+  color: var(--gold-light);
+  border: 1px solid var(--gold-glow);
+}
+
+.sauce-tag:hover {
+  background: var(--gold-dark);
+  color: var(--cream-light);
+  border-color: var(--gold);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===== GALERÍA ===== */
+#galeria {
+  background: var(--wood-teal-deep);
+}
+
+#galeria::before {
+  background:
+    repeating-linear-gradient(90deg,
+      var(--gold-glow) 0px, var(--gold-glow) 1px,
+      transparent 1px, transparent 100px),
+    radial-gradient(ellipse 80% 40% at 50% 0%,
+      var(--gold-glow) 0%, transparent 55%);
+}
+
+.gallery-item {
+  background: var(--wood-teal-mid);
+}
+
+.gallery-label {
+  background: linear-gradient(transparent, var(--dark-ink));
+  color: var(--gold-light);
+}
+
+/* ===== OPINIONES ===== */
+#opiniones {
+  background: var(--dark-wood);
+}
+
+#opiniones::before {
+  background:
+    repeating-linear-gradient(90deg,
+      var(--gold-glow) 0px, var(--gold-glow) 1px,
+      transparent 1px, transparent 90px),
+    radial-gradient(ellipse 70% 60% at 50% 0%,
+      var(--gold-glow) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 0% 100%,
+      var(--wood-teal-mid) 0%, transparent 50%);
+}
+
+#opiniones::after {
+  background: linear-gradient(90deg,
+    transparent 0%, var(--gold) 20%,
+    var(--gold-light) 50%,
+    var(--gold) 80%, transparent 100%
+  );
+}
+
+.opinions-header .section-title::after {
+  color: var(--gold);
+}
+
+.google-reviews-link {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+}
+
+.google-reviews-link:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+.opinion-card {
+  background: linear-gradient(160deg, var(--navy-mid) 0%, var(--navy-deep) 100%);
+  border: 1px solid var(--gold-glow);
+  box-shadow: var(--shadow-md);
+}
+
+.opinion-card::before, .opinion-card::after {
+  border-color: var(--gold-glow);
+}
+
+.opinion-card:hover {
+  border-color: var(--gold);
+}
+
+.opinion-photo {
+  border: 2px solid var(--gold);
+}
+
+.opinion-name {
+  color: var(--gold-pale);
+}
+
+.opinion-datetime {
+  color: var(--parchment-dark);
+}
+
+.opinion-stars .star-filled {
+  color: var(--gold);
+}
+
+.opinion-stars .star-empty {
+  color: var(--gold-glow);
+}
+
+.opinion-food-info {
+  color: var(--wood-teal-bright);
+  border-top: 1px solid var(--gold-glow);
+}
+
+.opinion-food-photo {
+  border: 1px solid var(--gold-glow);
+}
+
+.opinion-text {
+  color: var(--parchment-dark);
+}
+
+.opinion-text::before {
+  color: var(--gold-glow);
+}
+
+.carousel-nav-btn,
+.carousel-nav-prev-reviews,
+.carousel-nav-next-reviews {
+  border: 1px solid var(--gold-glow);
+  background: transparent;
+  color: var(--gold);
+}
+
+.carousel-nav-btn:hover,
+.carousel-nav-prev-reviews:hover,
+.carousel-nav-next-reviews:hover {
+  background: var(--gold-glow);
+  border-color: var(--gold);
+  color: var(--gold-light);
+}
+
+/* ===== MAPA ===== */
+#mapa {
+  background: var(--wood-teal-deep);
+}
+
+#mapa::before {
+  background: linear-gradient(90deg,
+    transparent, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent
+  );
+}
+
+/* ===== RESERVA ===== */
+#reserva {
+  background: linear-gradient(135deg, var(--wood-teal-deep) 0%, var(--wood-teal-mid) 100%);
+  border-top: 1px solid var(--gold-glow);
+}
+
+#reserva::before {
+  background:
+    repeating-linear-gradient(90deg,
+      var(--gold-glow) 0px, var(--gold-glow) 1px,
+      transparent 1px, transparent 80px),
+    radial-gradient(ellipse 60% 80% at 100% 50%,
+      var(--gold-glow) 0%, transparent 55%);
+}
+
+#reserva::after {
+  background: linear-gradient(90deg,
+    transparent, var(--gold) 30%, var(--gold-light) 50%, var(--gold) 70%, transparent
+  );
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--dark-wood);
+  border-top: 1px solid var(--gold-glow);
+}
+
+footer p {
+  color: var(--silver-light);
+}
+
+.copy {
+  border-top: 1px solid var(--gold-glow);
+}
+
+footer .footer-logo {
+  color: var(--gold);
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp-btn {
+  background: #25D366;
+  box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+}
+
+.whatsapp-btn:hover {
+  box-shadow: 0 14px 36px rgba(37,211,102,0.55);
+}
+
+/* ===== CARRUSEL GALERÍA ===== */
+.multi-carousel-track .gallery-item {
+  background: var(--wood-teal-mid);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gold-glow);
+}
+
+.multi-carousel-track .gallery-label {
+  background: linear-gradient(transparent, var(--dark-ink));
+  color: var(--gold-light);
+}
+
+/* ===== SCROLL HINT ===== */
+.scroll-hint {
+  color: var(--gold-light);
+}
+
+.scroll-hint .line {
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+/* ===== TRANSICIONES SUAVES ===== */
+#header-outer,
+.hero-bg,
+.nosotros-content,
+.info-block,
+#menu,
+.tab-nav,
+.tab-btn,
+.menu-item,
+.item-price,
+#galeria,
+#opiniones,
+.opinion-card,
+#mapa,
+#reserva,
+footer {
+  transition: background-color 0.3s ease, 
+              border-color 0.3s ease, 
+              color 0.3s ease,
+              box-shadow 0.3s ease;
+}

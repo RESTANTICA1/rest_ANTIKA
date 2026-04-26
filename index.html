@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Antika Restaurant – Sicuani, Cusco</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/theme-fixes.css">
     <link rel="stylesheet" href="css/spotify.css">
     <link rel="stylesheet" href="css/lang.css">
     <link rel="icon" type="image/png"  href="assets/images/logo antika.png">
@@ -46,6 +47,32 @@
             <button class="lang-btn" onclick="changeLanguage('pt')" title="Português"><img src="assets/icons/brasil.png" alt="Brasil" class="flag-img"></button>
           </div>
         </div>
+      </div>
+      <!--Selector de Temas-->
+      <div class="theme-selector">
+        <button class="theme-btn" onclick="changeTheme('dark')" title="Tema Oscuro" aria-label="Tema Oscuro">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="theme-btn" onclick="changeTheme('light')" title="Tema Claro" aria-label="Tema Claro">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+        <button class="theme-btn" onclick="changeTheme('purple-gold')" title="Tema Dorado-Morado" aria-label="Tema Dorado-Morado">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </button>
       </div>
     </ul>
   </nav>

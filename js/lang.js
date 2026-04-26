@@ -1,3 +1,37 @@
+/* ===== SISTEMA DE TEMAS ===== */
+// Cargar tema guardado al iniciar
+(function() {
+  const savedTheme = localStorage.getItem('antikaTheme') || 'dark';
+  document.documentElement.setAttribute('data-theme', savedTheme);
+  updateActiveThemeButton(savedTheme);
+})();
+
+// Función para cambiar tema
+function changeTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('antikaTheme', theme);
+  updateActiveThemeButton(theme);
+}
+
+// Actualizar botón activo
+function updateActiveThemeButton(theme) {
+  document.querySelectorAll('.theme-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  const themeMap = {
+    'dark': 0,
+    'light': 1,
+    'purple-gold': 2
+  };
+  
+  const buttons = document.querySelectorAll('.theme-btn');
+  if (buttons[themeMap[theme]]) {
+    buttons[themeMap[theme]].classList.add('active');
+  }
+}
+
+/* ===== TRADUCCIONES ===== */
 const translations = {
   es: {
     restaurant_name: "Restaurante - Sicuani",
