@@ -751,75 +751,93 @@ section { position: relative; }
 
 /* ─── TABS ─── */
 .tab-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  border-bottom: 2px solid rgba(30,80,76,0.5);
-  /* [MEJORA 5] Margen inferior reducido */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  border-bottom: none;
   margin: 0 40px 40px;
   position: sticky;
   top: 72px;
-  background: linear-gradient(135deg, #1a4a48 0%, #0f3230 50%, #1a4a48 100%);
+  background: linear-gradient(135deg, rgba(26,74,72,0.95), rgba(15,50,48,0.95));
   z-index: 10;
-  padding-top: 10px;
-  /* [MEJORA 1] Menos border-radius */
-  border-radius: 6px 6px 0 0;
-  box-shadow: 0 6px 28px rgba(10,26,24,0.4), inset 0 1px 0 rgba(200,168,76,0.2);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--gold) transparent;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(10,26,24,0.3);
+  overflow: visible;
+  border: 1px solid rgba(200,168,76,0.2);
 }
+
 .tab-nav::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0; height: 1px;
-  background: linear-gradient(90deg,
-    transparent, rgba(200,168,76,0.5) 30%, rgba(200,168,76,0.9) 50%,
-    rgba(200,168,76,0.5) 70%, transparent
-  );
+  display: none;
 }
-.tab-nav::-webkit-scrollbar { height: 3px; }
-.tab-nav::-webkit-scrollbar-track { background: transparent; }
-.tab-nav::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
 
 /* [MEJORA 2] Tab buttons más compactos */
 .tab-btn {
-  font-family: 'Special Elite', cursive;
-  /* [MEJORA 2] Fuente ligeramente más pequeña */
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--parchment-dark);
-  background: none;
-  border: none;
-  /* [MEJORA 2] Padding reducido */
-  padding: 11px 18px;
+  font-family: 'Crimson Text', serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+  color: var(--cream);
+  background: rgba(10,26,24,0.6);
+  border: 2px solid rgba(200,168,76,0.3);
+  padding: 14px 16px;
   cursor: pointer;
-  opacity: 0.6;
-  transition: all 0.25s ease;
-  border-bottom: 3px solid transparent;
-  margin-bottom: -2px;
-  /* [MEJORA 1] Menos redondeado */
-  border-radius: 4px 4px 0 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 10px;
   position: relative;
   white-space: nowrap;
   flex-shrink: 0;
-  min-height: 44px;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(10,26,24,0.3);
 }
+
+.tab-icon {
+  font-size: 24px;
+  display: block;
+  transition: transform 0.3s ease;
+  filter: grayscale(0.2) brightness(1.1);
+}
+
+.tab-text {
+  font-size: 13px;
+  display: block;
+  line-height: 1.2;
+}
+
 .tab-btn:hover {
-  opacity: 0.9;
   color: var(--gold-light);
-  background: rgba(200,168,76,0.08);
-  /* [MEJORA 1] Movimiento más sutil */
-  transform: translateY(-1px);
+  background: rgba(26,74,72,0.8);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(200,168,76,0.4);
 }
+
+.tab-btn:hover .tab-icon {
+  transform: scale(1.15);
+  filter: grayscale(0) brightness(1.3);
+}
+
 .tab-btn.active {
-  opacity: 1;
-  color: var(--gold-light);
-  border-bottom-color: var(--gold);
-  background: rgba(200,168,76,0.12);
-  box-shadow: 0 -2px 12px rgba(200,168,76,0.1);
+  color: var(--dark-ink);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  border-color: var(--gold-pale);
+  box-shadow: 0 4px 16px rgba(200,168,76,0.5), 0 0 0 3px rgba(200,168,76,0.2);
+  transform: translateY(-2px);
+}
+
+.tab-btn.active .tab-icon {
+  filter: grayscale(0) brightness(1) contrast(1.2);
+  transform: scale(1.1);
+}
+
+.tab-btn.active .tab-text {
+  font-weight: 700;
 }
 
 /* ─── TAB PANELS ─── */
@@ -833,6 +851,26 @@ section { position: relative; }
 @media (max-width: 768px){
   .tab-panel{
     margin-top: 80px;
+  }
+  
+  .tab-nav {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 20px 32px;
+    padding: 12px;
+  }
+  
+  .tab-btn {
+    min-height: 70px;
+    padding: 10px 8px;
+  }
+  
+  .tab-icon {
+    font-size: 28px;
+  }
+  
+  .tab-text {
+    font-size: 12px;
   }
 }
 .tab-panel.active { display: block; animation: tabFadeIn 0.35s ease; }

@@ -233,25 +233,28 @@
 }
 
 [data-theme="light"] .tab-nav {
-  background: linear-gradient(135deg, #e8f4f3 0%, #d0e8e6 50%, #e8f4f3 100%) !important;
-  border: 2px solid #164240 !important;
-  border-top: none !important;
-  box-shadow: 0 4px 12px rgba(22, 66, 64, 0.15) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border: 2px solid #e8f4f3 !important;
+  box-shadow: 0 4px 20px rgba(22, 66, 64, 0.12) !important;
 }
 
 [data-theme="light"] .tab-btn {
   color: #164240 !important;
+  background: #f8fafa !important;
+  border-color: rgba(22, 66, 64, 0.15) !important;
 }
 
 [data-theme="light"] .tab-btn:hover {
   color: #0a1f1e !important;
-  background: rgba(212, 175, 55, 0.1) !important;
+  background: #ffffff !important;
+  border-color: #d4af37 !important;
 }
 
 [data-theme="light"] .tab-btn.active {
-  color: #0a1f1e !important;
-  background: rgba(212, 175, 55, 0.2) !important;
-  border-bottom-color: #d4af37 !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #164240, #0a1f1e) !important;
+  border-color: #d4af37 !important;
+  box-shadow: 0 4px 16px rgba(22, 66, 64, 0.3), 0 0 0 3px rgba(212, 175, 55, 0.15) !important;
 }
 
 [data-theme="light"] .menu-section-title {
@@ -879,29 +882,33 @@ svg {
 }
 
 [data-theme="purple-gold"] .tab-nav {
-  background: linear-gradient(135deg, #4a2d5f 0%, #2d1b3d 50%, #4a2d5f 100%) !important;
-  border-bottom: 2px solid #ffa500 !important;
+  background: linear-gradient(135deg, rgba(74,45,95,0.95), rgba(45,27,61,0.95)) !important;
+  border: 1px solid rgba(255,165,0,0.3) !important;
+  box-shadow: 0 4px 20px rgba(155,107,196,0.3) !important;
 }
 
 [data-theme="purple-gold"] .tab-nav::before {
-  background: linear-gradient(90deg,
-    transparent, #ffa500 30%, #9b6bc4 50%, #ffa500 70%, transparent
-  ) !important;
+  display: none !important;
 }
 
 [data-theme="purple-gold"] .tab-btn {
-  color: #e8d8f0 !important;
+  color: #fef9f0 !important;
+  background: rgba(26,10,31,0.6) !important;
+  border-color: rgba(255,165,0,0.3) !important;
 }
 
 [data-theme="purple-gold"] .tab-btn:hover {
   color: #ffa500 !important;
-  background: rgba(255, 165, 0, 0.1) !important;
+  background: rgba(74,45,95,0.8) !important;
+  border-color: #ffa500 !important;
+  box-shadow: 0 6px 20px rgba(255,165,0,0.4) !important;
 }
 
 [data-theme="purple-gold"] .tab-btn.active {
-  color: #ffa500 !important;
-  border-bottom-color: #ffa500 !important;
-  background: rgba(255, 165, 0, 0.15) !important;
+  color: #2d1b3d !important;
+  background: linear-gradient(135deg, #ffa500, #ffb733) !important;
+  border-color: #ffd700 !important;
+  box-shadow: 0 4px 16px rgba(255,165,0,0.5), 0 0 0 3px rgba(255,165,0,0.2) !important;
 }
 
 [data-theme="purple-gold"] .menu-section-title {
@@ -1437,26 +1444,31 @@ svg {
 }
 
 [data-theme="neon"] .tab-nav {
-  background: #1a1a1a !important;
-  border-bottom: 2px solid #ffa500 !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(135deg, rgba(26,26,26,0.95), rgba(10,10,10,0.95)) !important;
+  border: 1px solid rgba(155,107,196,0.3) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5) !important;
 }
 
 [data-theme="neon"] .tab-btn {
   color: #f0f0f0 !important;
+  background: rgba(0,0,0,0.6) !important;
+  border-color: rgba(155,107,196,0.3) !important;
 }
 
 [data-theme="neon"] .tab-btn:hover {
   color: #ffa500 !important;
+  background: rgba(26,10,31,0.8) !important;
+  border-color: #9b6bc4 !important;
+  box-shadow: 0 6px 20px rgba(155,107,196,0.4) !important;
   text-shadow: none;
-  background: rgba(255, 165, 0, 0.1) !important;
 }
 
 [data-theme="neon"] .tab-btn.active {
-  color: #ffa500 !important;
+  color: #0a0a0a !important;
+  background: linear-gradient(135deg, #9b6bc4, #b565b3) !important;
+  border-color: #ffa500 !important;
+  box-shadow: 0 4px 16px rgba(155,107,196,0.5), 0 0 0 3px rgba(255,165,0,0.2) !important;
   text-shadow: none;
-  border-bottom-color: #ffa500 !important;
-  box-shadow: none;
 }
 
 [data-theme="neon"] .menu-section-title {
