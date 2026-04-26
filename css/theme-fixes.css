@@ -41,12 +41,15 @@ nav ul li.cta a:hover {
       var(--dark-ink) 100%),
     url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
     center/cover no-repeat;
+  background-blend-mode: multiply;
+  opacity: 1;
 }
 
 .hero-bg::before {
   background:
     radial-gradient(circle at 20% 30%, var(--gold-glow) 0%, transparent 40%),
     radial-gradient(circle at 80% 70%, var(--gold-glow) 0%, transparent 40%);
+  opacity: 0.5;
 }
 
 .hero-bg::after {
@@ -82,6 +85,7 @@ nav ul li.cta a:hover {
 /* ===== NOSOTROS ===== */
 .nosotros-img::after {
   background: linear-gradient(135deg, var(--wood-teal-deep), var(--gold-glow));
+  opacity: 0.4;
 }
 
 .nosotros-content::before {
@@ -520,9 +524,9 @@ footer {
   .hero-bg {
     background:
       linear-gradient(to bottom,
-        rgba(255,255,255,0.7) 0%,
-        rgba(255,255,255,0.85) 60%,
-        rgba(255,255,255,0.95) 100%),
+        rgba(255,255,255,0.50) 0%,
+        rgba(255,255,255,0.70) 60%,
+        rgba(255,255,255,0.85) 100%),
       url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
       center/cover no-repeat;
   }

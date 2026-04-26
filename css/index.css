@@ -363,9 +363,9 @@ nav ul li.cta a:hover {
   inset: 0;
   background:
     linear-gradient(to bottom,
-      rgba(10,26,24,0.42) 0%,
-      rgba(10,26,24,0.72) 60%,
-      rgba(10,26,24,0.92) 100%),
+      rgba(10,26,24,0.25) 0%,
+      rgba(10,26,24,0.50) 60%,
+      rgba(10,26,24,0.75) 100%),
     url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
     center/cover no-repeat;
 }
@@ -595,7 +595,7 @@ section { position: relative; }
 .nosotros-img::after {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(10,26,24,0.5), rgba(200,168,76,0.08));
+  background: linear-gradient(135deg, rgba(10,26,24,0.3), rgba(200,168,76,0.05));
 }
 
 .nosotros-content {
