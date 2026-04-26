@@ -1,0 +1,1592 @@
+/* ====================================================
+   CONTROL TOTAL DE TEXTOS POR TEMA - Antika Restaurant
+   Este archivo fuerza los colores correctos de texto
+   en TODOS los elementos para cada tema
+   ==================================================== */
+
+/* ===== TEMA OSCURO (DEFAULT) ===== */
+:root,
+[data-theme="dark"] {
+  /* Todos los textos por defecto */
+  color: var(--cream);
+}
+
+[data-theme="dark"] body {
+  color: var(--cream);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: var(--cream-light);
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] span,
+[data-theme="dark"] div,
+[data-theme="dark"] a {
+  color: inherit;
+}
+
+/* ===== TEMA CLARO ===== */
+[data-theme="light"] {
+  color: #1a1a1a;
+}
+
+[data-theme="light"] body {
+  color: #1a1a1a;
+  background: #ffffff;
+}
+
+/* HEADER - Tema Claro */
+[data-theme="light"] #header-outer {
+  background: rgba(255, 255, 255, 0.98);
+  color: #2a2a2a;
+  border-bottom: 2px solid #d4af37 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .logo-text {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .logo-sub {
+  color: #164240 !important;
+}
+
+[data-theme="light"] nav ul li a {
+  color: #2a2a2a !important;
+}
+
+[data-theme="light"] nav ul li a:hover {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] nav ul li.cta a {
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .hamburger span {
+  background: #164240 !important;
+}
+
+/* HERO - Tema Claro */
+[data-theme="light"] #hero {
+  color: #1a1a1a;
+}
+
+[data-theme="light"] .hero-badge {
+  color: #d4af37 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 2px solid #d4af37 !important;
+}
+
+[data-theme="light"] .hero-title {
+  color: #1a1a1a !important;
+}
+
+[data-theme="light"] .hero-title span {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .hero-desc {
+  color: #4a4a4a !important;
+}
+
+[data-theme="light"] .btn-primary {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #164240, #0a1f1e) !important;
+  border: 2px solid #164240 !important;
+  box-shadow: 0 4px 12px rgba(22, 66, 64, 0.3) !important;
+}
+
+[data-theme="light"] .btn-outline {
+  color: #164240 !important;
+  border: 2px solid #164240 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="light"] .btn-outline:hover {
+  color: #0a1f1e !important;
+  border-color: #0a1f1e !important;
+}
+
+[data-theme="light"] .scroll-hint {
+  color: #d4af37 !important;
+}
+
+/* NOSOTROS - Tema Claro - TODO CLARO */
+[data-theme="light"] #nosotros {
+  background: #fafafa !important;
+  border-top: 3px solid #d4af37 !important;
+}
+
+[data-theme="light"] .nosotros-content {
+  background: #f5f5f5 !important;
+  color: #1a1a1a !important;
+  border: 2px solid #e0e0e0 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .nosotros-content .section-label {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .nosotros-content .section-title {
+  color: #0a1f1e !important;
+}
+
+[data-theme="light"] .nosotros-content .section-desc {
+  color: #4a4a4a !important;
+}
+
+[data-theme="light"] .nosotros-content::after {
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    #d4af37 20%,
+    #d4af37 50%,
+    #d4af37 80%,
+    transparent 100%
+  ) !important;
+}
+
+[data-theme="light"] .info-block.teal {
+  background: #e8f4f3 !important;
+  color: #1a1a1a !important;
+  border: 2px solid #d0e8e6 !important;
+  box-shadow: inset 0 0 0 1px rgba(22, 66, 64, 0.1) !important;
+}
+
+[data-theme="light"] .info-block.teal .section-label {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .info-block.teal .section-title {
+  color: #0a1f1e !important;
+}
+
+[data-theme="light"] .info-block.teal p {
+  color: #4a4a4a !important;
+}
+
+[data-theme="light"] .info-block.teal strong {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .info-block.teal .map-link {
+  color: #164240 !important;
+  border-bottom: 2px solid #164240 !important;
+}
+
+[data-theme="light"] .info-block.light {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 2px solid #e8e8e8 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .info-block.light .section-label {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .info-block.light .section-title {
+  color: #0a1f1e !important;
+}
+
+[data-theme="light"] .info-block.light p {
+  color: #2a2a2a !important;
+}
+
+[data-theme="light"] .info-block.light strong {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .info-block.light .map-link {
+  color: #164240 !important;
+  border-bottom: 2px solid #164240 !important;
+}
+
+/* MENÚ - Tema Claro */
+[data-theme="light"] #menu {
+  background: #fafafa !important;
+  color: #1a1a1a !important;
+  border-top: 3px solid #d4af37 !important;
+}
+
+[data-theme="light"] .menu-header .section-label {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .menu-header .section-title {
+  color: #0a1f1e !important;
+}
+
+[data-theme="light"] .menu-header .section-desc {
+  color: #4a4a4a !important;
+}
+
+[data-theme="light"] .menu-header::after {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .tab-nav {
+  background: linear-gradient(135deg, #e8f4f3 0%, #d0e8e6 50%, #e8f4f3 100%) !important;
+  border: 2px solid #164240 !important;
+  border-top: none !important;
+  box-shadow: 0 4px 12px rgba(22, 66, 64, 0.15) !important;
+}
+
+[data-theme="light"] .tab-btn {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .tab-btn:hover {
+  color: #0a1f1e !important;
+  background: rgba(212, 175, 55, 0.1) !important;
+}
+
+[data-theme="light"] .tab-btn.active {
+  color: #0a1f1e !important;
+  background: rgba(212, 175, 55, 0.2) !important;
+  border-bottom-color: #d4af37 !important;
+}
+
+[data-theme="light"] .menu-section-title {
+  color: #164240 !important;
+  border-bottom: 2px solid #d4af37 !important;
+}
+
+[data-theme="light"] .item-name {
+  color: #0a1f1e !important;
+}
+
+[data-theme="light"] .item-desc {
+  color: #6a6a6a !important;
+}
+
+[data-theme="light"] .item-price {
+  background: #e8f4f3 !important;
+  color: #164240 !important;
+  border: 2px solid #164240 !important;
+}
+
+[data-theme="light"] .menu-item:hover .item-price {
+  background: #164240 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="light"] .menu-note {
+  background: #e8f4f3 !important;
+  color: #1a1a1a !important;
+  border: 2px solid #d4af37 !important;
+  border-left: 4px solid #d4af37 !important;
+}
+
+[data-theme="light"] .menu-note strong {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .broaster-table th {
+  background: #e8f4f3 !important;
+  color: #164240 !important;
+  border: 2px solid #164240 !important;
+}
+
+[data-theme="light"] .broaster-table td {
+  color: #1a1a1a !important;
+  background: #ffffff !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+[data-theme="light"] .broaster-table tr:nth-child(even) td {
+  background: #f8f8f8 !important;
+}
+
+[data-theme="light"] .broaster-table .price-col {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .broaster-table .promo-name {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .sauce-tag {
+  background: #e8f4f3 !important;
+  color: #164240 !important;
+  border: 2px solid #164240 !important;
+}
+
+[data-theme="light"] .sauce-tag:hover {
+  background: #164240 !important;
+  color: #ffffff !important;
+}
+
+/* GALERÍA - Tema Claro - TODO CLARO */
+[data-theme="light"] #galeria {
+  background: #f5f5f5 !important;
+  color: #1a1a1a !important;
+  border-top: 3px solid #d4af37 !important;
+}
+
+[data-theme="light"] #galeria .section-label {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] #galeria .section-title {
+  color: #0a1f1e !important;
+}
+
+[data-theme="light"] #galeria .section-desc {
+  color: #4a4a4a !important;
+}
+
+[data-theme="light"] .gallery-label {
+  color: #d4af37 !important;
+  background: linear-gradient(transparent, rgba(255,255,255,0.95)) !important;
+}
+
+/* OPINIONES - Tema Claro - TODO CLARO */
+[data-theme="light"] #opiniones {
+  background: #fafafa !important;
+  color: #1a1a1a !important;
+  border-top: 3px solid #d4af37 !important;
+}
+
+[data-theme="light"] #opiniones::before {
+  background:
+    radial-gradient(ellipse at top center, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(22, 66, 64, 0.08) 0%, transparent 60%) !important;
+}
+
+[data-theme="light"] #opiniones::after {
+  background: linear-gradient(90deg,
+    transparent 0%, #d4af37 20%,
+    #d4af37 50%,
+    #d4af37 80%, transparent 100%
+  ) !important;
+}
+
+[data-theme="light"] .opinions-header .section-label {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .opinions-header .section-title {
+  color: #0a1f1e !important;
+}
+
+[data-theme="light"] .opinions-header .section-desc {
+  color: #4a4a4a !important;
+}
+
+[data-theme="light"] .google-reviews-link {
+  color: #164240 !important;
+  border: 2px solid #164240 !important;
+}
+
+[data-theme="light"] .google-reviews-link:hover {
+  color: #0a1f1e !important;
+  background: rgba(22, 66, 64, 0.05) !important;
+}
+
+[data-theme="light"] .opinion-card {
+  background: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 2px solid #d4af37 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .opinion-card::before,
+[data-theme="light"] .opinion-card::after {
+  border-color: #d4af37 !important;
+}
+
+[data-theme="light"] .opinion-name {
+  color: #164240 !important;
+}
+
+[data-theme="light"] .opinion-datetime {
+  color: #6a6a6a !important;
+}
+
+[data-theme="light"] .opinion-text {
+  color: #2a2a2a !important;
+}
+
+[data-theme="light"] .opinion-text::before {
+  color: rgba(212, 175, 55, 0.2) !important;
+}
+
+[data-theme="light"] .opinion-food-info {
+  color: #164240 !important;
+  border-top: 2px solid #d4af37 !important;
+}
+
+[data-theme="light"] .opinion-stars .star-filled {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .opinion-stars .star-empty {
+  color: rgba(212, 175, 55, 0.3) !important;
+}
+
+[data-theme="light"] .opinion-photo {
+  border: 3px solid #d4af37 !important;
+}
+
+[data-theme="light"] .opinion-food-photo {
+  border: 2px solid #d4af37 !important;
+}
+
+[data-theme="light"] .carousel-nav-btn,
+[data-theme="light"] .carousel-nav-prev-reviews,
+[data-theme="light"] .carousel-nav-next-reviews {
+  color: #164240 !important;
+  border: 2px solid #164240 !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+[data-theme="light"] .carousel-nav-btn:hover,
+[data-theme="light"] .carousel-nav-prev-reviews:hover,
+[data-theme="light"] .carousel-nav-next-reviews:hover {
+  color: #0a1f1e !important;
+  background: #ffffff !important;
+}
+
+/* MAPA - Tema Claro */
+[data-theme="light"] #mapa {
+  background: #f5f5f5 !important;
+  border-top: 3px solid #164240 !important;
+  border-bottom: 3px solid #164240 !important;
+}
+
+/* RESERVA - Tema Claro - TODO CLARO */
+[data-theme="light"] #reserva {
+  background: #e8f4f3 !important;
+  color: #1a1a1a !important;
+  border-top: 3px solid #d4af37 !important;
+  box-shadow: inset 0 3px 0 0 #164240 !important;
+}
+
+[data-theme="light"] #reserva::before {
+  background:
+    radial-gradient(ellipse at right center, rgba(212, 175, 55, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse at left center, rgba(22, 66, 64, 0.1) 0%, transparent 70%) !important;
+}
+
+[data-theme="light"] #reserva::after {
+  background: linear-gradient(90deg,
+    transparent, #d4af37 30%, #d4af37 50%, #d4af37 70%, transparent
+  ) !important;
+}
+
+[data-theme="light"] .reserva-text .section-label {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .reserva-text .section-title {
+  color: #0a1f1e !important;
+}
+
+[data-theme="light"] .reserva-text .section-desc {
+  color: #4a4a4a !important;
+}
+
+/* FOOTER - Tema Claro - TODO CLARO */
+[data-theme="light"] footer {
+  background: #f5f5f5 !important;
+  color: #2a2a2a !important;
+  border-top: 3px solid #d4af37 !important;
+}
+
+[data-theme="light"] footer p {
+  color: #6a6a6a !important;
+}
+
+[data-theme="light"] footer .footer-logo {
+  color: #d4af37 !important;
+}
+
+[data-theme="light"] .copy {
+  border-top: 2px solid #d4af37 !important;
+}
+
+/* NAVEGACIÓN MÓVIL - Tema Claro */
+[data-theme="light"] nav.active ul {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border: 2px solid #d4af37 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="light"] nav.active ul li a {
+  color: #2a2a2a !important;
+}
+
+[data-theme="light"] nav.active ul li a:hover {
+  color: #d4af37 !important;
+}
+
+/* THEME SELECTOR - Tema Claro */
+[data-theme="light"] .theme-btn {
+  color: #2a2a2a !important;
+  border: 2px solid #d4af37 !important;
+  background: #ffffff !important;
+}
+
+[data-theme="light"] .theme-btn:hover {
+  color: #164240 !important;
+  border: 2px solid #164240 !important;
+  background: #e8f4f3 !important;
+}
+
+[data-theme="light"] .theme-btn.active {
+  background: #164240 !important;
+  color: #ffffff !important;
+  border: 2px solid #164240 !important;
+  box-shadow: 0 2px 8px rgba(22, 66, 64, 0.3) !important;
+}
+
+/* ===== TEMA DORADO-MORADO ===== */
+[data-theme="purple-gold"] body {
+  color: var(--cream);
+}
+
+[data-theme="purple-gold"] h1,
+[data-theme="purple-gold"] h2,
+[data-theme="purple-gold"] h3,
+[data-theme="purple-gold"] h4,
+[data-theme="purple-gold"] h5,
+[data-theme="purple-gold"] h6 {
+  color: var(--cream-light);
+}
+
+/* Asegurar que los textos heredan correctamente */
+[data-theme="purple-gold"] .hero-title {
+  color: var(--cream-light) !important;
+}
+
+[data-theme="purple-gold"] .hero-title span {
+  color: var(--gold-light) !important;
+}
+
+[data-theme="purple-gold"] .hero-desc {
+  color: var(--silver-light) !important;
+}
+
+[data-theme="purple-gold"] .section-title {
+  color: var(--gold-pale) !important;
+}
+
+[data-theme="purple-gold"] .section-desc {
+  color: var(--silver-light) !important;
+}
+
+/* ===== REGLAS GLOBALES PARA TODOS LOS TEMAS ===== */
+
+/* Asegurar que los inputs y selects tengan el color correcto */
+input,
+select,
+textarea,
+button {
+  color: inherit;
+}
+
+/* Links siempre deben tener color definido */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Asegurar que los SVG hereden el color */
+svg {
+  fill: currentColor;
+  stroke: currentColor;
+}
+
+/* Forzar herencia de color en elementos comunes */
+.section-label,
+.section-title,
+.section-desc,
+.hero-badge,
+.hero-title,
+.hero-desc,
+.menu-header,
+.tab-btn,
+.menu-item,
+.item-name,
+.item-desc,
+.item-price,
+.opinion-card,
+.opinion-name,
+.opinion-text {
+  color: inherit;
+}
+
+/* Importante: !important solo donde sea absolutamente necesario */
+[data-theme="light"] * {
+  /* Forzar que los elementos sin clase específica usen el color del tema */
+  color: inherit;
+}
+
+
+/* ====================================================
+   TEMA NEGRO CON DORADO, MORADO Y NARANJA
+   ==================================================== */
+
+[data-theme="purple-gold"] body {
+  color: var(--cream);
+  background: #0a0a0a;
+}
+
+/* HEADER - Tema Purple-Gold */
+[data-theme="purple-gold"] #header-outer {
+  background: rgba(26, 10, 31, 0.98);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+[data-theme="purple-gold"] .logo-text {
+  color: #ffa500 !important;
+  text-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+}
+
+[data-theme="purple-gold"] .logo-sub {
+  color: #9b6bc4 !important;
+}
+
+[data-theme="purple-gold"] nav ul li a {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] nav ul li a:hover {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] nav ul li.cta a {
+  background: linear-gradient(135deg, #ff6b35, #ff8c5a) !important;
+  color: #ffffff !important;
+}
+
+[data-theme="purple-gold"] .hamburger span {
+  background: #ffa500 !important;
+}
+
+/* HERO - Tema Purple-Gold */
+[data-theme="purple-gold"] .hero-bg {
+  background:
+    linear-gradient(to bottom,
+      rgba(10,10,10,0.5) 0%,
+      rgba(26,10,31,0.7) 60%,
+      rgba(10,10,10,0.9) 100%),
+    url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
+    center/cover no-repeat !important;
+}
+
+[data-theme="purple-gold"] .hero-bg::before {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(155,107,196,0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(155,107,196,0.08) 0%, transparent 40%) !important;
+}
+
+[data-theme="purple-gold"] .hero-bg::after {
+  background: linear-gradient(90deg,
+    transparent 0%,
+    #ffa500 25%,
+    #9b6bc4 50%,
+    #ffa500 75%,
+    transparent 100%
+  ) !important;
+}
+
+[data-theme="purple-gold"] .hero-badge {
+  color: #ffa500 !important;
+  background: rgba(26, 10, 31, 0.8) !important;
+  border-color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .hero-title {
+  color: #fef9f0 !important;
+  text-shadow: 0 0 40px rgba(255, 165, 0, 0.4), 0 0 80px rgba(155, 107, 196, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .hero-title span {
+  color: #ffa500 !important;
+  text-shadow: 0 0 30px rgba(255, 165, 0, 0.6) !important;
+}
+
+[data-theme="purple-gold"] .hero-desc {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .btn-primary {
+  background: linear-gradient(135deg, #4a2d5f, #2d1b3d) !important;
+  color: #ffa500 !important;
+  border: 1px solid #ffa500 !important;
+  box-shadow: 0 4px 20px rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .btn-primary:hover {
+  background: linear-gradient(135deg, #7a4d9e, #4a2d5f) !important;
+  box-shadow: 0 6px 30px rgba(255, 165, 0, 0.5) !important;
+}
+
+[data-theme="purple-gold"] .btn-outline {
+  color: #ffa500 !important;
+  border-color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .btn-outline:hover {
+  background: rgba(255, 165, 0, 0.1) !important;
+  border-color: #ffb733 !important;
+}
+
+[data-theme="purple-gold"] .scroll-hint {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .scroll-hint .line {
+  background: linear-gradient(to bottom, #9b6bc4, transparent) !important;
+}
+
+/* NOSOTROS - Tema Purple-Gold */
+[data-theme="purple-gold"] #nosotros {
+  background: #121212 !important;
+}
+
+[data-theme="purple-gold"] .nosotros-img::after {
+  background: linear-gradient(135deg, rgba(74,45,95,0.6), rgba(255,165,0,0.3)) !important;
+}
+
+[data-theme="purple-gold"] .nosotros-content {
+  background: #2d1b3d !important;
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .nosotros-content::before {
+  background:
+    radial-gradient(ellipse at top right, rgba(155,107,196,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(155,107,196,0.06) 0%, transparent 60%) !important;
+}
+
+[data-theme="purple-gold"] .nosotros-content::after {
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    #ffa500 20%,
+    #9b6bc4 50%,
+    #ffa500 80%,
+    transparent 100%
+  ) !important;
+}
+
+[data-theme="purple-gold"] .nosotros-content .section-label {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .nosotros-content .section-title {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .nosotros-content .section-desc {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .info-block.teal {
+  background: #4a2d5f !important;
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .info-block.teal::before {
+  background:
+    radial-gradient(ellipse at bottom left, rgba(155,107,196,0.1) 0%, transparent 70%),
+    radial-gradient(ellipse at top right, rgba(155,107,196,0.08) 0%, transparent 70%) !important;
+}
+
+[data-theme="purple-gold"] .info-block.teal .section-label {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .info-block.teal .section-title {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .info-block.teal p {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .info-block.teal strong {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .info-block.teal .map-link {
+  color: #ffa500 !important;
+  border-color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .info-block.light {
+  background: #1a0a1f !important;
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .info-block.light .section-label {
+  color: #9b6bc4 !important;
+}
+
+[data-theme="purple-gold"] .info-block.light .section-title {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .info-block.light p {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .info-block.light strong {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .info-block.light .map-link {
+  color: #ffa500 !important;
+  border-color: #ffa500 !important;
+}
+
+/* MENÚ - Tema Purple-Gold */
+[data-theme="purple-gold"] #menu {
+  background:
+    radial-gradient(ellipse 80% 40% at 20% 80%, rgba(155,107,196,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(155,107,196,0.08) 0%, transparent 50%),
+    linear-gradient(160deg, #1a0a1f 0%, #2d1b3d 40%, #1a0a1f 100%) !important;
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .menu-header .section-label {
+  color: #9b6bc4 !important;
+}
+
+[data-theme="purple-gold"] .menu-header .section-title {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .menu-header .section-desc {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .menu-header::after {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .tab-nav {
+  background: linear-gradient(135deg, #4a2d5f 0%, #2d1b3d 50%, #4a2d5f 100%) !important;
+  border-bottom: 2px solid #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .tab-nav::before {
+  background: linear-gradient(90deg,
+    transparent, #ffa500 30%, #9b6bc4 50%, #ffa500 70%, transparent
+  ) !important;
+}
+
+[data-theme="purple-gold"] .tab-btn {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .tab-btn:hover {
+  color: #ffa500 !important;
+  background: rgba(255, 165, 0, 0.1) !important;
+}
+
+[data-theme="purple-gold"] .tab-btn.active {
+  color: #ffa500 !important;
+  border-bottom-color: #ffa500 !important;
+  background: rgba(255, 165, 0, 0.15) !important;
+}
+
+[data-theme="purple-gold"] .menu-section-title {
+  color: #9b6bc4 !important;
+  border-bottom-color: rgba(155, 107, 196, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .menu-section-title::after {
+  background: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .menu-item {
+  border-bottom: 1px dotted rgba(255, 165, 0, 0.2) !important;
+}
+
+[data-theme="purple-gold"] .menu-item::before {
+  background: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .menu-item:hover {
+  background: rgba(255, 165, 0, 0.05) !important;
+}
+
+[data-theme="purple-gold"] .item-name {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .menu-item:hover .item-name {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .item-desc {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .item-price {
+  background: rgba(74, 45, 95, 0.5) !important;
+  color: #ffa500 !important;
+  border-color: rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .menu-item:hover .item-price {
+  background: #4a2d5f !important;
+  color: #ffd700 !important;
+  border-color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .menu-note {
+  background: linear-gradient(135deg, #4a2d5f, #2d1b3d) !important;
+  color: #fef9f0 !important;
+  border-left: 3px solid #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .menu-note strong {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .broaster-table th {
+  background: #4a2d5f !important;
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .broaster-table td {
+  background: rgba(26, 10, 31, 0.5) !important;
+  color: #fef9f0 !important;
+  border-bottom-color: rgba(255, 165, 0, 0.1) !important;
+}
+
+[data-theme="purple-gold"] .broaster-table tr:nth-child(even) td {
+  background: rgba(45, 27, 61, 0.5) !important;
+}
+
+[data-theme="purple-gold"] .broaster-table tr:hover td {
+  background: rgba(255, 165, 0, 0.1) !important;
+}
+
+[data-theme="purple-gold"] .broaster-table .price-col {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .broaster-table .promo-name {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .sauce-tag {
+  background: #4a2d5f !important;
+  color: #ffa500 !important;
+  border-color: rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .sauce-tag:hover {
+  background: #ffa500 !important;
+  color: #2d1b3d !important;
+  border-color: #ffa500 !important;
+}
+
+/* GALERÍA - Tema Purple-Gold */
+[data-theme="purple-gold"] #galeria {
+  background: #2d1b3d !important;
+}
+
+[data-theme="purple-gold"] #galeria::before {
+  background:
+    radial-gradient(ellipse at top center, rgba(155,107,196,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom center, rgba(155,107,196,0.08) 0%, transparent 60%) !important;
+}
+
+[data-theme="purple-gold"] #galeria .section-label {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] #galeria .section-title {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] #galeria .section-desc {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .gallery-item {
+  background: #4a2d5f !important;
+  border: 1px solid rgba(255, 165, 0, 0.2) !important;
+}
+
+[data-theme="purple-gold"] .gallery-label {
+  background: linear-gradient(transparent, rgba(26,10,31,0.95)) !important;
+  color: #ffa500 !important;
+}
+
+/* OPINIONES - Tema Purple-Gold */
+[data-theme="purple-gold"] #opiniones {
+  background: #0a0a0a !important;
+}
+
+[data-theme="purple-gold"] #opiniones::before {
+  background:
+    radial-gradient(ellipse at top center, rgba(155,107,196,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom left, rgba(155,107,196,0.1) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(155,107,196,0.08) 0%, transparent 60%) !important;
+}
+
+[data-theme="purple-gold"] #opiniones::after {
+  background: linear-gradient(90deg,
+    transparent 0%, #ffa500 20%,
+    #9b6bc4 50%,
+    #ffa500 80%, transparent 100%
+  ) !important;
+}
+
+[data-theme="purple-gold"] .opinions-header .section-label {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .opinions-header .section-title {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .opinions-header .section-title::after {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .opinions-header .section-desc {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .google-reviews-link {
+  color: #ffa500 !important;
+  border-color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .google-reviews-link:hover {
+  background: rgba(255, 165, 0, 0.1) !important;
+  color: #ffb733 !important;
+}
+
+[data-theme="purple-gold"] .opinion-card {
+  background: linear-gradient(160deg, #2d1b3d 0%, #1a0a1f 100%) !important;
+  border-color: rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .opinion-card::before,
+[data-theme="purple-gold"] .opinion-card::after {
+  border-color: rgba(255, 165, 0, 0.4) !important;
+}
+
+[data-theme="purple-gold"] .opinion-card:hover {
+  border-color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .opinion-name {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .opinion-datetime {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .opinion-text {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] .opinion-text::before {
+  color: rgba(255, 165, 0, 0.15) !important;
+}
+
+[data-theme="purple-gold"] .opinion-food-info {
+  color: #9b6bc4 !important;
+  border-top-color: rgba(255, 165, 0, 0.2) !important;
+}
+
+[data-theme="purple-gold"] .opinion-stars .star-filled {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .opinion-stars .star-empty {
+  color: rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .opinion-photo {
+  border-color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .opinion-food-photo {
+  border-color: rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .carousel-nav-btn,
+[data-theme="purple-gold"] .carousel-nav-prev-reviews,
+[data-theme="purple-gold"] .carousel-nav-next-reviews {
+  color: #ffa500 !important;
+  border-color: rgba(255, 165, 0, 0.5) !important;
+  background: rgba(26, 10, 31, 0.8) !important;
+}
+
+[data-theme="purple-gold"] .carousel-nav-btn:hover,
+[data-theme="purple-gold"] .carousel-nav-prev-reviews:hover,
+[data-theme="purple-gold"] .carousel-nav-next-reviews:hover {
+  background: rgba(255, 165, 0, 0.2) !important;
+  border-color: #ffa500 !important;
+}
+
+/* MAPA - Tema Purple-Gold */
+[data-theme="purple-gold"] #mapa {
+  background: #2d1b3d !important;
+}
+
+[data-theme="purple-gold"] #mapa::before {
+  background: linear-gradient(90deg,
+    transparent, #ffa500 30%, #9b6bc4 50%, #ffa500 70%, transparent
+  ) !important;
+}
+
+/* RESERVA - Tema Purple-Gold */
+[data-theme="purple-gold"] #reserva {
+  background: linear-gradient(135deg, #4a2d5f 0%, #2d1b3d 100%) !important;
+  border-top-color: rgba(155, 107, 196, 0.3) !important;
+}
+
+[data-theme="purple-gold"] #reserva::before {
+  background:
+    radial-gradient(ellipse at right center, rgba(155,107,196,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse at left center, rgba(155,107,196,0.1) 0%, transparent 70%) !important;
+}
+
+[data-theme="purple-gold"] #reserva::after {
+  background: linear-gradient(90deg,
+    transparent, #ffa500 30%, #9b6bc4 50%, #ffa500 70%, transparent
+  ) !important;
+}
+
+[data-theme="purple-gold"] .reserva-text .section-label {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .reserva-text .section-title {
+  color: #fef9f0 !important;
+}
+
+[data-theme="purple-gold"] .reserva-text .section-desc {
+  color: #e8d8f0 !important;
+}
+
+/* FOOTER - Tema Purple-Gold */
+[data-theme="purple-gold"] footer {
+  background: #0a0a0a !important;
+  border-top-color: rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="purple-gold"] footer p {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] footer .footer-logo {
+  color: #ffa500 !important;
+}
+
+[data-theme="purple-gold"] .copy {
+  border-top-color: rgba(255, 165, 0, 0.2) !important;
+}
+
+/* NAVEGACIÓN MÓVIL - Tema Purple-Gold */
+[data-theme="purple-gold"] nav.active ul {
+  background: rgba(26, 10, 31, 0.98) !important;
+}
+
+[data-theme="purple-gold"] nav.active ul li a {
+  color: #e8d8f0 !important;
+}
+
+[data-theme="purple-gold"] nav.active ul li a:hover {
+  color: #ffa500 !important;
+}
+
+/* THEME SELECTOR - Tema Purple-Gold */
+[data-theme="purple-gold"] .theme-btn {
+  color: #e8d8f0 !important;
+  border-color: rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="purple-gold"] .theme-btn:hover {
+  color: #ffa500 !important;
+  border-color: #ffa500 !important;
+  background: rgba(255, 165, 0, 0.1) !important;
+}
+
+[data-theme="purple-gold"] .theme-btn.active {
+  background: #ffa500 !important;
+  color: #2d1b3d !important;
+  border-color: #ffa500 !important;
+}
+
+
+/* ====================================================
+   TEMA NEÓN - Negro con Dorado, Morado y Naranja
+   Diseño formal y elegante
+   ==================================================== */
+
+[data-theme="neon"] body {
+  color: #ffffff;
+  background: #000000;
+}
+
+[data-theme="neon"] #header-outer {
+  background: rgba(10, 10, 10, 0.98);
+  border-bottom: 1px solid rgba(255, 165, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="neon"] .logo-text {
+  color: #ffa500 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .logo-sub {
+  color: #b565b3 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] nav ul li a {
+  color: #f0f0f0 !important;
+}
+
+[data-theme="neon"] nav ul li a:hover {
+  color: #ffa500 !important;
+}
+
+[data-theme="neon"] nav ul li.cta a {
+  background: linear-gradient(135deg, #ff6b35, #ff8c5a) !important;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+[data-theme="neon"] .hero-bg {
+  background:
+    linear-gradient(to bottom,
+      rgba(0,0,0,0.6) 0%,
+      rgba(0,0,0,0.8) 60%,
+      rgba(0,0,0,0.95) 100%),
+    url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
+    center/cover no-repeat !important;
+}
+
+[data-theme="neon"] .hero-bg::before {
+  display: none !important;
+}
+
+[data-theme="neon"] .hero-bg::after {
+  display: none !important;
+}
+
+[data-theme="neon"] .hero-badge {
+  color: #ffa500 !important;
+  background: rgba(0, 0, 0, 0.8) !important;
+  border: 1px solid #ffa500 !important;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .hero-title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="neon"] .hero-title span {
+  color: #ffa500 !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8) !important;
+}
+
+[data-theme="neon"] .hero-desc {
+  color: #f0f0f0 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .btn-primary {
+  background: linear-gradient(135deg, #8b4789, #b565b3) !important;
+  color: #ffffff !important;
+  border: 1px solid #b565b3 !important;
+  box-shadow: 0 4px 15px rgba(139, 71, 137, 0.3);
+  text-shadow: none;
+}
+
+[data-theme="neon"] .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(139, 71, 137, 0.4);
+}
+
+[data-theme="neon"] .btn-outline {
+  color: #ffa500 !important;
+  border: 1px solid #ffa500 !important;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .btn-outline:hover {
+  background: rgba(255, 165, 0, 0.1) !important;
+}
+
+[data-theme="neon"] #nosotros {
+  background: #0a0a0a !important;
+}
+
+[data-theme="neon"] .nosotros-img::after {
+  display: none !important;
+}
+
+[data-theme="neon"] .nosotros-content {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(255, 165, 0, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="neon"] .nosotros-content::before {
+  display: none !important;
+}
+
+[data-theme="neon"] .nosotros-content::after {
+  display: none !important;
+}
+
+[data-theme="neon"] .nosotros-content .section-label {
+  color: #ffa500 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .nosotros-content .section-title {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .info-block.teal {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(139, 71, 137, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="neon"] .info-block.teal::before {
+  display: none !important;
+}
+
+[data-theme="neon"] .info-block.teal .section-label {
+  color: #b565b3 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .info-block.light {
+  background: #0a0a0a !important;
+  border: 1px solid rgba(255, 107, 53, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="neon"] .info-block.light::before {
+  display: none !important;
+}
+
+[data-theme="neon"] .info-block.light .section-label {
+  color: #ff6b35 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] #menu {
+  background: #000000 !important;
+}
+
+[data-theme="neon"] #menu::before {
+  display: none !important;
+}
+
+[data-theme="neon"] .menu-header .section-label {
+  color: #b565b3 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .menu-header .section-title {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .tab-nav {
+  background: #1a1a1a !important;
+  border-bottom: 2px solid #ffa500 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="neon"] .tab-btn {
+  color: #f0f0f0 !important;
+}
+
+[data-theme="neon"] .tab-btn:hover {
+  color: #ffa500 !important;
+  text-shadow: none;
+  background: rgba(255, 165, 0, 0.1) !important;
+}
+
+[data-theme="neon"] .tab-btn.active {
+  color: #ffa500 !important;
+  text-shadow: none;
+  border-bottom-color: #ffa500 !important;
+  box-shadow: none;
+}
+
+[data-theme="neon"] .menu-section-title {
+  color: #b565b3 !important;
+  text-shadow: none;
+  border-bottom-color: rgba(139, 71, 137, 0.3) !important;
+}
+
+[data-theme="neon"] .item-name {
+  color: #ffffff !important;
+}
+
+[data-theme="neon"] .item-desc {
+  color: #f0f0f0 !important;
+}
+
+[data-theme="neon"] .item-price {
+  background: rgba(255, 165, 0, 0.15) !important;
+  color: #ffa500 !important;
+  border: 1px solid rgba(255, 165, 0, 0.3) !important;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .menu-item:hover .item-price {
+  background: rgba(255, 165, 0, 0.25) !important;
+  box-shadow: 0 2px 8px rgba(255, 165, 0, 0.2);
+}
+
+[data-theme="neon"] .menu-note {
+  background: #1a1a1a !important;
+  border-left: 3px solid #ffa500 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="neon"] #galeria {
+  background: #0a0a0a !important;
+}
+
+[data-theme="neon"] #galeria::before {
+  display: none !important;
+}
+
+[data-theme="neon"] #galeria .section-label {
+  color: #ffa500 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] #galeria .section-title {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .gallery-item {
+  border: 1px solid rgba(255, 165, 0, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="neon"] .gallery-item:hover {
+  border-color: rgba(255, 165, 0, 0.4) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="neon"] #opiniones {
+  background: #000000 !important;
+}
+
+[data-theme="neon"] #opiniones::before {
+  display: none !important;
+}
+
+[data-theme="neon"] #opiniones::after {
+  display: none !important;
+}
+
+[data-theme="neon"] .opinions-header .section-label {
+  color: #ff6b35 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .opinions-header .section-title {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .opinion-card {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(255, 165, 0, 0.2) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="neon"] .opinion-card:hover {
+  border-color: rgba(255, 165, 0, 0.3) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="neon"] .opinion-name {
+  color: #ffa500 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .opinion-stars .star-filled {
+  color: #ffa500 !important;
+  filter: none;
+}
+
+[data-theme="neon"] #reserva {
+  background: #0a0a0a !important;
+  border-top: 1px solid rgba(139, 71, 137, 0.3) !important;
+  box-shadow: none;
+}
+
+[data-theme="neon"] #reserva::before {
+  display: none !important;
+}
+
+[data-theme="neon"] #reserva::after {
+  display: none !important;
+}
+
+[data-theme="neon"] .reserva-text .section-label {
+  color: #b565b3 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .reserva-text .section-title {
+  color: #ffffff !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] footer {
+  background: #000000 !important;
+  border-top: 1px solid rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="neon"] footer .footer-logo {
+  color: #ffa500 !important;
+  text-shadow: none;
+}
+
+[data-theme="neon"] .theme-btn {
+  border-color: rgba(255, 165, 0, 0.3) !important;
+}
+
+[data-theme="neon"] .theme-btn:hover {
+  color: #ffa500 !important;
+  border-color: #ffa500 !important;
+  box-shadow: none;
+}
+
+[data-theme="neon"] .theme-btn.active {
+  background: #ffa500 !important;
+  color: #000000 !important;
+  box-shadow: none;
+}

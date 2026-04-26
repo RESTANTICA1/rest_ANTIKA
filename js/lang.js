@@ -22,7 +22,8 @@ function updateActiveThemeButton(theme) {
   const themeMap = {
     'dark': 0,
     'light': 1,
-    'purple-gold': 2
+    'purple-gold': 2,
+    'neon': 3
   };
   
   const buttons = document.querySelectorAll('.theme-btn');

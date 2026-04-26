@@ -45,17 +45,8 @@ nav ul li.cta a:hover {
 
 .hero-bg::before {
   background:
-    repeating-linear-gradient(
-      90deg,
-      var(--gold-glow) 0px, var(--gold-glow) 1px,
-      transparent 1px, transparent 120px
-    ),
-    repeating-linear-gradient(
-      165deg,
-      transparent 0px, transparent 80px,
-      var(--gold-glow) 80px, var(--gold-glow) 82px,
-      transparent 82px, transparent 180px
-    );
+    radial-gradient(circle at 20% 30%, var(--gold-glow) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, var(--gold-glow) 0%, transparent 40%);
 }
 
 .hero-bg::after {
@@ -95,13 +86,8 @@ nav ul li.cta a:hover {
 
 .nosotros-content::before {
   background:
-    repeating-linear-gradient(
-      90deg,
-      var(--gold-glow) 0px, var(--gold-glow) 1px,
-      transparent 1px, transparent 80px
-    ),
-    radial-gradient(ellipse 90% 60% at 110% 10%,
-      var(--gold-glow) 0%, transparent 55%);
+    radial-gradient(ellipse at top right, var(--gold-glow) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom left, var(--gold-glow) 0%, transparent 60%);
 }
 
 .nosotros-content::after {
@@ -116,11 +102,8 @@ nav ul li.cta a:hover {
 
 .info-block.teal::before {
   background:
-    repeating-linear-gradient(90deg,
-      var(--gold-glow) 0px, var(--gold-glow) 1px,
-      transparent 1px, transparent 80px),
-    radial-gradient(ellipse 70% 50% at 0% 100%,
-      var(--gold-glow) 0%, transparent 55%);
+    radial-gradient(ellipse at bottom left, var(--gold-glow) 0%, transparent 70%),
+    radial-gradient(ellipse at top right, var(--gold-glow) 0%, transparent 70%);
 }
 
 .info-block .map-link {
@@ -290,11 +273,8 @@ nav ul li.cta a:hover {
 
 #galeria::before {
   background:
-    repeating-linear-gradient(90deg,
-      var(--gold-glow) 0px, var(--gold-glow) 1px,
-      transparent 1px, transparent 100px),
-    radial-gradient(ellipse 80% 40% at 50% 0%,
-      var(--gold-glow) 0%, transparent 55%);
+    radial-gradient(ellipse at top center, var(--gold-glow) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom center, var(--gold-glow) 0%, transparent 60%);
 }
 
 .gallery-item {
@@ -313,13 +293,9 @@ nav ul li.cta a:hover {
 
 #opiniones::before {
   background:
-    repeating-linear-gradient(90deg,
-      var(--gold-glow) 0px, var(--gold-glow) 1px,
-      transparent 1px, transparent 90px),
-    radial-gradient(ellipse 70% 60% at 50% 0%,
-      var(--gold-glow) 0%, transparent 55%),
-    radial-gradient(ellipse 40% 40% at 0% 100%,
-      var(--wood-teal-mid) 0%, transparent 50%);
+    radial-gradient(ellipse at top center, var(--gold-glow) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom left, var(--wood-teal-mid) 0%, transparent 60%),
+    radial-gradient(ellipse at bottom right, var(--gold-glow) 0%, transparent 60%);
 }
 
 #opiniones::after {
@@ -431,11 +407,8 @@ nav ul li.cta a:hover {
 
 #reserva::before {
   background:
-    repeating-linear-gradient(90deg,
-      var(--gold-glow) 0px, var(--gold-glow) 1px,
-      transparent 1px, transparent 80px),
-    radial-gradient(ellipse 60% 80% at 100% 50%,
-      var(--gold-glow) 0%, transparent 55%);
+    radial-gradient(ellipse at right center, var(--gold-glow) 0%, transparent 70%),
+    radial-gradient(ellipse at left center, var(--gold-glow) 0%, transparent 70%);
 }
 
 #reserva::after {
@@ -513,4 +486,381 @@ footer {
               border-color 0.3s ease, 
               color 0.3s ease,
               box-shadow 0.3s ease;
+}
+
+
+/* ====================================================
+   CORRECCIONES ESPECÍFICAS PARA TEMA CLARO
+   ==================================================== */
+
+[data-theme="light"] {
+  /* Header */
+  #header-outer {
+    background: rgba(255, 255, 255, 0.98);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  }
+
+  nav ul li a {
+    color: #2a2a2a;
+  }
+
+  nav ul li a:hover {
+    color: #d4af37;
+  }
+
+  .logo-text {
+    color: #d4af37;
+  }
+
+  .logo-sub {
+    color: #164240;
+  }
+
+  /* Hero */
+  .hero-bg {
+    background:
+      linear-gradient(to bottom,
+        rgba(255,255,255,0.7) 0%,
+        rgba(255,255,255,0.85) 60%,
+        rgba(255,255,255,0.95) 100%),
+      url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600&q=80')
+      center/cover no-repeat;
+  }
+
+  .hero-badge {
+    color: #d4af37;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #d4af37;
+  }
+
+  .hero-title {
+    color: #1a1a1a;
+    text-shadow: 0 2px 20px rgba(212, 175, 55, 0.3);
+  }
+
+  .hero-title span {
+    color: #d4af37;
+  }
+
+  .hero-desc {
+    color: #4a4a4a;
+  }
+
+  .btn-primary {
+    color: #ffffff;
+  }
+
+  .btn-outline {
+    color: #164240;
+    border-color: #164240;
+  }
+
+  .btn-outline:hover {
+    color: #0a1f1e;
+    border-color: #0a1f1e;
+    background: rgba(22, 66, 64, 0.05);
+  }
+
+  /* Scroll hint */
+  .scroll-hint {
+    color: #d4af37;
+  }
+
+  /* Nosotros */
+  .nosotros-content {
+    background: #164240;
+    color: #ffffff;
+  }
+
+  .nosotros-content .section-label {
+    color: #ffd700;
+  }
+
+  .nosotros-content .section-title {
+    color: #ffffff;
+  }
+
+  .nosotros-content .section-desc {
+    color: #e8f0ee;
+  }
+
+  .info-block.teal {
+    background: #164240;
+    color: #ffffff;
+  }
+
+  .info-block.teal .section-label {
+    color: #ffd700;
+  }
+
+  .info-block.teal .section-title {
+    color: #ffffff;
+  }
+
+  .info-block.teal p {
+    color: #e8f0ee;
+  }
+
+  .info-block.teal .map-link {
+    color: #ffd700;
+    border-color: #ffd700;
+  }
+
+  .info-block.light {
+    background: #ffffff;
+    color: #1a1a1a;
+  }
+
+  .info-block.light .section-label {
+    color: #164240;
+  }
+
+  .info-block.light .section-title {
+    color: #0a1f1e;
+  }
+
+  .info-block.light p {
+    color: #2a2a2a;
+  }
+
+  /* Menú */
+  #menu {
+    background: #fafafa;
+    color: #1a1a1a;
+  }
+
+  .menu-header .section-label {
+    color: #164240;
+  }
+
+  .menu-header .section-title {
+    color: #0a1f1e;
+  }
+
+  .menu-header .section-desc {
+    color: #4a4a4a;
+  }
+
+  .tab-nav {
+    background: linear-gradient(135deg, #164240 0%, #0a1f1e 50%, #164240 100%);
+  }
+
+  .tab-btn {
+    color: #e8f0ee;
+  }
+
+  .tab-btn:hover {
+    color: #ffd700;
+  }
+
+  .tab-btn.active {
+    color: #ffd700;
+  }
+
+  .menu-section-title {
+    color: #164240;
+  }
+
+  .item-name {
+    color: #0a1f1e;
+  }
+
+  .item-desc {
+    color: #6a6a6a;
+  }
+
+  .item-price {
+    background: #164240;
+    color: #ffd700;
+    border-color: #164240;
+  }
+
+  .menu-item:hover .item-price {
+    background: #0a1f1e;
+    color: #ffffff;
+  }
+
+  .menu-note {
+    background: linear-gradient(135deg, #164240, #0a1f1e);
+    color: #ffffff;
+  }
+
+  .menu-note strong {
+    color: #ffd700;
+  }
+
+  .broaster-table th {
+    background: #164240;
+    color: #ffd700;
+  }
+
+  .broaster-table td {
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+
+  .broaster-table tr:nth-child(even) td {
+    background: #f8f8f8;
+  }
+
+  .broaster-table .price-col,
+  .broaster-table .promo-name {
+    color: #164240;
+  }
+
+  .sauce-tag {
+    background: #164240;
+    color: #ffd700;
+  }
+
+  .sauce-tag:hover {
+    background: #d4af37;
+    color: #ffffff;
+  }
+
+  /* Galería */
+  #galeria {
+    background: #164240;
+  }
+
+  #galeria .section-label {
+    color: #ffd700;
+  }
+
+  #galeria .section-title {
+    color: #ffffff;
+  }
+
+  #galeria .section-desc {
+    color: #e8f0ee;
+  }
+
+  .gallery-label {
+    color: #ffd700;
+  }
+
+  /* Opiniones */
+  #opiniones {
+    background: #0a1f1e;
+  }
+
+  .opinions-header .section-label {
+    color: #ffd700;
+  }
+
+  .opinions-header .section-title {
+    color: #ffffff;
+  }
+
+  .opinions-header .section-desc {
+    color: #e8f0ee;
+  }
+
+  .google-reviews-link {
+    color: #ffd700;
+    border-color: #ffd700;
+  }
+
+  .opinion-card {
+    background: linear-gradient(160deg, #1a524f 0%, #164240 100%);
+    color: #ffffff;
+  }
+
+  .opinion-name {
+    color: #ffd700;
+  }
+
+  .opinion-datetime {
+    color: #e8f0ee;
+  }
+
+  .opinion-text {
+    color: #e8f0ee;
+  }
+
+  .opinion-food-info {
+    color: #88c4bf;
+  }
+
+  .carousel-nav-btn,
+  .carousel-nav-prev-reviews,
+  .carousel-nav-next-reviews {
+    color: #ffd700;
+    border-color: #ffd700;
+  }
+
+  /* Mapa */
+  #mapa {
+    background: #164240;
+  }
+
+  /* Reserva */
+  #reserva {
+    background: linear-gradient(135deg, #164240 0%, #0a1f1e 100%);
+  }
+
+  .reserva-text .section-label {
+    color: #ffd700;
+  }
+
+  .reserva-text .section-title {
+    color: #ffffff;
+  }
+
+  .reserva-text .section-desc {
+    color: #e8f0ee;
+  }
+
+  /* Footer */
+  footer {
+    background: #0a1f1e;
+  }
+
+  footer p {
+    color: #e8f0ee;
+  }
+
+  footer .footer-logo {
+    color: #ffd700;
+  }
+}
+
+/* ====================================================
+   CORRECCIONES PARA NAVEGACIÓN EN TEMA CLARO
+   ==================================================== */
+
+[data-theme="light"] nav.active ul {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+[data-theme="light"] nav.active ul li a {
+  color: #2a2a2a;
+}
+
+[data-theme="light"] nav.active ul li a:hover {
+  color: #d4af37;
+}
+
+[data-theme="light"] nav.active ul li.cta a {
+  color: #ffffff;
+}
+
+[data-theme="light"] .hamburger span {
+  background: #d4af37;
+}
+
+[data-theme="light"] .theme-btn {
+  color: #2a2a2a;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .theme-btn:hover {
+  color: #d4af37;
+  border-color: #d4af37;
+  background: rgba(212, 175, 55, 0.1);
+}
+
+[data-theme="light"] .theme-btn.active {
+  background: #d4af37;
+  color: #ffffff;
 }
