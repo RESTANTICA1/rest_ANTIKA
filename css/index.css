@@ -163,6 +163,214 @@
   --shadow-wood: 0 8px 30px rgba(122,77,158,0.3);
 }
 
+/* ===== TEMA ANDES (Tierra y Oro) ===== */
+[data-theme="andes"] {
+  --wood-teal-deep:   #3e2723;
+  --wood-teal:        #5d4037;
+  --wood-teal-mid:    #795548;
+  --wood-teal-light:  #a1887f;
+  --wood-teal-bright: #bcaaa4;
+
+  --gold:             #d4af37;
+  --gold-light:       #ffd700;
+  --gold-pale:        #ffe082;
+  --gold-dark:        #b8941f;
+  --gold-glow:        rgba(212, 175, 55, 0.35);
+
+  --parchment:        #f5e6d3;
+  --parchment-dark:   #ede0ce;
+  --parchment-deep:   #e0d4c0;
+  --parchment-shadow: rgba(62, 39, 35, 0.15);
+
+  --dark-ink:         #f5e6d3;
+  --dark-wood:        #ede0ce;
+  --navy-deep:        #e8dcc8;
+  --navy-mid:         #e0d4c0;
+
+  --text-dark:        #3e2723;
+  --text-mid:         #5d4037;
+  --text-muted:       #795548;
+  --cream:            #3e2723;
+  --cream-light:      #2c1b18;
+  --silver-light:     #4a2f2a;
+
+  --crimson:          #c1440e;
+  --crimson-light:    #d4622f;
+
+  --teal:             #5d4037;
+  --teal-dark:        #3e2723;
+  --teal-light:       #795548;
+  --turquoise:        #8d6e63;
+  --turquoise-light:  #a1887f;
+  --navy:             #4e342e;
+  --beige:            #f5e6d3;
+  --beige-dark:       #ede0ce;
+  --text:             #3e2723;
+  --dark:             #f5e6d3;
+
+  --shadow-sm:   0 2px 8px rgba(193, 68, 14, 0.15);
+  --shadow-md:   0 4px 12px rgba(193, 68, 14, 0.2);
+  --shadow-lg:   0 8px 24px rgba(193, 68, 14, 0.25);
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.4);
+  --shadow-wood: 0 6px 20px rgba(62, 39, 35, 0.3);
+}
+
+/* ===== TEMA PACHAMAMA (Verde Andino) ===== */
+[data-theme="pachamama"] {
+  --wood-teal-deep:   #1b5e20;
+  --wood-teal:        #2d5016;
+  --wood-teal-mid:    #4a7c2c;
+  --wood-teal-light:  #689f38;
+  --wood-teal-bright: #8bc34a;
+
+  --gold:             #f9a825;
+  --gold-light:       #fbc02d;
+  --gold-pale:        #fff176;
+  --gold-dark:        #f57f17;
+  --gold-glow:        rgba(249, 168, 37, 0.35);
+
+  --parchment:        #faf8f3;
+  --parchment-dark:   #f5f3ed;
+  --parchment-deep:   #efeee8;
+  --parchment-shadow: rgba(27, 94, 32, 0.12);
+
+  --dark-ink:         #faf8f3;
+  --dark-wood:        #f5f3ed;
+  --navy-deep:        #f0efe9;
+  --navy-mid:         #efeee8;
+
+  --text-dark:        #1b5e20;
+  --text-mid:         #2d5016;
+  --text-muted:       #4a7c2c;
+  --cream:            #1b5e20;
+  --cream-light:      #0d3310;
+  --silver-light:     #2e4a1f;
+
+  --crimson:          #c62828;
+  --crimson-light:    #d32f2f;
+
+  --teal:             #2d5016;
+  --teal-dark:        #1b5e20;
+  --teal-light:       #4a7c2c;
+  --turquoise:        #558b2f;
+  --turquoise-light:  #689f38;
+  --navy:             #33691e;
+  --beige:            #faf8f3;
+  --beige-dark:       #f5f3ed;
+  --text:             #1b5e20;
+  --dark:             #faf8f3;
+
+  --shadow-sm:   0 2px 8px rgba(198, 40, 40, 0.12);
+  --shadow-md:   0 4px 12px rgba(198, 40, 40, 0.18);
+  --shadow-lg:   0 8px 24px rgba(198, 40, 40, 0.22);
+  --shadow-gold: 0 4px 20px rgba(249, 168, 37, 0.35);
+  --shadow-wood: 0 6px 20px rgba(27, 94, 32, 0.25);
+}
+
+/* ===== TEMA NOCHE CUSQUEÑA (Azul Profundo) ===== */
+[data-theme="noche-cusquena"] {
+  --wood-teal-deep:   #0a1929;
+  --wood-teal:        #0d47a1;
+  --wood-teal-mid:    #1565c0;
+  --wood-teal-light:  #1976d2;
+  --wood-teal-bright: #42a5f5;
+
+  --gold:             #ffa000;
+  --gold-light:       #ffb300;
+  --gold-pale:        #ffc107;
+  --gold-dark:        #ff8f00;
+  --gold-glow:        rgba(255, 160, 0, 0.4);
+
+  --parchment:        #eceff1;
+  --parchment-dark:   #cfd8dc;
+  --parchment-deep:   #b0bec5;
+  --parchment-shadow: rgba(10, 25, 41, 0.2);
+
+  --dark-ink:         #0a1929;
+  --dark-wood:        #0d1f2d;
+  --navy-deep:        #0a1929;
+  --navy-mid:         #102a43;
+
+  --text-dark:        #0a1929;
+  --text-mid:         #1e3a5f;
+  --text-muted:       #3d5a80;
+  --cream:            #eceff1;
+  --cream-light:      #ffffff;
+  --silver-light:     #b0bec5;
+
+  --crimson:          #ff6f00;
+  --crimson-light:    #ff8f00;
+
+  --teal:             #0d47a1;
+  --teal-dark:        #0a1929;
+  --teal-light:       #1565c0;
+  --turquoise:        #1976d2;
+  --turquoise-light:  #42a5f5;
+  --navy:             #102a43;
+  --beige:            #eceff1;
+  --beige-dark:       #cfd8dc;
+  --text:             #eceff1;
+  --dark:             #0a1929;
+
+  --shadow-sm:   0 2px 10px rgba(10, 25, 41, 0.3);
+  --shadow-md:   0 4px 16px rgba(10, 25, 41, 0.4);
+  --shadow-lg:   0 8px 32px rgba(10, 25, 41, 0.5);
+  --shadow-gold: 0 4px 20px rgba(255, 160, 0, 0.4);
+  --shadow-wood: 0 8px 30px rgba(10, 25, 41, 0.6);
+}
+
+/* ===== TEMA CHICHA MORADA (Morado Vibrante) ===== */
+[data-theme="chicha-morada"] {
+  --wood-teal-deep:   #4a148c;
+  --wood-teal:        #6a1b9a;
+  --wood-teal-mid:    #7b1fa2;
+  --wood-teal-light:  #8e24aa;
+  --wood-teal-bright: #ab47bc;
+
+  --gold:             #f9a825;
+  --gold-light:       #fbc02d;
+  --gold-pale:        #fff176;
+  --gold-dark:        #f57f17;
+  --gold-glow:        rgba(249, 168, 37, 0.35);
+
+  --parchment:        #f3e5f5;
+  --parchment-dark:   #e1bee7;
+  --parchment-deep:   #ce93d8;
+  --parchment-shadow: rgba(74, 20, 140, 0.15);
+
+  --dark-ink:         #f3e5f5;
+  --dark-wood:        #f8e9fa;
+  --navy-deep:        #ede0f0;
+  --navy-mid:         #e8d5ec;
+
+  --text-dark:        #4a148c;
+  --text-mid:         #6a1b9a;
+  --text-muted:       #7b1fa2;
+  --cream:            #4a148c;
+  --cream-light:      #38006b;
+  --silver-light:     #5e1a8a;
+
+  --crimson:          #c2185b;
+  --crimson-light:    #d81b60;
+
+  --teal:             #6a1b9a;
+  --teal-dark:        #4a148c;
+  --teal-light:       #7b1fa2;
+  --turquoise:        #8e24aa;
+  --turquoise-light:  #ab47bc;
+  --navy:             #6a1b9a;
+  --beige:            #f3e5f5;
+  --beige-dark:       #e1bee7;
+  --text:             #4a148c;
+  --dark:             #f3e5f5;
+
+  --shadow-sm:   0 2px 8px rgba(194, 24, 91, 0.15);
+  --shadow-md:   0 4px 12px rgba(194, 24, 91, 0.2);
+  --shadow-lg:   0 8px 24px rgba(194, 24, 91, 0.25);
+  --shadow-gold: 0 4px 20px rgba(249, 168, 37, 0.35);
+  --shadow-wood: 0 6px 20px rgba(74, 20, 140, 0.3);
+}
+
 /* ===== RESET ===== */
 *, *::before, *::after {
   margin: 0; padding: 0; box-sizing: border-box;

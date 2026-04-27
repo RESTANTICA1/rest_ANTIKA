@@ -1902,3 +1902,312 @@ svg {
     0 0 20px rgba(255, 165, 0, 0.3),
     0 0 40px rgba(255, 165, 0, 0.2);
 }
+
+
+/* ====================================================
+   TEMA ANDES - TIERRA Y ORO INCA
+   Inspirado en los colores de la tierra cusqueña
+   ==================================================== */
+
+[data-theme="andes"] body {
+  background: #f5e6d3;
+  color: #3e2723;
+}
+
+[data-theme="andes"] #header-outer {
+  background: rgba(245, 230, 211, 0.98);
+  border-bottom: 2px solid #d4af37;
+  box-shadow: 0 2px 8px rgba(62, 39, 35, 0.15);
+}
+
+[data-theme="andes"] .logo-text {
+  color: #c1440e !important;
+  text-shadow: 0 2px 4px rgba(193, 68, 14, 0.2);
+}
+
+[data-theme="andes"] .logo-sub {
+  color: #5d4037 !important;
+}
+
+[data-theme="andes"] nav ul li a {
+  color: #5d4037 !important;
+}
+
+[data-theme="andes"] nav ul li a:hover {
+  color: #c1440e !important;
+}
+
+[data-theme="andes"] .hero-title {
+  color: #3e2723 !important;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+}
+
+[data-theme="andes"] .hero-title span {
+  color: #c1440e !important;
+}
+
+[data-theme="andes"] .section-label {
+  color: #c1440e !important;
+}
+
+[data-theme="andes"] .section-title {
+  color: #3e2723 !important;
+}
+
+[data-theme="andes"] .btn-primary {
+  background: linear-gradient(135deg, #c1440e, #d4622f) !important;
+  color: #ffffff !important;
+  border: 2px solid #c1440e !important;
+}
+
+[data-theme="andes"] .tab-btn.active {
+  background: linear-gradient(135deg, #c1440e, #d4622f) !important;
+  color: #ffffff !important;
+  border-color: #d4af37 !important;
+}
+
+[data-theme="andes"] .item-price {
+  background: rgba(193, 68, 14, 0.1) !important;
+  color: #c1440e !important;
+  border: 2px solid #c1440e !important;
+}
+
+[data-theme="andes"] footer {
+  background: #ede0ce !important;
+  border-top: 2px solid #d4af37 !important;
+}
+
+
+/* ====================================================
+   TEMA PACHAMAMA - VERDE ANDINO
+   Inspirado en la naturaleza de los Andes
+   ==================================================== */
+
+[data-theme="pachamama"] body {
+  background: #faf8f3;
+  color: #1b5e20;
+}
+
+[data-theme="pachamama"] #header-outer {
+  background: rgba(250, 248, 243, 0.98);
+  border-bottom: 2px solid #f9a825;
+  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.12);
+}
+
+[data-theme="pachamama"] .logo-text {
+  color: #2d5016 !important;
+  text-shadow: 0 2px 4px rgba(45, 80, 22, 0.2);
+}
+
+[data-theme="pachamama"] .logo-sub {
+  color: #4a7c2c !important;
+}
+
+[data-theme="pachamama"] nav ul li a {
+  color: #2d5016 !important;
+}
+
+[data-theme="pachamama"] nav ul li a:hover {
+  color: #f9a825 !important;
+}
+
+[data-theme="pachamama"] .hero-title {
+  color: #1b5e20 !important;
+  text-shadow: 0 2px 4px rgba(249, 168, 37, 0.3);
+}
+
+[data-theme="pachamama"] .hero-title span {
+  color: #f9a825 !important;
+}
+
+[data-theme="pachamama"] .section-label {
+  color: #f9a825 !important;
+}
+
+[data-theme="pachamama"] .section-title {
+  color: #1b5e20 !important;
+}
+
+[data-theme="pachamama"] .btn-primary {
+  background: linear-gradient(135deg, #2d5016, #4a7c2c) !important;
+  color: #ffffff !important;
+  border: 2px solid #2d5016 !important;
+}
+
+[data-theme="pachamama"] .tab-btn.active {
+  background: linear-gradient(135deg, #2d5016, #4a7c2c) !important;
+  color: #ffffff !important;
+  border-color: #f9a825 !important;
+}
+
+[data-theme="pachamama"] .item-price {
+  background: rgba(198, 40, 40, 0.1) !important;
+  color: #c62828 !important;
+  border: 2px solid #c62828 !important;
+}
+
+[data-theme="pachamama"] footer {
+  background: #f5f3ed !important;
+  border-top: 2px solid #f9a825 !important;
+}
+
+
+/* ====================================================
+   TEMA NOCHE CUSQUEÑA - AZUL PROFUNDO
+   Inspirado en el cielo nocturno de Cusco
+   ==================================================== */
+
+[data-theme="noche-cusquena"] body {
+  background: #0a1929;
+  color: #eceff1;
+}
+
+[data-theme="noche-cusquena"] #header-outer {
+  background: rgba(10, 25, 41, 0.98);
+  border-bottom: 2px solid #ffa000;
+  box-shadow: 0 2px 12px rgba(255, 160, 0, 0.2);
+}
+
+[data-theme="noche-cusquena"] .logo-text {
+  color: #ffa000 !important;
+  text-shadow: 0 0 10px rgba(255, 160, 0, 0.4);
+}
+
+[data-theme="noche-cusquena"] .logo-sub {
+  color: #42a5f5 !important;
+}
+
+[data-theme="noche-cusquena"] nav ul li a {
+  color: #eceff1 !important;
+}
+
+[data-theme="noche-cusquena"] nav ul li a:hover {
+  color: #ffa000 !important;
+}
+
+[data-theme="noche-cusquena"] .hero-title {
+  color: #ffffff !important;
+  text-shadow: 0 0 20px rgba(255, 160, 0, 0.3);
+}
+
+[data-theme="noche-cusquena"] .hero-title span {
+  color: #ffa000 !important;
+  text-shadow: 0 0 20px rgba(255, 160, 0, 0.5);
+}
+
+[data-theme="noche-cusquena"] .section-label {
+  color: #ffa000 !important;
+}
+
+[data-theme="noche-cusquena"] .section-title {
+  color: #eceff1 !important;
+}
+
+[data-theme="noche-cusquena"] .btn-primary {
+  background: linear-gradient(135deg, #0d47a1, #1565c0) !important;
+  color: #ffffff !important;
+  border: 2px solid #ffa000 !important;
+  box-shadow: 0 4px 15px rgba(255, 160, 0, 0.3);
+}
+
+[data-theme="noche-cusquena"] .tab-btn.active {
+  background: linear-gradient(135deg, #0d47a1, #1565c0) !important;
+  color: #ffffff !important;
+  border-color: #ffa000 !important;
+  box-shadow: 0 4px 12px rgba(255, 160, 0, 0.3);
+}
+
+[data-theme="noche-cusquena"] .item-price {
+  background: rgba(255, 160, 0, 0.15) !important;
+  color: #ffa000 !important;
+  border: 2px solid #ffa000 !important;
+}
+
+[data-theme="noche-cusquena"] footer {
+  background: #0d1f2d !important;
+  border-top: 2px solid #ffa000 !important;
+}
+
+[data-theme="noche-cusquena"] .opinion-card {
+  background: #102a43 !important;
+  border: 1px solid rgba(255, 160, 0, 0.2) !important;
+}
+
+
+/* ====================================================
+   TEMA CHICHA MORADA - MORADO VIBRANTE
+   Inspirado en la bebida tradicional peruana
+   ==================================================== */
+
+[data-theme="chicha-morada"] body {
+  background: #f3e5f5;
+  color: #4a148c;
+}
+
+[data-theme="chicha-morada"] #header-outer {
+  background: rgba(243, 229, 245, 0.98);
+  border-bottom: 2px solid #c2185b;
+  box-shadow: 0 2px 8px rgba(106, 27, 154, 0.15);
+}
+
+[data-theme="chicha-morada"] .logo-text {
+  color: #6a1b9a !important;
+  text-shadow: 0 2px 4px rgba(106, 27, 154, 0.2);
+}
+
+[data-theme="chicha-morada"] .logo-sub {
+  color: #7b1fa2 !important;
+}
+
+[data-theme="chicha-morada"] nav ul li a {
+  color: #6a1b9a !important;
+}
+
+[data-theme="chicha-morada"] nav ul li a:hover {
+  color: #c2185b !important;
+}
+
+[data-theme="chicha-morada"] .hero-title {
+  color: #4a148c !important;
+  text-shadow: 0 2px 4px rgba(249, 168, 37, 0.3);
+}
+
+[data-theme="chicha-morada"] .hero-title span {
+  color: #c2185b !important;
+}
+
+[data-theme="chicha-morada"] .section-label {
+  color: #c2185b !important;
+}
+
+[data-theme="chicha-morada"] .section-title {
+  color: #4a148c !important;
+}
+
+[data-theme="chicha-morada"] .btn-primary {
+  background: linear-gradient(135deg, #6a1b9a, #7b1fa2) !important;
+  color: #ffffff !important;
+  border: 2px solid #6a1b9a !important;
+}
+
+[data-theme="chicha-morada"] .tab-btn.active {
+  background: linear-gradient(135deg, #6a1b9a, #7b1fa2) !important;
+  color: #ffffff !important;
+  border-color: #f9a825 !important;
+}
+
+[data-theme="chicha-morada"] .item-price {
+  background: rgba(194, 24, 91, 0.1) !important;
+  color: #c2185b !important;
+  border: 2px solid #c2185b !important;
+}
+
+[data-theme="chicha-morada"] footer {
+  background: #e1bee7 !important;
+  border-top: 2px solid #c2185b !important;
+}
+
+[data-theme="chicha-morada"] .opinion-card {
+  background: #ffffff !important;
+  border: 2px solid #c2185b !important;
+}

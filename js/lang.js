@@ -31,7 +31,11 @@ function updateActiveThemeButton(theme) {
     'dark': 0,
     'light': 1,
     'purple-gold': 2,
-    'neon': 3
+    'neon': 3,
+    'andes': 4,
+    'pachamama': 5,
+    'noche-cusquena': 6,
+    'chicha-morada': 7
   };
   
   if (dropdownItems[themeMap[theme]]) {
