@@ -73,27 +73,71 @@
   background: #164240 !important;
 }
 
-/* HERO - Tema Claro */
+/* HERO - Tema Claro con Mejor Contraste */
 [data-theme="light"] #hero {
   color: #1a1a1a;
+  position: relative;
+}
+
+/* Overlay con transparencia del 10% */
+[data-theme="light"] .hero-overlay {
+  background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(232, 244, 243, 0.08) 40%,
+    rgba(255, 255, 255, 0.1) 100%) !important;
+}
+
+/* Agregar capa adicional de contraste sutil */
+[data-theme="light"] .hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+  pointer-events: none;
 }
 
 [data-theme="light"] .hero-badge {
-  color: #d4af37 !important;
-  background: rgba(255, 255, 255, 0.9) !important;
+  color: #164240 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   border: 2px solid #d4af37 !important;
+  box-shadow: 
+    0 4px 15px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(212, 175, 55, 0.3);
+  font-weight: 700;
 }
 
 [data-theme="light"] .hero-title {
-  color: #1a1a1a !important;
+  color: #0a1f1e !important;
+  text-shadow: 
+    0 2px 4px rgba(255, 255, 255, 0.9),
+    0 4px 8px rgba(255, 255, 255, 0.7),
+    0 1px 0 rgba(255, 255, 255, 1),
+    0 2px 0 rgba(255, 255, 255, 0.9),
+    0 8px 20px rgba(0, 0, 0, 0.15) !important;
+  font-weight: 900;
 }
 
 [data-theme="light"] .hero-title span {
-  color: #d4af37 !important;
+  color: #b8941f !important;
+  text-shadow: 
+    0 2px 4px rgba(255, 255, 255, 0.9),
+    0 4px 8px rgba(255, 255, 255, 0.7),
+    0 1px 0 rgba(255, 255, 255, 1),
+    0 2px 0 rgba(255, 255, 255, 0.9),
+    0 8px 20px rgba(184, 148, 31, 0.3) !important;
+  font-weight: 900;
 }
 
 [data-theme="light"] .hero-desc {
-  color: #4a4a4a !important;
+  color: #164240 !important;
+  text-shadow: 
+    0 1px 2px rgba(255, 255, 255, 0.9),
+    0 2px 4px rgba(255, 255, 255, 0.7),
+    0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  font-weight: 600;
 }
 
 [data-theme="light"] .btn-primary {
@@ -1242,8 +1286,8 @@ svg {
 
 
 /* ====================================================
-   TEMA NEÓN - Negro con Dorado, Morado y Naranja
-   Diseño formal y elegante
+   TEMA NEÓN - VERDADERO EFECTO NEÓN
+   Colores brillantes con efectos de luz intensos
    ==================================================== */
 
 [data-theme="neon"] body {
@@ -1251,35 +1295,76 @@ svg {
   background: #000000;
 }
 
+/* ===== HEADER CON BRILLO NEÓN ===== */
 [data-theme="neon"] #header-outer {
   background: rgba(10, 10, 10, 0.98);
-  border-bottom: 1px solid rgba(255, 165, 0, 0.3);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid #ffa500;
+  box-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.5),
+    0 2px 20px rgba(255, 165, 0, 0.3);
 }
 
 [data-theme="neon"] .logo-text {
   color: #ffa500 !important;
-  text-shadow: none;
+  text-shadow: 
+    0 0 10px #ffa500,
+    0 0 20px #ffa500,
+    0 0 30px #ff8c00,
+    0 0 40px #ff8c00;
+  animation: neonTextPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonTextPulse {
+  from {
+    text-shadow: 
+      0 0 10px #ffa500,
+      0 0 20px #ffa500,
+      0 0 30px #ff8c00,
+      0 0 40px #ff8c00;
+  }
+  to {
+    text-shadow: 
+      0 0 5px #ffa500,
+      0 0 10px #ffa500,
+      0 0 15px #ff8c00,
+      0 0 20px #ff8c00;
+  }
 }
 
 [data-theme="neon"] .logo-sub {
   color: #b565b3 !important;
-  text-shadow: none;
+  text-shadow: 
+    0 0 10px #b565b3,
+    0 0 20px #9b6bc4;
 }
 
 [data-theme="neon"] nav ul li a {
   color: #f0f0f0 !important;
+  text-shadow: 0 0 5px rgba(240, 240, 240, 0.5);
 }
 
 [data-theme="neon"] nav ul li a:hover {
   color: #ffa500 !important;
+  text-shadow: 
+    0 0 10px #ffa500,
+    0 0 20px #ffa500;
 }
 
 [data-theme="neon"] nav ul li.cta a {
   background: linear-gradient(135deg, #ff6b35, #ff8c5a) !important;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  box-shadow: 
+    0 4px 15px rgba(255, 107, 53, 0.5),
+    0 0 20px rgba(255, 107, 53, 0.3);
+  border: 1px solid #ff6b35;
 }
 
+[data-theme="neon"] nav ul li.cta a:hover {
+  box-shadow: 
+    0 6px 20px rgba(255, 107, 53, 0.7),
+    0 0 30px rgba(255, 107, 53, 0.5);
+}
+
+/* ===== HERO CON EFECTOS NEÓN ===== */
 [data-theme="neon"] .hero-bg {
   background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&q=90')
     center/cover no-repeat !important;
@@ -1294,60 +1379,105 @@ svg {
 
 [data-theme="neon"] .hero-bg::before {
   background:
-    radial-gradient(circle at 20% 30%, rgba(155,107,196,0.06) 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(155,107,196,0.06) 0%, transparent 40%) !important;
-  opacity: 0.5 !important;
+    radial-gradient(circle at 20% 30%, rgba(255, 165, 0, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(181, 101, 179, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 60%) !important;
+  opacity: 1 !important;
+  animation: neonGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
 }
 
 [data-theme="neon"] .hero-bg::after {
   background: linear-gradient(90deg,
     transparent 0%,
-    rgba(155,107,196,0.3) 25%,
-    rgba(155,107,196,0.5) 50%,
-    rgba(155,107,196,0.3) 75%,
+    rgba(255, 165, 0, 0.2) 25%,
+    rgba(181, 101, 179, 0.3) 50%,
+    rgba(255, 165, 0, 0.2) 75%,
     transparent 100%
   ) !important;
 }
 
 [data-theme="neon"] .hero-badge {
   color: #ffa500 !important;
-  background: rgba(0, 0, 0, 0.8) !important;
-  border: 1px solid #ffa500 !important;
-  box-shadow: none;
-  text-shadow: none;
+  background: rgba(0, 0, 0, 0.9) !important;
+  border: 2px solid #ffa500 !important;
+  box-shadow: 
+    0 0 10px rgba(255, 165, 0, 0.5),
+    inset 0 0 10px rgba(255, 165, 0, 0.2);
+  text-shadow: 
+    0 0 5px #ffa500,
+    0 0 10px #ffa500;
 }
 
 [data-theme="neon"] .hero-title {
   color: #ffffff !important;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8) !important;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 2px 30px rgba(0, 0, 0, 0.8) !important;
 }
 
 [data-theme="neon"] .hero-title span {
   color: #ffa500 !important;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8) !important;
+  text-shadow: 
+    0 0 10px #ffa500,
+    0 0 20px #ffa500,
+    0 0 30px #ff8c00,
+    0 0 40px #ff8c00,
+    0 2px 30px rgba(0, 0, 0, 0.8) !important;
+  animation: neonTitlePulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes neonTitlePulse {
+  from {
+    text-shadow: 
+      0 0 10px #ffa500,
+      0 0 20px #ffa500,
+      0 0 30px #ff8c00,
+      0 0 40px #ff8c00;
+  }
+  to {
+    text-shadow: 
+      0 0 20px #ffa500,
+      0 0 30px #ffa500,
+      0 0 40px #ff8c00,
+      0 0 50px #ff8c00;
+  }
 }
 
 [data-theme="neon"] .hero-desc {
   color: #f0f0f0 !important;
-  text-shadow: none;
+  text-shadow: 0 0 10px rgba(240, 240, 240, 0.3);
 }
 
 [data-theme="neon"] .btn-primary {
   background: linear-gradient(135deg, #8b4789, #b565b3) !important;
   color: #ffffff !important;
-  border: 1px solid #b565b3 !important;
-  box-shadow: 0 4px 15px rgba(139, 71, 137, 0.3);
-  text-shadow: none;
+  border: 2px solid #b565b3 !important;
+  box-shadow: 
+    0 4px 15px rgba(181, 101, 179, 0.5),
+    0 0 20px rgba(181, 101, 179, 0.3);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 [data-theme="neon"] .btn-primary:hover {
-  box-shadow: 0 6px 20px rgba(139, 71, 137, 0.4);
+  box-shadow: 
+    0 6px 25px rgba(181, 101, 179, 0.7),
+    0 0 30px rgba(181, 101, 179, 0.5);
+  transform: translateY(-2px);
 }
 
 [data-theme="neon"] .btn-outline {
   color: #ffa500 !important;
-  border: 1px solid #ffa500 !important;
-  box-shadow: none;
+  border: 2px solid #ffa500 !important;
+  box-shadow: 
+    0 0 10px rgba(255, 165, 0, 0.3),
+    inset 0 0 10px rgba(255, 165, 0, 0.1);
+  text-shadow: 0 0 5px #ffa500;
   text-shadow: none;
 }
 
@@ -1623,4 +1753,152 @@ svg {
   background: #ffa500 !important;
   color: #000000 !important;
   box-shadow: none;
+}
+
+
+/* ===== CONTINUACIÓN TEMA NEÓN - EFECTOS BRILLANTES ===== */
+
+[data-theme="neon"] .scroll-hint {
+  color: #ffa500 !important;
+  text-shadow: 
+    0 0 10px #ffa500,
+    0 0 20px #ffa500;
+}
+
+[data-theme="neon"] .scroll-hint .line {
+  background: linear-gradient(to bottom, transparent, #ffa500);
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+}
+
+/* Opiniones con brillo neón */
+[data-theme="neon"] #opiniones {
+  background: #0a0a0a !important;
+}
+
+[data-theme="neon"] #opiniones .section-label {
+  color: #b565b3 !important;
+  text-shadow: 
+    0 0 10px #b565b3,
+    0 0 20px #9b6bc4;
+}
+
+[data-theme="neon"] #opiniones .section-title {
+  color: #ffffff !important;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+[data-theme="neon"] .google-reviews-link {
+  border: 2px solid #ffa500;
+  box-shadow: 
+    0 0 15px rgba(255, 165, 0, 0.3),
+    inset 0 0 15px rgba(255, 165, 0, 0.1);
+}
+
+[data-theme="neon"] .google-reviews-link:hover {
+  box-shadow: 
+    0 0 25px rgba(255, 165, 0, 0.5),
+    0 0 35px rgba(255, 165, 0, 0.3),
+    inset 0 0 20px rgba(255, 165, 0, 0.2);
+}
+
+/* Reserva con brillo neón */
+[data-theme="neon"] #reserva {
+  background: #000000 !important;
+  border-top: 2px solid #ffa500;
+  box-shadow: 0 -2px 20px rgba(255, 165, 0, 0.3);
+}
+
+[data-theme="neon"] #reserva .section-label {
+  color: #ff6b35 !important;
+  text-shadow: 
+    0 0 10px #ff6b35,
+    0 0 20px #ff8c5a;
+}
+
+[data-theme="neon"] #reserva .section-title {
+  color: #ffffff !important;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.6),
+    0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+/* WhatsApp flotante con brillo */
+[data-theme="neon"] .whatsapp-btn {
+  box-shadow: 
+    0 4px 20px rgba(37, 211, 102, 0.5),
+    0 0 30px rgba(37, 211, 102, 0.3);
+  border: 2px solid #25D366;
+}
+
+[data-theme="neon"] .whatsapp-btn:hover {
+  box-shadow: 
+    0 6px 30px rgba(37, 211, 102, 0.7),
+    0 0 40px rgba(37, 211, 102, 0.5);
+  transform: translateY(-4px) scale(1.05);
+}
+
+/* Footer con efectos neón intensos */
+[data-theme="neon"] footer .footer-logo {
+  color: #ffa500 !important;
+  text-shadow: 
+    0 0 10px #ffa500,
+    0 0 20px #ffa500,
+    0 0 30px #ff8c00,
+    0 0 40px #ff8c00;
+  animation: neonFooterPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonFooterPulse {
+  from {
+    text-shadow: 
+      0 0 10px #ffa500,
+      0 0 20px #ffa500,
+      0 0 30px #ff8c00,
+      0 0 40px #ff8c00;
+  }
+  to {
+    text-shadow: 
+      0 0 5px #ffa500,
+      0 0 10px #ffa500,
+      0 0 15px #ff8c00,
+      0 0 20px #ff8c00;
+  }
+}
+
+/* Carrusel con brillo neón */
+[data-theme="neon"] .carousel-nav-btn {
+  background: rgba(255, 165, 0, 0.1);
+  border: 2px solid #ffa500;
+  box-shadow: 
+    0 0 10px rgba(255, 165, 0, 0.3),
+    inset 0 0 10px rgba(255, 165, 0, 0.1);
+}
+
+[data-theme="neon"] .carousel-nav-btn:hover {
+  background: rgba(255, 165, 0, 0.2);
+  box-shadow: 
+    0 0 20px rgba(255, 165, 0, 0.5),
+    0 0 30px rgba(255, 165, 0, 0.3),
+    inset 0 0 15px rgba(255, 165, 0, 0.2);
+}
+
+[data-theme="neon"] .gallery-label {
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 2px solid #b565b3;
+  box-shadow: 
+    0 -2px 15px rgba(181, 101, 179, 0.3),
+    inset 0 2px 15px rgba(181, 101, 179, 0.1);
+  text-shadow: 
+    0 0 5px #b565b3,
+    0 0 10px #9b6bc4;
+}
+
+/* Mapa con borde neón */
+[data-theme="neon"] #mapa iframe {
+  border: 2px solid #ffa500;
+  box-shadow: 
+    0 0 20px rgba(255, 165, 0, 0.3),
+    0 0 40px rgba(255, 165, 0, 0.2);
 }
