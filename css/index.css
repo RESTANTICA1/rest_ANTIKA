@@ -218,53 +218,53 @@
 /* ===== TEMA PACHAMAMA (Verde Andino) ===== */
 [data-theme="pachamama"] {
   --wood-teal-deep:   #1b5e20;
-  --wood-teal:        #2d5016;
-  --wood-teal-mid:    #4a7c2c;
-  --wood-teal-light:  #689f38;
-  --wood-teal-bright: #8bc34a;
+  --wood-teal:        #2e7d32;
+  --wood-teal-mid:    #388e3c;
+  --wood-teal-light:  #4caf50;
+  --wood-teal-bright: #66bb6a;
 
-  --gold:             #f9a825;
-  --gold-light:       #fbc02d;
-  --gold-pale:        #fff176;
-  --gold-dark:        #f57f17;
-  --gold-glow:        rgba(249, 168, 37, 0.35);
+  --gold:             #ffa726;
+  --gold-light:       #ffb74d;
+  --gold-pale:        #ffcc80;
+  --gold-dark:        #ff9800;
+  --gold-glow:        rgba(255, 167, 38, 0.4);
 
-  --parchment:        #faf8f3;
-  --parchment-dark:   #f5f3ed;
-  --parchment-deep:   #efeee8;
+  --parchment:        #fff8e1;
+  --parchment-dark:   #fff3cd;
+  --parchment-deep:   #ffecb3;
   --parchment-shadow: rgba(27, 94, 32, 0.12);
 
-  --dark-ink:         #faf8f3;
-  --dark-wood:        #f5f3ed;
-  --navy-deep:        #f0efe9;
-  --navy-mid:         #efeee8;
+  --dark-ink:         #fff8e1;
+  --dark-wood:        #fff3cd;
+  --navy-deep:        #ffecb3;
+  --navy-mid:         #ffe082;
 
   --text-dark:        #1b5e20;
-  --text-mid:         #2d5016;
-  --text-muted:       #4a7c2c;
+  --text-mid:         #2e7d32;
+  --text-muted:       #388e3c;
   --cream:            #1b5e20;
   --cream-light:      #0d3310;
   --silver-light:     #2e4a1f;
 
-  --crimson:          #c62828;
-  --crimson-light:    #d32f2f;
+  --crimson:          #d32f2f;
+  --crimson-light:    #e53935;
 
-  --teal:             #2d5016;
+  --teal:             #2e7d32;
   --teal-dark:        #1b5e20;
-  --teal-light:       #4a7c2c;
-  --turquoise:        #558b2f;
-  --turquoise-light:  #689f38;
+  --teal-light:       #388e3c;
+  --turquoise:        #43a047;
+  --turquoise-light:  #4caf50;
   --navy:             #33691e;
-  --beige:            #faf8f3;
-  --beige-dark:       #f5f3ed;
+  --beige:            #fff8e1;
+  --beige-dark:       #fff3cd;
   --text:             #1b5e20;
-  --dark:             #faf8f3;
+  --dark:             #fff8e1;
 
-  --shadow-sm:   0 2px 8px rgba(198, 40, 40, 0.12);
-  --shadow-md:   0 4px 12px rgba(198, 40, 40, 0.18);
-  --shadow-lg:   0 8px 24px rgba(198, 40, 40, 0.22);
-  --shadow-gold: 0 4px 20px rgba(249, 168, 37, 0.35);
-  --shadow-wood: 0 6px 20px rgba(27, 94, 32, 0.25);
+  --shadow-sm:   0 2px 8px rgba(211, 47, 47, 0.15);
+  --shadow-md:   0 4px 12px rgba(211, 47, 47, 0.2);
+  --shadow-lg:   0 8px 24px rgba(211, 47, 47, 0.25);
+  --shadow-gold: 0 4px 20px rgba(255, 167, 38, 0.4);
+  --shadow-wood: 0 6px 20px rgba(27, 94, 32, 0.3);
 }
 
 /* ===== TEMA NOCHE CUSQUEÑA (Azul Profundo) ===== */
