@@ -88,7 +88,13 @@ document.addEventListener('click', function(event) {
   }
 });
 
-/* ===== TRADUCCIONES ===== */
+/* ===== SISTEMA DE IDIOMAS =====
+   - Idioma por defecto: Español (es)
+   - Para nuevos usuarios sin caché: se carga español automáticamente
+   - Si el usuario cambia de idioma: se guarda en localStorage
+   - En visitas posteriores: se carga el idioma guardado
+   ===================================== */
+
 const translations = {
   es: {
     restaurant_name: "Restaurante - Sicuani",
@@ -359,9 +365,12 @@ function changeLanguage(lang) {
     select.addEventListener('change', () => changeLanguage(select.value));
   }
 
-  // Aplicar idioma guardado (o español por defecto)
+  // Aplicar idioma guardado o español por defecto para nuevos usuarios
   const savedLang = localStorage.getItem('lang') || 'es';
   if (select) select.value = savedLang;
+
+  // Establecer español como idioma por defecto del documento
+  document.documentElement.lang = savedLang;
 
   // Si el menú dinámico ya cargó, aplicar todo de inmediato
   if (window._antika && window._antika.menuLoaded) {
@@ -369,7 +378,6 @@ function changeLanguage(lang) {
   } else {
     // Aplicar traducciones estáticas ahora
     applyStaticTranslations(savedLang);
-    document.documentElement.lang = savedLang;
 
     // Esperar a que el menú cargue para refrescarlo también
     const waitForMenu = setInterval(() => {
