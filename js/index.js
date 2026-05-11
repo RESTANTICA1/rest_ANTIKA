@@ -341,10 +341,7 @@ function renderAdicionalesGen(frag, data) {
     nm.className = 'item-name';
     nm.textContent = item.name;
     info.appendChild(nm);
-    const pr = document.createElement('span');
-    pr.className = 'item-price';
-    pr.textContent = 'S/ ' + item.price.toFixed(2);
-    wrap.append(info, pr);
+    wrap.appendChild(info);
     col1.appendChild(wrap);
   });
 
@@ -466,12 +463,7 @@ function createMenuItem(name, desc, price) {
     info.appendChild(ds);
   }
 
-  const pr    = document.createElement('span');
-  pr.className = 'item-price';
-  pr.textContent = 'S/ ' + price.toFixed(2);
-
   wrap.appendChild(info);
-  wrap.appendChild(pr);
   return wrap;
 }
 
